@@ -1,11 +1,17 @@
 <html>
-    <head>
-         <title>index</title>
-    </head>
+	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>测试管理平台</title>
 
-    <body>
-    <volist name='data' id='vo'>
-        <{$vo.id}>--<{$vo.adder}>---<{$vo.createTime}><br>
-    </volist>   
-    </body>
+	</head>
+
+	<frameset rows="60, *">
+		<frame src="__URL__/top" name="top" scrolling="no" />
+
+		<frameset cols="150, *">
+			<frame src="__URL__/menu" name="left" />
+
+			<frame src="__URL__/program" name="right" />
+		</frameset>
+	</frameset><noframes></noframes>
 </html>

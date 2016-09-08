@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>--未知标题---</title>
+		<link type="text/css" rel="stylesheet" href="<{$public}>/css/reset.css" />
+		<link type="text/css" rel="stylesheet" href="<{$res}>/css/style.css" />
+	    <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
+	    <script type="text/javascript" src="<{$public}>/js/global.js"></script>
+	</head>
+	<body>
+		<ul style="list-style:none;margin:10px;padding:0px">
+			<{if $smarty.get.pd eq "two"}>
+				<li> <h4>分析</h4>
+				     <ul style="line-height: 20px;margin:10px;">
+				        <li><a href="<{$app}>/control" target="right">功能控件</a></li>
+	                    <li><a href="<{$app}>/testscene" target="right">场景测试</a></li>
+				     </ul>
+				<li>
+			<{elseif $smarty.get.pd eq "three"}>
+				<li> <h4>仓库</h4>
+				     <ul style="line-height: 20px;margin:10px;">
+				        <li><a href="<{$app}>/testcase" target="right">用例库</a></li>
+	                    <li><a href="<{$app}>/control" target="right">控件库</a></li>
+	                    <li><a href="<{$app}>/scene" target="right">场景库</a></li>
+				     </ul>
+				<li>
+			<{elseif $smarty.get.pd eq "four"}>
+				<li> <h4>执行</h4>
+				     <ul style="line-height: 20px;margin:10px;">
+				        <li><a href="<{$app}>/product" target="right">手工测试</a></li>
+	                    <li><a href="<{$app}>/program" target="right">自动化测试</a></li>
+				     </ul>
+				<li>
+			<{elseif $smarty.get.pd eq "five"}>
+				<li> <h4>报告</h4>
+				     <ul style="line-height: 20px;margin:10px;">
+	                    <li><a href="<{$app}>/survey/received" target="right">待接收任务</a></li>
+				     </ul>
+				<li>
+			<{elseif $smarty.get.pd eq "six"}>
+				<li> <h4>设置</h4>
+				     <ul style="line-height: 20px;margin:10px;">
+				        <li><a href="<{$app}>/user" target="right">用户</a></li>
+	                    <!--  <li><a href="<{$app}>/dictionary" target="right">数据字典</a></li>-->
+				     </ul>
+				<li>
+			<{else}>
+      				<li> <h4>待办</h4>
+                        <ul style="line-height: 20px;margin:10px;">
+	                       <li><a href="<{$app}>/survey/daily" target="right">今日待办</a></li>
+	                       <li><a href="<{$app}>/weekly" target="right">测试周报</a></li>
+					       <li><a href="<{$app}>/survey/allwork" target="right">工作清单</a></li>
+				        </ul>
+				     <li>
+				     <li> <h4>测试分析</h4>
+                        <ul style="line-height: 20px;margin:10px;">
+                           <li><a href="<{$app}>/product" target="right">测试产品</a></li>
+	                       <li><a href="<{$app}>/program" target="right">测试项目</a></li>
+				        </ul>
+				     <li>
+				      <li> <h4>测试执行</h4>
+				         <ul style="line-height: 20px;margin:10px;">
+				           <li><a href="<{$app}>/product" target="right">手工测试</a></li>
+	                       <li><a href="<{$app}>/program" target="right">自动化测试</a></li>
+				         <ul>
+				      <li>
+			<{/if}>
+		</ul>
+	</body>
+</html>
