@@ -1,19 +1,14 @@
 <?php
 
-class IndexAction extends Action {
+class SystemAction extends Action {
     public function index(){
     	
-    	 $m=M('product');
+    	 $m=M('system');
     	 $arr=$m->select();
     
 	     $this->assign('data',$arr);
 	     $this->display();
     }
  
-  public function show(){
-	     echo "welcome,".$_GET['name'];
-    }
-
-
-
+  
 }

@@ -1,6 +1,6 @@
 <?php
 
-class IndexAction extends Action {
+class ProductAction extends Action {
     public function index(){
     	
     	 $m=M('product');
@@ -10,10 +10,5 @@ class IndexAction extends Action {
 	     $this->display();
     }
  
-  public function show(){
-	     echo "welcome,".$_GET['name'];
-    }
-
-
-
+  
 }
