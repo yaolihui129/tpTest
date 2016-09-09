@@ -2,9 +2,11 @@
 
 class SystemAction extends Action {
     public function index(){
-
+        $prodid=$_GET['prodid'];
+        $a=array(prodid=>$prodid);
+        var_dump($a);
     	 $m=M('system');
-    	 $arr=$m->select();
+    	 $arr=$m->where($a)->select();
 
 	     $this->assign('data',$arr);
 	     $this->display();

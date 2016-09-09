@@ -1,9 +1,4 @@
-<html>
-    <head>
-         <title>User</title>
-          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-          <style type="text/css">
-            @CHARSET "UTF-8";
+@CHARSET "UTF-8";
 /*公共样式表*/
 body {margin:0 auto; font-size:12px; font-family:"微软雅黑","宋体",Arial, Helvetica, sans-serif; color:#333; line-height:20px;}
 a,a:hover{color:#333;text-decoration:none; outline:0 none;}
@@ -155,56 +150,57 @@ a:hover.shouhuo_btn{ text-decoration:none;}
 .hy_table3{padding-bottom:10px; border:1px #ddd solid; border-radius:4px; margin-top:10px; font-size:14px;}
 .zt{border:1px #F58B0F solid; background:#FFF7EB; padding:10px; line-height:22px}
 .hy_table4 td{border-bottom:1px #ddd solid;}
-          </style>
-    </head>
 
-    <body>
-        <div class="place">
-                                 所在位置：用户<a href="__URL__/add" ><span>添加用户</span> </a>
-        </div>
-        <div class="content">
-           <div class="main">
-              <div class="top">用户管理</div>
-              <div class="midd">
-                 <table border="1" width="1000" align="center">
-                      <caption><h1>用户表</h1></caption>
-                     <tr>
-                       <th>ID</th>
-                       <th>员工号</th>
-                       <th>登录名</th>
-                       <th>姓名</th>
-                       <th>状态</th>
-                       <th>分组</th>
-                       <th>手机</th>
-                       <th>座机</th>
-                       <th>邮箱</th>
-                       <th>最后更新时间</th>
-                       <th>操作</th>
-                     </tr>
-                   <volist name='data' id='vo'>
-                     <tr>
-                       <td><{$vo.id}></td>
-                       <td><{$vo.userNo}></td>
-                       <td><{$vo.username}></td>
-                       <td><{$vo.realname}></td>
-                       <td><{$vo.state}></td>
-                       <td><{$vo.usergp}></td>
-                       <td><{$vo.phone}></td>
-                       <td><{$vo.tel}></td>
-                       <td><{$vo.email}></td>
-                       <td><{$vo.updateTime}></td>
-                       <td>
-                          <a href="__URL__//mod/id/<{$vo.id}>"">修改</a>/
-                          <a href="__URL__/setpw/id/<{$vo.id}>">重置密码</a>/
-                          <a href="__URL__/del/id/<{$vo.id}>">删除</a>/
 
-                       </td>
-                    </tr>
-                  </volist>
-                 </table>
-        </div><!-- midd -->
-           </div><!-- main -->
-        </div><!-- content -->
+/*管理操作按钮*/
+a.admin_edit{display:block; float:left; width:42px; height:22px; line-height:25px; text-align:center;background:#76A500; color:#f5f5f5; border-radius:2px; font-family:'宋体'; font-size:12px;}
+a:hover.admin_edit,a:hover.admin_del{background-color:#cccc00;}
+a.admin_del{display:block; float:left; width:42px; height:22px; line-height:25px; text-align:center;background:#FF9900; color:#f5f5f5; border-radius:2px; font-family:'宋体'; font-size:12px;}
+a.proname{color:#0500fc}
+a:hover.proname{color:#0500fc}
+.mat3{margin-top:3px;}
+.search{border:1px #ddd solid; border-bottom:0; background:#fdfdfd; height:46px; line-height:46px; overflow:hidden; padding:0 5px; margin-top:5px;}
+.qiehuan a{padding:5px 10px; color:#2277ae;}
+.qiehuan a:hover{color:#2277ae;}
+.qiehuan a.sel{background:#5d9ac6; color:#fff; border-radius:3px;}
 
-    </body>
-</html>
+.admin_u {
+	width:auto;
+	height:100%;
+	line-height:61px;
+	text-indent:25px;
+	background: url(../images/user.gif) no-repeat 0px 22px;
+}
+
+.admin_t {
+	width:auto;
+	padding-top:10px;
+	height:100%;
+	margin-right:5px;
+}
+
+.admin_t li {
+	height:25px;
+	line-height:25px;
+}
+
+.admin_l{float:left; width:950px;}
+.admin_r{float:right; width:230px;}
+.admin_t_info{border:1px #b1cae8 solid; font-family:"宋体";}
+.admin_t_info h3{background:url(../images/tt2.gif) repeat-x; height:31px; line-height:30px; padding:0 10px; color:#555}
+.admin_t_info ul{padding:8px 10px;}
+.admin_t_info ul li{text-align:right; line-height:34px; color:#666;}
+.admin_t_info ul li a{float:left; text-align:left; color:#0579C6;}
+a.all_more{ display:block; background:url(../images/tt3.gif) no-repeat; width:210px; height:25px; text-align:center; line-height:25px; margin:0 10px 10px; color:#333;}
+
+.admin_t_info1{float:left; width:467px;}
+.admin_t_info1 ul li{height:34px; border-bottom:1px #ddd dashed;}
+.admin_t_info1 ul li a{color:#333;}
+.bg01{background:#DEECF4;}
+.admin_t_info table{margin:10px; width:928px;}
+.admin_t_info td{border:1px #ddd solid; padding:13px 10px; text-align:center}
+.admin_t_info .bg01{padding:8px;}
+.banben{padding:11px 10px;}
+.sq1{background:url(../images/sq1.gif) no-repeat; width:140px;height:30px;}
+.sq0{background:url(../images/sq0.gif) no-repeat; width:130px;height:30px;}
+

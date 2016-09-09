@@ -1,0 +1,43 @@
+<html>
+    <head>
+         <title>UserAdd</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    </head>
+
+    <body>
+        <div class="place">
+                                 所在位置：
+             <a href="__URL__">用户</a>
+             >重置密码
+            <span style="margin-left:60;">
+            <a href="__URL__"> 返回</a>
+            </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">重置密码</div>
+              <div class="midd">
+                 <form action="__URL__/set" method="post" >
+                  <input type="hidden" name="id" value="<{$user.id}>" />
+                  <table border="1" width="550" align="left">
+                     <tr>
+                         <td> 用户：</td>
+                         <td>
+                         <{$user.userNo}>：<{$user.realname}>:重置以后的的密码为：123456，请尽快修改密码！
+                         <input type="hidden" name="password" value="123456" />
+                         <input type="submit"  name="do_submit" value="提 交" >
+                         </td>
+                     </tr>
+                   </table>
+                 </form>
+
+              </div><!-- midd -->
+           </div><!-- main -->
+        </div><!-- content -->
+    </body>
+</html>
+
+
+</body>
+</html>
