@@ -68,10 +68,6 @@ body{background:#fff;}
 .midd{width:1100px;margin:0 30;background:#fff;}
 .left{float:left;width:200px; overflow:hidden; background:#fff;}
 .left li{line-height:20px;padding-left:20px;}
-.fenlei h3{background:url(../images/libg1.gif) no-repeat; width:108px; height:33px; line-height:33px; color:#fff; padding-left:30px;}
-.fenlei li{background:url(../images/libg2.gif) no-repeat bottom; width:110px; height:36px; line-height:36px; padding-left:30px; font-weight:bold;}
-.fenlei li a{color:#555; font-size:13px;}
-.fenlei li a:hover,.fenlei li.sel a{color:#e79b00; text-decoration:underline;}
 .mid{float:left;width:900px;}
 .right{float:right;width:400px; overflow:hidden;}
 .now_l{background:url(../images/now_l.gif) no-repeat; height:33px; float:left; width:6px;}
@@ -80,8 +76,6 @@ body{background:#fff;}
 .tixing{background:#ffffe0; color:#666; height:30px; line-height:30px; margin-top:5px; padding:0 10px; border:1px #f9dfb2 solid;}
 .searbox .input1{width:200px; height:22px; border:1px #8799ad solid; margin-right:5px;}
 .input2{padding:0 5px;}
-.fabu a{background:url(../images/fabu.gif) no-repeat; width:69px; height:23px; line-height:23px; margin-top:6px; text-align:center; color:#333; font-size:12px; display:block;}
-.fabu a:hover{color:#333}
 .list{width:955px; overflow:hidden; border:1px #ddd solid;}
 .list th{padding:7px 5px; border-bottom:1px #ddd solid; color:#555; font-weight:normal; font-size:14px;}
 .list td{padding:10px 8px; border-bottom:1px #ddd solid; color:#555; text-align:center; font-size:13px;}
@@ -112,7 +106,7 @@ textarea{font-size:14px; line-height:24px;border:1px #cecece solid; border-top:1
 .input600{width:600px;}
 .input650{width:650px;}
 
-.tjbtn{background:url(../images/btn.gif) no-repeat; width:70px; height:30px; text-align:center; line-height:30px; color:#fff; border:0; font-size:14px; font-weight:bold; cursor:pointer;}
+.tjbtn{background:url(__PUBLIC__/Images/login_btn.gif) no-repeat; width:70px; height:30px; text-align:center; line-height:30px; color:#fff; border:0; font-size:14px; font-weight:bold; cursor:pointer;}
 .foot{text-align:center; line-height:30px; color:#666;}
 .foot a{color:#666;}
 .dingdan{background:#ffffe0; color:#666; line-height:30px; margin-top:5px; padding:15px; border:1px #f9dfb2 solid;}
@@ -169,7 +163,7 @@ a:hover.proname{color:#0500fc}
 	height:100%;
 	line-height:61px;
 	text-indent:25px;
-	background: url(../images/user.gif) no-repeat 0px 22px;
+	background: url(__PUBLIC__/Images/user.gif) no-repeat 0px 22px;
 }
 
 .admin_t {
@@ -187,11 +181,11 @@ a:hover.proname{color:#0500fc}
 .admin_l{float:left; width:950px;}
 .admin_r{float:right; width:230px;}
 .admin_t_info{border:1px #b1cae8 solid; font-family:"宋体";}
-.admin_t_info h3{background:url(../images/tt2.gif) repeat-x; height:31px; line-height:30px; padding:0 10px; color:#555}
+.admin_t_info h3{background:url(__PUBLIC__/Images/tt2.gif) repeat-x; height:31px; line-height:30px; padding:0 10px; color:#555}
 .admin_t_info ul{padding:8px 10px;}
 .admin_t_info ul li{text-align:right; line-height:34px; color:#666;}
 .admin_t_info ul li a{float:left; text-align:left; color:#0579C6;}
-a.all_more{ display:block; background:url(../images/tt3.gif) no-repeat; width:210px; height:25px; text-align:center; line-height:25px; margin:0 10px 10px; color:#333;}
+a.all_more{ display:block; background:url(__PUBLIC__/Images/tt3.gif) no-repeat; width:210px; height:25px; text-align:center; line-height:25px; margin:0 10px 10px; color:#333;}
 
 .admin_t_info1{float:left; width:467px;}
 .admin_t_info1 ul li{height:34px; border-bottom:1px #ddd dashed;}
@@ -201,6 +195,6 @@ a.all_more{ display:block; background:url(../images/tt3.gif) no-repeat; width:21
 .admin_t_info td{border:1px #ddd solid; padding:13px 10px; text-align:center}
 .admin_t_info .bg01{padding:8px;}
 .banben{padding:11px 10px;}
-.sq1{background:url(../images/sq1.gif) no-repeat; width:140px;height:30px;}
-.sq0{background:url(../images/sq0.gif) no-repeat; width:130px;height:30px;}
+.sq1{background:url(__PUBLIC__/Images/sq1.gif) no-repeat; width:140px;height:30px;}
+.sq0{background:url(__PUBLIC__/Images/sq0.gif) no-repeat; width:130px;height:30px;}
 

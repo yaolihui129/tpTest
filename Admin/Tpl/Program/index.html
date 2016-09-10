@@ -1,11 +1,68 @@
 <html>
     <head>
-         <title>index</title>
+         <title>Program</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+          <import type="css" file="Css.style" />
+ 
     </head>
 
     <body>
-    <volist name='data' id='vo'>
-        <{$vo.id}>--<{$vo.adder}>---<{$vo.createTime}><br>
-    </volist>   
+        <div class="place">
+                                 所在位置：测试项目
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">测试项目</div>
+              <div class="midd">
+                 <table border="1" width="1000" align="center">
+                      <caption align="left"><h1>测试项目</h1></caption>
+                     <tr>
+                       <th>编号</th>
+                       <th>项目：
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add"  >添加 </a>
+                          </span>
+                       </th>
+                       <th>状态</th>
+                       <th>开始</th>
+                       <th>结束</th>
+                       <th>负责人</th>                    
+                       <th>操作 </th>
+                     </tr>
+                     <volist name='Pros' id='pro'>     
+                    <tr>
+                       <td><{$pro.proid}></td>
+                       <td>
+                         <{$pro.program}>（<{$pro.type}>）
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__URL__/details/id/<{$pro.id}>">详情</a>
+                           <a href="__URL__/mod/id/<{$pro.id}>">修改</a>
+                         </span>
+                       </td>
+                       <td><{$pro.state}></td>
+                       <td><{$pro.start}></td>
+                       <td><{$pro.end}></td>
+                       <td><{$pro.manager}></td>                  
+                       <td> 
+                          <a href="__APP__/stage/index/proid/<{$pro.id}>">里程碑</a>
+                          <a href="__APP__/stage/index/proid/<{$pro.id}>">系统</a>
+                          <a href="__APP__/scene/index/proid/<{$pro.id}>">场景</a>
+                          <a href="__APP__/risk/index/proid/<{$pro.id}>">风险</a>                     
+                          <a href="__APP__/func/proid/<{$pro.id}>">功能点</a>
+                          <a href="__APP__/range/proid/<{$pro.id}>">范围</a>                                                  
+                          <a href="__URL__/del/id/<{$pro.id}>" onclick="return confirm('你确定要删除项目：<{$pro.program}>吗？')">删除</a>
+                       </td>
+                    </tr>                    
+                    </volist>                                          
+                </table>
+        </div><!-- midd -->
+           </div><!-- main -->
+        </div><!-- content -->
+    
+    
+    
+    
+    
+   
     </body>
 </html>

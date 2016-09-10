@@ -1,10 +1,120 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+"http://www.w3.org/TR/html4/frameset.dtd">
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+    <head>
+         <title>UserAdd</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <import type="css" file="Css.style" />
+          <style type="text/css">
+            .btn{
+               background:url(__PUBLIC__/Images/btn.gif) no-repeat; 
+               width:70px; height:30px; text-align:center; line-height:30px; 
+               color:#fff; border:0; font-size:14px; font-weight:bold; cursor:pointer;
+               }
+          </style>
+                
+    </head>
 
-</body>
+    <body>
+        <div class="place">
+                                 所在位置：
+             <a href="__URL__">项目</a>
+             >编辑
+            <span style="float:right;margin-right:60px;">
+            <a href="__URL__"> 返回</a>
+             </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">
+                                        项目编辑
+                <span style="margin-left:120px;"><a href="__URL__/add"  >添加 </a></span>
+              </div>
+                 <div class="left">
+                    <volist name='pros' id='pro'>
+                       <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
+                    </volist>
+              </div>
+              <div class="midd">
+                 <form action="__URL__/update" method="post" >
+                 <input type="hidden" name="id" value="<{$p.id}>" />
+                  <table border="0" width="300" align="left">
+                   <tr>
+                         <td> 更新：</td>
+                         <td><{$p.moder}>更新于:<{$p.updateTime}></td>
+                     </tr>
+                     <tr>
+                         <td> 编号：</td>
+                         <td><input type="text" name="proid" value="<{$p.proid}>"  class="input100"/></td>
+                     </tr>
+                     <tr>
+                         <td>项目：</td>
+                         <td><input type="text" name="program" value="<{$p.program}>" class="input200"/></td>
+                     </tr>
+                     <tr>
+                         <td>负责人：</td>
+                         <td><input type="text" name="manager" value="<{$p.manager}>" class="input100"/></td>
+                     </tr>                    
+                     <tr>
+                          <td>类型：</td>
+                          <!--<td>
+                            <select name="type">
+                                 <option value="简要">简要</option>
+                                 <option value="普通">普通</option>
+                                
+                             </select>
+                         </td>-->
+                         <td><input type="text" name="type" value="<{$p.type}>" class="input100""/></td> 
+                     </tr>
+                     <tr>
+                         <td>状态：</td>
+                         <!-- <td>
+                             <select name="state">
+                                 <option value="进行中">进行中</option>
+                                 <option value="未开始">未开始</option>                                
+                                 <option value="已完成">已完成</option>
+                                 <option value="已搁置">已搁置</option>
+                                 <option value="已取消">已取消</option>
+                                 
+                             </select>
+                         </td>-->
+                         
+                          <td> <input type="text" name="state" value="<{$p.state}>" class="input100"/></td>
+                     </tr>
+                      
+                     <tr>
+                         <td> 分组：</td>
+                         <!--<td>
+                            <select name="testgp">
+                                 <option value="C">C端</option>
+                                 <option value="B">C端</option>
+                                 <option value="OP">OP</option>
+                                 <option value="Auto">自动化</option>
+                             </select>
+                         </td> -->
+                          <td><input type="text" name="testgp" value="Auto" class="input100"/></td>
+                     </tr>
+                     <tr>
+                         <td>开始：</td>
+                         <td><input type="text" name="start" value="<{$p.start}>" class="input100"/></td>
+                     </tr>
+                     <tr>
+                         <td>结束：</td>
+                         <td><input type="text" name="end" value="<{$p.end}>" class="input100" /></td>
+                     </tr>
+                    
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="修   改" ></td>
+                     </tr>
+                  </table>
+                 </form>
+              
+              
+              
+
+              </div><!-- midd -->
+           </div><!-- main -->
+        </div><!-- content -->
+    </body>
 </html>

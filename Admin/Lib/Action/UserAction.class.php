@@ -22,8 +22,8 @@ class UserAction extends Action {
         $_POST['password']=md5("123456");
         $_POST['state']="在职";
         $_POST['email']=$_POST['username']."@yiche.com";
-        $_POST['adder']='yaolh';
-        $_POST['moder']='yaolh';
+        $_POST['adder']=$_SESSION['realname'];
+        $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($m->create()){
             $count=$m->add($_POST);
@@ -40,7 +40,7 @@ class UserAction extends Action {
     }
 
     public function mod(){
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $m=M('user');
 
         $arr=$m->select();
@@ -52,7 +52,7 @@ class UserAction extends Action {
     }
 
     public function update(){
-        $_POST['moder']='yao';
+        $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         $db=M('user');
         if ($db->save($_POST)){
@@ -70,12 +70,11 @@ class UserAction extends Action {
     }
 
     public function set(){
-
-        $arr['id']=$_POST['id'];
-        $arr['password']=md5($_POST['password']);
-        var_dump($arr);
         $db=M('user');
-        if ($db->save($arr)){
+        $_POST['password']=md5(123456);
+        var_dump($_POST);
+       
+        if ($db->save($_POST)){
             $this->success("密码已重置为：123456！");
         }else{
             $this->error("重置失败！");
@@ -84,8 +83,9 @@ class UserAction extends Action {
     }
 
     public function del(){
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
    	    $m=M('user');
-   	    $id=$_GET['id'];
+   	    
    	    $count =$m->delete($id);
    	    if ($count>0) {
    		    $this->success('删除成功');

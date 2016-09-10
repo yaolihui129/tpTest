@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+    <head>
+         <title>UserAdd</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <import type="css" file="Css.style" />
+          <style type="text/css">
+            .btn{
+               background:url(__PUBLIC__/Images/btn.gif) no-repeat; 
+               width:70px; height:30px; text-align:center; line-height:30px; 
+               color:#fff; border:0; font-size:14px; font-weight:bold; cursor:pointer;
+               }
+          </style>
+                
+    </head>
+
+    <body>
+        <div class="place">
+                                 所在位置：
+             <a href="__URL__">项目</a>
+             >详情
+            <span style="float:right;margin-right:60px;">
+            <a href="__URL__"> 返回</a>
+             </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">
+                                        项目详情               
+              </div>
+                 <div class="left">
+                    <volist name='pros' id='pro'>
+                       <a href="__URL__/details/id/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
+                    </volist>
+              </div>
+              <div class="midd">
+                 <form action="__URL__/update" method="post" >
+                 <input type="hidden" name="id" value="<{$p.id}>" />
+                  <table border="0" width="300" align="left">
+                   <tr>
+                         <td> 更新：</td>
+                         <td><{$p.moder}>更新于:<{$p.updateTime}></td>
+                     </tr>
+                     <tr>
+                         <td>项目：</td>
+                         <td><{$p.proid}>：<{$p.program}></td>
+                     </tr>
+                     <tr>
+                         <td>产品：</td>
+                         <td><input type="text" name="pm" value="<{$p.pm}>" class="input100"/></td>
+                     </tr>                    
+                     <tr>
+                          <td>类型：</td>
+                          <!--<td>
+                            <select name="reType">
+                                 <option value="简要">简要</option>
+                                 <option value="普通">普通</option>
+                                
+                             </select>
+                         </td>-->
+                         <td><input type="text" name="reType" value="<{$p.reType}>" class="input100""/></td> 
+                     </tr>
+                    
+                      
+                     <tr>
+                         <td> 级别：</td>
+                         <!--<td>
+                            <select name="reLevel">
+                                 <option value="C">C端</option>
+                                 <option value="B">C端</option>
+                                 <option value="OP">OP</option>
+                                 <option value="Auto">自动化</option>
+                             </select>
+                         </td> -->
+                          <td><input type="text" name="reLevel" value="<{$p.reLevel}>" class="input100"/></td>
+                     </tr>
+                      <tr>
+                         <td>上线：</td>
+                         <td><input type="text" name="expOnline" value="<{$p.expOnline}>" class="input100"/></td>
+                     </tr>
+                     <tr>
+                         <td>简介：</td>
+                         <td><input type="text" name="profile" value="<{$p.profile}>" class="input100"/></td>
+                     </tr> 
+                    
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="修   改" ></td>
+                     </tr>
+                  </table>
+                 </form>
+              </div><!-- midd -->
+           </div><!-- main -->
+        </div><!-- content -->
+    </body>
+</html>

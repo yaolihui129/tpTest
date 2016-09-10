@@ -3,12 +3,16 @@
 class SystemAction extends Action {
     public function index(){
         $prodid=$_GET['prodid'];
+        $p=M('product');
+        $arr=$p->select();
+        $this->assign('data',$arr);
+        
         $a=array(prodid=>$prodid);
         var_dump($a);
     	 $m=M('system');
-    	 $arr=$m->where($a)->select();
+    	 $syses=$m->where($a)->select();
 
-	     $this->assign('data',$arr);
+	     $this->assign('syses',$syses);
 	     $this->display();
     }
 
@@ -34,6 +38,10 @@ class SystemAction extends Action {
         $m=M('system');
         $id=$_GET['id'];
 
+    }
+    
+    public function test(){
+        $this->display();
     }
 
     public function del(){

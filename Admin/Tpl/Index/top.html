@@ -1,39 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+"http://www.w3.org/TR/html4/frameset.dtd">
 <html>
 	<head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>--未知标题---</title>
-		<link type="text/css" rel="stylesheet" href="<{$public}>/css/reset.css" />
-		<link type="text/css" rel="stylesheet" href="<{$res}>/css/style.css" />
-	    <script type="text/javascript" src="<{$public}>/js/jquery.js"></script>
-	    <script type="text/javascript" src="<{$public}>/js/global.js"></script>
+		<import type="css" file="Css.style" />
+
 	</head>
 
 	<body>
 	<div class="bgimg"></div>
 	<div class="pagetop">
-	    <div class="logo fl"><img src="<{$res}>/images/logo.png" /></div>
+	    <div class="logo fl"><img src="__PUBLIC__/Images/logo.png" /></div>
 		<div>
-			<h5>测试管理平台</h5>
-			<h1 style="height:15px;"></h1>
-            <span  class="fl">
-		        <a href="<{$url}>/menu/pd/one" target="left"> 首页 </a> ||
-		        <a href="<{$url}>/menu/pd/two" target="left"> 分析</a> ||
-		        <a href="<{$url}>/menu/pd/three" target="left"> 仓库 </a> ||
-		        <a href="<{$url}>/menu/pd/four" target="left"> 执行</a> ||
-		        <a href="<{$url}>/menu/pd/five" target="left"> 报告</a> ||
-		        <a href="<{$url}>/menu/pd/six" target="left"> 设置 </a> ||
-	            &nbsp;
-	            &nbsp;
-	            &nbsp;
-	            &nbsp;
-	            &nbsp;
-	      </span>
+			<h5 style="margin-top:10px;">测试管理平台</h5>            
           <span  class="fr">
-	             <b>欢迎您-</b><{$smarty.session.realname}>&nbsp;
-		         <a href="<{$app}>/index/main" target="right"" >
-		         <img border=0 src="<{$res}>/images/exit4.gif"></a>
-		         <a target="_top" href="<{$app}>/login/logout"  onclick="return confirm('你确定要退出系统吗？')" >
-			     <img border=0 src="<{$res}>/images/exit3.gif"></a>
+               
+	             <b>欢迎您-</b><{$_SESSION.realname}>&nbsp;
+	             <b><{$_SESSION.testgp}></b>
+		         <a href="__APP__/index/main" target="right"" >
+		         <img border=0 src="__PUBLIC__/Images/exit4.gif"></a>
+		         <a target="_top" href="__APP__/Login/logout"  onclick="return confirm('你确定要退出系统吗？')" >
+			     <img border=0 src="__PUBLIC__/Images/exit3.gif"></a>
 		  </span>
            </div>
 	  </div><!--pagetop-->

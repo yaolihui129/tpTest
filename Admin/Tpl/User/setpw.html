@@ -2,7 +2,14 @@
     <head>
          <title>UserAdd</title>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
+         <import type="css" file="Css.style" />
+         <style type="text/css">
+            .btn{
+               background:url(__PUBLIC__/Images/btn.gif) no-repeat; 
+               width:70px; height:30px; text-align:center; line-height:30px; 
+               color:#fff; border:0; font-size:14px; font-weight:bold; cursor:pointer;
+               }
+          </style>
     </head>
 
     <body>
@@ -10,7 +17,7 @@
                                  所在位置：
              <a href="__URL__">用户</a>
              >重置密码
-            <span style="margin-left:60;">
+            <span style="float:right;margin-right:60px;">
             <a href="__URL__"> 返回</a>
             </span>
         </div>
@@ -24,10 +31,12 @@
                      <tr>
                          <td> 用户：</td>
                          <td>
-                         <{$user.userNo}>：<{$user.realname}>:重置以后的的密码为：123456，请尽快修改密码！
-                         <input type="hidden" name="password" value="123456" />
-                         <input type="submit"  name="do_submit" value="提 交" >
+                         <{$user.userNo}>：<{$user.realname}>:重置以后的的密码为：123456，请尽快修改密码！                                            
                          </td>
+                     </tr>
+                     <tr>
+                     <td></td>
+                     <td><input type="submit" class="btn" name="do_submit" value="提 交" ></td>
                      </tr>
                    </table>
                  </form>

@@ -1,11 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+"http://www.w3.org/TR/html4/frameset.dtd">
 <html>
     <head>
-         <title>index</title>
+         <title>UserAdd</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <import type="css" file="Css.style" />
+                
     </head>
 
     <body>
-    <volist name='data' id='vo'>
-        <{$vo.id}>--<{$vo.sysid}>---<{$vo.name}><br>
-    </volist>
+        <div class="place">
+                                 所在位置：
+             <a href="__APP__/Product">产品</a>
+             >系统
+            <span style="margin-left:60;">
+            <a href="__APP__/Product"> 返回</a>
+            </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">系统管理</div>
+              <div class="left">
+                    <volist name='data' id='vo'>
+                      <ur>
+                         <li><a href="__URL__/index/prodid/<{$vo.id}>""><{$vo.id}>-<{$vo.short}>:<{$vo.state}></a></li>
+                       </ur>
+                    </volist>
+              </div>
+              <div class="midd">
+                   <table border="1" width="800" align="center">
+                      <caption align="left"><h1>系统</h1></caption>
+                     <tr>
+                       <th>编号</th>
+                       <th>系统：
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add"  >添加 </a>
+                          </span>
+                       </th>
+                       <th>状态</th>
+                       <th>维护</th>
+                       <th>更新时间</th>                   
+                       <th>操作 </th>
+                     </tr>
+                     <volist name='syses' id='sys'>     
+                    <tr>
+                       <td><{$sys.sysid}></td>
+                       <td>
+                         <{$sys.system}>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__URL__/mod/id/<{$sys.id}>">修改</a>
+                         </span>
+                       </td>
+                       <td><{$sys.state}></td>
+                       <td><{$sys.moder}></td>
+                       <td><{$sys.updateTime}></td>                  
+                       <td>
+                          <a href="__APP__/Path/index/prodid/<{$vo.prodid}>/sysid/<{$vo.id}>" >路径</a>
+                          <a href="__URL__/test/id/<{$vo.id}>" >环境</a>                                                 
+                          <a href="__URL__/del/id/<{$sys.id}>" onclick="return confirm('你确定要删除项目：<{$prod.system}>吗？')">删除</a>
+                       </td>
+                    </tr>                    
+                    </volist>                                          
+                </table>
+
+              </div><!-- midd -->
+           </div><!-- main -->
+        </div><!-- content -->
     </body>
 </html>

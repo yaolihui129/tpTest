@@ -21,20 +21,21 @@ class CaseAction extends Action {
     }
 
     public function mod(){
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $m=M('case');
-        $id=$_GET['id'];
+        
         $this->display();
     }
 
     public function update(){
         $m=M('case');
-        $id=$_GET['id'];
+        
 
     }
 
     public function del(){
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $m=M('case');
-        $id=$_GET['id'];
         $count =$m->delete($id);
         if ($count>0) {
             $this->success('数据删除成功');
