@@ -2,7 +2,8 @@
 class LoginAction extends Action {
     
     public function index(){
-
+        
+        layout(false); // 临时关闭当前模板的布局功能       
         $this->display();
     }
     

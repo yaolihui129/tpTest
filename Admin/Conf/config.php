@@ -12,8 +12,10 @@ return array(
 	'DB_PORT'=>'3306',
 	'DB_PREFIX'=>'tp_',
 	//'DB_DSN'=>'mysql://root:root@127.0.0.1:3307/tms',
-	//'SHOW_PAGE_TRACE'=>true,
-
+	//'SHOW_PAGE_TRACE'=>true,// 调试模式
+   // 'LAYOUT_ON'=>true, //开启模板渲染
+    
+    
 
 );
 ?>
