@@ -8,7 +8,7 @@ class SystemAction extends Action {
         $this->assign('data',$arr);
         
         $a=array(prodid=>$prodid);
-        var_dump($a);
+        //var_dump($a);
     	 $m=M('system');
     	 $syses=$m->where($a)->select();
 
