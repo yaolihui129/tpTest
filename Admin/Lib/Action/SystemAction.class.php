@@ -1,12 +1,12 @@
 <?php
 
-class SystemAction extends Action {
+class SystemAction extends CommonAction {
     public function index(){
         $prodid=$_GET['prodid'];
         $p=M('product');
         $arr=$p->select();
         $this->assign('data',$arr);
-        
+
         $a=array(prodid=>$prodid);
         //var_dump($a);
     	 $m=M('system');
@@ -23,7 +23,7 @@ class SystemAction extends Action {
     }
 
     public function insert(){
-        $m=M('system');
+        $m=D('system');
         $id=$_GET['id'];
 
     }
@@ -35,11 +35,11 @@ class SystemAction extends Action {
     }
 
     public function update(){
-        $m=M('system');
+        $m=D('system');
         $id=$_GET['id'];
 
     }
-    
+
     public function test(){
         $this->display();
     }

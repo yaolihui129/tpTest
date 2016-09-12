@@ -1,6 +1,6 @@
 <?php
 
-class ProgramAction extends Action {
+class ProgramAction extends CommonAction {
     public function index(){
 
     	 $m=M('program');
@@ -19,7 +19,7 @@ class ProgramAction extends Action {
         $pros= D("program")
         ->where(array("testgp"=>"$testgp"))
         ->select();
-     
+
         $this->assign("pros",$pros);
         //dump($pros);
         //初始化添加字段
@@ -36,7 +36,7 @@ class ProgramAction extends Action {
     }
 
     public function insert(){
-        $m=M('program');
+        $m=D('program');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
@@ -53,25 +53,25 @@ class ProgramAction extends Action {
     }
 
     public function mod(){
-        
+
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
-        
+
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
         //获取项目列表
-        $m=D(program);
+        $m=M(program);
         $pros= $m
         ->where(array("testgp"=>"$testgp"))
         ->select();
         $this->assign("pros",$pros);
-        
+
         $arr=$m->find($id);
         $this->assign('p',$arr);
-        
+
         $this->display();
     }
 
     public function update(){
-        $db=M('program');
+        $db=D('program');
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
@@ -79,8 +79,8 @@ class ProgramAction extends Action {
         }else{
             $this->error("修改失败！");
         }
-   }    
-        
+   }
+
         //项目详情
     public function details(){
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
@@ -98,17 +98,17 @@ class ProgramAction extends Action {
         //$this->assign("jianjie",Form::editor("profile",$arr['profile']));
         $this->display() ;
     }
-        
-       
-        
 
- 
+
+
+
+
 
     public function del(){
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
-        
+
         $m=M('program');
-      
+
         $count =$m->delete($id);
         if ($count>0) {
             $this->success('删除成功');

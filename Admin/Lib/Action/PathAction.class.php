@@ -1,6 +1,6 @@
 <?php
 
-class PathAction extends Action {
+class PathAction extends CommonAction {
     public function index(){
 
     	 $m=M('path');
@@ -17,7 +17,7 @@ class PathAction extends Action {
     }
 
     public function insert(){
-        $m=M('path');
+        $m=D('path');
         $id=$_GET['id'];
 
     }
@@ -35,7 +35,7 @@ class PathAction extends Action {
     }
 
     public function del(){
-        $m=M('path');
+        $m=D('path');
         $id=$_GET['id'];
         $count =$m->delete($id);
         if ($count>0) {

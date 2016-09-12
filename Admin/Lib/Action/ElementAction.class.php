@@ -1,6 +1,6 @@
 <?php
 
-class ElementAction extends Action {
+class ElementAction extends CommonAction {
     public function index(){
 
     	 $m=M('element');
@@ -16,7 +16,7 @@ class ElementAction extends Action {
     }
 
     public function insert(){
-        $m=M('element');
+        $m=D('element');
         $id=$_GET['id'];
 
     }
@@ -28,7 +28,7 @@ class ElementAction extends Action {
     }
 
     public function update(){
-        $m=M('element');
+        $m=D('element');
         $id=$_GET['id'];
 
     }

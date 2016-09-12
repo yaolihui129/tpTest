@@ -1,6 +1,6 @@
 <?php
 
-class ProsysAction extends Action {
+class ProsysAction extends CommonAction {
     public function index(){
 
     	 $m=M('prosys');
@@ -17,7 +17,7 @@ class ProsysAction extends Action {
     }
 
     public function insert(){
-        $m=M('prosys');
+        $m=D('prosys');
         $id=$_GET['id'];
 
     }
@@ -29,7 +29,7 @@ class ProsysAction extends Action {
     }
 
     public function update(){
-        $m=M('case');
+        $m=D('prosys');
         $id=$_GET['id'];
 
     }

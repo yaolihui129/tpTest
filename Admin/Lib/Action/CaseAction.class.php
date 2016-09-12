@@ -1,6 +1,6 @@
 <?php
 
-class CaseAction extends Action {
+class CaseAction extends CommonAction {
     public function index(){
 
     	 $m=M('case');
@@ -15,7 +15,7 @@ class CaseAction extends Action {
     }
 
     public function insert(){
-        $m=M('case');
+        $m=D('case');
         $id=$_GET['id'];
 
     }
@@ -23,13 +23,13 @@ class CaseAction extends Action {
     public function mod(){
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $m=M('case');
-        
+
         $this->display();
     }
 
     public function update(){
-        $m=M('case');
-        
+        $m=D('case');
+
 
     }
 

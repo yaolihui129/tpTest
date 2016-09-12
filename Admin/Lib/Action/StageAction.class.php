@@ -1,6 +1,6 @@
 <?php
 
-class StageAction extends Action {
+class StageAction extends CommonAction {
     public function index(){
 
     	 $m=M('stage');
@@ -15,7 +15,7 @@ class StageAction extends Action {
     }
 
     public function insert(){
-        $m=M('stage');
+        $m=D('stage');
         $id=$_GET['id'];
 
     }
@@ -27,7 +27,7 @@ class StageAction extends Action {
     }
 
     public function update(){
-        $m=M('stage');
+        $m=D('stage');
         $id=$_GET['id'];
 
     }

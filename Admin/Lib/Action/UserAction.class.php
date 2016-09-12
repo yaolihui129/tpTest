@@ -1,6 +1,6 @@
 <?php
 
-class UserAction extends Action {
+class UserAction extends CommonAction {
     public function index(){
 
     	 $m=M('user');
@@ -18,13 +18,24 @@ class UserAction extends Action {
 
     public function insert(){
        // var_dump($_POST);
-        $m=M('user');
+        $m=D('user');
         $_POST['password']=md5("123456");
         $_POST['state']="在职";
         $_POST['email']=$_POST['username']."@yiche.com";
-        $_POST['adder']=$_SESSION['realname'];
-        $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        //$_POST['adder']=$_SESSION['realname'];
+       // $_POST['moder']=$_SESSION['realname'];
+       // $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        if(!$m->create()){
+            $this->error($m->getError());
+        }
+        $lastId=$m->add();
+        if($lastId){
+           $this->success("添加成功");
+        }else{
+            $this->error('用户注册失败');
+        }
+
+        /*
         if ($m->create()){
             $count=$m->add($_POST);
             if ($count){
@@ -34,7 +45,7 @@ class UserAction extends Action {
             }
         }else{
             $this->error($m->getError());
-        }
+        }*/
 
 
     }
@@ -54,7 +65,7 @@ class UserAction extends Action {
     public function update(){
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
-        $db=M('user');
+        $db=D('user');
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
@@ -73,7 +84,7 @@ class UserAction extends Action {
         $db=M('user');
         $_POST['password']=md5(123456);
         var_dump($_POST);
-       
+
         if ($db->save($_POST)){
             $this->success("密码已重置为：123456！");
         }else{
@@ -85,7 +96,7 @@ class UserAction extends Action {
     public function del(){
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
    	    $m=M('user');
-   	    
+
    	    $count =$m->delete($id);
    	    if ($count>0) {
    		    $this->success('删除成功');

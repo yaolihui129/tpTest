@@ -1,6 +1,6 @@
 <?php
 
-class ProductAction extends Action {
+class ProductAction extends CommonAction {
     public function index(){
 
     	 $m=M('product');
@@ -16,7 +16,7 @@ class ProductAction extends Action {
     }
 
     public function insert(){
-        $m=M('product');
+        $m=D('product');
         $id=$_GET['id'];
 
     }
@@ -28,7 +28,7 @@ class ProductAction extends Action {
     }
 
     public function update(){
-        $m=M('product');
+        $m=D('product');
         $id=$_GET['id'];
 
     }

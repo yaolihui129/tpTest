@@ -1,6 +1,6 @@
 <?php
 
-class ExefuncAction extends Action {
+class ExefuncAction extends CommonAction {
     public function index(){
 
     	 $m=M('exefunc');
@@ -17,7 +17,7 @@ class ExefuncAction extends Action {
     }
 
     public function insert(){
-        $m=M('exefunc');
+        $m=D('exefunc');
         $id=$_GET['id'];
 
     }
@@ -29,7 +29,7 @@ class ExefuncAction extends Action {
     }
 
     public function update(){
-        $m=M('exefunc');
+        $m=D('exefunc');
         $id=$_GET['id'];
 
     }

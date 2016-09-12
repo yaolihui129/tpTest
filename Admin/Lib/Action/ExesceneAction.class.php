@@ -1,6 +1,6 @@
 <?php
 
-class ExesceneAction extends Action {
+class ExesceneAction extends CommonAction {
     public function index(){
 
     	 $m=M('exescene');
@@ -16,7 +16,7 @@ class ExesceneAction extends Action {
     }
 
     public function insert(){
-        $m=M('exescene');
+        $m=D('exescene');
         $id=$_GET['id'];
 
     }
@@ -28,7 +28,7 @@ class ExesceneAction extends Action {
     }
 
     public function update(){
-        $m=M('exescene');
+        $m=D('exescene');
         $id=$_GET['id'];
 
     }

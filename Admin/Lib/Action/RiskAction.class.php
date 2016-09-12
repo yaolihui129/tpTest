@@ -1,6 +1,6 @@
 <?php
 
-class RiskAction extends Action {
+class RiskAction extends CommonAction {
     public function index(){
 
     	 $m=M('risk');
@@ -15,7 +15,7 @@ class RiskAction extends Action {
     }
 
     public function insert(){
-        $m=M('risk');
+        $m=D('risk');
         $id=$_GET['id'];
 
     }
@@ -27,7 +27,7 @@ class RiskAction extends Action {
     }
 
     public function update(){
-        $m=M('risk');
+        $m=D('risk');
         $id=$_GET['id'];
 
     }
