@@ -10,12 +10,12 @@
         <div class="content">
            <div class="main">
               <div class="top">用户添加</div>
-               <div class="left">
+               <div class="left"  width="20%" align="center" >
                     <volist name='data' id='vo'>
                        <a href="__URL__/mod/id/<{$vo.id}>""><{$vo.userNo}>-<{$vo.realname}>:<{$vo.state}></a><br>
                     </volist>
               </div>
-              <div class="midd">
+              <div class="midd" width="50%" align="center" >
                  <form action="__URL__/insert" method="post" >
                   <table border="0" width="600" align="left">
                      <tr>
