@@ -2,11 +2,23 @@
 
 class ProsysAction extends CommonAction {
     public function index(){
+        $gp=$_SESSION['usergp'];
+        //获取项目列表
+        $pros= D("program")
+        ->where(array("testgp"=>"$gp"))
+        ->select();
+        $this->assign("pros",$pros);
 
-    	 $m=M('prosys');
-    	 $arr=$m->select();
+        //获取系统关联数据
+        $proid=$_GET['proid'];
+        $proses= D("prosys")
+        //->where(array("proid"=>"$proid"))
+        ->query("SELECT a.id AS id,b.sysid AS sysno,a.sysid AS sysid,b.`name` AS sysname,
+                a.proid AS proid,a.adder AS adder,a.createtime AS createtime,a.updatetime AS updatetime
+                FROM tp_prosys AS a INNER JOIN tp_system AS b ON b.id = a.sysid WHERE a.proid = ? order by sysid","select",array("$proid"));
+        $this->assign("proses",$proses);
 
-	     $this->assign('data',$arr);
+
 	     $this->display();
     }
 

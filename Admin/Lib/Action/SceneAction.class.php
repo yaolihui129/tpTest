@@ -2,11 +2,19 @@
 
 class SceneAction extends CommonAction {
     public function index(){
-
-    	 $m=M('scene');
-    	 $arr=$m->select();
-
-	     $this->assign('data',$arr);
+        $proid=$_GET['proid'];
+        $gp=$_SESSION['usergp'];
+        //获取项目列表
+        $pros= D("program")
+        ->where(array("testgp"=>"$gp"))
+        ->select();
+        $this->assign("pros",$pros);
+        $this->assign(array("proid"=>"$proid"));
+        //获取项目场景数据
+        $scenes= D("scene")
+        ->where(array("proid"=>"$proid"))
+        ->select();
+        $this->assign("scenes",$scenes);
 	     $this->display();
     }
 
@@ -30,6 +38,10 @@ class SceneAction extends CommonAction {
         $m=D('scene');
         $id=$_GET['id'];
 
+    }
+
+    public function library(){
+        $this->display();
     }
 
     public function del(){

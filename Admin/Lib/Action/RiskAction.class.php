@@ -2,11 +2,21 @@
 
 class RiskAction extends CommonAction {
     public function index(){
+        $gp=$_SESSION['usergp'];
+        //获取项目列表
+        $pros= D("program")
+        ->where(array("testgp"=>"$gp"))
+        ->select();
+        $this->assign("pros",$pros);
 
-    	 $m=M('risk');
-    	 $arr=$m->select();
+        //获取项目风险数据
+        $proid=$_GET['proid'];
+        $risks= D("risk")
+        ->where(array("proid"=>"$proid"))
+        ->select();
+        $this->assign("risks",$risks);
 
-	     $this->assign('data',$arr);
+
 	     $this->display();
     }
 

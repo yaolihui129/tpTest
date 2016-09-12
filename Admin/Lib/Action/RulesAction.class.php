@@ -2,11 +2,19 @@
 
 class RulesAction extends CommonAction {
     public function index(){
+        $prodid=$_GET['prodid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcs= D("func")
+        ->where(array("pathid"=>"$pathid"))
+        ->select();
+        $this->assign("funcs",$funcs);
 
-    	 $m=M('rules');
-    	 $arr=$m->select();
-
-	     $this->assign('data',$arr);
+        $funcid=$_GET['funcid'];
+        $rules= D("rules")
+        ->where(array("funcid"=>"$funcid"))
+        ->select();
+        $this->assign("rules",$rules);
 	     $this->display();
     }
 

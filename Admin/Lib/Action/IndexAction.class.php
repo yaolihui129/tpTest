@@ -17,4 +17,8 @@ class IndexAction extends CommonAction {
         $this->display();
     }
 
+    public  function test(){
+        $this->display();
+    }
+
 }

@@ -2,39 +2,48 @@
         <div class="place">
                                  所在位置：用户
         </div>
-        <div class="main">
+        <div class="content">
+           <div class="main">
               <div class="top">用户管理</div>
               <div class="midd">
-                 <table border="1" width="1000" align="center">
-                      <caption align="left" ><h1>用户表</h1></caption>
+                 <table border="1" width="100%" align="center">
+
                      <tr>
                        <th>ID</th>
                        <th>员工号</th>
                        <th>登录名</th>
-                       <th>姓名</th>
-                       <th>状态</th>
+                       <th>
+                                                                       姓名
+                         <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add" >添加</a>
+                         </span>
+                       </th>
+
                        <th>分组</th>
                        <th>手机</th>
                        <th>座机</th>
                        <th>邮箱</th>
                        <th>最后更新时间</th>
-                       <th>操作:<a href="__URL__/add" >添加</a></th>
+                       <th>操作</th>
                      </tr>
                    <volist name='data' id='vo'>
                      <tr>
                        <td><{$vo.id}></td>
                        <td><{$vo.userNo}></td>
                        <td><{$vo.username}></td>
-                       <td><{$vo.realname}></td>
-                       <td><{$vo.state}></td>
+                       <td>
+                           <a href="__URL__//mod/id/<{$vo.id}>"><{$vo.realname}></a>
+                          <span style="float:right;margin-right:5px;">
+                           <a href="__URL__//mod/id/<{$vo.id}>">修改</a>
+                           <a href="__URL__/setpw/id/<{$vo.id}>">重置密码</a>
+                         </span>
+                       </td>
                        <td><{$vo.usergp}></td>
                        <td><{$vo.phone}></td>
                        <td><{$vo.tel}></td>
                        <td><{$vo.email}></td>
                        <td><{$vo.updateTime}></td>
                        <td>
-                          <a href="__URL__//mod/id/<{$vo.id}>"">修改</a>
-                          <a href="__URL__/setpw/id/<{$vo.id}>">重置密码</a>
                           <a href="__URL__/del/id/<{$vo.id}>"
                              onclick="return confirm('你确定要删除用户：<{$vo.realname}>吗？')">
                                                                    删除
@@ -46,4 +55,3 @@
                  </table>
         </div><!-- midd -->
      </div><!-- main -->
- 

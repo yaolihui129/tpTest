@@ -7,11 +7,11 @@
             <a href="__APP__/Product"> 返回</a>
             </span>
         </div>
-
+        <div class="content">
            <div class="main">
               <div class="top">系统管理</div>
               <div class="left">
-                    <h1> 测试产品</h1> 
+                    <h1> 测试产品</h1>
                     <volist name='data' id='vo'>
                       <ur>
                          <li><a href="__URL__/index/prodid/<{$vo.id}>""><{$vo.id}>-<{$vo.short}>:<{$vo.state}></a></li>
@@ -30,10 +30,10 @@
                        </th>
                        <th>状态</th>
                        <th>维护</th>
-                       <th>更新时间</th>                   
+                       <th>更新时间</th>
                        <th>操作 </th>
                      </tr>
-                     <volist name='syses' id='sys'>     
+                     <volist name='syses' id='sys'>
                     <tr>
                        <td><{$sys.sysid}></td>
                        <td>
@@ -44,15 +44,14 @@
                        </td>
                        <td><{$sys.state}></td>
                        <td><{$sys.moder}></td>
-                       <td><{$sys.updateTime}></td>                  
+                       <td><{$sys.updateTime}></td>
                        <td>
                           <a href="__APP__/Path/index/prodid/<{$vo.prodid}>/sysid/<{$vo.id}>" >路径</a>
-                          <a href="__URL__/test/id/<{$vo.id}>" >环境</a>                                                 
+                          <a href="__URL__/test/id/<{$vo.id}>" >环境</a>
                           <a href="__URL__/del/id/<{$sys.id}>" onclick="return confirm('你确定要删除项目：<{$prod.system}>吗？')">删除</a>
                        </td>
-                    </tr>                    
-                    </volist>                                          
+                    </tr>
+                    </volist>
                 </table>
               </div><!-- midd -->
            </div><!-- main -->
-  

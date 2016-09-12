@@ -3,10 +3,21 @@
 class StageAction extends CommonAction {
     public function index(){
 
-    	 $m=M('stage');
-    	 $arr=$m->select();
+    	 $gp=$_SESSION['usergp'];
+        //获取项目列表
+        $pros= D("program")
+        ->where(array("testgp"=>"$gp"))
+        ->select();
+        $this->assign("pros",$pros);
 
-	     $this->assign('data',$arr);
+        //获取里程碑数据
+        $proid=$_GET['proid'];
+        $stages= D("stage")
+        ->where(array("proid"=>"$proid"))
+        ->select();
+        $this->assign("stages",$stages);
+
+
 	     $this->display();
     }
 
@@ -30,6 +41,18 @@ class StageAction extends CommonAction {
         $m=D('stage');
         $id=$_GET['id'];
 
+    }
+
+    public function test(){
+
+        $this->display();
+    }
+
+
+    public function autotest(){
+
+
+        $this->display();
     }
 
     public function del(){

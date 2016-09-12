@@ -3,13 +3,12 @@
                                  所在位置：
              <a href="__URL__">用户</a>
              >编辑
-           
-           
              <span style="float:right;margin-right:60px;">
               <a href="__URL__/add" >添加用户 </a>
               <a href="__URL__">  返回</a>
              </span>
         </div>
+        <div class="content">
            <div class="main">
               <div class="top">用户修改</div>
               <div class="left">
@@ -37,44 +36,52 @@
                          <td>姓名：</td>
                          <td><input type="text" name="realname" value="<{$user.realname}>" class="input300"/></td>
                      </tr>
+                     <tr>
+                         <td> 分组：</td>
+                         <td>
+
+                         <select name="usergp">
+                                 <option value="C"  <?php echo $user['usergp']=='C'?'selected=selected':null;?> >C端</option>
+                                 <option value="B"  <?php echo $user['usergp']=='B'?'selected=selected':null;?> >C端</option>
+                                 <option value="OP"  <?php echo $user['usergp']=='OP'?'selected=selected':null;?> >OP</option>
+                                 <option value="Auto"  <?php echo $user['usergp']=='Auto'?'selected=selected':null;?> >自动化</option>
+                          </select>
+                           <!--  <select name="usergp">
+                              <foreach name="dgps" item="vo">
+                                <option value="<{$vo.v}>" > <{$vo.v}></option>
+                              </foreach>
+                          </select>-->
+
+
+
+
+                          </td>
+                     </tr>
                       <tr>
                          <td>状态：</td>
-                         <!--   <td>
-                                                                     在职<input type='radio' name='state' value='在职' >
-                                                                     离职<input type='radio' name='state' value='离职'/>
-
-                         </td>-->
-                       <td><input type="text" name="state" value="<{$user.state}>" class="input300"/></td>
+                         <td>
+                                                                     在职<input type='radio' name='state' value='在职' <?php echo $user['state']=='在职'?'checked=”checked”':null;?> />
+                                                                     离职<input type='radio' name='state' value='离职' <?php echo $user['state']=='离职'?'checked=”checked”':null;?> />
+                         </td>
                      </tr>
                      <tr>
                          <td>职位：</td>
-                         <!-- <td>
+                          <td>
                             <select name="position">
-                                 <option value="测试工程师" >测试工程师</option>
-                                 <option value="初级测试工程师" >初级测试工程师</option>
-                                 <option value="测试经理" >测试经理</option>
-                                 <option value="高级测试经理" >高级测试经理</option>
-                                 <option value="质量总监" >质量总监</option>
+                                 <option value="测试工程师"  <?php echo $user['position']=='测试工程师'?'selected=selected':null;?> >测试工程师</option>
+                                 <option value="初级测试工程师" <?php echo $user['position']=="初级测试工程师" ? 'selected=selected':null;?> >初级测试工程师</option>
+                                 <option value="测试经理" <?php echo $user['position']=="测试经理" ? 'selected=selected':null;?> >测试经理</option>
+                                 <option value="高级测试经理" <?php echo $user['position']=="高级测试经理" ? 'selected=selected':null;?> >高级测试经理</option>
+                                 <option value="质量总监" <?php echo $user['position']=="质量总监" ? 'selected=selected':null;?> >质量总监</option>
                              </select>
-                         </td>-->
-                          <td> <input type="text" name="position" value="<{$user.position}>" class="input300"/></td>
+                         </td>
+
                      </tr>
                      <tr>
                          <td>邮箱：</td>
                          <td><input type="text" name="email" value="<{$user.email}>" class="input300" /></td>
                      </tr>
-                     <tr>
-                         <td> 分组：</td>
-                         <!--<td>
-                            <select name="usergp">
-                                 <option value="C">C端</option>
-                                 <option value="B">C端</option>
-                                 <option value="OP">OP</option>
-                                 <option value="Auto">自动化</option>
-                             </select>
-                          </td>-->
-                          <td><input type="text" name="usergp" value="<{$user.usergp}>" class="input300"/></td>
-                     </tr>
+
                      <tr>
                          <td>部门：</td>
                          <td><input type="text" name="team" value="<{$user.team}>" class="input300"/></td>
@@ -96,4 +103,3 @@
 
               </div><!-- midd -->
            </div><!-- main -->
- 

@@ -3,10 +3,24 @@
 class PathAction extends CommonAction {
     public function index(){
 
-    	 $m=M('path');
-    	 $arr=$m->select();
+        //系统数据
+        $prodid=$_GET['prodid'];
+        $syses= D("system")
+        ->order("sysid")
+        ->where(array("prodid"=>"$prodid","state"=>"正常"))
+        ->select();
+        $this->assign("syses",$syses);
+        //路径数据
+        $sysid=$_GET['sysid'];
+        $pathes= D("path")
+        ->order("sn")
+        ->where(array("sysid"=>"$sysid","state"=>"正常"))
+        ->select();
+        $this->assign("pathes",$pathes);
 
-	     $this->assign('data',$arr);
+
+
+
 	     $this->display();
     }
 

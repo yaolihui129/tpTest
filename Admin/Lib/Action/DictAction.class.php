@@ -1,45 +1,42 @@
 <?php
 
-class ElementAction extends CommonAction {
+class DictAction extends CommonAction {
     public function index(){
 
-    	 $m=M('element');
-    	 $arr=$m->select();
-
+    	 $m=M('dict');
+    	 $where=array("type"=>"testgp","state"=>"正常");
+    	 $arr=$m->field('k,v',false)->where($where)->select();
+         dump($arr);
 	     $this->assign('data',$arr);
 	     $this->display();
     }
-
 
     public function add(){
         $this->display();
     }
 
     public function insert(){
-        $m=D('element');
+        $m=D('dict');
         $id=$_GET['id'];
 
     }
 
     public function mod(){
-        $m=M('element');
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        $m=M('dict');
+
         $this->display();
     }
 
     public function update(){
-        $m=D('element');
-        $id=$_GET['id'];
+        $m=D('dict');
 
-    }
 
-    public function library(){
-        $this->display();
     }
 
     public function del(){
-        $m=M('element');
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        $m=M('dict');
         $count =$m->delete($id);
         if ($count>0) {
             $this->success('数据删除成功');
@@ -47,6 +44,5 @@ class ElementAction extends CommonAction {
             $this->error('数据删除失败');
         }
     }
-
 
 }

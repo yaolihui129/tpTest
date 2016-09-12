@@ -2,11 +2,20 @@
 
 class CaseAction extends CommonAction {
     public function index(){
+         $prodid=$_GET['prodid'];
+         $proid=$_GET['proid'];
+         $sysid=$_GET['sysid'];
+         $pathid=$_GET['pathid'];
+         $funcid=$_GET['funcid'];
+
+         $f=M('func');
+         $funces=$f->find($funcid);
+         $this->assign('funces',$funces);
 
     	 $m=M('case');
-    	 $arr=$m->select();
-
-	     $this->assign('data',$arr);
+    	 $where=array("funcid"=>$funcid);
+    	 $cases=$m->where($where)->select();
+	     $this->assign('cases',$cases);
 	     $this->display();
     }
 
@@ -15,8 +24,8 @@ class CaseAction extends CommonAction {
     }
 
     public function insert(){
+
         $m=D('case');
-        $id=$_GET['id'];
 
     }
 
@@ -33,14 +42,18 @@ class CaseAction extends CommonAction {
 
     }
 
+    public function library(){
+        $this->display();
+    }
+
     public function del(){
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $m=M('case');
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

@@ -13,7 +13,21 @@ class UserAction extends CommonAction {
         $m=M('user');
         $arr=$m->select();
         $this->assign('data',$arr);
+
+        $d=M('dict');
+        /* 取分组字典 */
+        $where=array("type"=>"testgp","state"=>"正常");
+        $dgps=$d->field('k,v',false)->where($where)->select();
+        $this->assign('dgps',$dgps);
+
+        /* 取职位字典 */
+        $where=array("type"=>"position","state"=>"正常");
+        $posies=$d->field('k,v',false)->where($where)->select();
+        $this->assign('posies',$posies);
+
         $this->display();
+
+
     }
 
     public function insert(){
@@ -59,6 +73,20 @@ class UserAction extends CommonAction {
 
         $arr=$m->find($id);
         $this->assign('user',$arr);
+
+        $d=M('dict');
+        /* 取分组字典 */
+        $where=array("type"=>"testgp","state"=>"正常");
+        $dgps=$d->field('k,v',false)->where($where)->select();
+        $this->assign('dgps',$dgps);
+
+        /* 取职位字典 */
+        $where=array("type"=>"position","state"=>"正常");
+        $posies=$d->field('k,v',false)->where($where)->select();
+        $this->assign('posies',$posies);
+
+
+//         dump($dgps);
         $this->display();
     }
 

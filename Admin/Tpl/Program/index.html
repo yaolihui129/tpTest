@@ -2,11 +2,23 @@
         <div class="place">
                                  所在位置：测试项目
         </div>
+        <div class="content">
            <div class="main">
-              <div class="top">测试项目</div>
+              <div class="top">
+                                          测试项目
+                <span style="float:right;">
+                                              分组：
+                  <select name="usergp" onchanged="">
+                    <option value="C"  <?php echo $_SESSION['testgp']=='C'?'selected=selected':null;?> >C端</option>
+                    <option value="B"  <?php echo $_SESSION['testgp']=='B'?'selected=selected':null;?> >C端</option>
+                    <option value="OP"  <?php echo $_SESSION['testgp']=='OP'?'selected=selected':null;?> >OP</option>
+                    <option value="Auto"  <?php echo $_SESSION['testgp']=='Auto'?'selected=selected':null;?> >自动化</option>
+                  </select>
+                </span>
+              </div>
               <div class="midd">
-                 <table border="1" width="1000" align="center">
-                      <caption align="left"><h1>测试项目</h1></caption>
+                 <table border="1" width="100%" align="center">
+
                      <tr>
                        <th>编号</th>
                        <th>项目：
@@ -17,10 +29,10 @@
                        <th>状态</th>
                        <th>开始</th>
                        <th>结束</th>
-                       <th>负责人</th>                    
+                       <th>负责人</th>
                        <th>操作 </th>
                      </tr>
-                     <volist name='Pros' id='pro'>     
+                     <volist name='Pros' id='pro'>
                     <tr>
                        <td><{$pro.proid}></td>
                        <td>
@@ -33,19 +45,18 @@
                        <td><{$pro.state}></td>
                        <td><{$pro.start}></td>
                        <td><{$pro.end}></td>
-                       <td><{$pro.manager}></td>                  
-                       <td> 
-                          <a href="__APP__/stage/index/proid/<{$pro.id}>">里程碑</a>
-                          <a href="__APP__/stage/index/proid/<{$pro.id}>">系统</a>
-                          <a href="__APP__/scene/index/proid/<{$pro.id}>">场景</a>
-                          <a href="__APP__/risk/index/proid/<{$pro.id}>">风险</a>                     
-                          <a href="__APP__/func/proid/<{$pro.id}>">功能点</a>
-                          <a href="__APP__/range/proid/<{$pro.id}>">范围</a>                                                  
+                       <td><{$pro.manager}></td>
+                       <td>
+                          <a href="__APP__/Stage/index/proid/<{$pro.id}>">里程碑</a>
+                          <a href="__APP__/Prosys/index/proid/<{$pro.id}>">系统</a>
+                          <a href="__APP__/Scene/index/proid/<{$pro.id}>">场景</a>
+                          <a href="__APP__/Risk/index/proid/<{$pro.id}>">风险</a>
+                          <a href="__APP__/Func/proid/<{$pro.id}>">功能点</a>
+                          <a href="__APP__/Range/proid/<{$pro.id}>">范围</a>
                           <a href="__URL__/del/id/<{$pro.id}>" onclick="return confirm('你确定要删除项目：<{$pro.program}>吗？')">删除</a>
                        </td>
-                    </tr>                    
-                    </volist>                                          
+                    </tr>
+                    </volist>
                 </table>
         </div><!-- midd -->
            </div><!-- main -->
-  

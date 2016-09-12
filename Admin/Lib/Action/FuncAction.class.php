@@ -2,11 +2,21 @@
 
 class FuncAction extends CommonAction {
     public function index(){
+        //获取路径
+        $sysid=$_GET['sysid'];
+        $pathes= D("path")
+        ->order("sn")
+        ->where(array("sysid"=>"$sysid","state"=>"正常"))
+        ->select();
+        $this->assign("pathes",$pathes);
 
-    	 $m=M('func');
-    	 $arr=$m->select();
-
-	     $this->assign('data',$arr);
+        //获取功能
+        $pathid=$_GET['pathid'];
+        $funcs= D("func")
+        ->order("sn")
+        ->where(array("pathid"=>"$pathid"))
+        ->select();
+        $this->assign("funcs",$funcs);
 	     $this->display();
     }
 
