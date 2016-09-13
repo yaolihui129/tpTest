@@ -10,7 +10,7 @@
         <div class="content">
            <div class="main">
               <div class="top">
-                                        项目详情               
+                                        项目详情
               </div>
                  <div class="left">
                     <volist name='pros' id='pro'>
@@ -20,7 +20,7 @@
               <div class="midd">
                  <form action="__URL__/update" method="post" >
                  <input type="hidden" name="id" value="<{$p.id}>" />
-                  <table border="0" width="300" align="left">
+                  <table border="0" width="700" align="left">
                    <tr>
                          <td> 更新：</td>
                          <td><{$p.moder}>更新于:<{$p.updateTime}></td>
@@ -31,42 +31,36 @@
                      </tr>
                      <tr>
                          <td>产品：</td>
-                         <td><input type="text" name="pm" value="<{$p.pm}>" class="input100"/></td>
-                     </tr>                    
+                         <td><input type="text" name="pm" value="<{$p.pm}>" class="input200"/></td>
+                     </tr>
                      <tr>
                           <td>类型：</td>
-                          <!--<td>
-                            <select name="reType">
-                                 <option value="简要">简要</option>
-                                 <option value="普通">普通</option>
-                                
-                             </select>
-                         </td>-->
-                         <td><input type="text" name="reType" value="<{$p.reType}>" class="input100""/></td> 
+                          <td>
+                             <input type='radio' name='reType' value='需求新增' <?php echo $p['reType']=='需求新增'?'checked=”checked”':null;?> />需求新增
+                             <input type='radio' name='reType' value='需求变更' <?php echo $p['reType']=='需求变更'?'checked=”checked”':null;?> />需求变更
+                             <input type='radio' name='reType' value='系统BUG' <?php echo $p['reType']=='系统BUG'?'checked=”checked”':null;?> />系统BUG
+                         </td>
                      </tr>
-                    
-                      
+                     <tr>
+                         <td>上线：</td>
+                         <td><input type="text" name="expOnline" value="<{$p.expOnline}>" class="input200"/></td>
+                     </tr>
+
                      <tr>
                          <td> 级别：</td>
-                         <!--<td>
-                            <select name="reLevel">
-                                 <option value="C">C端</option>
-                                 <option value="B">C端</option>
-                                 <option value="OP">OP</option>
-                                 <option value="Auto">自动化</option>
-                             </select>
-                         </td> -->
-                          <td><input type="text" name="reLevel" value="<{$p.reLevel}>" class="input100"/></td>
-                     </tr>
-                      <tr>
-                         <td>上线：</td>
-                         <td><input type="text" name="expOnline" value="<{$p.expOnline}>" class="input100"/></td>
+                         <td>
+                             <input type='radio' name='reLevel' value='紧急需求' <?php echo $p['reLevel']=='紧急需求'?'checked=”checked”':null;?> />紧急需求
+                             <input type='radio' name='reLevel' value='一般需求' <?php echo $p['reLevel']=='一般需求'?'checked=”checked”':null;?> />一般需求
+
+                         </td>
                      </tr>
                      <tr>
                          <td>简介：</td>
-                         <td><input type="text" name="profile" value="<{$p.profile}>" class="input100"/></td>
-                     </tr> 
-                    
+                         <td>
+                            <textarea name="profile" rows="10" cols="70"><{$p.profile}></textarea>
+                         <!--  <input type="text" name="profile" value="<{$p.profile}>" class="input100"/>-->
+                         </td>
+                     </tr>
                      <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="修   改" ></td>
@@ -75,4 +69,3 @@
                  </form>
               </div><!-- midd -->
            </div><!-- main -->
- 
