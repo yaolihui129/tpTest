@@ -91,9 +91,11 @@ class UserAction extends CommonAction {
     }
 
     public function update(){
+
+        $db=D('user');
+
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
-        $db=D('user');
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
@@ -122,7 +124,9 @@ class UserAction extends CommonAction {
     }
 
     public function del(){
+        /* 接收参数*/
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
    	    $m=M('user');
 
    	    $count =$m->delete($id);

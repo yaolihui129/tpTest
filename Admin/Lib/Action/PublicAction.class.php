@@ -13,14 +13,6 @@ class PublicAction extends Action{
 
 
 
-    public function fenlei(){
-         $d=M('dict');
-         $where=array("type"=>"testgp","state"=>"正常");
-         $dgps=$d->field('k,v',false)->where($where)->select();
-        foreach (  $dgps as $dic       ){
-           $a= $dic.k.$dic.v;
-        }
-      return $a;
-    }
+
 
 }

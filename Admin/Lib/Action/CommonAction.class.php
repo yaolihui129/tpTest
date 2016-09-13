@@ -6,6 +6,13 @@ class CommonAction extends Action{
             $this->redirect('Login/index');
         }
     }
+
+
+
+
+
+
+
 }
 
 

@@ -13,20 +13,10 @@
               <div class="midd">
                  <form action="__URL__/set" method="post" >
                   <input type="hidden" name="id" value="<{$user.id}>" />
-                  <table border="1" width="550" align="left">
-                     <tr>
-                         <td> 用户：</td>
-                         <td>
-                         <{$user.userNo}>：<{$user.realname}>:重置以后的的密码为：123456，请尽快修改密码！                                            
-                         </td>
-                     </tr>
-                     <tr>
-                     <td></td>
-                     <td><input type="submit" class="btn" name="do_submit" value="提 交" ></td>
-                     </tr>
-                   </table>
+                  <{$user.userNo}>：<{$user.realname}>:<br />
+                                                重置以后的的密码为：123456<br />
+                  <input type="submit" class="btn" name="do_submit" value="提 交" ><br />
                  </form>
 
               </div><!-- midd -->
            </div><!-- main -->
- 

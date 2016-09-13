@@ -1,7 +1,7 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
+             <a href="__URL__">产品</a>
              >添加
             <span style="float:right;margin-right:60px;">
             <a href="__URL__"> 返回</a>
@@ -9,8 +9,44 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">产品添加</div>
+              <div class="left"  width="20%" align="center">
+                    <volist name='data' id='vo'>
+                       <a href="__URL__/mod/id/<{$vo.id}>"><{$vo.id}>.<{$vo.short}></a><br>
+                    </volist>
+              </div>
+              <div class="midd" width="50%" align="right" >
+                 <form action="__URL__/insert" method="post" >
+                  <table border="0" width="500" align="left">
+                     <tr>
+                         <td>简称：</td>
+                         <td><input type="text" name="short" value=""  class="input200"/></td>
+                     </tr>
+                     <tr>
+                         <td>产品</td>
+                         <td><input type="text" name="product" value=""  class="input200"/></td>
+                     </tr>
+
+                     <tr>
+                         <td>状态</td>
+                         <td>
+                             <select name="state">
+                                 <option value="正常">正常</option>
+                                 <option value="待确认">待确认</option>
+                                 <option value="已搁置">已搁置</option>
+                                 <option value="作废">作废</option>
+                             </select>
+
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         </td>
+                     </tr>
+                  </table>
+                 </form>
+
 
               </div><!-- midd -->
            </div><!-- main -->
-       <layout name="layout" />

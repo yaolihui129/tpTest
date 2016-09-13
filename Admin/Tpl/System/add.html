@@ -1,15 +1,55 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">系统</a>
+             <a href="__URL__/index/prodid/<{$w.prodid}>">系统</a>
              >添加
             <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
+            <a href="__URL__/index/prodid/<{$w.prodid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top">系统添加</div>
+              <div class="left"  width="20%" align="center">
+                  <h1>测试系统</h1>
+                    <volist name='data' id='vo'>
+                       <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>"><{$vo.sysid}></a><br>
+                    </volist>
+              </div>
+              <div class="midd" width="50%" align="right" >
+                 <form action="__URL__/insert" method="post" >
+                  <table border="0" width="500" align="left">
+                     <tr>
+                         <td> 编号：</td>
+                         <td><input type="text" name="sysid" value=""  class="input300"/>*如：APP.HMC、Web.CRM</td>
+                     </tr>
+                     <tr>
+                         <td>系统</td>
+                         <td><input type="text" name="system" value=""  class="input300"/></td>
+                     </tr>
+                      <tr>
+                         <td>产品</td>
+                         <td ><input type="text" name="prodid" readonly= "true "  bgcolor="#ccc" value="<{$w.prodid}>"  class="input80"/></td>
+                     </tr>
+                     <tr>
+                         <td>状态</td>
+                         <td>
+                             <select name="state">
+                                 <option value="正常">正常</option>
+                                 <option value="待确认">待确认</option>
+                                 <option value="已搁置">已搁置</option>
+                                 <option value="作废">作废</option>
+                             </select>
+                         <!--  <input type="text" name="state" value="正常"  class="input300"/>-->
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         </td>
+                     </tr>
+                  </table>
+                 </form>
 
               </div><!-- midd -->
            </div><!-- main -->

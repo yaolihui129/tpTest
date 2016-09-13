@@ -99,7 +99,15 @@ class ProgramAction extends CommonAction {
         $this->display() ;
     }
 
+    public function chaged(){
 
+        $testgp=$_GET['testgp'];
+
+        $_SESSION['testgp']=$testgp;
+        $this->redirect('Index/index');
+
+
+    }
 
 
 

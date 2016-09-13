@@ -1,51 +1,49 @@
       <layout name="layout" />
         <div class="place">
-                                 所在位置：             
+                                 所在位置：
                                  数据字典
-            
         </div>
         <div class="content">
            <div class="main">
               <div class="top">数据字典</div>
-              <div class="left" width="20%" align="center" >
-                    <h1>分类</h1>
+              <div class="left" width="20%"  >
                     <volist name='data' id='vo'>
                       <ur>
                          <li><a href="__URL__/index/type/<{$vo.type}>""><{$vo.type}></a></li>
                        </ur>
                     </volist>
               </div>
-              <div class="midd">
-                   <table border="1" width="70%" align="center">
-                      <caption align="left"><h1>系统</h1></caption>
+              <div class="midd" width="50%" align="center">
+                   <table border="1" width="70%">
                      <tr>
-                       <th>编号</th>
-                       <th>系统：
+                       <th width=10% align="center" bgcolor="#ccc">Key</th>
+                       <th width=10% align="center" bgcolor="#ccc">Value：
                           <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/add"  >添加 </a>
+                             <a href="__URL__/add/type/<{$w.type}>"  >添加 </a>
                           </span>
                        </th>
-                       <th>状态</th>
-                       <th>维护</th>
-                       <th>更新时间</th>
-                       <th>操作 </th>
+                       <th width=5% align="center" bgcolor="#ccc">类型</th>
+                       <th width=5% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">维护</th>
+                       <th width=10% align="center" bgcolor="#ccc">更新时间</th>
+                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
-                     <volist name='syses' id='sys'>
+                     <volist name='arr' id='ar'>
                     <tr>
-                       <td><{$sys.sysid}></td>
-                       <td>
-                         <{$sys.system}>
+
+                        <td align="center"><{$ar.k}></td>
+                        <td align="center">
+                         <{$ar.v}>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__URL__/mod/id/<{$sys.id}>">修改</a>
+                           <a href="__URL__/mod/id/<{$ar.id}>/type/<{$w.type}>">修改</a>
                          </span>
                        </td>
-                       <td><{$sys.state}></td>
-                       <td><{$sys.moder}></td>
-                       <td><{$sys.updateTime}></td>
-                       <td>
-                          <a href="__APP__/Path/index/prodid/<{$vo.prodid}>/sysid/<{$vo.id}>" >路径</a>
-                          <a href="__URL__/test/id/<{$vo.id}>" >环境</a>
-                          <a href="__URL__/del/id/<{$sys.id}>" onclick="return confirm('你确定要删除项目：<{$prod.system}>吗？')">删除</a>
+                       <td align="center"><{$ar.type}></td>
+                       <td align="center"><{$ar.state}></td>
+                       <td align="center"><{$ar.moder}></td>
+                       <td align="center"><{$ar.updateTime}></td>
+                       <td align="center">
+                          <a href="__URL__/del/id/<{$ar.id}>" onclick="return confirm('你确定要删除：<{$ar.v}>？')">删除</a>
                        </td>
                     </tr>
                     </volist>

@@ -29,7 +29,7 @@
                      </tr>
                      <tr>
                          <td> 编号：</td>
-                         <td><input type="text" name="proid" value="<{$p.proid}>"  class="input100"/></td>
+                         <td><input type="text" name="proid" value="<{$p.proid}>"  class="input200"/></td>
                      </tr>
                      <tr>
                          <td>项目：</td>
@@ -37,54 +37,50 @@
                      </tr>
                      <tr>
                          <td>负责人：</td>
-                         <td><input type="text" name="manager" value="<{$p.manager}>" class="input100"/></td>
+                         <td><input type="text" name="manager" value="<{$p.manager}>" class="input200"/></td>
                      </tr>
                      <tr>
                           <td>类型：</td>
-                          <!--<td>
-                            <select name="type">
-                                 <option value="简要">简要</option>
-                                 <option value="普通">普通</option>
-
-                             </select>
-                         </td>-->
-                         <td><input type="text" name="type" value="<{$p.type}>" class="input100""/></td>
+                          <td>
+                          <input type='radio' name='type' value='简要' <?php echo $p['type']=='简要'?'checked=”checked”':null;?> />简要
+                          <input type='radio' name='type' value='常规' <?php echo $p['type']=='常规'?'checked=”checked”':null;?> />常规
+                         </td>
                      </tr>
                      <tr>
                          <td>状态：</td>
-                         <!-- <td>
+                         <td>
                              <select name="state">
-                                 <option value="进行中">进行中</option>
-                                 <option value="未开始">未开始</option>
-                                 <option value="已完成">已完成</option>
-                                 <option value="已搁置">已搁置</option>
-                                 <option value="已取消">已取消</option>
+                                 <option value="进行中" <?php echo $p['state']=='进行中'?'selected=selected':null;?>  >进行中</option>
+                                 <option value="未开始" <?php echo $p['state']=='未开始'?'selected=selected':null;?>  >未开始</option>
+                                 <option value="已完成" <?php echo $p['state']=='已完成'?'selected=selected':null;?>  >已完成</option>
+                                 <option value="已搁置" <?php echo $p['state']=='已搁置'?'selected=selected':null;?>  >已搁置</option>
+                                 <option value="已取消" <?php echo $p['state']=='已取消'?'selected=selected':null;?>  >已取消</option>
 
                              </select>
-                         </td>-->
+                         </td>
 
-                          <td> <input type="text" name="state" value="<{$p.state}>" class="input100"/></td>
+                          <!-- <td> <input type="text" name="state" value="<{$p.state}>" class="input100"/></td>-->
                      </tr>
 
                      <tr>
                          <td> 分组：</td>
-                         <!--<td>
-                            <select name="testgp">
-                                 <option value="C">C端</option>
-                                 <option value="B">C端</option>
-                                 <option value="OP">OP</option>
-                                 <option value="Auto">自动化</option>
-                             </select>
-                         </td> -->
-                          <td><input type="text" name="testgp" value="Auto" class="input100"/></td>
+                        <td>
+                            <select name="usergp">
+                                 <option value="C"  <?php echo $p['testgp']=='C'?'selected=selected':null;?> >C端</option>
+                                 <option value="B"  <?php echo $p['testgp']=='B'?'selected=selected':null;?> >C端</option>
+                                 <option value="OP"  <?php echo $p['testgp']=='OP'?'selected=selected':null;?> >OP</option>
+                                 <option value="Auto"  <?php echo $p['testgp']=='Auto'?'selected=selected':null;?> >自动化</option>
+                          </select>
+                         </td>
+                           <!--<td><input type="text" name="testgp" value="Auto" class="input100"/></td>-->
                      </tr>
                      <tr>
                          <td>开始：</td>
-                         <td><input type="text" name="start" value="<{$p.start}>" class="input100"/></td>
+                         <td><input type="text" name="start" value="<{$p.start}>" class="input200"/></td>
                      </tr>
                      <tr>
                          <td>结束：</td>
-                         <td><input type="text" name="end" value="<{$p.end}>" class="input100" /></td>
+                         <td><input type="text" name="end" value="<{$p.end}>" class="input200" /></td>
                      </tr>
 
                      <tr>
