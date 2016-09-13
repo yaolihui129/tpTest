@@ -2,23 +2,36 @@
 
 class SceneAction extends CommonAction {
     public function index(){
+         /* 接收参数*/
         $proid=$_GET['proid'];
-        $gp=$_SESSION['usergp'];
-        //获取项目列表
-        $pros= D("program")
-        ->where(array("testgp"=>"$gp"))
-        ->select();
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
-        $this->assign(array("proid"=>"$proid"));
-        //获取项目场景数据
-        $scenes= D("scene")
-        ->where(array("proid"=>"$proid"))
-        ->select();
+
+        /* 实例化模型*/
+        $s= D("scene");
+        $where=array("proid"=>"$proid");
+        $scenes=$s->where($where)->select();
         $this->assign("scenes",$scenes);
+        $this->assign('w',$where);       
+
 	     $this->display();
     }
 
     public function add(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        /* 实例化模型*/
+        $s= D("scene");
+        $where=array("proid"=>"$proid");
+        $scenes=$s->where($where)->select();
+        $this->assign("scenes",$scenes);
+        $this->assign('w',$where);
+        
+        
         $this->display();
     }
 
@@ -39,8 +52,20 @@ class SceneAction extends CommonAction {
     }
 
     public function mod(){
-        $m=M('scene');
+        /* 接收参数*/
+        $proid=$_GET['proid'];
         $id=$_GET['id'];
+        /* 实例化模型*/
+        $s= D("scene");
+        $where=array("proid"=>"$proid");
+        $scenes=$s->where($where)->select();
+        $this->assign("scenes",$scenes);
+        
+        $scene=$s ->find($id);
+        $this->assign("scene",$scene);
+        $this->assign('w',$where);
+        
+        
         $this->display();
     }
 

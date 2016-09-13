@@ -3,10 +3,9 @@
 class ProgramAction extends CommonAction {
     public function index(){
         /* 接收参数*/
-        
+        $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
         /* 实例化模型*/
-    	 $m=M('program');
-    	 $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
+    	 $m=M('program');   	
     	 $arr=$m->where(array("testgp"=>"$testgp"))->select();
 
 	     $this->assign('Pros',$arr);
@@ -116,6 +115,18 @@ class ProgramAction extends CommonAction {
         $this->redirect('Index/index');
 
 
+    }
+    
+    public function test(){
+    
+        $this->display();
+    }
+    
+    
+    public function autotest(){
+    
+    
+        $this->display();
     }
 
     public function del(){

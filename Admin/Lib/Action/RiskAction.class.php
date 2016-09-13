@@ -2,25 +2,37 @@
 
 class RiskAction extends CommonAction {
     public function index(){
-        $gp=$_SESSION['usergp'];
-        //获取项目列表
-        $pros= D("program")
-        ->where(array("testgp"=>"$gp"))
-        ->select();
+         /* 接收参数*/
+        $proid=$_GET['proid'];
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
 
-        //获取项目风险数据
-        $proid=$_GET['proid'];
-        $risks= D("risk")
-        ->where(array("proid"=>"$proid"))
-        ->select();
+        /* 实例化模型*/
+        $s = D("risk");
+        $where=array("proid"=>"$proid");
+        $risks=$s->where($where)->select();
         $this->assign("risks",$risks);
+        $this->assign('w',$where);
 
 
 	     $this->display();
     }
 
     public function add(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        /* 实例化模型*/
+        $s = D("risk");
+        $where=array("proid"=>"$proid");
+        $risks=$s->where($where)->select();
+        $this->assign("risks",$risks);
+        $this->assign('w',$where);
+        
+        
         $this->display();
     }
 
@@ -41,8 +53,21 @@ class RiskAction extends CommonAction {
     }
 
     public function mod(){
-        $m=M('risk');
+        /* 接收参数*/
+        $proid=$_GET['proid'];
         $id=$_GET['id'];
+        /* 实例化模型*/
+        $s = D("risk");
+        $where=array("proid"=>"$proid");
+        $risks=$s->where($where)->select();
+        $this->assign("risks",$risks);
+        $this->assign('w',$where);
+        
+        /* 实例化模型*/
+        $m=M('risk');
+        $risk=$m->find($id);
+        $this->assign("risk",$risk);
+       
         $this->display();
     }
 

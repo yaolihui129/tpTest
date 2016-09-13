@@ -2,31 +2,46 @@
 
 class StageAction extends CommonAction {
     public function index(){
-
-    	 $gp=$_SESSION['usergp'];
-        //获取项目列表
-        $pros= D("program")
-        ->where(array("testgp"=>"$gp"))
-        ->select();
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
 
-        //获取里程碑数据
-        $proid=$_GET['proid'];
-        $stages= D("stage")
-        ->where(array("proid"=>"$proid"))
-        ->select();
+        /* 实例化模型*/
+        $s = D("stage");
+        $where=array("proid"=>"$proid");
+        $stages=$s->where($where)->select();
         $this->assign("stages",$stages);
-
+        $this->assign('w',$where);
+        
 
 	     $this->display();
     }
 
     public function add(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $gp=$_SESSION['testgp'];
+        /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
+        $this->assign("pros",$pros);
+        
+        $where=array("proid"=>$proid);
+        $this->assign('w',$where);
+       
+        
+        
         $this->display();
     }
 
     public function insert(){
-
+        /* 实例化模型*/
         $m=D('stage');
 
         $_POST['adder']=$_SESSION['realname'];
@@ -45,14 +60,31 @@ class StageAction extends CommonAction {
     }
 
     public function mod(){
-        $m=M('stage');
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $gp=$_SESSION['testgp'];
         $id=$_GET['id'];
+        /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
+        $this->assign("pros",$pros);
+        $where=array("proid"=>$proid);
+        $this->assign('w',$where);
+        
+        
+        /* 实例化模型*/
+        $m=M('stage');
+        $stage=$m->find($id);
+        $this->assign("stage",$stage);
+       
         $this->display();
     }
 
     public function update(){
+        /* 实例化模型*/
         $db=D('stage');
-    $_POST['moder']=$_SESSION['realname'];
+        $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
@@ -62,17 +94,7 @@ class StageAction extends CommonAction {
 
     }
 
-    public function test(){
-
-        $this->display();
-    }
-
-
-    public function autotest(){
-
-
-        $this->display();
-    }
+   
 
     public function del(){
         /* 接收参数*/

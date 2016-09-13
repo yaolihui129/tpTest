@@ -2,12 +2,22 @@
 
 class ProsysAction extends CommonAction {
     public function index(){
-        $gp=$_SESSION['usergp'];
-        //获取项目列表
-        $pros= D("program")
-        ->where(array("testgp"=>"$gp"))
-        ->select();
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
+
+        /* 实例化模型*/
+        $s = D("stage");
+        $where=array("proid"=>"$proid");
+        $stages=$s->where($where)->select();
+        $this->assign("stages",$stages);
+        $this->assign('w',$where);
+        
 
         //获取系统关联数据
         $proid=$_GET['proid'];

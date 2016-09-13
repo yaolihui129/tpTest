@@ -59,6 +59,45 @@ class FuncAction extends CommonAction {
         }
 
     }
+    
+    public function func(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $gp=$_SESSION['testgp'];
+        /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
+        $this->assign("pros",$pros);
+        
+        /* 实例化模型*/
+        $s = D("stage");
+        $where=array("proid"=>"$proid");
+        $stages=$s->where($where)->select();
+        $this->assign("stages",$stages);
+        $this->assign('w',$where);
+        
+    }
+    
+    
+    public function range(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $gp=$_SESSION['testgp'];
+        /* 实例化模型*/
+        $m= D("program");
+        $where=array("testgp"=>"$gp");
+        $pros=$m->where($where)->select();
+        $this->assign("pros",$pros);
+        
+        /* 实例化模型*/
+        $s = D("stage");
+        $where=array("proid"=>"$proid");
+        $stages=$s->where($where)->select();
+        $this->assign("stages",$stages);
+        $this->assign('w',$where);
+        
+    }
 
     public function del(){
         /* 接收参数*/
