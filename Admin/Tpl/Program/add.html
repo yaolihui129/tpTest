@@ -17,62 +17,18 @@
               </div>
               <div class="midd">
                  <form action="__URL__/insert" method="post" >
-                  <table border="0" width="300" align="left">
+                  <table border="0" width="500" align="left">
                      <tr>
                          <td> 编号：</td>
-                         <td><input type="text" name="proid" value="<{$p.proid}>"  class="input100"/></td>
-                     </tr>
-                     <tr>
-                         <td>项目：</td>
-                         <td><input type="text" name="program" value="" class="input200"/></td>
-                     </tr>
-                     <tr>
-                         <td>负责人：</td>
-                         <td><input type="text" name="manager" value="<{$p.manager}>" class="input100"/></td>
-                     </tr>
-                      <tr>
-                         <td> 产品：</td>
                          <td>
-                            <select name="prodid">
-                                 <option value="1">惠买车</option>
-                                 <option value="2">自动化</option>
-
-                             </select>
-                         </td>
-
-                        <!--   <td><input type="text" name="prodid" value="" class="input300"/></td>-->
-                     </tr>
-                     <tr>
-                         <td>类型：</td>
-                         <td>
-                            <select name="prodid">
+                             <input type="text" name="proid" value="<{$p.proid}>"  class="input100"/>
+                             &nbsp;
+                             <select name="prodid">
                                  <option value="简要">简要</option>
                                  <option value="普通">普通</option>
-
                              </select>
-                         </td>
-                         <!-- <td><input type="text" name="type" value="" class="input300""/></td> -->
-                     </tr>
-                     <tr>
-                         <td>状态：</td>
-                         <td>
-                             <select name="state">
-                                 <option value="进行中">进行中</option>
-                                 <option value="未开始">未开始</option>
-                                 <option value="已完成">已完成</option>
-                                 <option value="已搁置">已搁置</option>
-                                 <option value="已取消">已取消</option>
-
-                             </select>
-                         </td>
-
-                         <!--  <td> <input type="text" name="position" value="测试工程师" class="input300"/></td>-->
-                     </tr>
-
-                     <tr>
-                         <td> 分组：</td>
-                         <td>
-                            <select name="testgp">
+                                                                      分组：
+                             <select name="testgp">
                                  <option value="C"  <?php echo $_SESSION['testgp']=='C'?'selected=selected':null;?>  >C端</option>
                                  <option value="B"  <?php echo $_SESSION['testgp']=='B'?'selected=selected':null;?>  >B端</option>
                                  <option value="OP"  <?php echo $_SESSION['testgp']=='OP'?'selected=selected':null;?>  >OP</option>
@@ -81,14 +37,38 @@
                          </td>
                      </tr>
                      <tr>
-                         <td>开始：</td>
-                         <td><input type="text" name="start" value="<{$p.start}>" class="input100"/></td>
+                         <td>项目：</td>
+                         <td>
+                            <input type="text" name="program" value="" class="input200"/>
+                            &nbsp;
+                            <select name="state">
+                                 <option value="进行中">进行中</option>
+                                 <option value="未开始">未开始</option>
+                                 <option value="已完成">已完成</option>
+                                 <option value="已搁置">已搁置</option>
+                                 <option value="已取消">已取消</option>
+                             </select>
+                         </td>
                      </tr>
                      <tr>
-                         <td>结束：</td>
-                         <td><input type="text" name="end" value="<{$p.end}>" class="input100" /></td>
+                         <td>开始-结束:</td>
+                         <td>
+                            <{$startDate}>
+                            - &nbsp;<{$endDate}>
+                         </td>
                      </tr>
-
+                     <tr>
+                         <td>负责人：</td>
+                         <td>
+                             <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
+                              &nbsp;&nbsp;&nbsp; 所属产品：&nbsp; 
+                             <select name="prodid">
+                                 <option value="1">惠买车</option>
+                                 <option value="2">自动化</option>
+                             </select>                        
+                         </td>
+                     </tr>
+                     
                      <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交" ></td>

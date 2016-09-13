@@ -49,31 +49,20 @@ class UserAction extends CommonAction {
             $this->error('用户注册失败');
         }
 
-        /*
-        if ($m->create()){
-            $count=$m->add($_POST);
-            if ($count){
-                $this->success("添加成功");
-            }else{
-                $this->error("添加失败");
-            }
-        }else{
-            $this->error($m->getError());
-        }*/
-
-
+       
     }
 
     public function mod(){
+        /* 接收参数*/
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
         $m=M('user');
-
         $arr=$m->select();
         $this->assign('data',$arr);
 
-        $arr=$m->find($id);
-        $this->assign('user',$arr);
-
+        $user=$m->find($id);
+        $this->assign('user',$user);
+        /* 实例化模型*/
         $d=M('dict');
         /* 取分组字典 */
         $where=array("type"=>"testgp","state"=>"正常");
@@ -85,12 +74,11 @@ class UserAction extends CommonAction {
         $posies=$d->field('k,v',false)->where($where)->select();
         $this->assign('posies',$posies);
 
-
-//         dump($dgps);
         $this->display();
     }
 
     public function update(){
+        /* 实例化模型*/
 
         $db=D('user');
 
@@ -104,6 +92,7 @@ class UserAction extends CommonAction {
     }
 
     public function setpw(){
+        /* 实例化模型*/
         $m=D('user');
         $arr=$m->find($_GET['id']);
         $this->assign('user',$arr);
@@ -111,6 +100,7 @@ class UserAction extends CommonAction {
     }
 
     public function set(){
+        /* 实例化模型*/
         $db=M('user');
         $_POST['password']=md5(123456);
         var_dump($_POST);

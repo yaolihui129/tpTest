@@ -62,7 +62,7 @@ class DictAction extends CommonAction {
         $m=M('dict');
         /* 查询数据*/
         $arr=$m->field('id,k,v,type,state',false)->where($where)->select();
-        $dic=$m->field('id,k,v,type,state',false)->find($id);
+        $dic=$m->find($id);
 
 
         /* 输出数据*/

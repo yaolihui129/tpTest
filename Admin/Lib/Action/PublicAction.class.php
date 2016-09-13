@@ -35,13 +35,13 @@ class PublicAction extends Action{
         $str = '';
         if($loadjs || !defined('CALENDAR_INIT')) {
             define('CALENDAR_INIT', 1);
-            $str .= '<script src="'.B_PUBLIC.'/js/date/js/jscal2.js"></script>
-   				 <script src="'.B_PUBLIC.'/js/date/js/lang/cn.js"></script>
-   				 <link rel="stylesheet" type="text/css" href="'.B_PUBLIC.'/js/date/css/jscal2.css" />
-    				<link rel="stylesheet" type="text/css" href="'.B_PUBLIC.'/js/date/css/border-radius.css" />
-    				<link rel="stylesheet" type="text/css" href="'.B_PUBLIC.'/js/date/css/steel/steel.css" />';
+            $str .= '<script src="'.__PUBLIC__.'/js/date/js/jscal2.js"></script>
+   				 <script src="'.__PUBLIC__.'/js/date/js/lang/cn.js"></script>
+   				 <link rel="stylesheet" type="text/css" href="'.__PUBLIC__.'/js/date/css/jscal2.css" />
+    				<link rel="stylesheet" type="text/css" href="'.__PUBLIC__.'/js/date/css/border-radius.css" />
+    				<link rel="stylesheet" type="text/css" href="'.__PUBLIC__.'/js/date/css/steel/steel.css" />';
         }
-        $str .= '<input style="height:30px" type="text" name="'.$name.'" id="'.$id.'" value="'.$value.'" size="'.$size.'" class="date" readonly>&nbsp;';
+        $str .= '<input style="height:20px" type="text" name="'.$name.'" id="'.$id.'" value="'.$value.'" size="'.$size.'" class="date" readonly>&nbsp;';
         $str .= '<script type="text/javascript">
 			Calendar.setup({
 			weekNumbers: true,
@@ -68,7 +68,7 @@ class PublicAction extends Action{
     public static function editor($textareaid = 'content', $value='', $toolbar = 'basic', $height = 200, $color = '', $up=true) {
         $str ='<textarea id="'.$textareaid.'" name="'.$textareaid.'">'.$value.'</textarea>';
         if(!defined('EDITOR_INIT')) {
-            $str .= '<script type="text/javascript" src="'.B_PUBLIC.'/js/ckeditor/ckeditor.js"></script>';
+            $str .= '<script type="text/javascript" src="'.__PUBLIC__.'/js/ckeditor/ckeditor.js"></script>';
             define('EDITOR_INIT', 1);
         }
 
@@ -124,19 +124,43 @@ class PublicAction extends Action{
         return $str;
     }
 
+    
     /**
-     * 状态选择控件
+     * 颜色控件
      *
      * @param $name 控件name
      * @param $value 选中值
      */
-    public static function mstate($name,$value="正常"){
+    public static function color($name, $value = '000000') {
+    
+        if(!defined('COLOR_INIT')) {
+            define('COLOR_INIT', 1);
+            $str= '<script src="'.__PUBLIC__.'/js/jscolor/jscolor.js"></script>';
+    
+        }
+        $str .= '<input class="color" style="width:48px;height:16px;overfrom:hidden" name="'.$name.'" value="'.$value.'" />';
+    
+        return $str;
+    }
+    /**
+     * 状态选择控件
+     *
+     * @param $name 控件name
+     * @param $type
+     * @param $value 选中值
+     */
+    public static function mdict($name,$type,$value="正常"){
+        
+        $m=M('dict');
+        $where=array("type"=>$type,"state"=>"正常");
+        $dices=$m->where($where)->select();
+        /*
         $str.='<select name="'.$name.'">
-	           <option value="正常" "'.$value.'"=="正常"?"selected=selected":"";>正常</option>
-	           <option value="待确认" "'.$value.'"=="待确认"?"selected=selected":""; >待确认</option>
-	           <option value="已搁置" "'.$value.'"=="已搁置"?"selected=selected":""; >已搁置</option>
-	           <option value="作废"  "'.$value.'"=="作废"?"selected=selected":""; >作废</option>
+            foreach($dices as $dic){
+	          <option value="$dic['k']" .$value=="$dic['k']"?"selected=selected":"";>$dic['k']</option>
+	        }       
 	        </select>' ;
+	        */
         return $str;
     }
 

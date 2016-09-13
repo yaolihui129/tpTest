@@ -21,6 +21,10 @@
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="id" value="<{$dic.id}>" />
                     <table border="0" width="600" align="left">
+                        <tr>
+                           <td> 更新：</td>
+                           <td><{$dic.moder}>更新于:<{$dic.updateTime}></td>
+                         </tr>
                          <tr>
                              <td> Key：</td>
                              <td><input type="text" name="k" value="<{$dic.k}>"  class="input200"/></td>
