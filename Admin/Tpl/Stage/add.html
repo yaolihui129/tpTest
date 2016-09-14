@@ -18,43 +18,69 @@
               </div>
               <div class="midd" width="50%" align="right" >
                  <form action="__URL__/insert" method="post" >
-                  <table border="0" width="500" align="left">
+                  <table border="0" width="300" align="left">
                      <tr>
                          <td> 顺序：</td>
-                         <td><input type="text" name="sn" value="<{$c}>"  class="input300"/></td>
+                         <td>
+                           <input type="text" name="sn" value="<{$c}>"  class="input100"/>
+                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/>
+                                                            
+                         </td>
                      </tr>
                      <tr>
                          <td>阶段</td>
-                         <td><input type="text" name="stage" value=""  class="input300"/></td>
-                     </tr>
-                      <tr>
-                         <td>项目</td>
-                         <td ><input type="text" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/></td>
+                         <td>
+                         
+                         <select name="stage">
+                                 <option value="编写测试计划">编写测试计划</option>
+                                 <option value="编写测试用例">编写测试用例</option>                                
+                                 <option value="功能验证">功能验证</option>
+                                 <option value="第一轮测试">第一轮测试</option>
+                                 <option value="第二轮测试">第二轮测试</option>
+                                 <option value="第三轮测试">第三轮测试</option>
+                                 <option value="第四轮测试">第四轮测试</option>
+                                 <option value="线上验证测试">线上验证测试</option>
+                           </select> 
+                         </td>
                      </tr>
                      <tr>
                          <td>状态</td>
                          <td>
-                             <select name="state">
-                                 <option value="进行中">进行中</option>
+                            <select name="state">
                                  <option value="未开始">未开始</option>
+                                 <option value="进行中">进行中</option>                                
                                  <option value="已完成">已完成</option>
                                  <option value="已搁置">已搁置</option>
                                  <option value="已取消">已取消</option>
-                             </select>
+                           </select> 
+                         
                          </td>
                      </tr>
+                     <tr>
+                         <td>文档</td>
+                         <td>
+                           <select name="document">
+                                 <option value="1">无文档</option>
+                                 <option value="2">测试计划</option>
+                                 <option value="3">测试用例</option>
+                                 <option value="4">BUG分析报告</option>
+                                 <option value="5">测试综合报告</option>
+                           </select> 
+                        </td>
+                     </tr> 
                       <tr>
                          <td>开始</td>
                          <td>
                             <{$startDate}>
                          </td>
                      </tr>
-                      <tr>
+                     <tr>
                          <td>结束</td>
                          <td>
-                           <{$endDate}>
+                            <{$endDate}>
                          </td>
                      </tr>
+                                         
                      <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交">

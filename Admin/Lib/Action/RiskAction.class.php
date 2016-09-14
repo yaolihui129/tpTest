@@ -23,15 +23,19 @@ class RiskAction extends CommonAction {
     }
 
     public function add(){
-        /* 接收参数*/
-        $proid=$_GET['proid'];
+       /* 接收参数*/
+        $proid=$_GET['proid'];        
         /* 实例化模型*/
-        $s = D("risk");
-        $where=array("proid"=>"$proid");
-        $risks=$s->where($where)->select();
-        $this->assign("risks",$risks);
+        $m= D("risk");
+        $where=array("proid"=>$proid);
+        $data=$m->where($where)->select();
+
+        $this->assign("data",$data);
+        $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
-        
+        $this->assign('c',$count);
+        $this->assign("tamethod",PublicAction::editor("amethod","暂无方案"));
+        $this->assign("tremaks",PublicAction::editor("remaks",""));
         
         $this->display();
     }
@@ -55,18 +59,21 @@ class RiskAction extends CommonAction {
     public function mod(){
         /* 接收参数*/
         $proid=$_GET['proid'];
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
-        $s = D("risk");
-        $where=array("proid"=>"$proid");
-        $risks=$s->where($where)->select();
-        $this->assign("risks",$risks);
+        $m= D("risk");
+        $where=array("proid"=>$proid);
+        $data=$m->where($where)->select();
+
+        $this->assign("data",$data);
         $this->assign('w',$where);
         
         /* 实例化模型*/
         $m=M('risk');
         $risk=$m->find($id);
         $this->assign("risk",$risk);
+        $this->assign("tamethod",PublicAction::editor("amethod",$risk['amethod']));
+        $this->assign("tremaks",PublicAction::editor("remaks",$risk['remaks']));
        
         $this->display();
     }

@@ -1,17 +1,67 @@
-      <layout name="layout" /> </head>
-
-    <body>
+  <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
-             >添加
+             <a href="__URL__/Program">项目</a>
+             ><a href="__URL__/index/proid/<{$w.proid}>">风险</a>
+             >详情
             <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
+            <a href="__URL__/index/proid/<{$w.proid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">风险详情</div>
+              <div class="left"  width="20%" align="left">
+                    <volist name='data' id='vo' empty="没有数据">
+                       <a href="__URL__/mod/id/<{$vo.id}>/proid/<{$w.proid}>"><{$vo.sn}>.<{$vo.risk}>:<{$vo.state}></a><br>
+                    </volist>
+              </div>
+              <div class="midd" width="50%" align="right" >
+                 <form action="__URL__/update" method="post" >
+                 <input type="hidden" name="id" value="<{$risk.id}>" />
+                  <table border="0" width="650" align="left">
+                     <tr>
+                         <td> 顺序：</td>
+                         <td>
+                           <input type="text" name="sn" value="<{$risk.sn}>"  class="input60"/>
+                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>" />
+                                                                     状态
+                           <select name="state">
+                                 <option value="打开" <?php echo $risk['state']=='打开'?'selected=selected':null;?>  >打开</option>
+                                 <option value="关闭"  <?php echo $risk['state']=='关闭'?'selected=selected':null;?>  >关闭</option>                                
+                                 
+                           </select>   
+                                                                 级别
+                            <select name="level">
+                                 <option value="1" <?php echo $risk['level']==1?'selected=selected':null;?>  >1</option>
+                                 <option value="2" <?php echo $risk['level']==2?'selected=selected':null;?>  >2</option>
+                                 <option value="3" <?php echo $risk['level']==3?'selected=selected':null;?>  >3</option>                               
+                           </select>                          
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>风险</td>
+                         <td><input type="text" name="risk" value="<{$risk.risk}>"  class="input600"/></td>
+                     </tr>                   
+                      <tr>
+                         <td>方案</td>
+                         <td>
+                            <{$tamethod}>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>备注</td>
+                         <td>
+                            <{$tremaks}>
+                         </td>
+                     </tr>                                         
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         </td>
+                     </tr>
+                  </table>
+                 </form>
 
               </div><!-- midd -->
            </div><!-- main -->
