@@ -15,7 +15,7 @@
               </div>
                  <div class="left">
                                               项目列表<br />
-                    <volist name='pros' id='pro'>
+                    <volist name='pros' id='pro' empty="没有数据">
                        <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
                     </volist>
               </div>
@@ -68,7 +68,7 @@
                              <input type='radio' name='type' value='简要' <?php echo $p['type']=='简要'?'checked=”checked”':null;?> />简要
                              <input type='radio' name='type' value='常规' <?php echo $p['type']=='常规'?'checked=”checked”':null;?> />常规
                          </td>
-                     </tr>                            
+                     </tr>
                      <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="修   改" ></td>

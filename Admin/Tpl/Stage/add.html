@@ -1,15 +1,67 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
+             <a href="__URL__/Program">项目</a>
+             ><a href="__URL__/index/proid/<{$w.proid}>">里程碑</a>
              >添加
             <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
+            <a href="__URL__/index/proid/<{$w.proid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">里程碑添加</div>
+              <div class="left"  width="20%" align="left">
+                    <volist name='data' id='vo' empty="没有数据">
+                       <a href="__URL__/mod/id/<{$vo.id}>/proid/<{$w.proid}>"><{$vo.sn}>.<{$vo.stage}>:<{$vo.state}></a><br>
+                    </volist>
+              </div>
+              <div class="midd" width="50%" align="right" >
+                 <form action="__URL__/insert" method="post" >
+                  <table border="0" width="500" align="left">
+                     <tr>
+                         <td> 顺序：</td>
+                         <td><input type="text" name="sn" value="<{$c}>"  class="input300"/></td>
+                     </tr>
+                     <tr>
+                         <td>阶段</td>
+                         <td><input type="text" name="stage" value=""  class="input300"/></td>
+                     </tr>
+                      <tr>
+                         <td>项目</td>
+                         <td ><input type="text" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/></td>
+                     </tr>
+                     <tr>
+                         <td>状态</td>
+                         <td>
+                             <select name="state">
+                                 <option value="进行中">进行中</option>
+                                 <option value="未开始">未开始</option>
+                                 <option value="已完成">已完成</option>
+                                 <option value="已搁置">已搁置</option>
+                                 <option value="已取消">已取消</option>
+                             </select>
+                         </td>
+                     </tr>
+                      <tr>
+                         <td>开始</td>
+                         <td>
+                            <{$startDate}>
+                         </td>
+                     </tr>
+                      <tr>
+                         <td>结束</td>
+                         <td>
+                           <{$endDate}>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         </td>
+                     </tr>
+                  </table>
+                 </form>
 
               </div><!-- midd -->
            </div><!-- main -->

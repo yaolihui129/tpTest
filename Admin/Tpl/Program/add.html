@@ -11,7 +11,7 @@
            <div class="main">
               <div class="top">项目添加</div>
                  <div class="left" width="20%" align="left">
-                    <volist name='pros' id='pro'>
+                    <volist name='pros' id='pro' empty="没有数据">
                        <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
                     </volist>
               </div>
@@ -61,14 +61,14 @@
                          <td>负责人：</td>
                          <td>
                              <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
-                              &nbsp;&nbsp;&nbsp; 所属产品：&nbsp; 
+                              &nbsp;&nbsp;&nbsp; 所属产品：&nbsp;
                              <select name="prodid">
                                  <option value="1">惠买车</option>
                                  <option value="2">自动化</option>
-                             </select>                        
+                             </select>
                          </td>
                      </tr>
-                     
+
                      <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交" ></td>

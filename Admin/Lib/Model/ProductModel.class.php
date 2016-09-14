@@ -4,8 +4,8 @@ class ProductModel extends Model{
     protected $_auto=array(
 
         array('adder','getAdder',1,'callback'),
-        array('moder','getAdder',2,'callback'),
-        array('updateTime','time',2,'function'),
+        array('moder','getAdder',3,'callback'),
+        array('updateTime','time',3,'function'),
 
     );
 
@@ -15,12 +15,11 @@ class ProductModel extends Model{
 
 
     protected $_validate=array(
-//         array('code','require','验证码必须填写!'),
-//         array('code','checkCode','验证码错误!',0,'callback',1),
-//         array('username','require','用户必须填写!'),
-//         array('username','','用户已经存在',0,'unique',1),
-//         array('username','/^\w{6,}$/','用户名必须6个字母以上',0,'regex',1),
-//         array('repassword','password','确认密码不正确',0,'confirm'),
+           array('product','require','产品必须填写!'),
+           array('product','','产品已经存在',0,'unique',1),
+           array('short','require','简称必须填写!'),
+           array('short','','简称已经存在',0,'unique',1),
+
     );
     protected function checkCode($code){
         if(md5($code)!=$_SESSION['code']){

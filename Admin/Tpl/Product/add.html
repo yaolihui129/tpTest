@@ -11,7 +11,7 @@
            <div class="main">
               <div class="top">产品添加</div>
               <div class="left"  width="20%" align="center">
-                    <volist name='data' id='vo'>
+                    <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>"><{$vo.id}>.<{$vo.short}></a><br>
                     </volist>
               </div>
@@ -30,13 +30,12 @@
                      <tr>
                          <td>状态</td>
                          <td>
-                             <select name="state">
+                              <select name="state">
                                  <option value="正常">正常</option>
                                  <option value="待确认">待确认</option>
                                  <option value="已搁置">已搁置</option>
                                  <option value="作废">作废</option>
                              </select>
-
                          </td>
                      </tr>
                      <tr>

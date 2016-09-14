@@ -13,7 +13,7 @@
                                         项目详情
               </div>
                  <div class="left">
-                    <volist name='pros' id='pro'>
+                    <volist name='pros' id='pro' empty="没有数据">
                        <a href="__URL__/details/id/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
                     </volist>
               </div>
@@ -43,7 +43,7 @@
                      </tr>
                      <tr>
                          <td>上线：</td>
-                         <td><{$online}></td>                        
+                         <td><{$online}></td>
                      </tr>
 
                      <tr>
@@ -59,7 +59,7 @@
                          <td>
                             <{$jianjie}>
                             <!-- <textarea name="profile" rows="10" cols="70"><{$p.profile}></textarea> -->
-                         
+
                          </td>
                      </tr>
                      <tr>

@@ -12,7 +12,7 @@
            <div class="main">
               <div class="top">用户修改</div>
               <div class="left">
-                    <volist name='data' id='vo'>
+                    <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>""><{$vo.userNo}>-<{$vo.realname}>:<{$vo.state}></a><br>
                     </volist>
               </div>

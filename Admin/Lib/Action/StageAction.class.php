@@ -17,7 +17,7 @@ class StageAction extends CommonAction {
         $stages=$s->where($where)->select();
         $this->assign("stages",$stages);
         $this->assign('w',$where);
-        
+
 
 	     $this->display();
     }
@@ -25,18 +25,22 @@ class StageAction extends CommonAction {
     public function add(){
         /* 接收参数*/
         $proid=$_GET['proid'];
-        $gp=$_SESSION['testgp'];
+        $start=date("Y-m-d",time());
+        $end=date("Y-m-d",time()+1*24*3600);
         /* 实例化模型*/
-        $m= D("program");
-        $where=array("testgp"=>"$gp");
-        $pros=$m->where($where)->select();
-        $this->assign("pros",$pros);
-        
+        $m= D("stage");
         $where=array("proid"=>$proid);
+        $pros=$m->where($where)->select();
+
+        $this->assign("data",$pros);
+        $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
-       
-        
-        
+        $this->assign('c',$count);
+        $this->assign("startDate",PublicAction::date("start",$start));
+        $this->assign("endDate",PublicAction::date("end",$end));
+
+
+
         $this->display();
     }
 
@@ -62,22 +66,25 @@ class StageAction extends CommonAction {
     public function mod(){
         /* 接收参数*/
         $proid=$_GET['proid'];
-        $gp=$_SESSION['testgp'];
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
-        $m= D("program");
-        $where=array("testgp"=>"$gp");
-        $pros=$m->where($where)->select();
-        $this->assign("pros",$pros);
+        $m= D("stage");
         $where=array("proid"=>$proid);
+        $pros=$m->where($where)->select();
+
+        $this->assign("data",$pros);
+        $stage=$m->find($id);
+        $this->assign("stage",$stage);
         $this->assign('w',$where);
-        
-        
+        $this->assign("startDate",PublicAction::date("start",$stage['start']));
+        $this->assign("endDate",PublicAction::date("end",$stage['end']));
+
+
         /* 实例化模型*/
         $m=M('stage');
         $stage=$m->find($id);
         $this->assign("stage",$stage);
-       
+
         $this->display();
     }
 
@@ -94,7 +101,7 @@ class StageAction extends CommonAction {
 
     }
 
-   
+
 
     public function del(){
         /* 接收参数*/

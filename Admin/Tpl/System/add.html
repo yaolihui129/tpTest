@@ -12,7 +12,7 @@
               <div class="top">系统添加</div>
               <div class="left"  width="20%" align="center">
                   <h1>测试系统</h1>
-                    <volist name='data' id='vo'>
+                    <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>"><{$vo.sysid}></a><br>
                     </volist>
               </div>

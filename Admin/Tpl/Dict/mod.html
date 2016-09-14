@@ -11,7 +11,7 @@
            <div class="main">
               <div class="top">字典:<{$w.tpye}></div>
               <div class="left" width="20%"  >
-                    <volist name='data' id='vo'>
+                    <volist name='data' id='vo' empty="没有数据">
                       <ur>
                          <li><a href="__URL__/mod/id/<{$vo.id}>/type/<{$w.type}>"><{$vo.k}>:<{$vo.v}></a></li>
                        </ur>

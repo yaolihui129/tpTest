@@ -124,7 +124,7 @@ class PublicAction extends Action{
         return $str;
     }
 
-    
+
     /**
      * 颜色控件
      *
@@ -132,35 +132,14 @@ class PublicAction extends Action{
      * @param $value 选中值
      */
     public static function color($name, $value = '000000') {
-    
+
         if(!defined('COLOR_INIT')) {
             define('COLOR_INIT', 1);
             $str= '<script src="'.__PUBLIC__.'/js/jscolor/jscolor.js"></script>';
-    
+
         }
         $str .= '<input class="color" style="width:48px;height:16px;overfrom:hidden" name="'.$name.'" value="'.$value.'" />';
-    
-        return $str;
-    }
-    /**
-     * 状态选择控件
-     *
-     * @param $name 控件name
-     * @param $type
-     * @param $value 选中值
-     */
-    public static function mdict($name,$type,$value="正常"){
-        
-        $m=M('dict');
-        $where=array("type"=>$type,"state"=>"正常");
-        $dices=$m->where($where)->select();
-        /*
-        $str.='<select name="'.$name.'">
-            foreach($dices as $dic){
-	          <option value="$dic['k']" .$value=="$dic['k']"?"selected=selected":"";>$dic['k']</option>
-	        }       
-	        </select>' ;
-	        */
+
         return $str;
     }
 

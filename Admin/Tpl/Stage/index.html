@@ -10,21 +10,21 @@
         <div class="content">
            <div class="main">
               <div class="top">里程碑</div>
-              <div class="left" width="30%">                  
-                    <volist name='pros' id='pro'>
+              <div class="left" width="30%">
+                    <volist name='pros' id='pro' empty="没有数据">
                       <ur>
                        <a href="__URL__/index/proid/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
-                      </ur> 
+                      </ur>
                     </volist>
               </div>
               <div class="midd" width="60%">
                    <table border="1" width="80%" align="center">
-                    
+
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
                        <th width=15% align="left"  bgcolor="#ccc">阶段
                           <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/add/prodid/<{$w.prodid}>"  >添加 </a>
+                             <a href="__URL__/add/proid/<{$w.proid}>"  >添加 </a>
                           </span>
                        </th>
                        <th width=5% align="center" bgcolor="#ccc">状态</th>
@@ -43,7 +43,7 @@
                             <{$st.stage}>
                          </a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Path/index/proid/<{$st.proid}>/stageid/<{$st.id}>" >列队</a>                           
+                           <a href="__APP__/Path/index/proid/<{$st.proid}>/stageid/<{$st.id}>" >列队</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>
                        </td>

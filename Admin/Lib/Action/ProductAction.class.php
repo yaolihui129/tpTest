@@ -26,12 +26,14 @@ class ProductAction extends CommonAction {
     public function insert(){
         /* 实例化模型*/
         $m=D('product');
-        $_POST['adder']=$_SESSION['realname'];
-        $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+       $_POST['adder']=$_SESSION['realname'];
+       $_POST['moder']=$_SESSION['realname'];
+       $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
+//         dump($m);
+//         exit();
         $lastId=$m->add();
         if($lastId){
            $this->success("添加成功");
