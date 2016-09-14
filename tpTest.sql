@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-14 00:43:42
+Date: 2016-09-15 00:16:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -607,7 +607,7 @@ CREATE TABLE `tp_program` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_program
@@ -617,6 +617,7 @@ INSERT INTO `tp_program` VALUES ('24', 'Auto.1608.2', '测试后台一期', '2',
 INSERT INTO `tp_program` VALUES ('25', 'Auto.1608.3', 'yaohTest', '2', '进行中', '2016-08-01', '2016-08-31', '腰立辉', 'Auto', '简要', 'yyy', '需求新增', '一般需求', '2016-08-13', 'sadasasdahjdashdj1.yuiwqe3.hysajdu就卡萨丁', '腰立辉', '腰立辉', '2016-09-10 23:40:26', '2016-09-10 23:40:26');
 INSERT INTO `tp_program` VALUES ('30', 'Auto.1608.5', 'GD', '1', '进行中', '2016-08-08', '2016-08-15', '腰立辉', 'Auto', '简要', 'ddd', '需求新增', '一般需求', '2016-08-15', '', '腰立辉', '腰立辉', '2016-09-10 23:40:35', '2016-09-10 23:40:35');
 INSERT INTO `tp_program` VALUES ('40', 'Auto1609.5', 'yut', '0', '进行中', '2016-09-10', '2016-09-17', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-10 23:30:57', '2016-09-10 23:30:57');
+INSERT INTO `tp_program` VALUES ('41', 'Auto1609.6', 'Lyjeshop', '2', '进行中', '2016-09-14', '2016-09-21', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-14 22:56:32', '2016-09-14 22:56:32');
 
 -- ----------------------------
 -- Table structure for `tp_prosys`
@@ -660,14 +661,14 @@ CREATE TABLE `tp_risk` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_risk
 -- ----------------------------
-INSERT INTO `tp_risk` VALUES ('10', null, '分派场景时，需要把场景下的场景功能，场景下的数据用例，等信息导入执行表（复制），逻辑关系较复杂短时间内很难理清', '2', '暂无方案', '23', '正常', null, '腰立辉', null, '2016-08-08 14:43:51', '2016-08-08 14:43:51');
-INSERT INTO `tp_risk` VALUES ('5', null, '不涉及页面，只会套用模板，交互会是严重问题', '1', '暂无方案', '24', '正常', null, '腰立辉', null, '2016-08-08 14:41:51', '2016-08-08 14:41:51');
-INSERT INTO `tp_risk` VALUES ('11', null, '&lt;p&gt;\r\n	12313&lt;/p&gt;\r\n', '2', '&lt;p&gt;\r\n	暂无方案&lt;/p&gt;\r\n', '24', '正常', null, '腰立辉', null, '2016-08-14 16:22:49', '2016-08-14 16:22:49');
+INSERT INTO `tp_risk` VALUES ('10', '1', '分派场景时，需要把场景下的场景功能，场景下的数据用例，等信息导入执行表（复制），逻辑关系较复杂短时间内很难理清', '1', '<p>\r\n	暂无方案</p>\r\n', '23', '打开', '<p>\r\n	asd</p>\r\n', '腰立辉', '腰立辉', '2016-09-14 22:42:27', '2016-09-14 22:42:27');
+INSERT INTO `tp_risk` VALUES ('5', '1', '不涉及页面，只会套用模板，交互会是严重问题', '1', '<p>\r\n	暂无方案</p>\r\n', '24', '打开', '', '腰立辉', '腰立辉', '2016-09-14 22:45:36', '2016-09-14 22:45:36');
+INSERT INTO `tp_risk` VALUES ('12', '2', 'werw', '3', '<ul>\r\n	<li>\r\n		asd</li>\r\n	<li>\r\n		hjsad</li>\r\n	<li>\r\n		jsa</li>\r\n</ul>\r\n', '24', '关闭', '<p>\r\n	asdad<span style=\"color: rgb(255, 0, 0);\">asda</span></p>\r\n', '腰立辉', '腰立辉', '2016-09-14 22:45:51', '2016-09-14 22:45:51');
 
 -- ----------------------------
 -- Table structure for `tp_rules`
@@ -723,7 +724,6 @@ CREATE TABLE `tp_scene` (
   `sn` int(11) DEFAULT NULL,
   `swho` varchar(20) DEFAULT NULL,
   `swhen` varchar(50) DEFAULT NULL,
-  `swhere` varchar(20) DEFAULT NULL,
   `stestip` varchar(200) DEFAULT NULL,
   `scene` varchar(50) DEFAULT NULL,
   `level` int(11) DEFAULT NULL,
@@ -731,22 +731,23 @@ CREATE TABLE `tp_scene` (
   `proid` smallint(6) DEFAULT NULL,
   `flow` varchar(300) DEFAULT NULL,
   `remarks` text,
-  `type` varchar(10) DEFAULT NULL,
-  `sourceisd` int(11) DEFAULT NULL,
+  `sourceid` smallint(6) DEFAULT '0',
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=50 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scene
 -- ----------------------------
-INSERT INTO `tp_scene` VALUES ('43', '1', '车顾问', '当下', '车顾问APP', 'cheguwen.com', '提用户下单', '2', '正常', '24', '11-wqej-qweq-qqqq', null, '创建', '0', '腰立辉', null, '2016-08-07 17:44:58', '2016-08-07 17:44:58');
-INSERT INTO `tp_scene` VALUES ('45', '1', '测试人员', '1', '后台', 'http://192.168.43.61:81/test/brotest/admin.php', '正常登录退出', '2', '正常', '25', '登录-退出', null, '创建', '0', '腰立辉', null, '2016-08-08 15:26:17', '2016-08-08 15:26:17');
-INSERT INTO `tp_scene` VALUES ('46', '2', '测试人员', '项目初期', '后台', 'http://192.168.43.61:81/test/brotest/admin.php', '录入项目信息', '2', '正常', '25', '登录-新建项目-退出', null, '创建', '0', '腰立辉', null, '2016-08-08 15:27:53', '2016-08-08 15:27:53');
-INSERT INTO `tp_scene` VALUES ('47', '1', '123', '123', '1', '123', '123', '2', '正常', '23', '11-wqej-qweq-qqqq', null, '创建', '0', '腰立辉', null, '2016-08-14 19:08:23', '2016-08-14 19:08:23');
+INSERT INTO `tp_scene` VALUES ('43', '1', '车顾问', '当下', 'cheguwen.com', '提用户下单', '3', '正常', '24', '11-wqej-qweq-qqqq', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:13:33', '2016-09-15 00:13:33');
+INSERT INTO `tp_scene` VALUES ('45', '1', '测试人员', '1', 'http://192.168.43.61:81/test/brotest/admin.php', '正常登录退出', '2', '正常', '25', '登录-退出', null, '0', '腰立辉', null, '2016-08-08 15:26:17', '2016-08-08 15:26:17');
+INSERT INTO `tp_scene` VALUES ('46', '2', '测试人员', '项目初期', 'http://192.168.43.61:81/test/brotest/admin.php', '录入项目信息', '2', '正常', '25', '登录-新建项目-退出', null, '0', '腰立辉', null, '2016-08-08 15:27:53', '2016-08-08 15:27:53');
+INSERT INTO `tp_scene` VALUES ('47', '1', '123', '123', '123', '123', '2', '正常', '23', '11-wqej-qweq-qqqq', null, '0', '腰立辉', null, '2016-08-14 19:08:23', '2016-08-14 19:08:23');
+INSERT INTO `tp_scene` VALUES ('48', '2', 'hsdf', '当下', null, 'asd', '0', '正常', '24', '', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:15:32', '2016-09-15 00:14:59');
+INSERT INTO `tp_scene` VALUES ('49', '3', 'xda', '当下', null, 'asddd', '0', '正常', '24', null, null, '0', '腰立辉', '腰立辉', '2016-09-15 00:15:16', '2016-09-15 00:15:16');
 
 -- ----------------------------
 -- Table structure for `tp_scenefunc`
@@ -785,32 +786,34 @@ CREATE TABLE `tp_stage` (
   `start` date DEFAULT NULL,
   `end` date DEFAULT '0000-00-00',
   `state` varchar(5) DEFAULT NULL,
-  `document` varchar(50) DEFAULT NULL,
+  `document` smallint(1) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_stage
 -- ----------------------------
-INSERT INTO `tp_stage` VALUES ('1', null, '测试计划', '23', '2016-08-05', '2016-08-08', '进行中', '测试计划', '腰立辉', null, '2016-08-07 14:47:42', '2016-08-07 14:47:42');
-INSERT INTO `tp_stage` VALUES ('2', null, '测试用例编写', '23', '2016-08-06', '2016-08-08', '未开始', '测试用例', '腰立辉', null, '2016-08-07 14:43:49', '2016-08-07 14:43:49');
-INSERT INTO `tp_stage` VALUES ('3', null, '第一轮测试', '23', '2016-08-08', '2016-08-10', '未开始', 'Bug分析报告', '腰立辉', null, '2016-08-07 14:46:09', '2016-08-07 14:46:08');
-INSERT INTO `tp_stage` VALUES ('4', null, '测试计划', '24', '2016-08-07', '2016-08-09', '未开始', '无文档', '腰立辉', null, '2016-08-07 14:41:06', '2016-08-07 14:41:06');
-INSERT INTO `tp_stage` VALUES ('5', null, '测试用例编写', '24', '2016-08-07', '2016-08-09', '未开始', '无文档', '腰立辉', null, '2016-08-07 14:55:46', '2016-08-07 14:55:46');
-INSERT INTO `tp_stage` VALUES ('6', null, '产品设计', '25', '2016-08-07', '2016-08-09', '已完成', '无文档', '腰立辉', null, '2016-08-08 14:39:22', '2016-08-08 14:39:22');
-INSERT INTO `tp_stage` VALUES ('8', null, '第一轮测试', '25', '2016-08-08', '2016-08-10', '未开始', '无文档', '腰立辉', null, '2016-08-08 16:45:07', '2016-08-08 16:45:07');
-INSERT INTO `tp_stage` VALUES ('9', null, '测试计划', '30', '2016-08-08', '2016-08-10', '未开始', '无文档', '腰立辉', null, '2016-08-08 22:50:53', '2016-08-08 22:50:53');
-INSERT INTO `tp_stage` VALUES ('10', null, '测试用例', '30', '2016-08-11', '2016-08-12', '未开始', '无文档', '腰立辉', null, '2016-08-08 22:51:34', '2016-08-08 22:51:34');
-INSERT INTO `tp_stage` VALUES ('11', null, '第一轮测试', '30', '2016-08-12', '2016-08-14', '未开始', '无文档', '腰立辉', null, '2016-08-08 22:52:13', '2016-08-08 22:52:13');
-INSERT INTO `tp_stage` VALUES ('12', null, '第二轮测试', '30', '2016-08-15', '2016-08-18', '未开始', '无文档', '腰立辉', null, '2016-08-08 22:52:34', '2016-08-08 22:52:34');
-INSERT INTO `tp_stage` VALUES ('13', null, '线上验证', '30', '2016-08-19', '2016-08-20', '未开始', '无文档', '腰立辉', null, '2016-08-08 22:52:55', '2016-08-08 22:52:55');
-INSERT INTO `tp_stage` VALUES ('18', null, '第二轮测试', '25', '2016-08-10', '2016-08-12', '未开始', '无文档', '腰立辉', null, '2016-08-10 14:04:03', '2016-08-10 14:04:03');
-INSERT INTO `tp_stage` VALUES ('19', null, '第三轮测试', '25', '2016-08-10', '2016-08-12', '未开始', '无文档', '腰立辉', null, '2016-08-10 14:04:13', '2016-08-10 14:04:13');
-INSERT INTO `tp_stage` VALUES ('20', null, '线上验证', '25', '2016-08-10', '2016-08-12', '未开始', '无文档', '腰立辉', null, '2016-08-10 14:04:33', '2016-08-10 14:04:33');
+INSERT INTO `tp_stage` VALUES ('1', '1', '测试计划', '23', '2016-08-05', '2016-08-08', '已完成', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:33', '2016-09-14 21:26:05');
+INSERT INTO `tp_stage` VALUES ('2', '2', '用例编写', '23', '2016-08-06', '2016-08-08', '未开始', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:35', '2016-09-14 20:42:59');
+INSERT INTO `tp_stage` VALUES ('3', '3', '第一轮测试', '23', '2016-08-08', '2016-08-10', '未开始', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:36', '2016-09-14 21:26:26');
+INSERT INTO `tp_stage` VALUES ('4', '1', '测试计划', '24', '2016-08-07', '2016-08-09', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:37:27', '2016-09-14 21:37:27');
+INSERT INTO `tp_stage` VALUES ('5', '2', '测试用例编写', '24', '2016-08-07', '2016-08-09', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:37:33', '2016-09-14 21:37:33');
+INSERT INTO `tp_stage` VALUES ('6', '1', '产品设计', '25', '2016-08-07', '2016-08-09', '已完成', '4', '腰立辉', '腰立辉', '2016-09-14 21:34:07', '2016-09-14 21:34:07');
+INSERT INTO `tp_stage` VALUES ('8', '2', '第一轮测试', '25', '2016-08-08', '2016-08-10', '未开始', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:41', '2016-09-14 21:30:32');
+INSERT INTO `tp_stage` VALUES ('9', '1', '测试计划', '30', '2016-08-08', '2016-08-10', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:37:46', '2016-09-14 21:37:46');
+INSERT INTO `tp_stage` VALUES ('10', '2', '测试用例', '30', '2016-08-11', '2016-08-12', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:37:51', '2016-09-14 21:37:51');
+INSERT INTO `tp_stage` VALUES ('11', '3', '第一轮测试', '30', '2016-08-12', '2016-08-14', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:37:56', '2016-09-14 21:37:56');
+INSERT INTO `tp_stage` VALUES ('12', '4', '第二轮测试', '30', '2016-08-15', '2016-08-18', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:38:02', '2016-09-14 21:38:02');
+INSERT INTO `tp_stage` VALUES ('13', '5', '线上验证', '30', '2016-08-19', '2016-08-20', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:38:08', '2016-09-14 21:38:08');
+INSERT INTO `tp_stage` VALUES ('18', '3', '第二轮测试', '25', '2016-08-10', '2016-08-12', '未开始', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:49', '2016-09-14 21:31:16');
+INSERT INTO `tp_stage` VALUES ('19', '4', '第三轮测试', '25', '2016-08-10', '2016-08-12', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:34:35', '2016-09-14 21:34:35');
+INSERT INTO `tp_stage` VALUES ('20', '5', '线上验证', '25', '2016-08-11', '2016-08-12', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:34:54', '2016-09-14 21:34:54');
+INSERT INTO `tp_stage` VALUES ('23', '4', '第二轮测试', '23', '2016-09-14', '2016-09-15', '未开始', '0', '腰立辉', '腰立辉', '2016-09-14 21:31:53', '2016-09-14 21:19:02');
+INSERT INTO `tp_stage` VALUES ('24', '1', '编写测试计划', '40', '2016-09-14', '2016-09-15', '未开始', '1', '腰立辉', '腰立辉', '2016-09-14 21:39:53', '2016-09-14 21:39:53');
 
 -- ----------------------------
 -- Table structure for `tp_system`

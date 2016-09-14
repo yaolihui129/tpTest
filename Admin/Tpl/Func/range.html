@@ -1,16 +1,50 @@
-      <layout name="layout" />
+       <layout name="layout" />
+    <body>
         <div class="place">
                                  所在位置：
              <a href="__APP__/Program">项目</a>
-             >范围
+             >风险
             <span style="float:right;margin-right:60px;">
              <a href="__APP__/Program"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">测试范围</div>
-              
-              
+              <div class="top">项目风险</div>
+               <div class="left" width="30%">
+                    <volist name='pros' id='pro' empty="没有数据">
+                      <ur>
+                       <a href="__URL__/range/proid/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
+                      </ur>
+                    </volist>
+              </div>
+              <div class="midd" width="60%">
+                   <table border="1" width="80%" align="center">
+                     <tr>
+                        <th width=7% align="center" bgcolor="#ccc">系统</th>
+                       <th width=20% align="left"  bgcolor="#ccc">路径</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=7% align="center" bgcolor="#ccc">功能</th>                      
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>                      
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>                      
+                       <th width=10% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='data' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.system}></td>
+                       <td align="center"><{$st.path}></td>
+                       <td align="center" ><{$st.pstate}></td>
+                       <td align="center" ><{$st.func}></td>                                             
+                       <td align="center" ><{$st.state}></td>
+                       <td align="center" ><{$st.moder}></td>                      
+                       <td align="center" >
+                          <a href="__APP__/rules/index/id/<{$st.id}>" >规则</a>
+                          <a href="__APP__/case/index/id/<{$st.id}>" >用例</a>
+                          <a href="__APP__/dcase/index/id/<{$st.id}>" >数据</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
+
               </div><!-- midd -->
            </div><!-- main -->

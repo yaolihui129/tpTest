@@ -2,7 +2,7 @@
 
 class SceneAction extends CommonAction {
     public function index(){
-         /* 接收参数*/
+        /* 接收参数*/
         $proid=$_GET['proid'];
     	$gp=$_SESSION['testgp'];
          /* 实例化模型*/
@@ -12,24 +12,28 @@ class SceneAction extends CommonAction {
         $this->assign("pros",$pros);
 
         /* 实例化模型*/
-        $s= D("scene");
+        $s = D("scene");
         $where=array("proid"=>"$proid");
-        $scenes=$s->where($where)->select();
-        $this->assign("scenes",$scenes);
-        $this->assign('w',$where);       
+        $scene=$s->where($where)->select();
+        $this->assign("scene",$scene);
+        $this->assign('w',$where);      
 
 	     $this->display();
     }
 
     public function add(){
-        /* 接收参数*/
+       /* 接收参数*/
         $proid=$_GET['proid'];
+       
         /* 实例化模型*/
-        $s= D("scene");
-        $where=array("proid"=>"$proid");
-        $scenes=$s->where($where)->select();
-        $this->assign("scenes",$scenes);
+        $m= D("scene");
+        $where=array("proid"=>$proid);
+        $pros=$m->where($where)->select();
+
+        $this->assign("data",$pros);
+        $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
+        $this->assign('c',$count);
         
         
         $this->display();
@@ -54,16 +58,17 @@ class SceneAction extends CommonAction {
     public function mod(){
         /* 接收参数*/
         $proid=$_GET['proid'];
-        $id=$_GET['id'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
-        $s= D("scene");
-        $where=array("proid"=>"$proid");
-        $scenes=$s->where($where)->select();
-        $this->assign("scenes",$scenes);
-        
-        $scene=$s ->find($id);
+        $m= D("scene");
+        $where=array("proid"=>$proid);
+        $pros=$m->where($where)->select();
+
+        $this->assign("data",$pros);
+        $scene=$m->find($id);
+        $this->assign('w',$where);       
         $this->assign("scene",$scene);
-        $this->assign('w',$where);
+       
         
         
         $this->display();

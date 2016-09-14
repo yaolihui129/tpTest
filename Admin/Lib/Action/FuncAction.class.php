@@ -61,21 +61,23 @@ class FuncAction extends CommonAction {
     }
     
     public function func(){
-        /* 接收参数*/
+         /* 接收参数*/
         $proid=$_GET['proid'];
-        $gp=$_SESSION['testgp'];
-        /* 实例化模型*/
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
         $m= D("program");
         $where=array("testgp"=>"$gp");
         $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
-        
+
         /* 实例化模型*/
-        $s = D("stage");
+        $s = D("prosys");
         $where=array("proid"=>"$proid");
-        $stages=$s->where($where)->select();
-        $this->assign("stages",$stages);
+        $data=$s->where($where)->select();
+        $this->assign("data",$data);
         $this->assign('w',$where);
+        
+        $this->display();
         
     }
     
@@ -83,19 +85,22 @@ class FuncAction extends CommonAction {
     public function range(){
         /* 接收参数*/
         $proid=$_GET['proid'];
-        $gp=$_SESSION['testgp'];
-        /* 实例化模型*/
+    	$gp=$_SESSION['testgp'];
+         /* 实例化模型*/
         $m= D("program");
         $where=array("testgp"=>"$gp");
         $pros=$m->where($where)->select();
         $this->assign("pros",$pros);
-        
+
         /* 实例化模型*/
-        $s = D("stage");
+        $s = D("func");
+        $where=array("fproid"=>"$proid");
+        $data=$s->where($where)->select();
+        $this->assign("data",$data);
         $where=array("proid"=>"$proid");
-        $stages=$s->where($where)->select();
-        $this->assign("stages",$stages);
         $this->assign('w',$where);
+        
+        $this->display();
         
     }
 
