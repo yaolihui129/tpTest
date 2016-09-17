@@ -9,7 +9,7 @@ class LoginAction extends Action {
     
     public function login(){
         $user = D('user')
-        ->field("id,username,realname,usergp")
+        ->field("id,username,realname,usergp,filename")
         ->where(array('username'=>$_POST['username'],'password'=>md5($_POST['password'])))
         ->find();
         if ($user){
@@ -17,6 +17,7 @@ class LoginAction extends Action {
             $_SESSION=$user;
             $_SESSION['isLogin']=1;
             $_SESSION['testgp']=$user['usergp'];
+            $_SESSION['filename']=$user['filename'];
             $this->redirect('Index/index');
         }else{
             // p($user);

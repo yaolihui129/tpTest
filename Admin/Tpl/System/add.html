@@ -29,18 +29,12 @@
                      </tr>
                       <tr>
                          <td>产品</td>
-                         <td ><input type="text" name="prodid" readonly= "true "  bgcolor="#ccc" value="<{$w.prodid}>"  class="input80"/></td>
+                         <td ><{$prod}></td>
                      </tr>
                      <tr>
                          <td>状态</td>
                          <td>
-                             <select name="state">
-                                 <option value="正常">正常</option>
-                                 <option value="待确认">待确认</option>
-                                 <option value="已搁置">已搁置</option>
-                                 <option value="作废">作废</option>
-                             </select>
-                         <!--  <input type="text" name="state" value="正常"  class="input300"/>-->
+                             <{$state}>
                          </td>
                      </tr>
                      <tr>

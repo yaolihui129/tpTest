@@ -39,14 +39,8 @@
 
                      <tr>
                          <td>状态</td>
-                         <td>
-                             <select name="state">
-                                 <option value="正常" <?php echo $sys['state']=='正常'?'selected=selected':null;?>  >正常</option>
-                                 <option value="待确认" <?php echo $sys['state']=='待确认'?'selected=selected':null;?>  >待确认</option>
-                                 <option value="已搁置" <?php echo $sys['state']=='已搁置'?'selected=selected':null;?>  >已搁置</option>
-                                 <option value="作废" <?php echo $sys['state']=='作废'?'selected=selected':null;?>  >作废</option>
-
-                             </select>
+                         <td>                            
+                             <{$state}>
 
                          </td>
                      </tr>

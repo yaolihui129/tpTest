@@ -23,31 +23,16 @@
                          <td>
                              <input type="text" name="proid" value="<{$p.proid}>"  class="input100"/>
                              &nbsp;
-                             <select name="prodid">
-                                 <option value="简要">简要</option>
-                                 <option value="普通">普通</option>
-                             </select>
-                                                                      分组：
-                             <select name="testgp">
-                                 <option value="C"  <?php echo $_SESSION['testgp']=='C'?'selected=selected':null;?>  >C端</option>
-                                 <option value="B"  <?php echo $_SESSION['testgp']=='B'?'selected=selected':null;?>  >B端</option>
-                                 <option value="OP"  <?php echo $_SESSION['testgp']=='OP'?'selected=selected':null;?>  >OP</option>
-                                 <option value="Auto"  <?php echo $_SESSION['testgp']=='Auto'?'selected=selected':null;?>  >自动化</option>
-                             </select>
+                             <{$selectptype}>
+                                                                     
                          </td>
                      </tr>
                      <tr>
                          <td>项目：</td>
                          <td>
                             <input type="text" name="program" value="" class="input200"/>
-                            &nbsp;
-                            <select name="state">
-                                 <option value="进行中">进行中</option>
-                                 <option value="未开始">未开始</option>
-                                 <option value="已完成">已完成</option>
-                                 <option value="已搁置">已搁置</option>
-                                 <option value="已取消">已取消</option>
-                             </select>
+                            &nbsp;                            
+                             <{$select}>
                          </td>
                      </tr>
                      <tr>
@@ -58,14 +43,18 @@
                          </td>
                      </tr>
                      <tr>
+                         <td>所属产品：</td>
+                         <td>
+                            <{$prod}>
+                                                                  分组：                             
+                            <{$selectgp}> 
+                         </td>
+                     </tr>
+                     <tr>
                          <td>负责人：</td>
                          <td>
                              <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
-                              &nbsp;&nbsp;&nbsp; 所属产品：&nbsp;
-                             <select name="prodid">
-                                 <option value="1">惠买车</option>
-                                 <option value="2">自动化</option>
-                             </select>
+                                                                     
                          </td>
                      </tr>
 

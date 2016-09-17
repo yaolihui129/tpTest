@@ -30,37 +30,20 @@
                          <td><{$p.proid}>：<{$p.program}></td>
                      </tr>
                      <tr>
-                         <td>产品：</td>
+                         <td>PM：</td>
                          <td><input type="text" name="pm" value="<{$p.pm}>" class="input200"/></td>
                      </tr>
                      <tr>
                           <td>类型：</td>
-                          <td>
-                             <input type='radio' name='reType' value='需求新增' <?php echo $p['reType']=='需求新增'?'checked=”checked”':null;?> />需求新增
-                             <input type='radio' name='reType' value='需求变更' <?php echo $p['reType']=='需求变更'?'checked=”checked”':null;?> />需求变更
-                             <input type='radio' name='reType' value='系统BUG' <?php echo $p['reType']=='系统BUG'?'checked=”checked”':null;?> />系统BUG
-                         </td>
+                          <td><{$reType}><{$reLevel}></td>                        
                      </tr>
                      <tr>
                          <td>上线：</td>
                          <td><{$online}></td>
                      </tr>
-
-                     <tr>
-                         <td> 级别：</td>
-                         <td>
-                             <input type='radio' name='reLevel' value='紧急需求' <?php echo $p['reLevel']=='紧急需求'?'checked=”checked”':null;?> />紧急需求
-                             <input type='radio' name='reLevel' value='一般需求' <?php echo $p['reLevel']=='一般需求'?'checked=”checked”':null;?> />一般需求
-
-                         </td>
-                     </tr>
                      <tr>
                          <td>简介：</td>
-                         <td>
-                            <{$jianjie}>
-                            <!-- <textarea name="profile" rows="10" cols="70"><{$p.profile}></textarea> -->
-
-                         </td>
+                         <td><{$jianjie}></td>
                      </tr>
                      <tr>
                          <td></td>

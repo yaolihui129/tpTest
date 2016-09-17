@@ -2,21 +2,27 @@
 
 class ProsysAction extends CommonAction {
     public function index(){
-        /* 接收参数*/
+         /* 接收参数*/
         $proid=$_GET['proid'];
-    	$gp=$_SESSION['testgp'];
          /* 实例化模型*/
-        $m= D("program");
-        $where=array("testgp"=>"$gp");
-        $pros=$m->where($where)->select();
-        $this->assign("pros",$pros);
-
-        /* 实例化模型*/
-        $s = D("stage");
+        $s = D("prosys");
         $where=array("proid"=>"$proid");
-        $stages=$s->where($where)->select();
-        $this->assign("stages",$stages);
+        $data=$s->where($where)->select();
+        $this->assign("data",$data);
         $this->assign('w',$where);
+        
+        /* 实例化模型*/
+        $m= D("program");
+        $p=$m->find($proid);
+        $prodid=$p['proid'];
+        /* 实例化模型*/
+        $m=M('system');
+        /*查询数据 */
+        $where=array(prodid=>$prodid);
+        $syses=$m->where($where)->select();
+        /*输出数据 */
+        $this->assign('syses',$syses);
+        
         
 
         //获取系统关联数据

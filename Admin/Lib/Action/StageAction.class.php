@@ -36,6 +36,8 @@ class StageAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
         $this->assign('c',$count);
+        $this -> assign("state", formselect("未开始","state","prost"));
+        $this -> assign("document", formselect("无文档","document","document"));
         $this->assign("startDate",PublicAction::date("start",$start));
         $this->assign("endDate",PublicAction::date("end",$end));
 
@@ -76,6 +78,8 @@ class StageAction extends CommonAction {
         $stage=$m->find($id);
         $this->assign("stage",$stage);
         $this->assign('w',$where);
+        $this -> assign("state", formselect($stage['state'],"state","prost"));
+        $this -> assign("document", formselect($stage['document'],"document","document"));
         $this->assign("startDate",PublicAction::date("start",$stage['start']));
         $this->assign("endDate",PublicAction::date("end",$stage['end']));
 

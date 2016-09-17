@@ -16,7 +16,7 @@
                     </volist>
               </div>
               <div class="midd" width="50%" align="center" >
-                 <form action="__URL__/insert" method="post" >
+                 <form action="__URL__/insert" method="post" enctype='multipart/form-data'>
                   <table border="0" width="600" align="left">
                      <tr>
                          <td> 员工号：</td>
@@ -28,32 +28,19 @@
                      </tr>
                      <tr>
                          <td>姓名：</td>
-                         <td><input type="text" name="realname" value="" class="input300""/></td>
+                         <td><input type="text" name="realname" value="" class="input300"/></td>
+                     </tr>
+                     <tr>
+                         <td>头像：</td>
+                         <td><input type="file" name="filename" class="input200"/></td>
                      </tr>
                      <tr>
                          <td>职位：</td>
-                         <td>
-                             <select name="position">
-                                 <option value="测试工程师">测试工程师</option>
-                                 <option value="初级测试工程师">初级测试工程师</option>
-                                 <option value="测试经理">测试经理</option>
-                                 <option value="高级测试经理">高级测试经理</option>
-                                 <option value="质量总监">质量总监</option>
-                             </select>
-                         </td>
-                         <!--  <td> <input type="text" name="position" value="测试工程师" class="input300"/></td>-->
+                         <td><{$position}></td>                        
                      </tr>
                      <tr>
                          <td> 分组：</td>
-                         <td>
-                            <select name="usergp">
-                                 <option value="C">C端</option>
-                                 <option value="B">C端</option>
-                                 <option value="OP">OP</option>
-                                 <option value="Auto">自动化</option>
-                             </select>
-                         </td>
-                         <!-- <td><input type="text" name="usergp" value="Auto" class="input300"/></td> -->
+                         <td><{$usergp}></td>                         
                      </tr>
                      <tr>
                          <td>部门：</td>

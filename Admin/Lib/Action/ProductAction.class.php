@@ -19,7 +19,9 @@ class ProductAction extends CommonAction {
         $arr=$m->select();
         /*输出数据 */
         $this->assign('data',$arr);
-
+        
+        $this -> assign("state", formselect());
+       
         $this->display();
     }
 
@@ -57,6 +59,7 @@ class ProductAction extends CommonAction {
         $prod=$m->find($id);
         /*输出数据 */
         $this->assign('prod',$prod);
+        $this -> assign("state", formselect($prod['state']));
 
         $this->display();
     }

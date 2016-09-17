@@ -30,27 +30,11 @@
                      </tr>
                      <tr>
                          <td>状态</td>
-                         <td>
-                             <select name="state">
-                                 <option value="进行中" <?php echo $stage['state']=='进行中'?'selected=selected':null;?>  >进行中</option>
-                                 <option value="未开始" <?php echo $stage['state']=='未开始'?'selected=selected':null;?>  >未开始</option>
-                                 <option value="已完成" <?php echo $stage['state']=='已完成'?'selected=selected':null;?>  >已完成</option>
-                                 <option value="已搁置" <?php echo $stage['state']=='已搁置'?'selected=selected':null;?>  >已搁置</option>
-                                 <option value="已取消" <?php echo $stage['state']=='已取消'?'selected=selected':null;?>  >已取消</option>
-                             </select>
-                         </td>
+                         <td><{$state}></td>                            
                      </tr>
                       <tr>
                          <td>文档</td>
-                         <td>
-                           <select name="document">
-                                 <option value="1" <?php echo $stage['document']==1?'selected=selected':null;?>  >无文档</option>
-                                 <option value="2" <?php echo $stage['document']==2?'selected=selected':null;?>  >测试计划</option>
-                                 <option value="3" <?php echo $stage['document']==3?'selected=selected':null;?>  >测试用例</option>
-                                 <option value="4 " <?php echo $stage['document']==4?'selected=selected':null;?>  >BUG分析报告</option>
-                                 <option value="5" <?php echo $stage['document']==5?'selected=selected':null;?>  >测试综合报告</option>
-                           </select> 
-                        </td>
+                         <td><{$document}></td>                           
                      </tr> 
                       <tr>
                          <td>开始</td>

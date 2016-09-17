@@ -33,6 +33,7 @@ class SceneAction extends CommonAction {
         $this->assign("data",$pros);
         $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
+        $this -> assign("state", formselect());
         $this->assign('c',$count);
         
         
@@ -66,7 +67,8 @@ class SceneAction extends CommonAction {
 
         $this->assign("data",$pros);
         $scene=$m->find($id);
-        $this->assign('w',$where);       
+        $this->assign('w',$where); 
+        $this -> assign("state", formselect($scene['state']));
         $this->assign("scene",$scene);
        
         

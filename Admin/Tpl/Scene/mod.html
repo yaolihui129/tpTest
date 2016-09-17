@@ -24,38 +24,31 @@
                          <td> 顺序：</td>
                          <td>
                            <input type="text" name="sn" value="<{$scene.sn}>"  class="input80"/>
-                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/>
+                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input100"/>
                                                                  级别
-                          <input type="text" name="level" value="<{$scene.level}>"  class="input80"/>                             
+                          <input type="text" name="level" value="<{$scene.level}>"  class="input100"/>                             
                          </td>
                      </tr>
                      <tr>
                          <td>角色</td>
-                         <td><input type="text" name="swho" value="<{$scene.swho}>"  class="input200"/></td>
+                         <td><input type="text" name="swho" value="<{$scene.swho}>"  class="input300"/></td>
                      </tr>
                      <tr>
                          <td>时间</td>
-                         <td><input type="text" name="swhen" value="<{$scene.swhen}>"  class="input200"/></td>
+                         <td><input type="text" name="swhen" value="<{$scene.swhen}>"  class="input300"/></td>
                      </tr>
                      <tr>
                          <td>场景</td>
                          <td><input type="text" name="scene" value="<{$scene.scene}>"  class="input300"/></td>
-                     </tr>                    
-                     <tr>
-                         <td>状态</td>
-                         <td>
-                            <select name="state">
-                                 <option value="正常" <?php echo $scene['state']=='正常'?'selected=selected':null;?>  >正常</option>
-                                 <option value="待确认" <?php echo $scene['state']=='待确认'?'selected=selected':null;?>  >待确认</option>
-                                 <option value="已搁置" <?php echo $scene['state']=='已搁置'?'selected=selected':null;?>  >已搁置</option>
-                                 <option value="作废" <?php echo $scene['state']=='作废'?'selected=selected':null;?>  >作废</option>
-                             </select>                        
-                         </td>
-                     </tr>                    
+                     </tr>                                                            
                       <tr>
                          <td>流程</td>
                          <td><input type="text" name="flow" value="<{$scene.flow}>"  class="input300"/></td>
-                     </tr>                              
+                     </tr>  
+                     <tr>
+                         <td>状态</td>
+                         <td><{$state}></td>                           
+                     </tr>                             
                     <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交">

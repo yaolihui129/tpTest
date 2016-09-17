@@ -8,12 +8,7 @@
                                           测试项目
                 <span style="float:right;">
                                               分组：
-                  <select name="tgp" onchanged="__URL__/changed/testgp/$tgp">
-                    <option value="C"  <?php echo $_SESSION['testgp']=='C'?'selected=selected':null;?> >C端</option>
-                    <option value="B"  <?php echo $_SESSION['testgp']=='B'?'selected=selected':null;?> >B端</option>
-                    <option value="OP"  <?php echo $_SESSION['testgp']=='OP'?'selected=selected':null;?> >OP</option>
-                    <option value="Auto"  <?php echo $_SESSION['testgp']=='Auto'?'selected=selected':null;?> >自动化</option>
-                  </select>
+                  <{$selectgp}>
                 </span>
               </div>
               <div class="midd" width="60%">
@@ -36,7 +31,7 @@
                     <tr>
                        <td align="center"><{$pro.proid}></td>
                        <td>
-                         <a href="__APP__/Stage/index/proid/<{$pro.id}>"><{$pro.program}>（<{$pro.type}>）</a>
+                         <a href="__APP__/Stage/index/proid/<{$pro.id}>"><{$pro.program}>（<{$pro.ptype}>）</a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__URL__/details/id/<{$pro.id}>">详情</a>
                            <a href="__APP__/Risk/index/proid/<{$pro.id}>">风险</a>
@@ -49,7 +44,7 @@
                          </span>
                        </td>
                        <td align="center">
-                           <a href="#"><{$pro.state}></a>
+                           <a href="#"><{$pro.prost}></a>
                            </td>
                        <td align="center"><{$pro.start}></td>
                        <td align="center"><{$pro.end}></td>

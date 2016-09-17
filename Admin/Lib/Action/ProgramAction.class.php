@@ -7,8 +7,11 @@ class ProgramAction extends CommonAction {
         /* 实例化模型*/
     	 $m=M('program');   	
     	 $arr=$m->where(array("testgp"=>"$testgp"))->select();
+    	 
+    	// dump($testgp);
 
 	     $this->assign('Pros',$arr);
+	     $this -> assign("selectgp", formselect($testgp,"testgp","testgp"));
 	     $this->display();
     }
 
@@ -32,6 +35,10 @@ class ProgramAction extends CommonAction {
         $end=date("Y-m-d",time()+7*24*3600);
         $arr=array("proid"=>"$testgp$d".".".($tol+1),"manager"=>"$manager","prodId"=>"1","state"=>"进行中","type"=>"简要","testgp"=>"$testgp");
         $this->assign("p",$arr);
+        $this -> assign("prod", prodselect());
+        $this -> assign("selectptype", formselect("简要","ptype","ptype"));
+        $this -> assign("selectgp", formselect($testgp,"testgp","testgp"));
+        $this -> assign("select", formselect("进行中","prost","prost"));
         $this->assign("startDate",PublicAction::date("start",$start));
         $this->assign("endDate",PublicAction::date("end",$end));
        
@@ -69,6 +76,9 @@ class ProgramAction extends CommonAction {
 
         $arr=$m->find($id);
         $this->assign('p',$arr);
+        $this -> assign("selectptype", formselect($arr['ptype'],"ptype","ptype"));
+        $this -> assign("selectgp", formselect($arr['testgp'],"testgp","testgp"));
+        $this -> assign("select", formselect($arr['prost'],"prost","prost"));
         $this->assign("startDate",PublicAction::date("start",$arr['start']));
         $this->assign("endDate",PublicAction::date("end",$arr['end']));
 
@@ -101,8 +111,11 @@ class ProgramAction extends CommonAction {
         //获取要编辑项目
         $arr=$m->find($id);
         $this->assign('p',$arr);
+        $this -> assign("reType", formselect($arr['reType'],"reType","reType"));
+        $this -> assign("reLevel", formselect($arr['reLevel'],"reLevel","reLevel"));
         $this->assign("online",PublicAction::date("expOnline",$arr['expOnline']));
         $this->assign("jianjie",PublicAction::editor("profile",$arr['profile']));
+        
         $this->display() ;
     }
 

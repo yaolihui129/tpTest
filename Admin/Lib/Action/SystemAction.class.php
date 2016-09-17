@@ -35,8 +35,10 @@ class SystemAction extends CommonAction {
         $m=M('system');
         /*查询数据 */
         $where=array(prodid=>$prodid);
-        $syses=$m->where($where)->select();
+        $syses=$m->where($where)->select($prodid);
         /*输出数据 */
+        $this -> assign("prod", prodselect());
+        $this -> assign("state", formselect());
         $this->assign('data',$syses);
         $this->assign('w',$where);
 
@@ -75,6 +77,7 @@ class SystemAction extends CommonAction {
         $syses=$m->where($where)->select();
         /*输出数据 */
         $this->assign('data',$syses);
+       
         $this->assign('w',$where);
         //dump($syses);
 
@@ -84,7 +87,8 @@ class SystemAction extends CommonAction {
         $sys=$m->find($id);
         /*输出数据 */
         $this->assign('sys',$sys);
-
+        $this -> assign("prod", prodselect($sys['prodid']));
+        $this -> assign("state", formselect($sys['state']));
         $this->display();
     }
 

@@ -31,26 +31,15 @@
                          <td> 编号：</td>
                          <td>
                              <input type="text" name="proid" value="<{$p.proid}>"  class="input100"/>
-                                                                     分组：
-                             <select name="usergp">
-                                 <option value="C"  <?php echo $p['testgp']=='C'?'selected=selected':null;?> >C端</option>
-                                 <option value="B"  <?php echo $p['testgp']=='B'?'selected=selected':null;?> >C端</option>
-                                 <option value="OP"  <?php echo $p['testgp']=='OP'?'selected=selected':null;?> >OP</option>
-                                 <option value="Auto"  <?php echo $p['testgp']=='Auto'?'selected=selected':null;?> >自动化</option>
-                             </select>
+                              &nbsp;
+                             <{$selectptype}>                                                                   
                              </td>
                      </tr>
                      <tr>
                          <td>项目：</td>
                          <td>
-                         <input type="text" name="program" value="<{$p.program}>" class="input200"/>
-                         <select name="state">
-                                 <option value="进行中" <?php echo $p['state']=='进行中'?'selected=selected':null;?>  >进行中</option>
-                                 <option value="未开始" <?php echo $p['state']=='未开始'?'selected=selected':null;?>  >未开始</option>
-                                 <option value="已完成" <?php echo $p['state']=='已完成'?'selected=selected':null;?>  >已完成</option>
-                                 <option value="已搁置" <?php echo $p['state']=='已搁置'?'selected=selected':null;?>  >已搁置</option>
-                                 <option value="已取消" <?php echo $p['state']=='已取消'?'selected=selected':null;?>  >已取消</option>
-                             </select>
+                         <input type="text" name="program" value="<{$p.program}>" class="input200"/>                         
+                          <{$select}>
                          </td>
                      </tr>
                      <tr>
@@ -60,13 +49,16 @@
                             - &nbsp;<{$endDate}>
                          </td>
                      </tr>
+                      <tr>
+                         <td>分组：  </td>
+                         <td>                                                                                             
+                            <{$selectgp}> 
+                         </td>
+                     </tr>
                      <tr>
                          <td>负责人：</td>
                          <td>
-                             <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
-                                                                    类型：
-                             <input type='radio' name='type' value='简要' <?php echo $p['type']=='简要'?'checked=”checked”':null;?> />简要
-                             <input type='radio' name='type' value='常规' <?php echo $p['type']=='常规'?'checked=”checked”':null;?> />常规
+                             <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>                                                                  
                          </td>
                      </tr>
                      <tr>

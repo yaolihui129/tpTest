@@ -17,13 +17,13 @@
                     </volist>
               </div>
               <div class="midd">
-                <form action="__URL__/update" method="post" >
+                <form action="__URL__/update" method="post" enctype='multipart/form-data'>
                   <input type="hidden" name="id" value="<{$user.id}>" />
                   <table border="0" width="500" align="left">
                       <tr>
                          <td> 更新：</td>
                          <td><{$user.moder}>更新于:<{$user.updateTime}></td>
-                     </tr>
+                     </tr>                                        
                      <tr>
                          <td> 员工号：</td>
                          <td><input type="text" name="userNo" value="<{$user.userNo}>" class="input300"/></td>
@@ -36,25 +36,17 @@
                          <td>姓名：</td>
                          <td><input type="text" name="realname" value="<{$user.realname}>" class="input300"/></td>
                      </tr>
+                      <tr>
+                         <td>头像：</td>
+                         <td><input type="file" name="filename" class="input200"/></td>
+                     </tr>
                      <tr>
-                         <td> 分组：</td>
-                         <td>
-                         <select name="usergp">
-                                 <option value="C"  <?php echo $user['usergp']=='C'?'selected=selected':null;?> >C端</option>
-                                 <option value="B"  <?php echo $user['usergp']=='B'?'selected=selected':null;?> >C端</option>
-                                 <option value="OP"  <?php echo $user['usergp']=='OP'?'selected=selected':null;?> >OP</option>
-                                 <option value="Auto"  <?php echo $user['usergp']=='Auto'?'selected=selected':null;?> >自动化</option>
-                          </select>
-                           <!--  <select name="usergp">
-                              <foreach name="dgps" item="vo">
-                                <option value="<{$vo.v}>" > <{$vo.v}></option>
-                              </foreach>
-                          </select>-->
-
-
-
-
-                          </td>
+                         <td></td>
+                         <td><img alt="头像" src="__ROOT__/Upload/<{$user.filename}>" height="200" width="160"></td>
+                     </tr>
+                     <tr>
+                         <td>职位：</td>
+                         <td><{$position}></td>                        
                      </tr>
                       <tr>
                          <td>状态：</td>
@@ -64,17 +56,8 @@
                          </td>
                      </tr>
                      <tr>
-                         <td>职位：</td>
-                          <td>
-                            <select name="position">
-                                 <option value="测试工程师"  <?php echo $user['position']=='测试工程师'?'selected=selected':null;?> >测试工程师</option>
-                                 <option value="初级测试工程师" <?php echo $user['position']=="初级测试工程师" ? 'selected=selected':null;?> >初级测试工程师</option>
-                                 <option value="测试经理" <?php echo $user['position']=="测试经理" ? 'selected=selected':null;?> >测试经理</option>
-                                 <option value="高级测试经理" <?php echo $user['position']=="高级测试经理" ? 'selected=selected':null;?> >高级测试经理</option>
-                                 <option value="质量总监" <?php echo $user['position']=="质量总监" ? 'selected=selected':null;?> >质量总监</option>
-                             </select>
-                         </td>
-
+                         <td> 分组：</td>
+                          <td><{$usergp}></td>    
                      </tr>
                      <tr>
                          <td>邮箱：</td>

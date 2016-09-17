@@ -2,21 +2,6 @@
 /*
  * 功能函数库
  */
-//测试函数
-function test(){
-    return $_SESSION['realname'];
-}
-
-function mstate($type){
-    $m=M('dict');
-    $where=array("type"=>"$type");
-    $data=$m->where($where)->select();
-    foreach ($data as $d){
-        $str.= "<option value='".$d['v']."'".">".$d['v']."</option>";
-    }
-    $s ="<select name=".$type.">".$str."</select>";
-    return $str;
-}
 
 /**
  * 状态选择控件
@@ -24,12 +9,91 @@ function mstate($type){
  * @param $name 控件name
  * @param $value 选中值
  */
- function state($name,$value="正常"){
-    $str.='<select name="'.$name.'">
-	           <option value="正常" <?php echo"'.$value.'"=="正常"?"selected=selected":"";?> >正常</option>
-	           <option value="待确认" "'.$value.'"=="待确认"?"selected=selected":""; >待确认</option>
-	           <option value="已搁置" "'.$value.'"=="已搁置"?"selected=selected":""; >已搁置</option>
-	           <option value="作废"  "'.$value.'"=="作废"?"selected=selected":""; >作废</option>
-	        </select>' ;
-    return $str;
+
+function formselect($value="正常",$name="state",$type="state") {
+    $html = '<select name="'.$name.'" class="inputselect">';
+    $m =M('dict');
+    $where=array("type"=>$type,"state"=>"正常");
+    //获取所有分类
+    $cats = $m->where($where)->select();
+
+
+    foreach($cats as $v) {
+        $selected = ($v['v']==$value) ? "selected" : "";
+        $html .= '<option '.$selected.' value="'.$v['v'].'">'.$v['v'].'</option>';
+    }
+
+    $html .='<select>';
+
+    return $html;
 }
+/**
+ * 产品选择
+ *
+ * @param $value 选中值
+ */
+function prodselect($value=1) {
+    $html = '<select name="prodid" class="inputselect">';
+    $m =M('product');
+    //$where=array("state"=>"正常");
+    //获取所有分类
+    $cats = $m->select();
+
+
+    foreach($cats as $v) {
+        $selected = ($v['id']==$value) ? "selected" : "";
+        $html .= '<option '.$selected.' value="'.$v['id'].'">'.$v['short'].'</option>';
+    }
+
+    $html .='<select>';
+
+    return $html;
+}
+
+
+/**
+ * 项目选择
+ *
+ * @param $value 选中值
+ */
+function proselect($value=1) {
+    $html = '<select name="prodid" class="inputselect">';
+    $m =M('program');
+    //$where=array("state"=>"正常");
+    //获取所有分类
+    $cats = $m->select();
+
+
+    foreach($cats as $v) {
+        $selected = ($v['id']==$value) ? "selected" : "";
+        $html .= '<option '.$selected.' value="'.$v['id'].'">'.$v['proid'].'</option>';
+    }
+
+    $html .='<select>';
+
+    return $html;
+}
+
+/**
+ * 系统选择
+ *
+ * @param $value 选中值
+ */
+function sysselect($value=1) {
+    $html = '<select name="prodid" class="inputselect">';
+    $m =M('system');
+    //$where=array("state"=>"正常");
+    //获取所有分类
+    $cats = $m->select();
+
+
+    foreach($cats as $v) {
+        $selected = ($v['id']==$value) ? "selected" : "";
+        $html .= '<option '.$selected.' value="'.$v['id'].'">'.$v['sysid'].'</option>';
+    }
+
+    $html .='<select>';
+
+    return $html;
+}
+

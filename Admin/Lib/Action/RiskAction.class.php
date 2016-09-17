@@ -34,6 +34,8 @@ class RiskAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign('w',$where);
         $this->assign('c',$count);
+        $this -> assign("state", formselect("打开","state","rstate"));
+        $this -> assign("level", formselect("C","level","risklevel"));
         $this->assign("tamethod",PublicAction::editor("amethod","暂无方案"));
         $this->assign("tremaks",PublicAction::editor("remaks",""));
         
@@ -72,6 +74,8 @@ class RiskAction extends CommonAction {
         $m=M('risk');
         $risk=$m->find($id);
         $this->assign("risk",$risk);
+        $this -> assign("level", formselect($risk['level'],"level","risklevel"));
+        $this -> assign("state", formselect($risk['state'],"state","rstate"));
         $this->assign("tamethod",PublicAction::editor("amethod",$risk['amethod']));
         $this->assign("tremaks",PublicAction::editor("remaks",$risk['remaks']));
        

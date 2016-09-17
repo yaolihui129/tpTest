@@ -10,6 +10,47 @@
         <div class="content">
            <div class="main">
               <div class="top">项目涉及系统</div>
+              <div class="left" width="35%">
+                   <table border="1" width="35%" align="center">
+                     <tr>
+                       <th width=7% align="center" bgcolor="#ccc">系统</th>                                             
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>                       
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>                      
+                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='data' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.sysid}></td>                       
+                       <td align="center" ><a href="#"><{$st.state}></a></td>                                             
+                       <td align="center" ><{$st.moder}></td>                      
+                       <td align="center" >                         
+                          <a href="__APP__/dcase/index/id/<{$st.id}>" >移除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
+
+              </div>
+              
+              <div class="midd" width="35%">
+                   <table border="1" width="35%" align="center">
+                     <tr>
+                       <th width=7% align="center" bgcolor="#ccc">系统</th>                                             
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>                       
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>                      
+                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='data' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.sysid}></td>                       
+                       <td align="center" ><a href="#"><{$st.state}></a></td>                                             
+                       <td align="center" ><{$st.moder}></td>                      
+                       <td align="center" >                         
+                          <a href="__APP__/dcase/index/id/<{$st.id}>" >移除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
 
               </div><!-- midd -->
            </div><!-- main -->

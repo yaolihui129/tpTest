@@ -10,20 +10,12 @@ class UserAction extends CommonAction {
     }
 
     public  function add(){
+        $testgp=$_SESSION['testgp'];
         $m=M('user');
         $arr=$m->select();
         $this->assign('data',$arr);
-
-        $d=M('dict');
-        /* 取分组字典 */
-        $where=array("type"=>"testgp","state"=>"正常");
-        $dgps=$d->field('k,v',false)->where($where)->select();
-        $this->assign('dgps',$dgps);
-
-        /* 取职位字典 */
-        $where=array("type"=>"position","state"=>"正常");
-        $posies=$d->field('k,v',false)->where($where)->select();
-        $this->assign('posies',$posies);
+        $this -> assign("usergp", formselect($testgp,"usergp","testgp"));
+        $this -> assign("position", formselect("测试工程师","position","position"));
 
         $this->display();
 
@@ -36,12 +28,30 @@ class UserAction extends CommonAction {
         $_POST['password']=md5("123456");
         $_POST['state']="在职";
         $_POST['email']=$_POST['username']."@yiche.com";
-        //$_POST['adder']=$_SESSION['realname'];
-       // $_POST['moder']=$_SESSION['realname'];
-       // $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['adder']=$_SESSION['realname'];
+        $_POST['moder']=$_SESSION['realname'];
+        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
+        
+        import('ORG.Net.UploadFile');
+        $upload = new UploadFile();// 实例化上传类
+        $upload->maxSize  = 3145728 ;// 设置附件上传大小
+        $upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->savePath =  './Upload/';// 设置附件上传目录
+        $upload->thumb = true;//开启缩略图
+        $upload->thumbPrefix = 'tb'; //设置前缀
+//         $upload->thumbPath =  './Upload/tb/';// 设置缩略图上传目录
+        
+        if(!$upload->upload()) {// 上传错误提示错误信息
+            $this->error($upload->getErrorMsg());
+        }else{// 上传成功 获取上传文件信息
+            $info =  $upload->getUploadFileInfo();
+        }
+        $m->filename=$info[0]['savename'];
+        
+        
         $lastId=$m->add();
         if($lastId){
            $this->success("添加成功");
@@ -62,17 +72,9 @@ class UserAction extends CommonAction {
 
         $user=$m->find($id);
         $this->assign('user',$user);
-        /* 实例化模型*/
-        $d=M('dict');
-        /* 取分组字典 */
-        $where=array("type"=>"testgp","state"=>"正常");
-        $dgps=$d->field('k,v',false)->where($where)->select();
-        $this->assign('dgps',$dgps);
-
-        /* 取职位字典 */
-        $where=array("type"=>"position","state"=>"正常");
-        $posies=$d->field('k,v',false)->where($where)->select();
-        $this->assign('posies',$posies);
+        $this -> assign("usergp", formselect($user['usergp'],"usergp","testgp"));
+        $this -> assign("position", formselect($user['position'],"position","position"));
+        
 
         $this->display();
     }
@@ -84,6 +86,20 @@ class UserAction extends CommonAction {
 
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        
+        import('ORG.Net.UploadFile');
+        $upload = new UploadFile();// 实例化上传类
+        $upload->savePath =  './Upload/';// 设置附件上传目录
+        if(!$upload->upload()) {// 上传错误提示错误信息
+            $this->error($upload->getErrorMsg());
+        }else{// 上传成功 获取上传文件信息
+            $info =  $upload->getUploadFileInfo();
+        }
+        //$db->filename=$info[0]['savename'];
+        
+        $_POST['filename']=$info[0]['savename'];
+        
+        
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{

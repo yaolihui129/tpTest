@@ -23,38 +23,32 @@
                          <td> 顺序：</td>
                          <td>
                            <input type="text" name="sn" value="<{$c}>"  class="input80"/>
-                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/>
+                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input100"/>
                                                                  级别
-                          <input type="text" name="level" value="2"  class="input80"/>                             
+                          <input type="text" name="level" value="2"  class="input100"/>                             
                          </td>
                      </tr>
                      <tr>
                          <td>角色</td>
-                         <td><input type="text" name="swho" value=""  class="input200"/></td>
+                         <td><input type="text" name="swho" value=""  class="input300"/></td>
                      </tr>
                      <tr>
                          <td>时间</td>
-                         <td><input type="text" name="swhen" value="当下"  class="input200"/></td>
+                         <td><input type="text" name="swhen" value="当下"  class="input300"/></td>
                      </tr>
                      <tr>
                          <td>场景</td>
                          <td><input type="text" name="scene" value=""  class="input300"/></td>
-                     </tr>                    
-                     <tr>
-                         <td>状态</td>
-                         <td>
-                            <select name="state">
-                                 <option value="正常">正常</option>
-                                 <option value="待确认">待确认</option>
-                                 <option value="已搁置">已搁置</option>
-                                 <option value="作废">作废</option>
-                             </select>                        
-                         </td>
-                     </tr>                    
+                     </tr>                                                           
                       <tr>
                          <td>流程</td>
                          <td><input type="text" name="flow" value=""  class="input300"/></td>
-                     </tr>                              
+                     </tr>
+                     <tr>
+                         <td>状态</td>
+                         <td><{$state}></td>
+                            
+                     </tr>                               
                     <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交">
