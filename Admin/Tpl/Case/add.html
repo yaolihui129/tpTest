@@ -1,15 +1,19 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
-             >添加
-            <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
-            </span>
+              <a href="__APP__/Product">产品</a>
+              ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>             
+              ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
+              ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
+              ><a href="__URL__/index/funcid/<{$funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">用例</a>
+              >添加
+               <span style="float:right;margin-right:60px;">
+                 <a href="__URL__/index/funcid/<{$funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+               </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">用例添加</div>
 
               </div><!-- midd -->
            </div><!-- main -->

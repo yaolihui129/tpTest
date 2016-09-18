@@ -2,26 +2,50 @@
 
 class FuncAction extends CommonAction {
     public function index(){
-        //获取路径
+         /* 接收参数*/
+        $prodid=$_GET['prodid'];
         $sysid=$_GET['sysid'];
-        $pathes= D("path")
-        ->order("sn")
-        ->where(array("sysid"=>"$sysid","state"=>"正常"))
-        ->select();
-        $this->assign("pathes",$pathes);
-
-        //获取功能
         $pathid=$_GET['pathid'];
-        $funcs= D("func")
-        ->order("sn")
-        ->where(array("pathid"=>"$pathid"))
-        ->select();
+        /* 实例化模型*/
+        $m=D('path');
+        $where=array("sysid"=>"$sysid","state"=>"正常");       
+        $data=$m->where($where)->order("sn")->select();
+        $this->assign("data",$data);
+
+        /* 实例化模型*/
+        $m= D("func");
+        $where=array("pathid"=>"$pathid");
+        $funcs=$m->where($where)->order("sn")->select();
         $this->assign("funcs",$funcs);
-	     $this->display();
+        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $this->assign("w",$where);
+        
+        
+	    $this->display();
     }
 
 
     public function add(){
+        
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        /* 实例化模型*/
+        $m= D("func");
+        $where=array("pathid"=>"$pathid");
+        $data=$m->where($where)->order("sn")->select();
+       // dump($data);
+        $this->assign("data",$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $this->assign("w",$where);
+        $this -> assign("state", formselect());
+        $this -> assign("fproid", proselect($proid,"fproid"));
+        
+        
         $this->display();
     }
 
@@ -43,8 +67,25 @@ class FuncAction extends CommonAction {
     }
 
     public function mod(){
-        $m=M('func');
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
         $id=$_GET['id'];
+        /* 实例化模型*/
+        $m= D("func");
+        $where=array("pathid"=>"$pathid");
+        $data=$m->where($where)->order("sn")->select();
+        $this->assign("data",$data);
+        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $this->assign("w",$where);
+        
+        
+        $func=$m->find($id);
+        $this->assign("func",$func);
+        $this -> assign("state", formselect($func['state']));
+        $this -> assign("fproid", proselect($func['fproid'],"fproid"));
+        
         $this->display();
     }
 

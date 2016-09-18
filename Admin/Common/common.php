@@ -56,12 +56,12 @@ function prodselect($value=1) {
  *
  * @param $value 选中值
  */
-function proselect($value=1) {
-    $html = '<select name="prodid" class="inputselect">';
+function proselect($value=1,$name=proid) {
+    $html = '<select name="'.$name.'" class="inputselect">';
     $m =M('program');
-    //$where=array("state"=>"正常");
+    $where=array("testgp"=>$_SESSION['testgp']);
     //获取所有分类
-    $cats = $m->select();
+    $cats = $m->where($where)->order("end desc")->select();
 
 
     foreach($cats as $v) {
