@@ -2,24 +2,23 @@
 
 class PathAction extends CommonAction {
     public function index(){
-
-        //系统数据
+        /* 接收参数*/
         $prodid=$_GET['prodid'];
-        $syses= D("system")
-        ->order("sysid")
-        ->where(array("prodid"=>"$prodid","state"=>"正常"))
-        ->select();
-        $this->assign("syses",$syses);
-        //路径数据
         $sysid=$_GET['sysid'];
-        $pathes= D("path")
-        ->order("sn")
-        ->where(array("sysid"=>"$sysid","state"=>"正常"))
-        ->select();
+        /* 实例化模型*/       
+        $m=D('system');
+        $where=array("prodid"=>"$prodid","state"=>"正常");
+        $syses=$m->where($where)->order("sysno")->select();
+
+        $this->assign("data",$syses);
+         /* 实例化模型*/
+        $m=D('path');
+        $where=array("sysid"=>"$sysid");
+        $pathes= $m->where($where)->order("sn")->select();
+        $where=array("prodid"=>"$prodid","sysid"=>"$sysid");
+        
         $this->assign("pathes",$pathes);
-
-
-
+        $this->assign("w",$where);
 
 	     $this->display();
     }
@@ -27,6 +26,22 @@ class PathAction extends CommonAction {
 
 
     public function add(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $sysid=$_GET['sysid'];
+        /* 实例化模型*/
+        $m=D('path');
+        /* 查询传递数据*/
+        $where=array("sysid"=>"$sysid");
+        $data= $m->where($where)->order("sn")->select();
+        $this->assign("data",$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);        
+        $where=array("prodid"=>"$prodid","sysid"=>"$sysid");
+        $this->assign("w",$where);
+        $this -> assign("state", formselect());
+        
+        
         $this->display();
     }
 
@@ -48,8 +63,24 @@ class PathAction extends CommonAction {
     }
 
     public function mod(){
-        $m=M('path');
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $sysid=$_GET['sysid'];
         $id=$_GET['id'];
+        /* 实例化模型*/
+        $m=D('path');
+        $where=array("sysid"=>"$sysid");
+        $data= $m->where($where)->order("sn")->select();
+        $where=array("prodid"=>"$prodid","sysid"=>"$sysid");
+        $this->assign("data",$data);
+        $this->assign("w",$where);
+        //编辑内容
+        $path=$m->find($id);
+        $this->assign("path",$path);
+        $this -> assign("state", formselect($path['state']));
+        
+        
+       
         $this->display();
     }
 

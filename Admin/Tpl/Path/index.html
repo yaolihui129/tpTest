@@ -1,15 +1,63 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
-             >添加
-            <span style="margin-left:60;">
-            <a href="__URL__"> 返回</a>
+             <a href="__APP__/Product">产品</a>
+             ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>             
+             >路径
+            <span style="float:right;margin-right:60px;">
+            <a href="__APP__/System/index/prodid/<{$w.prodid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">路径管理</div>
+              <div class="left" width="30%">
+                    <h1>系统</h1>
+                    <volist name='data' id='vo' empty="没有数据">
+                      <ur>
+                         <li><a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>""><{$vo.sysno}>:<{$vo.state}></a></li>
+                       </ur>
+                    </volist>
+              </div>
+              <div class="midd" width="60%">
+                   <table border="1" width="80%" align="center">
+                      <h1>路径</h1>
+                     <tr>
+                       <th width=5% align="center" bgcolor="#ccc">ID</th>
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=30% align="left"  bgcolor="#ccc">路径
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"  >添加 </a>
+                          </span>
+                       </th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">维护</th>
+                       <th width=10% align="center" bgcolor="#ccc">更新时间</th>
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='pathes' id='path' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$path.id}></td>
+                       <td align="center" ><{$path.sn}></td>
+                       <td >
+                         <a href="__APP__/Path/index/prodid/<{$sys.prodid}>/sysid/<{$sys.id}>" >
+                            <{$path.path}>
+                         </a>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>" >功能点</a>                           
+                           <a href="__URL__/mod/id/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>">修改</a>
+                         </span>
+                       </td>
+                       <td align="center" ><{$path.state}></td>
+                       <td align="center" ><{$path.moder}></td>
+                       <td align="center" ><{$path.updateTime}></td>
+                       <td align="center" >
+
+                          <a href="__URL__/del/id/<{$path.id}>" onclick="return confirm('你确定要删除路径：<{$path.path}>？')">删除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
 
               </div><!-- midd -->
            </div><!-- main -->
