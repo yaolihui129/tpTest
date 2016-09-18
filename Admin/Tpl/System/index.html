@@ -11,7 +11,7 @@
            <div class="main">
               <div class="top">系统管理</div>
               <div class="left" width="30%">
-                    <h1> 测试产品</h1>
+                    <h1> 产品</h1>
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
                          <li><a href="__URL__/index/prodid/<{$vo.id}>""><{$vo.id}>-<{$vo.short}>:<{$vo.state}></a></li>
@@ -35,7 +35,7 @@
                      </tr>
                      <volist name='syses' id='sys' empty="没有数据">
                     <tr>
-                       <td align="center" ><{$sys.sysid}></td>
+                       <td align="center" ><{$sys.sysno}></td>
                        <td >
                          <a href="__APP__/Path/index/prodid/<{$sys.prodid}>/sysid/<{$sys.id}>" >
                             <{$sys.system}>

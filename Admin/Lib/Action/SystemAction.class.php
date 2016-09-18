@@ -35,9 +35,9 @@ class SystemAction extends CommonAction {
         $m=M('system');
         /*查询数据 */
         $where=array(prodid=>$prodid);
-        $syses=$m->where($where)->select($prodid);
+        $syses=$m->where($where)->select();
         /*输出数据 */
-        $this -> assign("prod", prodselect());
+        $this -> assign("prod", prodselect($prodid));
         $this -> assign("state", formselect());
         $this->assign('data',$syses);
         $this->assign('w',$where);
@@ -77,7 +77,7 @@ class SystemAction extends CommonAction {
         $syses=$m->where($where)->select();
         /*输出数据 */
         $this->assign('data',$syses);
-       
+
         $this->assign('w',$where);
         //dump($syses);
 
@@ -109,23 +109,22 @@ class SystemAction extends CommonAction {
     public function test(){
         /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+
 
         /* 实例化模型*/
         $m=M('system');
         /*查询数据 */
-        $where=array(prodid=>$prodid);
+        $where=array("prodid"=>$prodid);
         $syses=$m->where($where)->select();
-        /*输出数据 */
-        $this->assign('data',$syses);
-        $this->assign('w',$where);
-
-
-
-        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         $sys=$m->find($id);
         /*输出数据 */
+        $this->assign('data',$syses);
+        $where=array("prodid"=>$prodid,"proid"=>$proid);
+        $this->assign('w',$where);
         $this->assign('sys',$sys);
-
+//dump($where);
 
         $this->display();
     }

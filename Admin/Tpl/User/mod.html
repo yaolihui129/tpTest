@@ -23,7 +23,7 @@
                       <tr>
                          <td> 更新：</td>
                          <td><{$user.moder}>更新于:<{$user.updateTime}></td>
-                     </tr>                                        
+                     </tr>
                      <tr>
                          <td> 员工号：</td>
                          <td><input type="text" name="userNo" value="<{$user.userNo}>" class="input300"/></td>
@@ -36,6 +36,11 @@
                          <td>姓名：</td>
                          <td><input type="text" name="realname" value="<{$user.realname}>" class="input300"/></td>
                      </tr>
+                     <tr>
+                         <td>职位：</td>
+                         <td><{$position}>
+                                                                                分组：<{$usergp}></td>
+                     </tr>
                       <tr>
                          <td>头像：</td>
                          <td><input type="file" name="filename" class="input200"/></td>
@@ -44,20 +49,13 @@
                          <td></td>
                          <td><img alt="头像" src="__ROOT__/Upload/<{$user.filename}>" height="200" width="160"></td>
                      </tr>
-                     <tr>
-                         <td>职位：</td>
-                         <td><{$position}></td>                        
-                     </tr>
+
                       <tr>
                          <td>状态：</td>
                          <td>
                                                                      在职<input type='radio' name='state' value='在职' <?php echo $user['state']=='在职'?'checked=”checked”':null;?> />
                                                                      离职<input type='radio' name='state' value='离职' <?php echo $user['state']=='离职'?'checked=”checked”':null;?> />
                          </td>
-                     </tr>
-                     <tr>
-                         <td> 分组：</td>
-                          <td><{$usergp}></td>    
                      </tr>
                      <tr>
                          <td>邮箱：</td>

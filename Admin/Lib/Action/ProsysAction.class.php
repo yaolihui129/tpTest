@@ -11,11 +11,11 @@ class ProsysAction extends CommonAction {
         $data=$s->where($where)
         ->join('tp_system ON tp_prosys.sysid =tp_system.id')
         ->select();
-        //dump($data);
-         
+//         dump($data);
+
         $this->assign("data",$data);
-        $this->assign('w',$where);        
-        
+        $this->assign('w',$where);
+
         /* 实例化模型*/
         $m=M('system');
         /*查询数据 */
@@ -27,11 +27,11 @@ class ProsysAction extends CommonAction {
 
 	     $this->display();
     }
- 
+
 
     public function insert(){
         /* 接收参数*/
-        
+
         $m=D('prosys');
         $_GET['adder']=$_SESSION['realname'];
         $_GET['moder']=$_SESSION['realname'];
@@ -54,7 +54,7 @@ class ProsysAction extends CommonAction {
     public function del(){
         /* 接收参数*/
         $id = !empty($_POST['prosysid']) ? $_POST['prosysid'] : $_GET['prosysid'];
-        
+
         /* 实例化模型*/
         $m=M('prosys');
 
