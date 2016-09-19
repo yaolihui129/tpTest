@@ -2,16 +2,49 @@
 
 class ElementAction extends CommonAction {
     public function index(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $dcases=$m->where($where)->select();
+        $this->assign('dcases',$dcases);
 
-    	 $m=M('element');
-    	 $arr=$m->select();
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
 
-	     $this->assign('data',$arr);
+
+
 	     $this->display();
     }
 
 
     public function add(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+
         $this->display();
     }
 
@@ -33,8 +66,27 @@ class ElementAction extends CommonAction {
     }
 
     public function mod(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
         $m=M('element');
-        $id=$_GET['id'];
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $element=$m->find($id);
+        $this->assign('element',$element);
+        $this -> assign("state", formselect($element['state']));
+
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+
+
         $this->display();
     }
 
@@ -62,9 +114,9 @@ class ElementAction extends CommonAction {
         $id=$_GET['id'];
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

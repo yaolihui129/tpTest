@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-19 16:16:52
+Date: 2016-09-19 18:00:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -215,7 +215,9 @@ INSERT INTO `tp_dict` VALUES ('53', '4', 'D', 'risklevel', '正常', '腰立辉'
 DROP TABLE IF EXISTS `tp_element`;
 CREATE TABLE `tp_element` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sn` smallint(6) DEFAULT NULL,
+  `sn` smallint(3) DEFAULT NULL,
+  `control` varchar(50) DEFAULT NULL,
+  `state` varchar(5) DEFAULT NULL,
   `funcid` int(11) DEFAULT NULL,
   `web` varchar(100) DEFAULT NULL,
   `ios` varchar(50) DEFAULT NULL,
@@ -224,21 +226,23 @@ CREATE TABLE `tp_element` (
   `form` varchar(10) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
   `typeset` varchar(50) DEFAULT NULL,
-  `control` varchar(50) DEFAULT NULL,
   `data` varchar(50) DEFAULT NULL,
-  `state` varchar(5) DEFAULT NULL,
   `group` varchar(50) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_element
 -- ----------------------------
-INSERT INTO `tp_element` VALUES ('1', null, null, null, null, null, null, null, null, null, null, null, null, null, 'yy', null, '2016-09-10 14:30:48', '0000-00-00 00:00:00');
+INSERT INTO `tp_element` VALUES ('1', '1', 'gtsdf', '正常', '16', null, null, null, null, null, null, null, 'num4', null, 'yy', '腰立辉', '2016-09-19 17:51:52', '2016-09-19 17:51:52');
+INSERT INTO `tp_element` VALUES ('2', '2', 'zzz', '正常', '16', null, null, null, null, null, null, null, 'num2', null, null, null, '2016-09-19 16:40:37', '0000-00-00 00:00:00');
+INSERT INTO `tp_element` VALUES ('3', '3', 'werw', '正常', '16', null, null, null, null, null, null, null, 'num3', null, '腰立辉', '腰立辉', '2016-09-19 17:56:44', '2016-09-19 17:56:44');
+INSERT INTO `tp_element` VALUES ('4', '4', '【熬枯受淡】', '正常', '16', null, null, null, null, null, null, null, 'num4', null, '腰立辉', '腰立辉', '2016-09-19 17:57:04', '2016-09-19 17:57:04');
+INSERT INTO `tp_element` VALUES ('5', '5', '案件收到货', '正常', '16', null, null, null, null, null, null, null, 'num5', null, '腰立辉', '腰立辉', '2016-09-19 17:57:32', '2016-09-19 17:57:32');
 
 -- ----------------------------
 -- Table structure for `tp_exefunc`
