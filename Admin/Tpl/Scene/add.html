@@ -10,8 +10,8 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">场景添加</div>
-              <div class="left"  width="20%" align="left">
+              <div class="top" style="margin-left:320px;">场景添加</div>
+              <div class="left" align="left" style="width:30%">
                     <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>/proid/<{$w.proid}>"><{$vo.sn}>.<{$vo.swho}>[<{$vo.swhen}>]<{$vo.scene}>:<{$vo.state}></a><br>
                     </volist>
@@ -25,7 +25,7 @@
                            <input type="text" name="sn" value="<{$c}>"  class="input80"/>
                           <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input100"/>
                                                                  级别
-                          <input type="text" name="level" value="2"  class="input100"/>                             
+                          <input type="text" name="level" value="2"  class="input100"/>
                          </td>
                      </tr>
                      <tr>
@@ -39,7 +39,7 @@
                      <tr>
                          <td>场景</td>
                          <td><input type="text" name="scene" value=""  class="input300"/></td>
-                     </tr>                                                           
+                     </tr>
                       <tr>
                          <td>流程</td>
                          <td><input type="text" name="flow" value=""  class="input300"/></td>
@@ -47,8 +47,8 @@
                      <tr>
                          <td>状态</td>
                          <td><{$state}></td>
-                            
-                     </tr>                               
+
+                     </tr>
                     <tr>
                          <td></td>
                          <td> <input type="submit" class="btn" name="do_submit" value="提 交">

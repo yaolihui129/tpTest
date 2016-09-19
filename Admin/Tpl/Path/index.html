@@ -2,7 +2,7 @@
         <div class="place">
                                  所在位置：
              <a href="__APP__/Product">产品</a>
-             ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>             
+             ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
              >路径
             <span style="float:right;margin-right:60px;">
             <a href="__APP__/System/index/prodid/<{$w.prodid}>"> 返回</a>
@@ -10,9 +10,9 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">路径管理</div>
+              <div class="top" style="margin-left:200px;">路径管理</div>
               <div class="left" width="30%">
-                    <h1>系统</h1>
+
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
                          <li><a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>""><{$vo.sysno}>:<{$vo.state}></a></li>
@@ -21,7 +21,7 @@
               </div>
               <div class="midd" width="60%">
                    <table border="1" width="80%" align="center">
-                      <h1>路径</h1>
+
                      <tr>
                        <th width=5% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -44,7 +44,7 @@
                             <{$path.path}>
                          </a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>" >功能点</a>                           
+                           <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>" >功能点</a>
                            <a href="__URL__/mod/id/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>">修改</a>
                          </span>
                        </td>

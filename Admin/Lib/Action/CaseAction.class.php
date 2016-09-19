@@ -9,20 +9,42 @@ class CaseAction extends CommonAction {
          $pathid=$_GET['pathid'];
          $funcid=$_GET['funcid'];
          /* 实例化模型*/
-         $f=M('func');
-         $funces=$f->find($funcid);
-         /* 输出数据*/
-         $this->assign('funces',$funces);
-         /* 实例化模型*/
+         $m=M('func');
+         $where=array("pathid"=>$pathid);
+         $data=$m->where($where)->select();
+         $this->assign('data',$data);
     	 $m=M('case');
     	 $where=array("funcid"=>$funcid);
     	 $cases=$m->where($where)->select();
-    	 /* 输出数据*/
 	     $this->assign('cases',$cases);
+	     $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+	     $this->assign('w',$where);
+
+
 	     $this->display();
     }
 
     public function add(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+
+        /* 实例化模型*/
+        $m=M('case');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $this -> assign("fproid", proselect($proid,"fproid"));
+        $this->assign("caozuo",PublicAction::editor("steps"));
+
         $this->display();
     }
 
@@ -45,9 +67,26 @@ class CaseAction extends CommonAction {
     }
 
     public function mod(){
+
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
         $m=M('case');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+        $case=$m->find($id);
+        $this->assign("case",$case);
+        $this -> assign("state", formselect($case['state']));
+        $this -> assign("fproid", proselect($case['fproid'],"fproid"));
+        $this->assign("caozuo",PublicAction::editor("steps",$case['steps']));
 
         $this->display();
     }

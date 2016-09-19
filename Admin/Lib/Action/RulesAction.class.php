@@ -2,24 +2,51 @@
 
 class RulesAction extends CommonAction {
     public function index(){
+        /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
-        $funcs= D("func")
-        ->where(array("pathid"=>"$pathid"))
-        ->select();
-        $this->assign("funcs",$funcs);
-
         $funcid=$_GET['funcid'];
-        $rules= D("rules")
-        ->where(array("funcid"=>"$funcid"))
-        ->select();
-        $this->assign("rules",$rules);
+        /* 实例化模型*/
+        $m=M('func');
+        $where=array("pathid"=>$pathid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $rules=$m->where($where)->select();
+        $this->assign('rules',$rules);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+
 	     $this->display();
     }
 
 
     public function add(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $this -> assign("fproid", proselect($proid,"fproid"));
+        $this->assign("beizhu",PublicAction::editor("remark"));
+
         $this->display();
     }
 
@@ -41,8 +68,26 @@ class RulesAction extends CommonAction {
     }
 
     public function mod(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
         $m=M('rules');
-        $id=$_GET['id'];
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+        $rule=$m->find($id);
+        $this->assign("rule",$rule);
+        $this -> assign("state", formselect($rule['state']));
+        $this -> assign("fproid", proselect($rule['fproid'],"fproid"));
+        $this->assign("beizhu",PublicAction::editor("remark",$rule['remark']));;
+
         $this->display();
     }
 

@@ -28,9 +28,10 @@ class DictAction extends CommonAction {
         $m=M('dict');
         /* 查询数据*/
         $arr=$m->field('id,k,v,type,state,moder,updateTime',false)->where($where)->select();
-
-        /* 输出数据*/
         $this->assign('data',$arr);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+
         $this->assign('w',$where);
 
         $this->display();
