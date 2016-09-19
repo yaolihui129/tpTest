@@ -56,7 +56,7 @@ function prodselect($value=1) {
  *
  * @param $value 选中值
  */
-function proselect($value=1,$name=proid) {
+function proselect($value=1,$name=prono) {
     $html = '<select name="'.$name.'" class="inputselect">';
     $m =M('program');
     $where=array("testgp"=>$_SESSION['testgp']);
@@ -66,7 +66,7 @@ function proselect($value=1,$name=proid) {
 
     foreach($cats as $v) {
         $selected = ($v['id']==$value) ? "selected" : "";
-        $html .= '<option '.$selected.' value="'.$v['id'].'">'.$v['proid'].'</option>';
+        $html .= '<option '.$selected.' value="'.$v['id'].'">'.$v['prono'].'</option>';
     }
 
     $html .='<select>';
@@ -79,7 +79,7 @@ function getProNo($id){
     $m=M('program');
     $data=$m->find($id);
     //dump($data);
-    return $data['proid'];
+    return $data['prono'];
 
 }
 

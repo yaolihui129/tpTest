@@ -103,6 +103,20 @@ class ElementAction extends CommonAction {
     }
 
     public function library(){
+        /* 接收参数*/
+        $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
+        $proid=$_GET['proid'];
+        /* 实例化模型*/
+        $m=D('program');
+        $where=array("testgp"=>$testgp);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $m=D('element');
+        $where=array("proid"=>$proid);
+        $elements=$m->where($where)->select();
+        $this->assign('elements',$elements);               
+        $this->assign('w',$where);
+        
         $this->display();
     }
 

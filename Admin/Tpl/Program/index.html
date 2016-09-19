@@ -7,8 +7,7 @@
               <div class="top">
                 <span style="margin-left:85px;">测试项目</span>
                 <span style="float:right;">
-                                              分组：
-                  <{$selectgp}>
+                                             当前分组：<{$_SESSION['testgp']}>                 
                 </span>
               </div>
               <div class="left"  style="width:7%;" align="left">
@@ -37,7 +36,7 @@
                      </tr>
                      <volist name='Pros' id='pro' empty="没有数据">
                     <tr>
-                       <td align="center"><{$pro.proid}></td>
+                       <td align="center"><{$pro.prono}></td>
                        <td>
                          <a href="__APP__/Stage/index/proid/<{$pro.id}>"><{$pro.program}>（<{$pro.ptype}>）</a>
                          <span style="float:right;margin-right:5px;">
@@ -48,6 +47,8 @@
                            <a href="__APP__/Func/func/proid/<{$pro.id}>">功能点</a>
                            <a href="__APP__/Func/range/proid/<{$pro.id}>">范围</a>
                            <a href="__APP__/Scene/index/proid/<{$pro.id}>">场景</a>
+                           <a href="__APP__/Case/library/proid/<{$pro.id}>">用例库</a>
+                           <a href="__APP__/Element/library/proid/<{$pro.id}>">控件库</a>
                            <a href="__URL__/mod/id/<{$pro.id}>">修改</a>
                          </span>
                        </td>

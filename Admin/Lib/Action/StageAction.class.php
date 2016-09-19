@@ -106,6 +106,20 @@ class StageAction extends CommonAction {
     }
 
 
+    public function test(){
+        $proid=$_GET['proid'];
+        
+    
+        $this->display();
+    }
+    
+    
+    public function autotest(){
+    
+    
+        $this->display();
+    }
+    
 
     public function del(){
         /* 接收参数*/

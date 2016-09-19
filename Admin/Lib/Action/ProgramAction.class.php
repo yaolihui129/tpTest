@@ -37,7 +37,7 @@ class ProgramAction extends CommonAction {
         $manager= $_SESSION['realname'];
         $start=date("Y-m-d",time());
         $end=date("Y-m-d",time()+7*24*3600);
-        $arr=array("proid"=>"$testgp$d".".".($tol+1),"manager"=>"$manager","prodId"=>"1","state"=>"进行中","type"=>"简要","testgp"=>"$testgp");
+        $arr=array("prono"=>"$testgp$d".".".($tol+1),"manager"=>"$manager","prodId"=>"1","state"=>"进行中","type"=>"简要","testgp"=>"$testgp");
         $this->assign("p",$arr);
         $this -> assign("prod", prodselect());
         $this -> assign("selectptype", formselect("简要","ptype","ptype"));
@@ -123,28 +123,7 @@ class ProgramAction extends CommonAction {
         $this->display() ;
     }
 
-    public function chaged(){
-        /* 接收参数*/
-
-        $testgp=$_GET['testgp'];
-
-        $_SESSION['testgp']=$testgp;
-        $this->redirect('Index/index');
-
-
-    }
-
-    public function test(){
-
-        $this->display();
-    }
-
-
-    public function autotest(){
-
-
-        $this->display();
-    }
+  
 
     public function del(){
         /* 接收参数*/

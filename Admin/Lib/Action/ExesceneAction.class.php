@@ -2,11 +2,16 @@
 
 class ExesceneAction extends CommonAction {
     public function index(){
-
-    	 $m=M('exescene');
-    	 $arr=$m->select();
-
-	     $this->assign('data',$arr);
+        $proid=$_GET['proid'];
+    	 $m=M('program');   	 
+    	 $data=$m->join(" tp_stage ON tp_program.id = tp_stage.proid")->select();
+	     $this->assign('data',$data);
+	     dump($data);
+	     $m=D('exescene');
+	     $where=array("proid"=>$proid,"tester"=>$_SESSION['realname']);
+	     $exe=$m->where($where)->select();
+	     $this->assign('exe',$exe);
+	     
 	     $this->display();
     }
 

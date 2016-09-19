@@ -107,8 +107,20 @@ class CaseAction extends CommonAction {
 
     public function library(){
         /* 接收参数*/
+        $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
+        $proid=$_GET['proid'];
+       
         /* 实例化模型*/
-        /* 输出数据*/
+        $m=D('program');
+        $where=array("testgp"=>$testgp);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $where=array("fproid"=>$proid);
+        $cases=$m->where($where)->select();
+       
+        $this->assign('cases',$cases);               
+        $this->assign('w',$where);
 
 
         $this->display();

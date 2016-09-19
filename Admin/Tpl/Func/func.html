@@ -14,7 +14,7 @@
                <div class="left" width="30%">
                     <volist name='pros' id='pro' empty="没有数据">
                       <ur>
-                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.proid}>-<{$pro.program}>:<{$pro.state}></a><br>
+                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
                       </ur>
                     </volist>
               </div>
@@ -23,24 +23,22 @@
 
                      <tr>
                        <th width=7% align="center" bgcolor="#ccc">系统</th>
-                       <th width=20% align="left"  bgcolor="#ccc">路径</th>
+                       <th width=17% align="left"  bgcolor="#ccc">路径</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=7% align="center" bgcolor="#ccc">功能</th>                      
+                       <th width=10% align="left" bgcolor="#ccc">功能</th>                      
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=5% align="center" bgcolor="#ccc">项目</th>
-                       <th width=3% align="center" bgcolor="#ccc">维护</th>                      
-                       <th width=10% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=5% align="center" bgcolor="#ccc">项目</th>                                             
+                       <th width=7% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
                     <tr>
-                       <td align="center" ><{$st.sysid}></td>
-                       <td ><{$st.risk}></td>
-                       <td align="center" ><{$st.level}></td>
-                       <td align="center" ><a href="#"><{$st.state}></a></td>                       
-                       <td align="center" ><{$st.amethod}></td>
+                       <td align="center" ><{$st.sysno}></td>
+                       <td align="left" ><{$st.path}></td>
+                       <td align="center" ><{$st.pstate}></td>
+                       <td align="left" ><{$st.func}></td>                       
+                       <td align="center" ><{$st.state}></td>                      
+                       <td align="center" ><{$st.fproid|getProNo=###}></td>
                       
-                       <td align="center" ><{$st.adder1}></td>
-                       <td align="center" ><{$st.moder}></td>                      
                        <td align="center" >
                           <a href="__APP__/rules/index/id/<{$st.id}>" >规则</a>
                           <a href="__APP__/case/index/id/<{$st.id}>" >用例</a>

@@ -39,7 +39,7 @@ class PathAction extends CommonAction {
         $this->assign("c",$count);        
         $where=array("prodid"=>"$prodid","sysid"=>"$sysid");
         $this->assign("w",$where);
-        $this -> assign("state", formselect());
+        $this -> assign("pstate", formselect("","pstate"));
         
         
         $this->display();
@@ -77,7 +77,7 @@ class PathAction extends CommonAction {
         //编辑内容
         $path=$m->find($id);
         $this->assign("path",$path);
-        $this -> assign("state", formselect($path['state']));
+        $this -> assign("pstate", formselect($path['pstate'],"pstate"));
         
         
        

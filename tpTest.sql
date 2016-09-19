@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 43.61:3307
+Source Server         : mysql:3306
 Source Server Version : 50532
-Source Host           : localhost:3307
+Source Host           : localhost:3306
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-19 18:00:33
+Date: 2016-09-20 00:00:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -216,6 +216,7 @@ DROP TABLE IF EXISTS `tp_element`;
 CREATE TABLE `tp_element` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sn` smallint(3) DEFAULT NULL,
+  `typeset` varchar(4) DEFAULT NULL,
   `control` varchar(50) DEFAULT NULL,
   `state` varchar(5) DEFAULT NULL,
   `funcid` int(11) DEFAULT NULL,
@@ -225,7 +226,6 @@ CREATE TABLE `tp_element` (
   `bytype` varchar(10) DEFAULT NULL,
   `form` varchar(10) DEFAULT NULL,
   `type` varchar(20) DEFAULT NULL,
-  `typeset` varchar(50) DEFAULT NULL,
   `data` varchar(50) DEFAULT NULL,
   `group` varchar(50) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
@@ -238,11 +238,11 @@ CREATE TABLE `tp_element` (
 -- ----------------------------
 -- Records of tp_element
 -- ----------------------------
-INSERT INTO `tp_element` VALUES ('1', '1', 'gtsdf', '正常', '16', null, null, null, null, null, null, null, 'num4', null, 'yy', '腰立辉', '2016-09-19 17:51:52', '2016-09-19 17:51:52');
-INSERT INTO `tp_element` VALUES ('2', '2', 'zzz', '正常', '16', null, null, null, null, null, null, null, 'num2', null, null, null, '2016-09-19 16:40:37', '0000-00-00 00:00:00');
-INSERT INTO `tp_element` VALUES ('3', '3', 'werw', '正常', '16', null, null, null, null, null, null, null, 'num3', null, '腰立辉', '腰立辉', '2016-09-19 17:56:44', '2016-09-19 17:56:44');
-INSERT INTO `tp_element` VALUES ('4', '4', '【熬枯受淡】', '正常', '16', null, null, null, null, null, null, null, 'num4', null, '腰立辉', '腰立辉', '2016-09-19 17:57:04', '2016-09-19 17:57:04');
-INSERT INTO `tp_element` VALUES ('5', '5', '案件收到货', '正常', '16', null, null, null, null, null, null, null, 'num5', null, '腰立辉', '腰立辉', '2016-09-19 17:57:32', '2016-09-19 17:57:32');
+INSERT INTO `tp_element` VALUES ('1', '1', '操作', 'gtsdf', '正常', '16', null, null, null, null, null, null, 'num4', null, 'yy', '腰立辉', '2016-09-19 22:47:34', '2016-09-19 17:51:52');
+INSERT INTO `tp_element` VALUES ('2', '2', '操作', 'zzz', '正常', '16', null, null, null, null, null, null, 'num2', null, null, null, '2016-09-19 22:47:38', '0000-00-00 00:00:00');
+INSERT INTO `tp_element` VALUES ('3', '3', '检查', 'werw', '正常', '16', null, null, null, null, null, null, 'num3', null, '腰立辉', '腰立辉', '2016-09-19 22:47:42', '2016-09-19 17:56:44');
+INSERT INTO `tp_element` VALUES ('4', '4', '检查', '【熬枯受淡】', '正常', '16', null, null, null, null, null, null, 'num4', null, '腰立辉', '腰立辉', '2016-09-19 22:47:48', '2016-09-19 17:57:04');
+INSERT INTO `tp_element` VALUES ('5', '5', '检查', '案件收到货', '正常', '16', null, null, null, null, null, null, 'num5', null, '腰立辉', '腰立辉', '2016-09-19 22:47:49', '2016-09-19 17:57:32');
 
 -- ----------------------------
 -- Table structure for `tp_exefunc`
@@ -540,7 +540,7 @@ CREATE TABLE `tp_path` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `sn` int(11) DEFAULT NULL,
   `path` varchar(200) DEFAULT NULL,
-  `state` varchar(5) DEFAULT NULL,
+  `pstate` varchar(5) DEFAULT NULL,
   `sysid` int(11) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
@@ -559,10 +559,10 @@ INSERT INTO `tp_path` VALUES ('105', '1', '登陆退出', '正常', '46', '腰�
 INSERT INTO `tp_path` VALUES ('111', '1', '登陆注销', '正常', '1', '腰立辉', null, '2016-08-11 10:42:44', '2016-08-11 10:42:44');
 INSERT INTO `tp_path` VALUES ('112', '2', '首页', '正常', '1', '腰立辉', null, '2016-08-11 10:22:42', '2016-08-11 10:22:42');
 INSERT INTO `tp_path` VALUES ('113', '1', '登陆模块', '正常', '5', '腰立辉', '腰立辉', '2016-09-19 11:25:34', '2016-09-19 11:25:34');
-INSERT INTO `tp_path` VALUES ('115', '2', '系统设置', '正常', '5', '腰立辉', null, '2016-08-11 11:01:17', '2016-08-11 11:01:17');
+INSERT INTO `tp_path` VALUES ('115', '2', '系统设置', '已搁置', '5', '腰立辉', '腰立辉', '2016-09-19 23:20:43', '2016-09-19 23:20:43');
 INSERT INTO `tp_path` VALUES ('116', '3', '产品管理', '正常', '5', '腰立辉', null, '2016-08-15 14:30:20', '2016-08-15 14:30:20');
 INSERT INTO `tp_path` VALUES ('117', '4', '产品管理-系统', '正常', '5', '腰立辉', null, '2016-08-15 14:30:35', '2016-08-15 14:30:35');
-INSERT INTO `tp_path` VALUES ('118', '5', '产品管理-系统-路径', '正常', '5', '腰立辉', null, '2016-08-15 14:30:47', '2016-08-15 14:30:47');
+INSERT INTO `tp_path` VALUES ('118', '5', '产品管理-系统-路径', '正常', '5', '腰立辉', '腰立辉', '2016-09-19 23:18:24', '2016-09-19 23:18:24');
 INSERT INTO `tp_path` VALUES ('119', '6', '产品管理-系统-路径-功能', '正常', '5', '腰立辉', null, '2016-08-15 14:31:21', '2016-08-15 14:31:21');
 INSERT INTO `tp_path` VALUES ('123', '7', '项目管理', '正常', '5', '腰立辉', null, '2016-08-15 15:58:28', '2016-08-15 15:58:28');
 INSERT INTO `tp_path` VALUES ('124', '8', '项目-里程碑', '正常', '5', '腰立辉', null, '2016-08-15 15:58:34', '2016-08-15 15:58:34');
@@ -613,7 +613,7 @@ INSERT INTO `tp_product` VALUES ('6', 'eshop', '电子商城', '正常', '贾晓
 DROP TABLE IF EXISTS `tp_program`;
 CREATE TABLE `tp_program` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
-  `proid` varchar(30) DEFAULT '',
+  `prono` varchar(30) DEFAULT '',
   `program` varchar(50) DEFAULT NULL,
   `prodid` int(11) DEFAULT NULL,
   `prost` varchar(6) DEFAULT NULL,
@@ -632,7 +632,7 @@ CREATE TABLE `tp_program` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_program
@@ -641,9 +641,10 @@ INSERT INTO `tp_program` VALUES ('23', 'Auto.1608.1', '测试后台二期', '2',
 INSERT INTO `tp_program` VALUES ('24', 'Auto.1608.2', '测试后台一期', '2', '已完成', '2016-07-21', '2016-08-05', '岳丹丹', 'Auto', '简要', '腰立辉', '需求新增', '一般需求', '2016-08-13', '<p>\r\n	简介</p>\r\n', '腰立辉', '腰立辉', '2016-09-17 14:26:04', '2016-09-17 14:26:04');
 INSERT INTO `tp_program` VALUES ('25', 'Auto.1608.3', 'yaohTest', '2', '进行中', '2016-08-01', '2016-08-31', '腰立辉', 'Auto', '简要', 'yyy', '需求新增', '一般需求', '2016-08-13', 'sadasasdahjdashdj1.yuiwqe3.hysajdu就卡萨丁', '腰立辉', '腰立辉', '2016-09-10 23:40:26', '2016-09-10 23:40:26');
 INSERT INTO `tp_program` VALUES ('30', 'Auto.1608.5', 'GDCardQ3-09', '5', '进行中', '2016-08-08', '2016-08-15', '贾晓宁', 'GD', '简要', 'ddd', '需求新增', '一般需求', '2016-08-15', '', '腰立辉', '贾晓宁', '2016-09-17 15:18:56', '2016-09-17 15:18:56');
-INSERT INTO `tp_program` VALUES ('40', 'Auto1609.5', 'yut', '2', '进行中', '2016-09-10', '2016-09-17', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 10:39:41', '2016-09-10 23:30:57');
+INSERT INTO `tp_program` VALUES ('40', 'Auto1609.4', 'yut', '2', '进行中', '2016-09-10', '2016-09-17', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 23:48:27', '2016-09-19 23:48:27');
 INSERT INTO `tp_program` VALUES ('41', 'Auto1609.6', 'Lyjeshop', '6', '进行中', '2016-09-14', '2016-09-21', '腰立辉', 'GD', '常规', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '贾晓宁', '2016-09-17 15:19:11', '2016-09-17 15:19:11');
 INSERT INTO `tp_program` VALUES ('42', 'Auto1609.5', 'yrte', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 10:28:17', '2016-09-19 10:28:17');
+INSERT INTO `tp_program` VALUES ('43', 'Auto1609.6', '儿童热特任', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 23:48:11', '2016-09-19 23:48:11');
 
 -- ----------------------------
 -- Table structure for `tp_prosys`
@@ -689,7 +690,7 @@ CREATE TABLE `tp_risk` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_risk
@@ -697,6 +698,8 @@ CREATE TABLE `tp_risk` (
 INSERT INTO `tp_risk` VALUES ('10', '1', '分派场景时，需要把场景下的场景功能，场景下的数据用例，等信息导入执行表（复制），逻辑关系较复杂短时间内很难理清', '1', '<p>\r\n	暂无方案</p>\r\n', '23', '打开', '<p>\r\n	asd</p>\r\n', '腰立辉', '腰立辉', '2016-09-14 22:42:27', '2016-09-14 22:42:27');
 INSERT INTO `tp_risk` VALUES ('5', '1', '不涉及页面，只会套用模板，交互会是严重问题', 'B', '<p>\r\n	暂无方案</p>\r\n', '24', '打开', '', '腰立辉', '腰立辉', '2016-09-17 16:26:28', '2016-09-17 16:26:28');
 INSERT INTO `tp_risk` VALUES ('12', '2', 'werw', '3', '<ul>\r\n	<li>\r\n		asd</li>\r\n	<li>\r\n		hjsad</li>\r\n	<li>\r\n		jsa</li>\r\n</ul>\r\n', '24', '关闭', '<p>\r\n	asdad<span style=\"color: rgb(255, 0, 0);\">asda</span></p>\r\n', '腰立辉', '腰立辉', '2016-09-14 22:45:51', '2016-09-14 22:45:51');
+INSERT INTO `tp_risk` VALUES ('14', '2', '也让她而', 'C', '<p>\r\n	暂无方案</p>\r\n', '23', '打开', '', '腰立辉', '腰立辉', '2016-09-19 23:54:13', '2016-09-19 23:54:13');
+INSERT INTO `tp_risk` VALUES ('15', '1', '从中选出', 'C', '<p>\r\n	暂无方案</p>\r\n', '40', '打开', '<p>\r\n	阿萨德撒</p>\r\n', '腰立辉', '腰立辉', '2016-09-19 23:54:58', '2016-09-19 23:54:58');
 
 -- ----------------------------
 -- Table structure for `tp_rules`

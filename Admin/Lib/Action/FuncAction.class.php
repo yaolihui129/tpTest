@@ -113,10 +113,14 @@ class FuncAction extends CommonAction {
         /* 实例化模型*/
         $s = D("prosys");
         $where=array("proid"=>"$proid");
-        $data=$s->where($where)->select();
+        $data=$s->where($where)
+        ->join('tp_system ON tp_prosys.sysid =tp_system.id')
+        ->join('tp_path ON tp_system.id = tp_path.sysid')
+        ->join('tp_func ON tp_path.id = tp_func.pathid')
+        ->select();
         $this->assign("data",$data);
         $this->assign('w',$where);
-
+// dump($data);
         $this->display();
 
     }
