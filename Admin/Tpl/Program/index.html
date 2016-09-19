@@ -5,27 +5,35 @@
         <div class="content">
            <div class="main">
               <div class="top">
-                                          测试项目
+                <span style="margin-left:85px;">测试项目</span>
                 <span style="float:right;">
                                               分组：
                   <{$selectgp}>
                 </span>
               </div>
+              <div class="left"  style="width:7%;" align="left">
+                  <h1>选择分组</h1>
+                    <volist name='data' id='vo' empty="没有数据">
+                      <ur style="margin-left:5px;">
+                       <a href="__URL__/index/testgp/<{$vo.v}>">   <{$vo.k}>.<{$vo.v}></a><br>
+                       </ur>
+                    </volist>
+              </div>
               <div class="midd" width="60%">
-                 <table border="1" width="100%" align="center">
+                 <table border="1" width="92%" align="center">
 
                      <tr>
-                       <th width=10% align="center" bgcolor="#ccc">编号</th>
-                       <th width=30% align="center" bgcolor="#ccc">项目：
+                       <th width=5% align="center" bgcolor="#ccc">编号</th>
+                       <th width=33% align="center" bgcolor="#ccc">项目：
                           <span style="float:right;margin-right:5px;">
                              <a href="__URL__/add"  >添加 </a>
                           </span>
                        </th>
-                       <th width=10% align="center" bgcolor="#ccc">状态</th>
-                       <th width=10% align="center" bgcolor="#ccc">开始</th>
-                       <th width=10% align="center" bgcolor="#ccc">结束</th>
-                       <th width=10% align="center" bgcolor="#ccc">负责人</th>
-                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">开始</th>
+                       <th width=5% align="center" bgcolor="#ccc">结束</th>
+                       <th width=5% align="center" bgcolor="#ccc">负责人</th>
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='Pros' id='pro' empty="没有数据">
                     <tr>

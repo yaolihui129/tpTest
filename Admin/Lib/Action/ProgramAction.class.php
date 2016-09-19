@@ -4,14 +4,18 @@ class ProgramAction extends CommonAction {
     public function index(){
         /* 接收参数*/
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
+        $m=M('dict');
+        $where=array("type"=>"testgp");
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        if (!empty($_GET['testgp'])) {
+            $_SESSION['testgp']=$_GET['testgp'];
+        }
         /* 实例化模型*/
-    	 $m=M('program');   	
+    	 $m=M('program');
     	 $arr=$m->where(array("testgp"=>"$testgp"))->select();
-    	 
-    	// dump($testgp);
-
 	     $this->assign('Pros',$arr);
-	     $this -> assign("selectgp", formselect($testgp,"testgp","testgp"));
+	     $this -> assign("selectgp", formselect($_SESSION['testgp'],"testgp","testgp"));
 	     $this->display();
     }
 
@@ -41,7 +45,7 @@ class ProgramAction extends CommonAction {
         $this -> assign("select", formselect("进行中","prost","prost"));
         $this->assign("startDate",PublicAction::date("start",$start));
         $this->assign("endDate",PublicAction::date("end",$end));
-       
+
         $this->display();
     }
 
@@ -115,7 +119,7 @@ class ProgramAction extends CommonAction {
         $this -> assign("reLevel", formselect($arr['reLevel'],"reLevel","reLevel"));
         $this->assign("online",PublicAction::date("expOnline",$arr['expOnline']));
         $this->assign("jianjie",PublicAction::editor("profile",$arr['profile']));
-        
+
         $this->display() ;
     }
 
@@ -129,16 +133,16 @@ class ProgramAction extends CommonAction {
 
 
     }
-    
+
     public function test(){
-    
+
         $this->display();
     }
-    
-    
+
+
     public function autotest(){
-    
-    
+
+
         $this->display();
     }
 

@@ -8,7 +8,7 @@ class FuncAction extends CommonAction {
         $pathid=$_GET['pathid'];
         /* 实例化模型*/
         $m=D('path');
-        $where=array("sysid"=>"$sysid","state"=>"正常");       
+        $where=array("sysid"=>"$sysid","state"=>"正常");
         $data=$m->where($where)->order("sn")->select();
         $this->assign("data",$data);
 
@@ -19,14 +19,13 @@ class FuncAction extends CommonAction {
         $this->assign("funcs",$funcs);
         $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
         $this->assign("w",$where);
-        
-        
+
 	    $this->display();
     }
 
 
     public function add(){
-        
+
         /* 接收参数*/
         $prodid=$_GET['prodid'];
         $proid=$_GET['proid'];
@@ -44,8 +43,8 @@ class FuncAction extends CommonAction {
         $this->assign("w",$where);
         $this -> assign("state", formselect());
         $this -> assign("fproid", proselect($proid,"fproid"));
-        
-        
+
+
         $this->display();
     }
 
@@ -79,13 +78,13 @@ class FuncAction extends CommonAction {
         $this->assign("data",$data);
         $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
         $this->assign("w",$where);
-        
-        
+
+
         $func=$m->find($id);
         $this->assign("func",$func);
         $this -> assign("state", formselect($func['state']));
         $this -> assign("fproid", proselect($func['fproid'],"fproid"));
-        
+
         $this->display();
     }
 
@@ -100,7 +99,7 @@ class FuncAction extends CommonAction {
         }
 
     }
-    
+
     public function func(){
          /* 接收参数*/
         $proid=$_GET['proid'];
@@ -117,12 +116,12 @@ class FuncAction extends CommonAction {
         $data=$s->where($where)->select();
         $this->assign("data",$data);
         $this->assign('w',$where);
-        
+
         $this->display();
-        
+
     }
-    
-    
+
+
     public function range(){
         /* 接收参数*/
         $proid=$_GET['proid'];
@@ -140,9 +139,9 @@ class FuncAction extends CommonAction {
         $this->assign("data",$data);
         $where=array("proid"=>"$proid");
         $this->assign('w',$where);
-        
+
         $this->display();
-        
+
     }
 
     public function del(){

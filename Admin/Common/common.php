@@ -74,6 +74,15 @@ function proselect($value=1,$name=proid) {
     return $html;
 }
 
+function getProNo($id){
+
+    $m=M('program');
+    $data=$m->find($id);
+    //dump($data);
+    return $data['proid'];
+
+}
+
 /**
  * 系统选择
  *
