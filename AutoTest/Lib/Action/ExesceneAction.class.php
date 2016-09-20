@@ -17,9 +17,10 @@ class ExesceneAction extends CommonAction {
 	     $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Manual");
 	     $exe=$m->where($where)->order("sn")->select();
 	     $this->assign('exe',$exe);
+	     $proid=!empty($_GET['proid'])?$_GET['proid']:$data[0]['proid'];
+	     $where=array("proid"=>$proid,"stageid"=>$stageid);
+	     $this->assign('w',$where);
 
-// 	     echo $c;
-// 	     dump($c);
 
 	     $this->display();
     }
@@ -40,9 +41,10 @@ class ExesceneAction extends CommonAction {
         $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Auto");
         $exe=$m->where($where)->order("sn")->select();
         $this->assign('exe',$exe);
+        $proid=!empty($_GET['proid'])?$_GET['proid']:$data[0]['proid'];
+        $where=array("proid"=>$proid,"stageid"=>$stageid);
+        $this->assign('w',$where);
 
-        // 	     echo $c;
-        // 	     dump($c);
 
         $this->display();
 

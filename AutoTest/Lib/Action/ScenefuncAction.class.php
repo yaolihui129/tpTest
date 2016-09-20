@@ -10,10 +10,18 @@ class ScenefuncAction extends CommonAction {
         $where=array("proid"=>"$proid");
         $data=$m->where($where)->select();
         $this->assign("data",$data);
-        $m=D('scenefunc');
-        $where=array("sceneid"=>$sceneid);
-        $sfunc=$m->where($where)->select();
+        
+        
+//         $m=D('scenefunc');
+        $m=D('system');
+        $where=array("tp_scenefunc.sceneid"=>$sceneid);
+        $sfunc=$m
+        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
+        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
+        ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
+        ->where($where)->select();
         $this->assign("sfunc",$sfunc);
+//         dump($sfunc);
         $where=array("proid"=>"$proid","sceneid"=>$sceneid);
         $this->assign("w",$where);
 

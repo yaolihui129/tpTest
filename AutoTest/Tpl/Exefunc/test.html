@@ -1,28 +1,27 @@
-      <layout name="layout" />
+ <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__APP__/Exescene">手工测试</a>
-             >测试执行
+             <a href="__APP__/Exescene/test">自动化测试</a>
+             >详情
                <span style="float:right;margin-right:60px;">
-                   <a href="__APP__/Exescene"> 返回</a>
-              </span>
+                   <a href="__APP__/Exescene/test"> 返回</a>
+               </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">手工测试执行
+              <div class="top">自动化测试数据
                   <span style="float:right;">
                                              当前项目：<{$w.proid|getProNo=###}>
-                 </span>             
+                 </span>            
               </div>
               <div class="left" align="left" style="widtht:15%;">
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li><a href="__URL__/index/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>"><{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
+                         <li><a href="__URL__/test/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>"><{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
                        </ur>
                     </volist>
               </div>
-              
-               <div class="midd" width="75%">
+              <div class="midd" width="75%">
                    <table border="1" width="80%" align="center">
 
                      <tr>

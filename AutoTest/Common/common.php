@@ -122,7 +122,6 @@ function countExeFunc($id){
    $where=array("testsceneid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 
@@ -134,7 +133,6 @@ function countStage($id){
     $where=array("proid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 /**
  * 根据项目获取风险数
@@ -144,7 +142,6 @@ function countRisk($id){
     $where=array("proid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -155,7 +152,6 @@ function countProsys($id){
     $where=array("proid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -166,7 +162,6 @@ function countRange($id){
     $where=array("fproid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -177,7 +172,6 @@ function countScene($id){
     $where=array("proid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -188,7 +182,6 @@ function countCase($id){
     $where=array("fproid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -199,7 +192,6 @@ function countPro($testgp){
     $where=array("testgp"=>$testgp);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -210,7 +202,6 @@ function countPath($id){
     $where=array("sysid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 /**
  * 根据路径获取功能数
@@ -220,7 +211,6 @@ function countFunc($id){
     $where=array("pathid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -231,7 +221,6 @@ function countSys($id){
     $where=array("prodid"=>$id);
     $count=$m->where($where)->count();
     return $count;
-
 }
 
 /**
@@ -255,4 +244,23 @@ function countFRules($id){
     return $count;
 }
 
+/**
+ * 根据阶段获列队数(M)
+ */
+function countEsceneM($id){
+    $m=M("exescene");
+    $where=array("stageid"=>$id,"type"=>"Manual","tester"=>$_SESSION['realname']);
+    $count=$m->where($where)->count();
+    return $count;
+}
+
+/**
+ * 根据阶段获列队数(A)
+ */
+function countEsceneA($id){
+    $m=M("exescene");
+    $where=array("stageid"=>$id,"type"=>"Auto","tester"=>$_SESSION['realname']);
+    $count=$m->where($where)->count();
+    return $count;
+}
 
