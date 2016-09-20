@@ -1,0 +1,54 @@
+      <layout name="layout" />
+        <div class="place">
+                                 所在位置：
+             <a href="__URL__/index/prodid/<{$w.prodid}>">系统</a>
+             >编辑
+            <span style="float:right;margin-right:60px;">
+            <a href="__URL__/index/prodid/<{$w.prodid}>"> 返回</a>
+            </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">系统编辑</div>
+              <div class="left"  width="30%" >
+                    <volist name='data' id='vo' empty="没有数据">
+                       <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>"><{$vo.sysno}></a><br>
+                    </volist>
+              </div>
+              <div class="midd" width="50%" align="right" >
+                 <form action="__URL__/update" method="post" >
+                 <input type="hidden" name="id" value="<{$sys.id}>" />
+                  <table border="0" width="500" align="left">
+                  <tr>
+                         <td> 更新：</td>
+                         <td><{$sys.moder}>更新于:<{$sys.updateTime}></td>
+                     </tr>
+                     <tr>
+                         <td> 编号：</td>
+                         <td><input type="text" name="sysno" value="<{$sys.sysno}>"  class="input300"/>*如：APP.HMC、Web.CRM</td>
+                     </tr>
+                     <tr>
+                         <td>系统</td>
+                         <td><input type="text" name="system" value="<{$sys.system}>"  class="input300"/></td>
+                     </tr>
+                      <tr>
+                         <td>产品</td>
+                         <td ><{$prod}></td>
+                     </tr>
+                     <tr>
+                         <td>状态</td>
+                         <td>
+                             <{$state}>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td></td>
+                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         </td>
+                     </tr>
+                  </table>
+                 </form>
+
+
+              </div><!-- midd -->
+           </div><!-- main -->

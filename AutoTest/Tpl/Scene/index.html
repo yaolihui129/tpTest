@@ -1,0 +1,72 @@
+      <layout name="layout" />
+        <div class="place">
+                                 所在位置：
+             <a href="__APP__/Program">项目</a>
+             >场景
+            <span style="float:right;margin-right:60px;">
+             <a href="__APP__/Program"> 返回</a>
+            </span>
+        </div>
+         <div class="content">
+           <div class="main">
+              <div class="top">测试场景
+                 <span style="float:right;">
+                                             当前项目：<{$w.proid|getProNo=###}>
+                 </span>
+              </div>
+              <div class="left" >
+                    <volist name='pros' id='pro' empty="没有数据">
+                      <ur>
+                       <a href="__URL__/index/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countScene=###}>:<{$pro.prost}></a><br>
+                      </ur>
+                    </volist>
+              </div>
+              <div class="midd" width="60%">
+                   <table border="1" width="80%" align="center">
+
+                     <tr>
+                      <th width=3% align="center" bgcolor="#ccc">ID</th>
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=3% align="center" bgcolor="#ccc">类型</th>
+                       <th width=5% align="center"  bgcolor="#ccc">角色</th>
+                       <th width=5% align="center" bgcolor="#ccc">时间</th>
+                       <th width=3% align="center" bgcolor="#ccc">级别</th>
+                       <th width=20% align="left" bgcolor="#ccc">场景
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add/proid/<{$w.proid}>">添加 </a>
+                          </span>
+                       </th>
+
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=10% align="center" bgcolor="#ccc">流程</th>
+                       <th width=3% align="center" bgcolor="#ccc">来源</th>
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='scene' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.id}></td>
+                       <td align="center" ><{$st.sn}></td>
+                       <td align="center" ><{$st.type}></td>
+                       <td align="center" ><{$st.swho}></td>
+                       <td align="center" ><{$st.swhen}></td>
+                       <td align="center" ><{$st.level}></td>
+                       <td align="left" >
+                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>"><{$st.scene}></a>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>" >场景功能</a>
+                           <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
+                         </span>
+                       </td>
+
+                       <td align="center" ><{$st.state}></td>
+                       <td align="center" ><{$st.flow}></td>
+                       <td align="center" ><{$st.sourceid}></td>
+                       <td align="center" >
+                          <a href="__URL__/del/id/<{$st.id}>" onclick="return confirm('你确定要删除场景：<{$st.swho}>:<{$swhen}><{$st.risk}>？')">删除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
+
+              </div><!-- midd -->
+           </div><!-- main -->

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-20 11:53:24
+Date: 2016-09-20 17:54:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -54,7 +54,7 @@ CREATE TABLE `tp_case` (
   `num19` varchar(255) DEFAULT NULL,
   `num20` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=116 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=117 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_case
@@ -149,6 +149,7 @@ INSERT INTO `tp_case` VALUES ('104', '1', '2', '选车', null, '……', '正常
 INSERT INTO `tp_case` VALUES ('105', '1', '2', '报名', null, '……', '正常', null, null, '功能编写', null, null, '2016-07-05 13:44:23', '2016-07-05 13:44:23', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `tp_case` VALUES ('112', '1', null, 'yuasd', '', '', '正常', null, '17', null, '腰立辉', '腰立辉', '2016-09-19 13:46:38', '2016-09-19 13:46:38', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 INSERT INTO `tp_case` VALUES ('113', '2', null, 'sdfew', '', '', '正常', '42', '17', null, '腰立辉', '腰立辉', '2016-09-19 13:48:20', '2016-09-19 13:48:20', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
+INSERT INTO `tp_case` VALUES ('116', '1', null, 'asda', '<p>\r\n	asd</p>\r\n', 'asd', '正常', '42', '48', '产品库', '腰立辉', '腰立辉', '2016-09-20 15:30:50', '2016-09-20 15:30:50', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for `tp_dict`
@@ -165,7 +166,7 @@ CREATE TABLE `tp_dict` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_dict
@@ -208,6 +209,8 @@ INSERT INTO `tp_dict` VALUES ('50', '1', 'A', 'risklevel', '正常', '腰立辉'
 INSERT INTO `tp_dict` VALUES ('51', '2', 'B', 'risklevel', '正常', '腰立辉', '腰立辉', '2016-09-17 16:19:21', '2016-09-17 16:19:21');
 INSERT INTO `tp_dict` VALUES ('52', '3', 'C', 'risklevel', '正常', '腰立辉', '腰立辉', '2016-09-17 16:19:27', '2016-09-17 16:19:27');
 INSERT INTO `tp_dict` VALUES ('53', '4', 'D', 'risklevel', '正常', '腰立辉', '腰立辉', '2016-09-17 16:19:34', '2016-09-17 16:19:34');
+INSERT INTO `tp_dict` VALUES ('54', '1', 'Manual', 'sceneType', '正常', '腰立辉', '腰立辉', '2016-09-20 17:07:24', null);
+INSERT INTO `tp_dict` VALUES ('55', '2', 'Auto', 'sceneType', '正常', '腰立辉', '腰立辉', '2016-09-20 17:07:28', '2016-09-20 17:00:39');
 
 -- ----------------------------
 -- Table structure for `tp_element`
@@ -373,15 +376,11 @@ CREATE TABLE `tp_func` (
 -- ----------------------------
 INSERT INTO `tp_func` VALUES ('1', '1', '用户登录', '正常', '105', '25', '腰立辉', null, '2016-08-08 14:30:41', '2016-08-08 14:30:41');
 INSERT INTO `tp_func` VALUES ('4', '2', '用户注销', '正常', '105', '25', '腰立辉', null, '2016-08-08 14:30:55', '2016-08-08 14:30:55');
-INSERT INTO `tp_func` VALUES ('3', '1', '待办列表', '正常', '106', '25', '腰立辉', null, '2016-08-08 21:10:30', '2016-08-08 21:10:30');
 INSERT INTO `tp_func` VALUES ('5', '1', '项目列表', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:13', '2016-08-08 14:34:13');
 INSERT INTO `tp_func` VALUES ('6', '2', '添加项目', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:26', '2016-08-08 14:34:26');
 INSERT INTO `tp_func` VALUES ('7', '3', '修改项目', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:42', '2016-08-08 14:34:42');
-INSERT INTO `tp_func` VALUES ('8', '1', '登陆', '正常', '111', '24', '腰立辉', null, '2016-08-09 21:57:27', '2016-08-09 21:57:27');
-INSERT INTO `tp_func` VALUES ('9', '2', '注销', '正常', '111', '25', '腰立辉', null, '2016-08-09 21:57:49', '2016-08-09 21:57:49');
 INSERT INTO `tp_func` VALUES ('149', '1', '用例列表', '正常', '150', '24', '腰立辉', null, '2016-08-15 17:05:57', '2016-08-15 17:05:57');
 INSERT INTO `tp_func` VALUES ('150', '2', '用例-添加', '正常', '150', '24', '腰立辉', null, '2016-08-15 17:06:17', '2016-08-15 17:06:17');
-INSERT INTO `tp_func` VALUES ('13', '1', '待办', '正常', '102', null, '腰立辉', null, '2016-08-10 17:37:09', '2016-08-10 17:37:09');
 INSERT INTO `tp_func` VALUES ('14', '1', '登录', '正常', '113', '24', '腰立辉', null, '2016-08-11 11:23:54', '2016-08-11 11:23:54');
 INSERT INTO `tp_func` VALUES ('15', '2', '注销', '正常', '113', '24', '腰立辉', null, '2016-08-11 11:24:02', '2016-08-11 11:24:02');
 INSERT INTO `tp_func` VALUES ('16', '1', '添加产品', '正常', '116', '24', '腰立辉', null, '2016-08-11 14:56:08', '2016-08-11 11:34:44');
@@ -414,10 +413,6 @@ INSERT INTO `tp_func` VALUES ('42', '7', '用例管理入口', '待确认', '119
 INSERT INTO `tp_func` VALUES ('43', '8', '控件管理入口', '待确认', '119', '24', '腰立辉', null, '2016-08-11 15:16:14', '2016-08-11 15:16:14');
 INSERT INTO `tp_func` VALUES ('44', '9', '数据用例入口', '待确认', '119', '24', '腰立辉', null, '2016-08-11 15:16:24', '2016-08-11 15:16:24');
 INSERT INTO `tp_func` VALUES ('45', '10', '返回-路径管理', '正常', '119', '24', '腰立辉', null, '2016-08-11 15:16:03', '2016-08-11 15:16:03');
-INSERT INTO `tp_func` VALUES ('46', '3', '12', '正常', '105', null, '腰立辉', null, '2016-08-14 22:33:47', '2016-08-14 22:33:47');
-INSERT INTO `tp_func` VALUES ('47', '4', '13', '正常', '105', null, '腰立辉', null, '2016-08-14 22:33:53', '2016-08-14 22:33:53');
-INSERT INTO `tp_func` VALUES ('48', '1', 'yyyy', '正常', '115', '24', '腰立辉', '腰立辉', '2016-09-19 10:04:32', '2016-09-19 10:04:32');
-INSERT INTO `tp_func` VALUES ('50', '6', '12', '作废', '116', '23', '腰立辉', '腰立辉', '2016-09-18 23:21:59', '2016-09-18 23:21:59');
 INSERT INTO `tp_func` VALUES ('51', '11', '标记为当前项目', '搁置', '119', '24', '腰立辉', null, '2016-08-15 14:44:55', '2016-08-15 14:44:55');
 INSERT INTO `tp_func` VALUES ('52', '1', '项目列表', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:46:06', '2016-08-15 14:46:06');
 INSERT INTO `tp_func` VALUES ('53', '2', '切换分组', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:46:15', '2016-08-15 14:46:15');
@@ -426,11 +421,11 @@ INSERT INTO `tp_func` VALUES ('55', '4', '查询-按项目', '正常', '123', '2
 INSERT INTO `tp_func` VALUES ('56', '5', '查询-按状态', '已搁置', '123', '24', '腰立辉', null, '2016-08-15 14:46:42', '2016-08-15 14:46:42');
 INSERT INTO `tp_func` VALUES ('57', '6', '里程碑入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:02', '2016-08-15 14:47:02');
 INSERT INTO `tp_func` VALUES ('58', '7', '场景入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:15', '2016-08-15 14:47:15');
-INSERT INTO `tp_func` VALUES ('59', '8', '详情（需求确认书）入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:28', '2016-08-15 14:47:28');
+INSERT INTO `tp_func` VALUES ('59', '8', '详情入口', '正常', '123', '24', '腰立辉', null, '2016-09-20 16:47:17', '2016-08-15 14:47:28');
 INSERT INTO `tp_func` VALUES ('60', '9', '项目系统入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:40', '2016-08-15 14:47:40');
 INSERT INTO `tp_func` VALUES ('61', '10', '项目功能点入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:47', '2016-08-15 14:47:47');
 INSERT INTO `tp_func` VALUES ('62', '11', '测试范围入口', '正常', '123', '24', '腰立辉', null, '2016-08-15 14:47:58', '2016-08-15 14:47:58');
-INSERT INTO `tp_func` VALUES ('63', '1', '左侧-项目列表（当前分组）', '正常', '124', '24', '腰立辉', null, '2016-08-15 14:48:36', '2016-08-15 14:48:36');
+INSERT INTO `tp_func` VALUES ('63', '1', '左侧-项目列表', '正常', '124', '24', '腰立辉', null, '2016-09-20 16:47:20', '2016-08-15 14:48:36');
 INSERT INTO `tp_func` VALUES ('64', '2', '切换分组', '正常', '124', '24', '腰立辉', null, '2016-08-15 14:48:49', '2016-08-15 14:48:49');
 INSERT INTO `tp_func` VALUES ('65', '3', '右侧-里程碑列表', '正常', '124', '24', '腰立辉', null, '2016-08-15 14:49:11', '2016-08-15 14:49:11');
 INSERT INTO `tp_func` VALUES ('66', '4', '查询-按里程碑ID', '正常', '124', '24', '腰立辉', null, '2016-08-15 14:49:26', '2016-08-15 14:49:26');
@@ -636,7 +631,7 @@ CREATE TABLE `tp_program` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_program
@@ -649,6 +644,7 @@ INSERT INTO `tp_program` VALUES ('40', 'Auto1609.4', 'yut', '2', '进行中', '2
 INSERT INTO `tp_program` VALUES ('41', 'Auto1609.6', 'Lyjeshop', '6', '进行中', '2016-09-14', '2016-09-21', '腰立辉', 'GD', '常规', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '贾晓宁', '2016-09-17 15:19:11', '2016-09-17 15:19:11');
 INSERT INTO `tp_program` VALUES ('42', 'Auto1609.5', 'yrte', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 10:28:17', '2016-09-19 10:28:17');
 INSERT INTO `tp_program` VALUES ('43', 'Auto1609.6', '儿童热特任', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 23:48:11', '2016-09-19 23:48:11');
+INSERT INTO `tp_program` VALUES ('44', 'OP1609.1', '营买分工初版', '1', '进行中', '2016-09-20', '2016-09-27', '孔洋', 'OP', '简要', '胡春阳', '需求新增', '一般需求', '2016-09-29', '', '腰立辉', '腰立辉', '2016-09-20 16:08:04', '2016-09-20 16:08:04');
 
 -- ----------------------------
 -- Table structure for `tp_prosys`
@@ -663,7 +659,7 @@ CREATE TABLE `tp_prosys` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`prosysid`)
-) ENGINE=MyISAM AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_prosys
@@ -675,6 +671,7 @@ INSERT INTO `tp_prosys` VALUES ('44', '1', '30', '腰立辉', 'yy', '2016-09-17 
 INSERT INTO `tp_prosys` VALUES ('47', '4', '25', '腰立辉', 'yy', '2016-09-17 20:45:47', '2016-08-14 17:47:25');
 INSERT INTO `tp_prosys` VALUES ('49', '3', '42', '腰立辉', '腰立辉', '2016-09-19 10:29:36', '2016-09-19 10:29:36');
 INSERT INTO `tp_prosys` VALUES ('50', '18', '42', '腰立辉', '腰立辉', '2016-09-19 10:38:15', '2016-09-19 10:38:15');
+INSERT INTO `tp_prosys` VALUES ('51', '11', '44', '腰立辉', '腰立辉', '2016-09-20 16:08:42', '2016-09-20 16:08:42');
 
 -- ----------------------------
 -- Table structure for `tp_risk`
@@ -694,7 +691,7 @@ CREATE TABLE `tp_risk` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_risk
@@ -704,6 +701,7 @@ INSERT INTO `tp_risk` VALUES ('5', '1', '不涉及页面，只会套用模板，
 INSERT INTO `tp_risk` VALUES ('12', '2', 'werw', '3', '<ul>\r\n	<li>\r\n		asd</li>\r\n	<li>\r\n		hjsad</li>\r\n	<li>\r\n		jsa</li>\r\n</ul>\r\n', '24', '关闭', '<p>\r\n	asdad<span style=\"color: rgb(255, 0, 0);\">asda</span></p>\r\n', '腰立辉', '腰立辉', '2016-09-14 22:45:51', '2016-09-14 22:45:51');
 INSERT INTO `tp_risk` VALUES ('14', '2', '也让她而', 'C', '<p>\r\n	暂无方案</p>\r\n', '23', '打开', '', '腰立辉', '腰立辉', '2016-09-19 23:54:13', '2016-09-19 23:54:13');
 INSERT INTO `tp_risk` VALUES ('15', '1', '从中选出', 'C', '<p>\r\n	暂无方案</p>\r\n', '40', '打开', '<p>\r\n	阿萨德撒</p>\r\n', '腰立辉', '腰立辉', '2016-09-19 23:54:58', '2016-09-19 23:54:58');
+INSERT INTO `tp_risk` VALUES ('16', '1', 'fasf', 'C', '<p>\r\n	暂无方案</p>\r\n', '25', '打开', '', '腰立辉', '腰立辉', '2016-09-20 14:46:48', '2016-09-20 14:46:48');
 
 -- ----------------------------
 -- Table structure for `tp_rules`
@@ -781,10 +779,10 @@ CREATE TABLE `tp_scene` (
 INSERT INTO `tp_scene` VALUES ('43', '1', null, '3', '车顾问', '当下', 'cheguwen.com', '提用户下单', '正常', '24', '11-wqej-qweq-qqqq', '0', '腰立辉', '腰立辉', '2016-09-15 00:13:33', '2016-09-15 00:13:33');
 INSERT INTO `tp_scene` VALUES ('45', '1', null, '2', '测试人员', '1', 'http://192.168.43.61:81/test/brotest/admin.php', '正常登录退出', '正常', '25', '登录-退出', '0', '腰立辉', null, '2016-08-08 15:26:17', '2016-08-08 15:26:17');
 INSERT INTO `tp_scene` VALUES ('46', '2', null, '2', '测试人员', '项目初期', 'http://192.168.43.61:81/test/brotest/admin.php', '录入项目信息', '正常', '25', '登录-新建项目-退出', '0', '腰立辉', '腰立辉', '2016-09-17 15:54:30', '2016-09-17 15:54:30');
-INSERT INTO `tp_scene` VALUES ('47', '1', null, '2', '123', '123', '123', '123', '正常', '23', '11-wqej-qweq-qqqq', '0', '腰立辉', null, '2016-08-14 19:08:23', '2016-08-14 19:08:23');
+INSERT INTO `tp_scene` VALUES ('47', '1', 'Manual', '2', '123', '123', '123', '123', '正常', '23', '11-wqej-qweq-qqqq', '0', '腰立辉', '腰立辉', '2016-09-20 17:18:27', '2016-09-20 17:18:27');
 INSERT INTO `tp_scene` VALUES ('48', '2', null, '1', 'hsdf', '当下', null, 'asd', '正常', '24', '', '0', '腰立辉', '腰立辉', '2016-09-15 00:18:39', '2016-09-15 00:14:59');
 INSERT INTO `tp_scene` VALUES ('49', '3', null, '1', 'xda', '当下', null, 'asddd', '正常', '24', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:18:36', '2016-09-15 00:15:16');
-INSERT INTO `tp_scene` VALUES ('50', '2', null, '1', 'hsdf121', '当下', null, 'asd', '正常', '24', '', '0', '腰立辉', '腰立辉', '2016-09-15 00:20:00', '2016-09-15 00:20:00');
+INSERT INTO `tp_scene` VALUES ('50', '1', 'Manual', '3', '车顾问', '当下11', null, '提用户下单', '正常', '24', '11-wqej-qweq-qqqq', '0', '腰立辉', '腰立辉', '2016-09-20 17:23:13', '2016-09-20 17:23:13');
 
 -- ----------------------------
 -- Table structure for `tp_scenefunc`

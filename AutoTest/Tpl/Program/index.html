@@ -1,0 +1,70 @@
+      <layout name="layout" />
+        <div class="place">
+                                 所在位置：测试项目
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">
+                <span style="margin-left:85px;">测试项目</span>
+                <span style="float:right;">
+                                             当前分组：<{$_SESSION['testgp']}>
+                </span>
+              </div>
+              <div class="left"  style="width:7%;" align="left">
+                  <h1>选择分组</h1>
+                    <volist name='data' id='vo' empty="没有数据">
+                      <ur style="margin-left:5px;">
+                       <a href="__URL__/index/testgp/<{$vo.v}>">   <{$vo.k}>.<{$vo.v}>：<{$vo.v|countPro=###}></a><br>
+                       </ur>
+                    </volist>
+              </div>
+              <div class="midd" width="60%">
+                 <table border="1" width="92%" align="center">
+
+                     <tr>
+                       <th width=5% align="center" bgcolor="#ccc">编号</th>
+                       <th width=33% align="center" bgcolor="#ccc">项目：
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__URL__/add"  >添加 </a>
+                          </span>
+                       </th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">开始</th>
+                       <th width=5% align="center" bgcolor="#ccc">结束</th>
+                       <th width=5% align="center" bgcolor="#ccc">负责人</th>
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='Pros' id='pro' empty="没有数据">
+                    <tr>
+                       <td align="center"><{$pro.prono}></td>
+                       <td>
+                         <a href="__APP__/Stage/index/proid/<{$pro.id}>"><{$pro.program}>（<{$pro.ptype}>）</a>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__URL__/details/id/<{$pro.id}>">详情 </a>
+                           <a href="__APP__/Risk/index/proid/<{$pro.id}>">风险 <{$pro.id|countRisk=###}></a>
+                           <a href="__APP__/Stage/index/proid/<{$pro.id}>">里程碑 <{$pro.id|countStage=###}></a>
+                           <a href="__APP__/Prosys/index/proid/<{$pro.id}>/prodid/<{$pro.prodid}>">系统<{$pro.id|countProsys=###}> </a>
+                           <a href="__APP__/Func/func/proid/<{$pro.id}>">功能点&nbsp; </a>
+                           <a href="__APP__/Func/range/proid/<{$pro.id}>">范围 <{$pro.id|countRange=###}> </a>
+                           <a href="__APP__/Scene/index/proid/<{$pro.id}>">场景<{$pro.id|countScene=###}></a>
+                           <a href="__APP__/Case/library/proid/<{$pro.id}>">用例库 <{$pro.id|countCase=###}></a>
+                           <a href="__APP__/Element/library/proid/<{$pro.id}>">控件库</a>
+                           <a href="__URL__/mod/id/<{$pro.id}>">修改</a>
+                         </span>
+                       </td>
+                       <td align="center">
+                           <a href="#"><{$pro.prost}></a>
+                           </td>
+                       <td align="center"><{$pro.start}></td>
+                       <td align="center"><{$pro.end}></td>
+                       <td align="center">
+                            <a href="#"><{$pro.manager}></a>
+                       </td>
+                       <td align="center">
+                          <a href="__URL__/del/id/<{$pro.id}>" onclick="return confirm('你确定要删除项目：<{$pro.program}>吗？')">删除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
+        </div><!-- midd -->
+           </div><!-- main -->

@@ -1,0 +1,57 @@
+      <layout name="layout" />
+        <div class="place">
+                                 所在位置：
+              >编辑
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">系统信息</div>
+              <div  class="midd">
+               <!--  <h3>系统信息</h3> -->
+	                <table width="100%" border="1" align="center" >
+		              <tr>
+			             <th>操作系统</th>
+			             <td><?php echo PHP_OS;?></td>
+		             </tr>
+		             <tr>
+			             <th>Apache版本</th>
+			             <td><?php echo apache_get_version();?></td>
+		             </tr>
+		             <tr>
+		         	     <th>PHP版本</th>
+			             <td><?php echo PHP_VERSION;?></td>
+		             </tr>
+		             <tr>
+			           <th>运行方式</th>
+			           <td><?php echo PHP_SAPI;?></td>
+		             </tr>
+		             <tr>
+			            <th>Apache目录</th>
+			            <td><?php echo php_ini_loaded_file();?></td>
+		             </tr>
+		            <tr>
+			             <th>数据库服务器</th>
+			             <td></td>
+		             </tr>
+		              <tr>
+			             <th>数据库名字</th>
+			             <td></td>
+		            </tr>
+		            <tr>
+			              <th>系统名称</th>
+			              <td>易车测试管理平台</td>
+		               </tr>
+		               <tr>
+			               <th>开发团队</th>
+			               <td>yaolh</td>
+		               </tr>
+		               <tr>
+			                <th>公司网址</th>
+			                <td><a href="http://www.yiche.com">http://www.yiche.com</a></td>
+		               </tr>
+
+	      </table>
+
+
+              </div><!-- midd -->
+           </div><!-- main -->

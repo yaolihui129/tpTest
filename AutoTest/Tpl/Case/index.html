@@ -1,0 +1,68 @@
+      <layout name="layout" />
+        <div class="place">
+                                 所在位置：
+               <a href="__APP__/Product">产品</a>
+              ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
+              ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
+              ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
+              >用例
+               <span style="float:right;margin-right:60px;">
+                 <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+               </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top" style="margin-left:200px;">测试用例</div>
+              <div class="left" align="left" style="widtht:15%;">
+                    <volist name='data' id='vo' empty="没有数据">
+                      <ur>
+                         <li><a href="__URL__/index/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>""><{$vo.sn}>:<{$vo.func}>:<{$vo.id|countFCase=###}></a></li>
+                       </ur>
+                    </volist>
+              </div>
+              <div class="midd" width="75%">
+                   <table border="1" width="80%" align="center">
+
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">ID</th>
+                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=15% align="left"  bgcolor="#ccc">意图
+                          <span style="float:right;margin-right:5px;">
+                             <a href="__APP__/Element/index/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">模板</a>
+                             <a href="__URL__/add/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"  >添加 </a>
+                          </span>
+                       </th>
+                       <th width=10% align="center"  bgcolor="#ccc">预期</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">项目</th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=7% align="center" bgcolor="#ccc">更新时间</th>
+                       <th width=2% align="center" bgcolor="#ccc">操作 </th>
+                     </tr>
+                     <volist name='cases' id='case' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$case.id}></td>
+                       <td align="center" ><{$case.sn}></td>
+                       <td >
+                         <a href="#" >
+                            <{$case.main}>
+                         </a>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__URL__/mod/id/<{$case.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">修改</a>
+                         </span>
+                       </td>
+                       <td align="center" ><{$case.expected}></td>
+                       <td align="center" ><{$case.state}></td>
+                       <td align="center" ><{$case.fproid|getProNo=###}></td>
+                       <td align="center" ><{$case.moder}></td>
+                       <td align="center" ><{$case.updateTime}></td>
+                       <td align="center" >
+
+                          <a href="__URL__/del/id/<{$case.id}>" onclick="return confirm('你确定要删除用例：<{$case.main}>？')">删除</a>
+                       </td>
+                    </tr>
+                    </volist>
+                </table>
+
+              </div><!-- midd -->
+           </div><!-- main -->
