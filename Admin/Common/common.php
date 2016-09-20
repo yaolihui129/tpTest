@@ -73,7 +73,9 @@ function proselect($value=1,$name=prono) {
 
     return $html;
 }
-
+/**
+ * 根据id获取项目编号
+ */
 function getProNo($id){
 
     $m=M('program');
@@ -106,3 +108,25 @@ function sysselect($value=1) {
     return $html;
 }
 
+/**
+ * 根据id获取场景
+ */
+ function getScene($id){
+
+    $m=M('scene');
+    $data=$m->find($id);
+    $str='角色:'.$data['swho'].';时间:'.$data['swhen'].';场景:'.$data['scene'];
+    return $str;
+
+}
+
+/**
+* 根据id获取数目
+*/
+function countExeFunc($id){
+    $m=M("exefunc");
+   $where=array("testsceneid"=>$id);
+    $count=$m->where($where)->count();
+    return $count;
+
+}

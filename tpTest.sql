@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql:3306
+Source Server         : 43.61:3307
 Source Server Version : 50532
-Source Host           : localhost:3306
+Source Host           : localhost:3307
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-20 00:00:39
+Date: 2016-09-20 11:53:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -264,11 +264,14 @@ CREATE TABLE `tp_exefunc` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exefunc
 -- ----------------------------
+INSERT INTO `tp_exefunc` VALUES ('1', null, null, null, null, null, null, '7', null, null, null, null, '2016-09-20 11:07:55', '0000-00-00 00:00:00');
+INSERT INTO `tp_exefunc` VALUES ('2', null, null, null, null, null, null, '10', null, null, null, null, '2016-09-20 11:07:52', '0000-00-00 00:00:00');
+INSERT INTO `tp_exefunc` VALUES ('3', null, null, null, null, null, null, '10', null, null, null, null, '2016-09-20 11:07:46', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `tp_exescene`
@@ -276,16 +279,17 @@ CREATE TABLE `tp_exefunc` (
 DROP TABLE IF EXISTS `tp_exescene`;
 CREATE TABLE `tp_exescene` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `stageid` int(11) DEFAULT NULL,
   `sn` int(11) DEFAULT NULL,
+  `type` varchar(8) DEFAULT 'Manual',
+  `stageid` int(11) DEFAULT NULL,
   `sceneid` int(11) DEFAULT NULL,
-  `testip` varchar(200) DEFAULT NULL,
   `tester` varchar(50) DEFAULT NULL,
+  `results` varchar(50) DEFAULT NULL,
+  `testip` varchar(200) DEFAULT NULL,
   `isrunning` int(11) DEFAULT NULL,
   `testtime` timestamp NULL DEFAULT NULL,
   `runningip` varchar(20) DEFAULT NULL,
   `verion` varchar(50) DEFAULT NULL,
-  `results` varchar(50) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -296,55 +300,55 @@ CREATE TABLE `tp_exescene` (
 -- ----------------------------
 -- Records of tp_exescene
 -- ----------------------------
-INSERT INTO `tp_exescene` VALUES ('7', '6', '4', '5', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.1', null, null, null, '2016-08-08 16:18:01', '2016-06-01 10:36:59');
-INSERT INTO `tp_exescene` VALUES ('10', '6', '2', '5', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.1', null, null, null, '2016-08-08 16:18:04', '2016-06-01 11:07:26');
-INSERT INTO `tp_exescene` VALUES ('12', '6', '2', '5', '200', '孟军良', null, '0000-00-00 00:00:00', null, 'V1.0.2', null, null, null, '2016-08-08 16:18:06', '2016-06-02 15:28:48');
-INSERT INTO `tp_exescene` VALUES ('14', null, '6', '1', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-02 17:35:38', '2016-06-02 17:35:38');
-INSERT INTO `tp_exescene` VALUES ('15', null, '7', '5', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-02 17:35:38', '2016-06-02 17:35:38');
-INSERT INTO `tp_exescene` VALUES ('16', null, '1', '9', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-06-07 11:40:11', '2016-06-07 11:40:11');
-INSERT INTO `tp_exescene` VALUES ('17', null, '2', '11', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-07 13:00:38', '2016-06-07 13:00:38');
-INSERT INTO `tp_exescene` VALUES ('18', null, '1', '12', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('19', null, '2', '13', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('20', null, '3', '14', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('21', null, '4', '15', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('22', null, '5', '16', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('23', null, '6', '18', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('24', null, '0', '19', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '失败', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
-INSERT INTO `tp_exescene` VALUES ('25', null, '2', '13', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-13 14:24:14', '2016-06-13 14:24:14');
-INSERT INTO `tp_exescene` VALUES ('26', null, '3', '16', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-13 14:24:16', '2016-06-13 14:24:16');
-INSERT INTO `tp_exescene` VALUES ('27', null, '4', '12', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-13 15:08:14', '2016-06-13 15:08:14');
-INSERT INTO `tp_exescene` VALUES ('28', null, '1', '19', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '失败', null, null, '2016-06-13 15:09:37', '2016-06-13 15:09:37');
-INSERT INTO `tp_exescene` VALUES ('31', null, '99', '9', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-15 17:00:20', '2016-06-15 17:00:20');
-INSERT INTO `tp_exescene` VALUES ('32', null, '99', '11', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-15 17:00:20', '2016-06-15 17:00:20');
-INSERT INTO `tp_exescene` VALUES ('36', null, '99', '9', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-15 17:19:35', '2016-06-15 17:19:35');
-INSERT INTO `tp_exescene` VALUES ('38', null, '1', '20', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
-INSERT INTO `tp_exescene` VALUES ('39', null, '2', '21', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '失败', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
-INSERT INTO `tp_exescene` VALUES ('40', null, '3', '22', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
-INSERT INTO `tp_exescene` VALUES ('41', null, '99', '20', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-16 15:19:08', '2016-06-16 15:19:08');
-INSERT INTO `tp_exescene` VALUES ('42', null, '99', '21', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-06-16 16:33:41', '2016-06-16 16:33:41');
-INSERT INTO `tp_exescene` VALUES ('44', null, '1', '24', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 11:48:54', '2016-06-20 11:48:54');
-INSERT INTO `tp_exescene` VALUES ('45', null, '2', '26', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 11:49:03', '2016-06-20 11:49:03');
-INSERT INTO `tp_exescene` VALUES ('46', null, '3', '25', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 11:49:09', '2016-06-20 11:49:09');
-INSERT INTO `tp_exescene` VALUES ('47', null, '99', '25', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 13:48:53', '2016-06-20 13:48:53');
-INSERT INTO `tp_exescene` VALUES ('48', null, '99', '24', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 13:48:55', '2016-06-20 13:48:55');
-INSERT INTO `tp_exescene` VALUES ('49', null, '99', '26', '200', '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-20 13:48:57', '2016-06-20 13:48:57');
-INSERT INTO `tp_exescene` VALUES ('51', null, '1', '27', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-22 14:34:42', '2016-06-22 14:34:42');
-INSERT INTO `tp_exescene` VALUES ('52', null, '2', '29', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-22 14:34:44', '2016-06-22 14:34:44');
-INSERT INTO `tp_exescene` VALUES ('53', null, '3', '28', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-22 14:34:46', '2016-06-22 14:34:46');
-INSERT INTO `tp_exescene` VALUES ('54', null, '4', '30', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-22 14:34:48', '2016-06-22 14:34:48');
-INSERT INTO `tp_exescene` VALUES ('55', null, '99', '27', '200', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-06-27 11:03:14', '2016-06-27 11:03:14');
-INSERT INTO `tp_exescene` VALUES ('73', null, '2', '33', null, '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-05 13:54:09', '2016-07-05 13:54:09');
-INSERT INTO `tp_exescene` VALUES ('74', null, '99', '34', null, '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-05 13:54:11', '2016-07-05 13:54:11');
-INSERT INTO `tp_exescene` VALUES ('75', null, '99', '33', null, '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-05 13:54:13', '2016-07-05 13:54:13');
-INSERT INTO `tp_exescene` VALUES ('79', null, '99', '33', 'http://zhixiao.huimaiche.com/', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-07-05 15:27:43', '2016-07-05 15:27:43');
-INSERT INTO `tp_exescene` VALUES ('80', null, '99', '34', 'http://jinkou.huimaiche.com/', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-07-05 15:27:45', '2016-07-05 15:27:45');
-INSERT INTO `tp_exescene` VALUES ('81', null, '99', '33', 'http://zhixiao.huimaiche.com/', '腰立辉', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-07-05 15:27:47', '2016-07-05 15:27:47');
-INSERT INTO `tp_exescene` VALUES ('86', null, '1', '32', null, '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-06 10:36:11', '2016-07-06 10:36:11');
-INSERT INTO `tp_exescene` VALUES ('87', null, '2', '23', null, '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-06 10:36:13', '2016-07-06 10:36:13');
-INSERT INTO `tp_exescene` VALUES ('88', null, '3', '32', null, '岳丹丹', null, '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-06 10:36:15', '2016-07-06 10:36:15');
-INSERT INTO `tp_exescene` VALUES ('96', null, '99', '36', null, '腰立辉', '0', '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-07-11 14:51:32', '2016-07-11 14:51:32');
-INSERT INTO `tp_exescene` VALUES ('97', null, '99', '36', null, '王鑫彤', '0', '0000-00-00 00:00:00', null, 'V1.0.3', null, null, null, '2016-07-11 14:56:11', '2016-07-11 14:56:11');
-INSERT INTO `tp_exescene` VALUES ('103', null, '99', '32', 'http://dealer.huimaiche.com', '岳丹丹', '0', '0000-00-00 00:00:00', null, 'V1.0.3', '通过', null, null, '2016-07-14 10:12:03', '2016-07-14 10:12:03');
+INSERT INTO `tp_exescene` VALUES ('7', '4', 'Manual ', '6', '43', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.1', null, null, '2016-09-20 11:44:25', '2016-06-01 10:36:59');
+INSERT INTO `tp_exescene` VALUES ('10', '2', 'Auto', '6', '46', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.1', null, null, '2016-09-20 11:44:33', '2016-06-01 11:07:26');
+INSERT INTO `tp_exescene` VALUES ('12', '2', null, '6', '5', '孟军良', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.2', null, null, '2016-08-08 16:18:06', '2016-06-02 15:28:48');
+INSERT INTO `tp_exescene` VALUES ('14', '6', null, null, '1', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-02 17:35:38', '2016-06-02 17:35:38');
+INSERT INTO `tp_exescene` VALUES ('15', '7', null, null, '5', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-02 17:35:38', '2016-06-02 17:35:38');
+INSERT INTO `tp_exescene` VALUES ('16', '1', 'Auto', '6', '9', '腰立辉', '通过', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-09-20 11:44:40', '2016-06-07 11:40:11');
+INSERT INTO `tp_exescene` VALUES ('17', '2', null, '6', '11', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-09-20 11:44:13', '2016-06-07 13:00:38');
+INSERT INTO `tp_exescene` VALUES ('18', '1', null, null, '12', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('19', '2', null, null, '13', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('20', '3', null, null, '14', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('21', '4', null, null, '15', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('22', '5', null, null, '16', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('23', '6', null, null, '18', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('24', '0', null, null, '19', '腰立辉', '失败', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-12 16:45:17', '2016-06-12 16:45:17');
+INSERT INTO `tp_exescene` VALUES ('25', '2', null, null, '13', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-13 14:24:14', '2016-06-13 14:24:14');
+INSERT INTO `tp_exescene` VALUES ('26', '3', null, null, '16', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-13 14:24:16', '2016-06-13 14:24:16');
+INSERT INTO `tp_exescene` VALUES ('27', '4', null, null, '12', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-13 15:08:14', '2016-06-13 15:08:14');
+INSERT INTO `tp_exescene` VALUES ('28', '1', null, null, '19', '腰立辉', '失败', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-13 15:09:37', '2016-06-13 15:09:37');
+INSERT INTO `tp_exescene` VALUES ('31', '99', null, null, '9', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-15 17:00:20', '2016-06-15 17:00:20');
+INSERT INTO `tp_exescene` VALUES ('32', '99', null, null, '11', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-15 17:00:20', '2016-06-15 17:00:20');
+INSERT INTO `tp_exescene` VALUES ('36', '99', null, null, '9', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-15 17:19:35', '2016-06-15 17:19:35');
+INSERT INTO `tp_exescene` VALUES ('38', '1', null, null, '20', '腰立辉', '通过', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
+INSERT INTO `tp_exescene` VALUES ('39', '2', null, null, '21', '腰立辉', '失败', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
+INSERT INTO `tp_exescene` VALUES ('40', '3', null, null, '22', '腰立辉', '通过', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-16 11:28:54', '2016-06-16 11:28:54');
+INSERT INTO `tp_exescene` VALUES ('41', '99', null, null, '20', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-16 15:19:08', '2016-06-16 15:19:08');
+INSERT INTO `tp_exescene` VALUES ('42', '99', null, null, '21', '岳丹丹', '通过', '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-16 16:33:41', '2016-06-16 16:33:41');
+INSERT INTO `tp_exescene` VALUES ('44', '1', null, null, '24', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 11:48:54', '2016-06-20 11:48:54');
+INSERT INTO `tp_exescene` VALUES ('45', '2', null, null, '26', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 11:49:03', '2016-06-20 11:49:03');
+INSERT INTO `tp_exescene` VALUES ('46', '3', null, null, '25', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 11:49:09', '2016-06-20 11:49:09');
+INSERT INTO `tp_exescene` VALUES ('47', '99', null, null, '25', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 13:48:53', '2016-06-20 13:48:53');
+INSERT INTO `tp_exescene` VALUES ('48', '99', null, null, '24', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 13:48:55', '2016-06-20 13:48:55');
+INSERT INTO `tp_exescene` VALUES ('49', '99', null, null, '26', '岳丹丹', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-20 13:48:57', '2016-06-20 13:48:57');
+INSERT INTO `tp_exescene` VALUES ('51', '1', null, null, '27', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-22 14:34:42', '2016-06-22 14:34:42');
+INSERT INTO `tp_exescene` VALUES ('52', '2', null, null, '29', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-22 14:34:44', '2016-06-22 14:34:44');
+INSERT INTO `tp_exescene` VALUES ('53', '3', null, null, '28', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-22 14:34:46', '2016-06-22 14:34:46');
+INSERT INTO `tp_exescene` VALUES ('54', '4', null, null, '30', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-22 14:34:48', '2016-06-22 14:34:48');
+INSERT INTO `tp_exescene` VALUES ('55', '99', null, null, '27', '腰立辉', null, '200', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-06-27 11:03:14', '2016-06-27 11:03:14');
+INSERT INTO `tp_exescene` VALUES ('73', '2', null, null, '33', '腰立辉', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 13:54:09', '2016-07-05 13:54:09');
+INSERT INTO `tp_exescene` VALUES ('74', '99', null, null, '34', '腰立辉', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 13:54:11', '2016-07-05 13:54:11');
+INSERT INTO `tp_exescene` VALUES ('75', '99', null, null, '33', '腰立辉', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 13:54:13', '2016-07-05 13:54:13');
+INSERT INTO `tp_exescene` VALUES ('79', '99', null, null, '33', '腰立辉', null, 'http://zhixiao.huimaiche.com/', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 15:27:43', '2016-07-05 15:27:43');
+INSERT INTO `tp_exescene` VALUES ('80', '99', null, null, '34', '腰立辉', null, 'http://jinkou.huimaiche.com/', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 15:27:45', '2016-07-05 15:27:45');
+INSERT INTO `tp_exescene` VALUES ('81', '99', null, null, '33', '腰立辉', null, 'http://zhixiao.huimaiche.com/', null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-05 15:27:47', '2016-07-05 15:27:47');
+INSERT INTO `tp_exescene` VALUES ('86', '1', null, null, '32', '岳丹丹', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-06 10:36:11', '2016-07-06 10:36:11');
+INSERT INTO `tp_exescene` VALUES ('87', '2', null, null, '23', '岳丹丹', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-06 10:36:13', '2016-07-06 10:36:13');
+INSERT INTO `tp_exescene` VALUES ('88', '3', null, null, '32', '岳丹丹', '通过', null, null, '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-06 10:36:15', '2016-07-06 10:36:15');
+INSERT INTO `tp_exescene` VALUES ('96', '99', null, null, '36', '腰立辉', null, null, '0', '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-11 14:51:32', '2016-07-11 14:51:32');
+INSERT INTO `tp_exescene` VALUES ('97', '99', null, null, '36', '王鑫彤', null, null, '0', '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-11 14:56:11', '2016-07-11 14:56:11');
+INSERT INTO `tp_exescene` VALUES ('103', '99', null, null, '32', '岳丹丹', '通过', 'http://dealer.huimaiche.com', '0', '0000-00-00 00:00:00', null, 'V1.0.3', null, null, '2016-07-14 10:12:03', '2016-07-14 10:12:03');
 
 -- ----------------------------
 -- Table structure for `tp_func`
@@ -753,16 +757,16 @@ INSERT INTO `tp_rules` VALUES ('29', '11', 'yehkashdk', 'jkasdaoisud', '16', '�
 DROP TABLE IF EXISTS `tp_scene`;
 CREATE TABLE `tp_scene` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sn` int(11) DEFAULT NULL,
+  `sn` smallint(3) DEFAULT NULL,
+  `type` varchar(8) DEFAULT 'Manual',
+  `level` smallint(1) DEFAULT NULL,
   `swho` varchar(20) DEFAULT NULL,
-  `swhen` varchar(50) DEFAULT NULL,
+  `swhen` varchar(20) DEFAULT NULL,
   `stestip` varchar(200) DEFAULT NULL,
   `scene` varchar(50) DEFAULT NULL,
-  `level` int(11) DEFAULT NULL,
   `state` varchar(5) DEFAULT NULL,
   `proid` smallint(6) DEFAULT NULL,
   `flow` varchar(300) DEFAULT NULL,
-  `remarks` text,
   `sourceid` smallint(6) DEFAULT '0',
   `adder` varchar(10) DEFAULT NULL,
   `moder` varchar(10) DEFAULT NULL,
@@ -774,13 +778,13 @@ CREATE TABLE `tp_scene` (
 -- ----------------------------
 -- Records of tp_scene
 -- ----------------------------
-INSERT INTO `tp_scene` VALUES ('43', '1', '车顾问', '当下', 'cheguwen.com', '提用户下单', '3', '正常', '24', '11-wqej-qweq-qqqq', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:13:33', '2016-09-15 00:13:33');
-INSERT INTO `tp_scene` VALUES ('45', '1', '测试人员', '1', 'http://192.168.43.61:81/test/brotest/admin.php', '正常登录退出', '2', '正常', '25', '登录-退出', null, '0', '腰立辉', null, '2016-08-08 15:26:17', '2016-08-08 15:26:17');
-INSERT INTO `tp_scene` VALUES ('46', '2', '测试人员', '项目初期', 'http://192.168.43.61:81/test/brotest/admin.php', '录入项目信息', '2', '正常', '25', '登录-新建项目-退出', null, '0', '腰立辉', '腰立辉', '2016-09-17 15:54:30', '2016-09-17 15:54:30');
-INSERT INTO `tp_scene` VALUES ('47', '1', '123', '123', '123', '123', '2', '正常', '23', '11-wqej-qweq-qqqq', null, '0', '腰立辉', null, '2016-08-14 19:08:23', '2016-08-14 19:08:23');
-INSERT INTO `tp_scene` VALUES ('48', '2', 'hsdf', '当下', null, 'asd', '1', '正常', '24', '', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:18:39', '2016-09-15 00:14:59');
-INSERT INTO `tp_scene` VALUES ('49', '3', 'xda', '当下', null, 'asddd', '1', '正常', '24', null, null, '0', '腰立辉', '腰立辉', '2016-09-15 00:18:36', '2016-09-15 00:15:16');
-INSERT INTO `tp_scene` VALUES ('50', '2', 'hsdf121', '当下', null, 'asd', '1', '正常', '24', '', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:20:00', '2016-09-15 00:20:00');
+INSERT INTO `tp_scene` VALUES ('43', '1', null, '3', '车顾问', '当下', 'cheguwen.com', '提用户下单', '正常', '24', '11-wqej-qweq-qqqq', '0', '腰立辉', '腰立辉', '2016-09-15 00:13:33', '2016-09-15 00:13:33');
+INSERT INTO `tp_scene` VALUES ('45', '1', null, '2', '测试人员', '1', 'http://192.168.43.61:81/test/brotest/admin.php', '正常登录退出', '正常', '25', '登录-退出', '0', '腰立辉', null, '2016-08-08 15:26:17', '2016-08-08 15:26:17');
+INSERT INTO `tp_scene` VALUES ('46', '2', null, '2', '测试人员', '项目初期', 'http://192.168.43.61:81/test/brotest/admin.php', '录入项目信息', '正常', '25', '登录-新建项目-退出', '0', '腰立辉', '腰立辉', '2016-09-17 15:54:30', '2016-09-17 15:54:30');
+INSERT INTO `tp_scene` VALUES ('47', '1', null, '2', '123', '123', '123', '123', '正常', '23', '11-wqej-qweq-qqqq', '0', '腰立辉', null, '2016-08-14 19:08:23', '2016-08-14 19:08:23');
+INSERT INTO `tp_scene` VALUES ('48', '2', null, '1', 'hsdf', '当下', null, 'asd', '正常', '24', '', '0', '腰立辉', '腰立辉', '2016-09-15 00:18:39', '2016-09-15 00:14:59');
+INSERT INTO `tp_scene` VALUES ('49', '3', null, '1', 'xda', '当下', null, 'asddd', '正常', '24', null, '0', '腰立辉', '腰立辉', '2016-09-15 00:18:36', '2016-09-15 00:15:16');
+INSERT INTO `tp_scene` VALUES ('50', '2', null, '1', 'hsdf121', '当下', null, 'asd', '正常', '24', '', '0', '腰立辉', '腰立辉', '2016-09-15 00:20:00', '2016-09-15 00:20:00');
 
 -- ----------------------------
 -- Table structure for `tp_scenefunc`
