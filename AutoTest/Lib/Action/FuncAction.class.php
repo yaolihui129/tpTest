@@ -33,6 +33,7 @@ class FuncAction extends CommonAction {
         $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
+        $w=$_GET['w'];
         /* 实例化模型*/
         $m= D("func");
         $where=array("pathid"=>"$pathid");
@@ -41,7 +42,7 @@ class FuncAction extends CommonAction {
         $this->assign("data",$data);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid","w"=>$w);
         $this->assign("w",$where);
         $this -> assign("state", formselect());
         $this -> assign("fproid", proselect($proid,"fproid"));
@@ -73,13 +74,14 @@ class FuncAction extends CommonAction {
         $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
+        $w=$_GET['w'];
         $id=$_GET['id'];
         /* 实例化模型*/
         $m= D("func");
         $where=array("pathid"=>"$pathid");
         $data=$m->where($where)->order("sn")->select();
         $this->assign("data",$data);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid","w"=>$w);
         $this->assign("w",$where);
 
 
@@ -123,6 +125,7 @@ class FuncAction extends CommonAction {
         ->order("tp_system.sysno,tp_path.sn,tp_path.id,tp_func.sn,tp_func.id")
         ->select();
         $this->assign("data",$data);
+        $where=array("proid"=>$proid);
         $this->assign('w',$where);
 // dump($data);
         $this->display();
@@ -152,6 +155,7 @@ class FuncAction extends CommonAction {
        // dump($data);
         $where=array("proid"=>"$proid");
         $this->assign('w',$where);
+        
 
         $this->display();
 

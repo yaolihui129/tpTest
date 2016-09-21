@@ -23,7 +23,7 @@
                                    <th width=3% align="left" bgcolor="#ccc">编号</th>
                                    <th width=13% align="left" bgcolor="#ccc">系统</th>
                                    <th width=3% align="left" bgcolor="#ccc">维护</th>
-                                   <th width=6% align="left" bgcolor="#ccc">更细时间</th>
+                                   <th width=9% align="left" bgcolor="#ccc">更新时间</th>
                                    <th width=2% align="center" bgcolor="#ccc">操作 </th>
                                   </tr>
                                 <volist name='data' id='st' empty="没有数据">
@@ -51,7 +51,7 @@
                            <h1>备选系统</h1>
                              <table border="1" width="550px" align="center">
                                 <tr>
-                                  <th width=5% align="left" bgcolor="#ccc">编号</th>
+                                  <th width=4% align="left" bgcolor="#ccc">编号</th>
                                   <th width=13% align="left" bgcolor="#ccc">系统
                                       <span style="float:right;margin-right:5px;">
                                          <a href="__APP__/System/add/proid/<{$w.proid}>/prodid/<{$w.prodid}>" >添加</a>
@@ -60,7 +60,7 @@
                                   <th width=3% align="center" bgcolor="#ccc">状态</th>
                                   <th width=3% align="center" bgcolor="#ccc">维护</th>
                                   <th width=9% align="center" bgcolor="#ccc">更新时间</th>
-                                  <th width=2% align="center" bgcolor="#ccc">操作 </th>
+                                  <!-- <th width=2% align="center" bgcolor="#ccc">操作 </th> -->
                                 </tr>
                             <volist name='syses' id='st' empty="没有数据">
                                 <tr>
@@ -79,9 +79,9 @@
                                    <td align="center" ><a href="#"><{$st.state}></a></td>
                                    <td align="center" ><{$st.moder}></td>
                                    <td align="center" ><{$st.updateTime}></td>
-                                   <td align="center" >
+                                   <!--  <td align="center" >
                                       <a href="__APP__/System/del/id/<{$st.id}>" onclick="return confirm('你确定要删除系统：<{$st.system}>？')" >删除</a>
-                                   </td>
+                                   </td>-->
                                 </tr>
                             </volist>
                          </table>

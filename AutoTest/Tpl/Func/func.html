@@ -28,28 +28,48 @@
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=7% align="left" bgcolor="#ccc">系统</th>
-                       <th width=15% align="left"  bgcolor="#ccc">路径</th>
+                       <th width=20% align="left"  bgcolor="#ccc">路径(编辑)</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=10% align="left" bgcolor="#ccc">功能</th>
+                       <th width=12% align="left" bgcolor="#ccc">功能（编辑）</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=5% align="center" bgcolor="#ccc">项目</th>
-                       <th width=12% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=8% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.id}></td>
                        <td align="left" ><{$st.sysno}></td>
-                       <td align="left" ><{$st.path}></td>
+                       <td align="left" >
+                       <empty name="st.sysid">
+                       <else />
+                       <empty name="st.pathid">
+                          <{$st.path}>
+                          <span style="float:right;margin-right:5px;">
+                          <a href="__APP__/Path/add/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                        <else />
+                          <a href="__APP__/Path/mod/id/<{$st.pathid}>/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func"><{$st.path}></a>
+                          <span style="float:right;margin-right:5px;">
+                          <a href="__APP__/Path/add/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                        </empty> 
+                        </empty>   
                        <td align="center" ><{$st.pstate}></td>
-                       <td align="left" ><{$st.func}></td>
+                       <td align="left" >
+                       <empty name="st.pathid">
+                       <else />
+                       <empty name="st.funcid">
+                               <a href="__APP__/Func/mod/id/<{$st.id}>/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func"><{$st.func}></a>
+                               <span style="float:right;margin-right:5px;">
+                              <a href="__APP__/Func/add/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                        <else />
+                               <span style="float:right;margin-right:5px;">                             
+                              <a href="__APP__/Func/add/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                         </empty> 
+                        </empty>      
                        <td align="center" ><{$st.state}></td>
                        <td align="center" ><{$st.fproid|getProNo=###}></td>
-
                        <td align="center" >
-                          <a href="">添加</a>
-                          <a href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
-                          <a href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >用例<{$st.id|countFCase=###}></a>
-                          <a href="">修改</a>
+                          <a href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func" >规则<{$st.id|countFRules=###}></a>
+                          <a href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func" >用例<{$st.id|countFCase=###}></a>                      
                        </td>
                     </tr>
                     </volist>

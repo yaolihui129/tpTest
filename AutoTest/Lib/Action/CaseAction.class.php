@@ -8,6 +8,7 @@ class CaseAction extends CommonAction {
          $sysid=$_GET['sysid'];
          $pathid=$_GET['pathid'];
          $funcid=$_GET['funcid'];
+         $w=$_GET['w'];
          /* 实例化模型*/
          $m=M('func');
          $where=array("pathid"=>$pathid);
@@ -17,7 +18,7 @@ class CaseAction extends CommonAction {
     	 $where=array("funcid"=>$funcid);
     	 $cases=$m->where($where)->select();
 	     $this->assign('cases',$cases);
-	     $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+	     $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
 	     $this->assign('w',$where);
 
 
@@ -31,13 +32,13 @@ class CaseAction extends CommonAction {
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $funcid=$_GET['funcid'];
-
+        $w=$_GET['w'];
         /* 实例化模型*/
         $m=M('case');
         $where=array("funcid"=>$funcid);
         $data=$m->where($where)->select();
         $this->assign('data',$data);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
         $this->assign('w',$where);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
@@ -74,13 +75,14 @@ class CaseAction extends CommonAction {
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $funcid=$_GET['funcid'];
+        $w=$_GET['w'];
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
         $m=M('case');
         $where=array("funcid"=>$funcid);
         $data=$m->where($where)->select();
         $this->assign('data',$data);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
         $this->assign('w',$where);
         $case=$m->find($id);
         $this->assign("case",$case);

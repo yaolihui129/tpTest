@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 43.61:3307
+Source Server         : mysql:3306
 Source Server Version : 50532
-Source Host           : localhost:3307
+Source Host           : localhost:3306
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-21 17:55:02
+Date: 2016-09-22 00:18:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -640,7 +640,7 @@ CREATE TABLE `tp_prosys` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`prosysid`)
-) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=56 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_prosys
@@ -653,6 +653,7 @@ INSERT INTO `tp_prosys` VALUES ('53', '4', '25', '腰立辉', '腰立辉', '2016
 INSERT INTO `tp_prosys` VALUES ('49', '3', '42', '腰立辉', '腰立辉', '2016-09-19 10:29:36', '2016-09-19 10:29:36');
 INSERT INTO `tp_prosys` VALUES ('52', '11', '42', '腰立辉', '腰立辉', '2016-09-21 09:11:44', '2016-09-21 09:11:44');
 INSERT INTO `tp_prosys` VALUES ('51', '11', '44', '腰立辉', '腰立辉', '2016-09-20 16:08:42', '2016-09-20 16:08:42');
+INSERT INTO `tp_prosys` VALUES ('55', '53', '25', '腰立辉', '腰立辉', '2016-09-21 22:03:55', '2016-09-21 22:03:55');
 
 -- ----------------------------
 -- Table structure for `tp_risk`
@@ -877,15 +878,15 @@ CREATE TABLE `tp_system` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_system
 -- ----------------------------
 INSERT INTO `tp_system` VALUES ('1', 'App.CGW', '车顾问App', '已搁置', '1', null, null, null, '18800000007', '111111', '腰立辉', '腰立辉', '2016-09-13 13:43:38', '2016-09-13 13:43:38');
 INSERT INTO `tp_system` VALUES ('3', 'APP.HMC', '惠买车APP', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-21 10:17:05', '2016-09-21 10:17:05');
-INSERT INTO `tp_system` VALUES ('4', 'Auto.Access', 'Access客户端', '正常', '2', null, 'V1.10', '192.168.43.61：easypass', '姓名', '123456', '腰立辉', null, '2016-08-12 15:50:00', '2016-08-12 15:50:00');
-INSERT INTO `tp_system` VALUES ('5', 'Auto.Main', '自动化后台', '正常', '2', null, 'V1.00', 'http://192.168.84.22:8017/main/index', 'yaolh', '888888', '腰立辉', null, '2016-08-12 15:49:45', '2016-08-12 15:49:45');
+INSERT INTO `tp_system` VALUES ('4', 'Auto.Access', 'Access客户端', '正常', '2', null, 'V1.10', '192.168.43.61：easypass', '姓名', '123456', '腰立辉', '腰立辉', '2016-09-22 00:08:48', '2016-09-22 00:08:48');
+INSERT INTO `tp_system` VALUES ('5', 'Auto.Main', '自动化后台', '正常', '2', null, 'V1.00', 'http://192.168.84.22:8017/main/index', 'yaolh', '888888', '腰立辉', '腰立辉', '2016-09-22 00:08:52', '2016-09-22 00:08:52');
 INSERT INTO `tp_system` VALUES ('6', 'Dealer.hmc', '惠买车商家版', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-21 10:17:01', '2016-09-21 10:17:01');
 INSERT INTO `tp_system` VALUES ('7', 'H5.CheGW', '车顾问H5', '已搁置', '1', null, null, null, null, null, null, '腰立辉', '2016-09-13 13:43:59', '2016-09-13 13:43:59');
 INSERT INTO `tp_system` VALUES ('8', 'OP.Brker', '经纪人业务平台', '已搁置', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:43', '2016-09-21 10:14:43');
@@ -908,6 +909,7 @@ INSERT INTO `tp_system` VALUES ('46', 'yao.tpTest', '测试管理平台', '正�
 INSERT INTO `tp_system` VALUES ('49', '1231', '12312', '正常', null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-13 11:07:56', '0000-00-00 00:00:00');
 INSERT INTO `tp_system` VALUES ('50', '戚薇', 'QWEQW', '正常', null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-13 11:10:14', '0000-00-00 00:00:00');
 INSERT INTO `tp_system` VALUES ('52', 'Bro.eshop', 'Eshop电子商城11', '正常', '6', null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-17 21:22:07', '2016-09-17 21:22:07');
+INSERT INTO `tp_system` VALUES ('53', 'wqwe', 'qwe', '正常', '2', null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-21 22:03:50', '2016-09-21 22:03:50');
 
 -- ----------------------------
 -- Table structure for `tp_user`

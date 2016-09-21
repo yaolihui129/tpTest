@@ -8,6 +8,7 @@ class RulesAction extends CommonAction {
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $funcid=$_GET['funcid'];
+        $w=$_GET['w'];
         /* 实例化模型*/
         $m=M('func');
         $where=array("pathid"=>$pathid);
@@ -18,7 +19,7 @@ class RulesAction extends CommonAction {
         $where=array("funcid"=>$funcid);
         $rules=$m->where($where)->select();
         $this->assign('rules',$rules);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
         $this->assign('w',$where);
 
 
@@ -33,13 +34,13 @@ class RulesAction extends CommonAction {
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $funcid=$_GET['funcid'];
-
+        $w=$_GET['w'];
         /* 实例化模型*/
         $m=M('rules');
         $where=array("funcid"=>$funcid);
         $data=$m->where($where)->select();
         $this->assign('data',$data);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
         $this->assign('w',$where);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
@@ -74,13 +75,14 @@ class RulesAction extends CommonAction {
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $funcid=$_GET['funcid'];
+        $w=$_GET['w'];
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
         /* 实例化模型*/
         $m=M('rules');
         $where=array("funcid"=>$funcid);
         $data=$m->where($where)->select();
         $this->assign('data',$data);
-        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid,"w"=>$w);
         $this->assign('w',$where);
         $rule=$m->find($id);
         $this->assign("rule",$rule);
@@ -111,9 +113,9 @@ class RulesAction extends CommonAction {
 
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

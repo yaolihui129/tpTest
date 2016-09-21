@@ -1,6 +1,7 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
+            <empty name="w.w"> 
             <empty name="w.proid">
                 <a href="__APP__/Product">产品</a>
                 ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
@@ -20,6 +21,15 @@
                      <a href="__URL__/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"> 返回</a>
                   </span>
             </empty>
+            <else />           
+             <a href="__APP__/Program">项目</a>
+                  ><a href="__APP__/Func/func/proid/<{$w.proid}>">功能点</a>
+                  >添加
+                  <span style="float:right;margin-right:60px;">
+                  <a href="__APP__/Func/func/proid/<{$w.proid}>"> 返回</a>
+                  </span>
+             </empty>
+            
         </div>
         <div class="content">
            <div class="main">
@@ -39,11 +49,15 @@
                      <tr><td>项目：</td> <td><{$fproid}>状态:<{$state}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"> </form>
+                         <empty name="w.w"> <empty name="w.w"> 
                              <empty name="w.proid">
                                 <a href="__URL__/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
                              <else />
                                 <a href="__URL__/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
                             </empty>
+                        <else />
+                                <a href="__APP__/Func/func/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
+                         </empty>
                          </td>
                      </tr>
                   </table>
