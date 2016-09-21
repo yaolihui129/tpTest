@@ -4,6 +4,7 @@ class FuncAction extends CommonAction {
     public function index(){
          /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         /* 实例化模型*/
@@ -17,7 +18,7 @@ class FuncAction extends CommonAction {
         $where=array("pathid"=>"$pathid");
         $funcs=$m->where($where)->order("sn")->select();
         $this->assign("funcs",$funcs);
-        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid");
         $this->assign("w",$where);
 
 	    $this->display();
@@ -29,6 +30,7 @@ class FuncAction extends CommonAction {
         /* 接收参数*/
         $prodid=$_GET['prodid'];
         $proid=$_GET['proid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         /* 实例化模型*/
@@ -39,7 +41,7 @@ class FuncAction extends CommonAction {
         $this->assign("data",$data);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
-        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid");
         $this->assign("w",$where);
         $this -> assign("state", formselect());
         $this -> assign("fproid", proselect($proid,"fproid"));
@@ -68,6 +70,7 @@ class FuncAction extends CommonAction {
     public function mod(){
         /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         $id=$_GET['id'];
@@ -76,7 +79,7 @@ class FuncAction extends CommonAction {
         $where=array("pathid"=>"$pathid");
         $data=$m->where($where)->order("sn")->select();
         $this->assign("data",$data);
-        $where=array("prodid"=>$prodid,"sysid"=>$sysid,"pathid"=>"$pathid");
+        $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>"$pathid");
         $this->assign("w",$where);
 
 

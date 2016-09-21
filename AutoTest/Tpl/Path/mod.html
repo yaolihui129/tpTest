@@ -1,13 +1,23 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-              <a href="__APP__/Product">产品</a>
-             ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>             
-             ><a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
-             >编辑
-              <span style="float:right;margin-right:60px;">
-              <a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
-              </span>
+             <empty name="w.proid">
+                  <a href="__APP__/Product">产品</a>
+                  ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
+                  ><a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
+                  >编辑
+                  <span style="float:right;margin-right:60px;">
+                  <a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+                  </span>
+                   <else />
+                   <a href="__APP__/Program">项目</a>
+                   ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
+                   ><a href="__URL__/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">路径</a>
+                   >编辑
+                  <span style="float:right;margin-right:60px;">
+                  <a href="__URL__/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"> 返回</a>
+                  </span>
+            </empty>
         </div>
         <div class="content">
            <div class="main">
@@ -29,7 +39,7 @@
                      <tr>
                          <td>路径</td>
                          <td><input type="text" name="path" value="<{$path.path}>"  class="input300"/></td>
-                     </tr>                      
+                     </tr>
                      <tr>
                          <td>状态</td>
                          <td>

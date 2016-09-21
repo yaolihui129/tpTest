@@ -6,10 +6,11 @@ class ProsysAction extends CommonAction {
         $proid=$_GET['proid'];
         $prodid=$_GET['prodid'];
          /* 实例化模型*/
-        $s = D("prosys");
-        $where=array("proid"=>"$proid");
+//         $s = D("prosys");
+        $s = D("system");
+        $where=array("tp_prosys.proid"=>"$proid");
         $data=$s->where($where)
-        ->join('tp_system ON tp_prosys.sysid =tp_system.id')
+        ->join('tp_prosys ON tp_prosys.sysid =tp_system.id')
         ->select();
         $this->assign("data",$data);
         /* 实例化模型*/

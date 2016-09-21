@@ -23,11 +23,37 @@ class PathAction extends CommonAction {
 	     $this->display();
     }
 
+    public function pindex(){
+        /* 接收参数*/
+        $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
+        $sysid=$_GET['sysid'];
+//       echo $prodid;
+        /* 实例化模型*/
+        $m=D('prosys');
+        $where=array("tp_prosys.proid"=>"$proid");
+        $syses=$m
+        ->join(" tp_system ON tp_system.id = tp_prosys.sysid")
+        ->where($where)->order("tp_system.sysno")->select();
+        $this->assign("data",$syses);
+        /* 实例化模型*/
+        $m=D('path');
+        $where=array("sysid"=>"$sysid");
+        $pathes= $m->where($where)->order("sn")->select();
+        $this->assign("pathes",$pathes);
+        $where=array("prodid"=>"$prodid","proid"=>"$proid","sysid"=>"$sysid");
+        $this->assign("w",$where);
+
+        $this->display();
+    }
+
+
 
 
     public function add(){
         /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         /* 实例化模型*/
         $m=D('path');
@@ -40,6 +66,9 @@ class PathAction extends CommonAction {
         $where=array("prodid"=>"$prodid","sysid"=>"$sysid");
         $this->assign("w",$where);
         $this -> assign("pstate", formselect("","pstate"));
+        $where=array("prodid"=>"$prodid","proid"=>"$proid","sysid"=>"$sysid");
+        $this->assign("w",$where);
+
 
 
         $this->display();
@@ -65,6 +94,7 @@ class PathAction extends CommonAction {
     public function mod(){
         /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $id=$_GET['id'];
         /* 实例化模型*/
@@ -78,6 +108,8 @@ class PathAction extends CommonAction {
         $path=$m->find($id);
         $this->assign("path",$path);
         $this -> assign("pstate", formselect($path['pstate'],"pstate"));
+        $where=array("prodid"=>"$prodid","proid"=>"$proid","sysid"=>"$sysid");
+        $this->assign("w",$where);
 
 
 

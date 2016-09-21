@@ -1,28 +1,29 @@
-      <layout name="layout" />
+    <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__APP__/Product">产品</a>
-             ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
+             <a href="__APP__/Program">项目</a>
+             ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
              >路径
             <span style="float:right;margin-right:60px;">
-            <a href="__APP__/System/index/prodid/<{$w.prodid}>"> 返回</a>
+            <a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;">路径管理</div>
-              <div class="left" width="30%">
-
+              <div class="top" style="margin-left:200px;">路径管理
+                 <span style="float:right;">
+                                             当前项目：<{$w.proid|getProNo=###}>
+                  </span>
+              </div>
+              <div class="left">
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li>
-                            <a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>">
-                             <{$vo.sysno}><{$vo.id|countPath=###}>:<{$vo.state}></a>
-                         </li>
+                         <li><a href="__URL__/pindex/sysid/<{$vo.id}>/proid/<{$vo.proid}>/prodid/<{$w.prodid}>">
+                           <{$vo.sysno}><{$vo.id|countPath=###}>:<{$vo.state}></a></li>
                        </ur>
                     </volist>
               </div>
-              <div class="midd" width="60%">
+              <div class="midd">
                    <table border="1" width="80%" align="center">
 
                      <tr>
@@ -30,7 +31,7 @@
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
                        <th width=30% align="left"  bgcolor="#ccc">路径
                           <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/add/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$proid}>"  >添加 </a>
+                             <a href="__URL__/add/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"  >添加 </a>
                           </span>
                        </th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
@@ -43,12 +44,12 @@
                        <td align="center" ><{$path.id}></td>
                        <td align="center" ><{$path.sn}></td>
                        <td >
-                         <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>" >
+                         <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>//proid/<{$w.proid}>" >
                             <{$path.path}>
                          </a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$proid}>" >功能点<{$path.id|countFunc=###}></a>
-                           <a href="__URL__/mod/id/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>/proid/<{$proid}>">修改</a>
+                           <a href="__APP__/Func/index/pathid/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>" >功能点<{$path.id|countFunc=###}></a>
+                           <a href="__URL__/mod/id/<{$path.id}>/sysid/<{$path.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">修改</a>
                          </span>
                        </td>
                        <td align="center" ><{$path.pstate}></td>
