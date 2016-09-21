@@ -2,7 +2,7 @@
         <div class="place">
                                  所在位置：
               <a href="__APP__/Program">项目</a>
-              >里程碑
+              >用例库
                <span style="float:right;margin-right:60px;">
                 <a href="__APP__/Program"> 返回</a>
                 </span>
@@ -14,14 +14,14 @@
                                              当前项目：<{$w.proid|getProNo=###}>
                    </span>
                </div>
-              <div class="left" width="30%">
+              <div class="left" >
                     <volist name='data' id='pro' empty="没有数据">
                       <ur>
                        <a href="__URL__/library/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countCase=###}>:<{$pro.prost}></a><br>
                       </ur>
                     </volist>
               </div>
-              <div class="midd" width="60%">
+              <div class="midd" >
                    <table border="1" width="80%" align="center">
 
                      <tr>
@@ -39,7 +39,7 @@
 
                     <tr>
                        <td align="center" ><{$case.id}></td>
-                       <td align="center" ><{$case.system}></td>
+                       <td align="center" ><{$case.sysno}></td>
                        <td align="center" ><{$case.path}></td>
                        <td align="center" ><{$case.func}></td>
                        <td align="center" ><{$case.main}></td>

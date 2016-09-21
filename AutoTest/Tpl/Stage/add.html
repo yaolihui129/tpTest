@@ -1,4 +1,4 @@
-      <layout name="layout" />
+<layout name="layout" />
         <div class="place">
                                  所在位置：
              <a href="__URL__/Program">项目</a>
@@ -11,67 +11,36 @@
         <div class="content">
            <div class="main">
               <div class="top">里程碑添加</div>
-              <div class="left"  width="20%" align="left">
+              <div class="left"  align="left">
                     <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>/proid/<{$w.proid}>"><{$vo.sn}>.<{$vo.stage}>:<{$vo.state}></a><br>
                     </volist>
               </div>
-              <div class="midd" width="50%" align="right" >
-                 <form action="__URL__/insert" method="post" >
+              <div class="midd"  align="right" >
                   <table border="0" width="300" align="left">
-                     <tr>
-                         <td> 顺序：</td>
-                         <td>
-                           <input type="text" name="sn" value="<{$c}>"  class="input100"/>
-                          <input type="hidden" name="proid" readonly= "true "  bgcolor="#ccc" value="<{$w.proid}>"  class="input80"/>
-                                                            
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>阶段</td>
-                         <td>
-                         
-                         <select name="stage">
+                  <form action="__URL__/insert" method="post" >
+                  <input type="hidden" name="proid" value="<{$w.proid}>" />
+                     <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$c}>"  class="input100"/></td></tr>
+                     <tr><td>阶段</td>
+                         <td><select name="stage">
                                  <option value="编写测试计划">编写测试计划</option>
-                                 <option value="编写测试用例">编写测试用例</option>                                
+                                 <option value="编写测试用例">编写测试用例</option>
                                  <option value="功能验证">功能验证</option>
                                  <option value="第一轮测试">第一轮测试</option>
                                  <option value="第二轮测试">第二轮测试</option>
                                  <option value="第三轮测试">第三轮测试</option>
                                  <option value="第四轮测试">第四轮测试</option>
                                  <option value="线上验证测试">线上验证测试</option>
-                           </select> 
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>状态</td>
-                         <td><{$state}></td>
-                           
-                     </tr>
-                     <tr>
-                         <td>文档</td>
-                         <td><{$document}></td>
-                         </tr> 
-                      <tr>
-                         <td>开始</td>
-                         <td>
-                            <{$startDate}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>结束</td>
-                         <td>
-                            <{$endDate}>
-                         </td>
-                     </tr>
-                                         
-                     <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                           </select></td></tr>
+                     <tr><td>状态</td><td><{$state}></td></tr>
+                     <tr><td>文档</td><td><{$document}></td></tr>
+                     <tr><td>开始</td><td><{$startDate}></td></tr>
+                     <tr><td>结束</td><td><{$endDate}></td></tr>
+                     <tr><td></td>
+                         <td><input type="submit" class="btn" name="do_submit" value="提 交"> </form>
+                             <a href="__URL__/index/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
                          </td>
                      </tr>
                   </table>
-                 </form>
-
               </div><!-- midd -->
            </div><!-- main -->

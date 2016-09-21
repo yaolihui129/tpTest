@@ -109,19 +109,25 @@ class CaseAction extends CommonAction {
         /* 接收参数*/
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
         $proid=$_GET['proid'];
-       
+
         /* 实例化模型*/
         $m=D('program');
         $where=array("testgp"=>$testgp);
         $data=$m->where($where)->select();
         $this->assign('data',$data);
-        $m=M('case');
-        $where=array("fproid"=>$proid);
-        $cases=$m->where($where)->select();
-       
-        $this->assign('cases',$cases);               
+//         $m=M('case');
+        $m=M('system');
+        $where=array("tp_case.fproid"=>$proid);
+        $cases=$m
+        ->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+        ->join(' inner JOIN tp_func ON tp_path.id = tp_func.pathid')
+        ->join(' inner JOIN tp_case ON tp_func.id = tp_case.funcid')
+        ->where($where)
+        ->order("tp_system.sysno,tp_path.sn,tp_path.id,tp_func.sn,tp_func.id,tp_case.sn,tp_case.id")
+        ->select();
+        $this->assign('cases',$cases);
+        $where=array("proid"=>$proid);
         $this->assign('w',$where);
-
 
         $this->display();
     }

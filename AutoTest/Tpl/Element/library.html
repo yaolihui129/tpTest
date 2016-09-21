@@ -2,9 +2,9 @@
         <div class="place">
                                所在位置：
               <a href="__APP__/Program">项目</a>
-              >里程碑
+              >控件库
                <span style="float:right;margin-right:60px;">
-                <a href="__APP__/Program"> 返回</a>
+                  <a href="__APP__/Program"> 返回</a>
                 </span>
         </div>
         <div class="content">
@@ -15,15 +15,12 @@
                    </span>
               </div>
               <div class="left" width="30%">
-                    <volist name='data' id='pro' empty="没有数据">
-                      <ur>
-                       <a href="__URL__/library/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
-                      </ur>
-                    </volist>
+                <volist name='data' id='pro' empty="没有数据"><ur><li>
+                   <a href="__URL__/library/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a>
+                </li></ur> </volist>
               </div>
               <div class="midd" width="60%">
                    <table border="1" width="80%" align="center">
-
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
@@ -37,10 +34,9 @@
                        <th width=7% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='elements' id='element' empty="没有数据">
-
                     <tr>
                        <td align="center" ><{$element.id}></td>
-                        <td align="center" ><{$element.sn}></td>
+                       <td align="center" ><{$element.sn}></td>
                        <td align="center" ><{$element.system}></td>
                        <td align="center" ><{$element.path}></td>
                        <td align="center" ><{$element.func}></td>
@@ -56,6 +52,5 @@
                     </tr>
                   </volist>
                 </table>
-
               </div><!-- midd -->
            </div><!-- main -->

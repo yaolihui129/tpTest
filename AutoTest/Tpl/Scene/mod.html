@@ -1,4 +1,4 @@
-      <layout name="layout" />
+ <layout name="layout" />
         <div class="place">
                                  所在位置：
              <a href="__APP__/Program">项目</a>
@@ -17,46 +17,26 @@
                     </volist>
               </div>
               <div class="midd" width="50%" align="right" >
-                 <form action="__URL__/update" method="post" >
-                  <input type="hidden" name="id" value="<{$scene.id}>" />
                   <table border="0" width="500" align="left">
-                     <tr>
-                         <td> 顺序：</td>
-                         <td>
-                           <input type="text" name="sn" value="<{$scene.sn}>"  class="input60"/>
-                          <input type="hidden" name="proid" value="<{$w.proid}>"  />
-                                                                     级别:
-                          <input type="text" name="level" value="<{$scene.level}>"  class="input60"/>
-                                                                     类型：<{$type}>
+                  <form action="__URL__/update" method="post" >
+                  <input type="hidden" name="id" value="<{$scene.id}>" />
+                  <input type="hidden" name="proid" value="<{$w.proid}>"  />
+                     <tr><td> 顺序：</td>
+                         <td><input type="text" name="sn" value="<{$scene.sn}>"  class="input60"/>
+                                                                            级别:<input type="text" name="level" value="<{$scene.level}>"  class="input60"/>
+                                                                            类型：<{$type}>
                          </td>
                      </tr>
-                     <tr>
-                         <td>角色:</td>
-                         <td><input type="text" name="swho" value="<{$scene.swho}>"  class="input200"/>
-                                                                  状态:<{$state}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>时间:</td>
-                         <td><input type="text" name="swhen" value="<{$scene.swhen}>"  class="input300"/></td>
-                     </tr>
-                     <tr>
-                         <td>场景:</td>
-                         <td><input type="text" name="scene" value="<{$scene.scene}>"  class="input300"/></td>
-                     </tr>
-                      <tr>
-                         <td>流程:</td>
-                         <td><input type="text" name="flow" value="<{$scene.flow}>"  class="input300"/></td>
-                     </tr>
-
-                    <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                     <tr><td>角色:</td><td><input type="text" name="swho" value="<{$scene.swho}>"  class="input200"/>状态:<{$state}></td></tr>
+                     <tr><td>时间:</td><td><input type="text" name="swhen" value="<{$scene.swhen}>"  class="input300"/></td></tr>
+                     <tr><td>场景:</td><td><input type="text" name="scene" value="<{$scene.scene}>"  class="input300"/></td></tr>
+                     <tr><td>流程:</td><td><input type="text" name="flow" value="<{$scene.flow}>"  class="input300"/></td></tr>
+                     <tr><td></td>
+                         <td><input type="submit" class="btn" name="do_submit" value="提 交"></form>
+                             <a href="__URL__/index/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
                          </td>
                      </tr>
                   </table>
-                 </form>
-
               </div><!-- midd -->
            </div><!-- main -->
 

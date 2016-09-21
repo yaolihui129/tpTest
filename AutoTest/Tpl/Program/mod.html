@@ -9,63 +9,28 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">
-                                        项目编辑
-                <span style="margin-left:120px;"><a  href="__URL__/add"  >添加 </a></span>
-              </div>
-                 <div class="left">
-                                              项目列表<br />
-                    <volist name='pros' id='pro' empty="没有数据">
-                       <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
-                    </volist>
+              <div class="top"> 项目编辑 </div>
+             <div class="left">
+                    <volist name='pros' id='pro' empty="没有数据"><ul><li>
+                       <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a>
+                    </li></ul></volist>
               </div>
               <div class="midd">
-                 <form action="__URL__/update" method="post" >
-                 <input type="hidden" name="id" value="<{$p.id}>" />
                   <table border="0" width="500" align="left">
-                   <tr>
-                         <td> 更新：</td>
-                         <td><{$p.moder}>更新于:<{$p.updateTime}></td>
-                     </tr>
-                     <tr>
-                         <td> 编号：</td>
-                         <td>
-                             <input type="text" name="prono" value="<{$p.prono}>"  class="input100"/>
-                              &nbsp;
-                             <{$selectptype}>
-                             </td>
-                     </tr>
-                     <tr>
-                         <td>项目：</td>
-                         <td>
-                         <input type="text" name="program" value="<{$p.program}>" class="input200"/>
-                          <{$select}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>开始-结束:</td>
-                         <td>
-                            <{$startDate}>
-                            - &nbsp;<{$endDate}>
-                         </td>
-                     </tr>
-                      <tr>
-                         <td>分组：  </td>
-                         <td>
-                            <{$selectgp}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>负责人：</td>
-                         <td>
-                             <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="修   改" ></td>
+                   <form action="__URL__/update" method="post" >
+                   <input type="hidden" name="id" value="<{$p.id}>" />
+                   <tr><td> 更新：</td><td><{$p.moder}>更新于:<{$p.updateTime}></td></tr>
+                   <tr><td> 编号：</td><td><input type="text" name="prono" value="<{$p.prono}>"  class="input100"/>&nbsp;<{$selectptype}></td></tr>
+                   <tr> <td>项目：</td><td><input type="text" name="program" value="<{$p.program}>" class="input200"/><{$select}></td></tr>
+                   <tr><td>分组：  </td><td><{$selectgp}>负责人：<input type="text" name="manager" value="<{$p.manager}>" class="input100"/></td></tr>
+                   <tr><td>开始-结束:</td><td><{$startDate}>- &nbsp;<{$endDate}></td></tr>
+                   <tr><td></td>
+                       <td>
+                         <input type="submit" class="btn" name="do_submit" value="修   改" > </form>
+                          <a href="__URL__/add"  ><button  class="btn" >添加</button> </a>
+                          <a href="__URL__"><button  class="btn" >返回</button></a>
+                       </td>
                      </tr>
                   </table>
-                 </form>
               </div><!-- midd -->
            </div><!-- main -->

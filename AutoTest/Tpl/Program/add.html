@@ -10,59 +10,27 @@
         <div class="content">
            <div class="main">
               <div class="top">项目添加</div>
-                 <div class="left" width="20%" align="left">
+                 <div class="left" align="left">
                     <volist name='pros' id='pro' empty="没有数据">
                        <a href="__URL__/mod/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
                     </volist>
               </div>
               <div class="midd">
-                 <form action="__URL__/insert" method="post" >
                   <table border="0" width="500" align="left">
-                     <tr>
-                         <td> 编号：</td>
-                         <td>
-                             <input type="text" name="prono" value="<{$p.prono}>"  class="input100"/>
-                             &nbsp;
-                             <{$selectptype}>
-
-                         </td>
+                  <form action="__URL__/insert" method="post" >
+                     <tr><td> 编号：</td>
+                         <td><input type="text" name="prono" value="<{$p.prono}>"  class="input100"/>&nbsp;<{$selectptype}></td>
                      </tr>
-                     <tr>
-                         <td>项目：</td>
+                     <tr><td>项目：</td><td><input type="text" name="program" value="" class="input200"/>&nbsp;<{$select}></td></tr>
+                     <tr><td>开始-结束:</td><td><{$startDate}>- &nbsp;<{$endDate}></td></tr>
+                     <tr><td>所属产品：</td><td><{$prod}>分组：<{$selectgp}></td></tr>
+                     <tr><td>负责人：</td><td><input type="text" name="manager" value="<{$p.manager}>" class="input100"/></td></tr>
+                     <tr><td></td>
                          <td>
-                            <input type="text" name="program" value="" class="input200"/>
-                            &nbsp;
-                             <{$select}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>开始-结束:</td>
-                         <td>
-                            <{$startDate}>
-                            - &nbsp;<{$endDate}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>所属产品：</td>
-                         <td>
-                            <{$prod}>
-                                                                  分组：
-                            <{$selectgp}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>负责人：</td>
-                         <td>
-                             <input type="text" name="manager" value="<{$p.manager}>" class="input100"/>
-
-                         </td>
-                     </tr>
-
-                     <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交" ></td>
+                           <input type="submit" class="btn" name="do_submit" value="提 交" ></form>
+                            <a href="__URL__"><button  class="btn" >返回</button></a>
+                           </td>
                      </tr>
                   </table>
-                 </form>
               </div><!-- midd -->
            </div><!-- main -->

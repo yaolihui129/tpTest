@@ -26,18 +26,18 @@
                    <table border="1" width="80%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
-                       <th width=7% align="center" bgcolor="#ccc">系统</th>
-                       <th width=17% align="left"  bgcolor="#ccc">路径</th>
+                       <th width=7% align="left" bgcolor="#ccc">系统</th>
+                       <th width=15% align="left"  bgcolor="#ccc">路径</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=10% align="center" bgcolor="#ccc">功能</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=3% align="center" bgcolor="#ccc">维护</th>
-                       <th width=7% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=9% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.id}></td>
-                       <td align="center" ><{$st.sysno}></td>
+                       <td align="left" ><{$st.sysno}></td>
                        <td align="left"><{$st.path}></td>
                        <td align="center" ><{$st.pstate}></td>
                        <td align="left" ><{$st.func}></td>
@@ -46,7 +46,7 @@
                        <td align="center" >
                           <a href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
                           <a href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >用例<{$st.id|countFCase=###}></a>
-
+                          <a href="#">修改</a>
                        </td>
                     </tr>
                     </volist>

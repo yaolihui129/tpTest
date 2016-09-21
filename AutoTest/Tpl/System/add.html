@@ -26,33 +26,21 @@
                     </volist>
               </div>
               <div class="midd" width="50%" align="right" >
-                 <form action="__URL__/insert" method="post" >
                   <table border="0" width="500" align="left">
-                     <tr>
-                         <td> 编号：</td>
-                         <td><input type="text" name="sysno" value=""  class="input200"/>*如：APP.HMC、Web.CRM</td>
-                     </tr>
-                     <tr>
-                         <td>系统</td>
-                         <td><input type="text" name="system" value=""  class="input400"/></td>
-                     </tr>
-                      <tr>
-                         <td>产品</td>
-                         <td ><{$prod}></td>
-                     </tr>
-                     <tr>
-                         <td>状态</td>
-                         <td>
-                             <{$state}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                   <form action="__URL__/insert" method="post" >
+                     <tr><td> 编号：</td><td><input type="text" name="sysno" value=""  class="input200"/>*如：APP.HMC、Web.CRM</td></tr>
+                     <tr><td>系统</td><td><input type="text" name="system" value=""  class="input400"/></td></tr>
+                     <tr><td>产品</td><td ><{$prod}></td> </tr>
+                     <tr><td>状态</td><td><{$state}></td></tr>
+                     <tr><td></td>
+                         <td><input type="submit" class="btn" name="do_submit" value="提 交"></form>
+                              <empty name="w.proid">
+                                 <a href="__URL__/index/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
+                              <else />
+                                 <a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
+                              </empty>
                          </td>
                      </tr>
                   </table>
-                 </form>
-
               </div><!-- midd -->
            </div><!-- main -->

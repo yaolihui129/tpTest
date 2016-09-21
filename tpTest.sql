@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql:3306
+Source Server         : 43.61:3307
 Source Server Version : 50532
-Source Host           : localhost:3306
+Source Host           : localhost:3307
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-20 23:59:39
+Date: 2016-09-21 17:55:02
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -355,8 +355,8 @@ CREATE TABLE `tp_func` (
 -- ----------------------------
 -- Records of tp_func
 -- ----------------------------
-INSERT INTO `tp_func` VALUES ('1', '1', '用户登录', '正常', '105', '25', '腰立辉', null, '2016-08-08 14:30:41', '2016-08-08 14:30:41');
-INSERT INTO `tp_func` VALUES ('4', '2', '用户注销', '正常', '105', '25', '腰立辉', null, '2016-08-08 14:30:55', '2016-08-08 14:30:55');
+INSERT INTO `tp_func` VALUES ('1', '1', '用户登录', '正常', '105', '25', '腰立辉', '腰立辉', '2016-09-21 11:25:28', '2016-09-21 11:25:28');
+INSERT INTO `tp_func` VALUES ('4', '2', '用户注销', '正常', '105', '25', '腰立辉', '腰立辉', '2016-09-21 14:39:17', '2016-09-21 14:39:17');
 INSERT INTO `tp_func` VALUES ('5', '1', '项目列表', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:13', '2016-08-08 14:34:13');
 INSERT INTO `tp_func` VALUES ('6', '2', '添加项目', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:26', '2016-08-08 14:34:26');
 INSERT INTO `tp_func` VALUES ('7', '3', '修改项目', '正常', '109', null, '腰立辉', null, '2016-08-08 14:34:42', '2016-08-08 14:34:42');
@@ -577,7 +577,7 @@ CREATE TABLE `tp_product` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_product
@@ -623,7 +623,7 @@ INSERT INTO `tp_program` VALUES ('25', 'Auto.1608.3', 'yaohTest', '2', '进行�
 INSERT INTO `tp_program` VALUES ('30', 'Auto.1608.5', 'GDCardQ3-09', '5', '进行中', '2016-08-08', '2016-08-15', '贾晓宁', 'GD', '简要', 'ddd', '需求新增', '一般需求', '2016-08-15', '', '腰立辉', '贾晓宁', '2016-09-17 15:18:56', '2016-09-17 15:18:56');
 INSERT INTO `tp_program` VALUES ('40', 'Auto1609.4', 'yut', '2', '进行中', '2016-09-10', '2016-09-17', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 23:48:27', '2016-09-19 23:48:27');
 INSERT INTO `tp_program` VALUES ('41', 'Auto1609.6', 'Lyjeshop', '6', '进行中', '2016-09-14', '2016-09-21', '腰立辉', 'GD', '常规', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '贾晓宁', '2016-09-17 15:19:11', '2016-09-17 15:19:11');
-INSERT INTO `tp_program` VALUES ('42', 'Auto1609.5', 'yrte', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 10:28:17', '2016-09-19 10:28:17');
+INSERT INTO `tp_program` VALUES ('42', 'Auto1609.5', 'yrte', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', '', '需求新增', '一般需求', '0000-00-00', '', '腰立辉', '腰立辉', '2016-09-21 13:43:20', '2016-09-21 13:43:20');
 INSERT INTO `tp_program` VALUES ('43', 'Auto1609.6', '儿童热特任', '1', '进行中', '2016-09-19', '2016-09-26', '腰立辉', 'Auto', '简要', null, '需求新增', '一般需求', '0000-00-00', null, '腰立辉', '腰立辉', '2016-09-19 23:48:11', '2016-09-19 23:48:11');
 INSERT INTO `tp_program` VALUES ('44', 'OP1609.1', '营买分工初版', '1', '进行中', '2016-09-20', '2016-09-27', '孔洋', 'OP', '简要', '胡春阳', '需求新增', '一般需求', '2016-09-29', '', '腰立辉', '腰立辉', '2016-09-20 16:08:04', '2016-09-20 16:08:04');
 
@@ -640,18 +640,18 @@ CREATE TABLE `tp_prosys` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`prosysid`)
-) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_prosys
 -- ----------------------------
 INSERT INTO `tp_prosys` VALUES ('46', '5', '24', '腰立辉', 'yy', '2016-09-17 20:45:41', '2016-08-11 11:21:37');
 INSERT INTO `tp_prosys` VALUES ('40', '5', '23', '腰立辉', 'yy', '2016-09-17 20:45:42', '2016-08-10 11:31:16');
-INSERT INTO `tp_prosys` VALUES ('43', '46', '25', '腰立辉', 'yy', '2016-09-17 20:45:43', '2016-08-10 11:32:42');
+INSERT INTO `tp_prosys` VALUES ('54', '46', '25', '腰立辉', '腰立辉', '2016-09-21 10:11:49', '2016-09-21 10:11:49');
 INSERT INTO `tp_prosys` VALUES ('44', '1', '30', '腰立辉', 'yy', '2016-09-17 20:45:44', '2016-08-10 16:45:18');
-INSERT INTO `tp_prosys` VALUES ('47', '4', '25', '腰立辉', 'yy', '2016-09-17 20:45:47', '2016-08-14 17:47:25');
+INSERT INTO `tp_prosys` VALUES ('53', '4', '25', '腰立辉', '腰立辉', '2016-09-21 10:07:23', '2016-09-21 10:07:23');
 INSERT INTO `tp_prosys` VALUES ('49', '3', '42', '腰立辉', '腰立辉', '2016-09-19 10:29:36', '2016-09-19 10:29:36');
-INSERT INTO `tp_prosys` VALUES ('50', '18', '42', '腰立辉', '腰立辉', '2016-09-19 10:38:15', '2016-09-19 10:38:15');
+INSERT INTO `tp_prosys` VALUES ('52', '11', '42', '腰立辉', '腰立辉', '2016-09-21 09:11:44', '2016-09-21 09:11:44');
 INSERT INTO `tp_prosys` VALUES ('51', '11', '44', '腰立辉', '腰立辉', '2016-09-20 16:08:42', '2016-09-20 16:08:42');
 
 -- ----------------------------
@@ -833,7 +833,7 @@ CREATE TABLE `tp_stage` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_stage
@@ -855,6 +855,7 @@ INSERT INTO `tp_stage` VALUES ('19', '4', '第三轮测试', '25', '2016-08-10',
 INSERT INTO `tp_stage` VALUES ('20', '5', '线上验证', '25', '2016-08-11', '2016-08-12', '未开始', '无文档', '腰立辉', '腰立辉', '2016-09-17 16:16:34', '2016-09-17 16:16:34');
 INSERT INTO `tp_stage` VALUES ('23', '4', '第二轮测试', '23', '2016-09-14', '2016-09-15', '未开始', '无文档', '腰立辉', '腰立辉', '2016-09-17 16:16:05', '2016-09-17 16:16:05');
 INSERT INTO `tp_stage` VALUES ('25', '3', '第一轮测试', '24', '2016-09-17', '2016-09-18', '未开始', 'BUG分析报告', '腰立辉', '腰立辉', '2016-09-17 16:13:44', '2016-09-17 16:13:44');
+INSERT INTO `tp_stage` VALUES ('26', '1', '编写测试计划', '41', '2016-09-23', '2016-09-25', '未开始', '无文档', '腰立辉', '腰立辉', '2016-09-21 15:05:38', '2016-09-21 15:05:38');
 
 -- ----------------------------
 -- Table structure for `tp_system`
@@ -882,26 +883,26 @@ CREATE TABLE `tp_system` (
 -- Records of tp_system
 -- ----------------------------
 INSERT INTO `tp_system` VALUES ('1', 'App.CGW', '车顾问App', '已搁置', '1', null, null, null, '18800000007', '111111', '腰立辉', '腰立辉', '2016-09-13 13:43:38', '2016-09-13 13:43:38');
-INSERT INTO `tp_system` VALUES ('3', 'APP.HMC', '惠买车APP', '正常', '1', null, null, null, null, null, null, null, '2016-08-05 22:44:14', '2016-05-23 11:39:51');
+INSERT INTO `tp_system` VALUES ('3', 'APP.HMC', '惠买车APP', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-21 10:17:05', '2016-09-21 10:17:05');
 INSERT INTO `tp_system` VALUES ('4', 'Auto.Access', 'Access客户端', '正常', '2', null, 'V1.10', '192.168.43.61：easypass', '姓名', '123456', '腰立辉', null, '2016-08-12 15:50:00', '2016-08-12 15:50:00');
 INSERT INTO `tp_system` VALUES ('5', 'Auto.Main', '自动化后台', '正常', '2', null, 'V1.00', 'http://192.168.84.22:8017/main/index', 'yaolh', '888888', '腰立辉', null, '2016-08-12 15:49:45', '2016-08-12 15:49:45');
-INSERT INTO `tp_system` VALUES ('6', 'Dealer.hmc', '惠买车商家版', '正常', '1', null, null, null, null, null, null, null, '2016-08-05 22:44:18', '2016-05-27 11:22:21');
+INSERT INTO `tp_system` VALUES ('6', 'Dealer.hmc', '惠买车商家版', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-21 10:17:01', '2016-09-21 10:17:01');
 INSERT INTO `tp_system` VALUES ('7', 'H5.CheGW', '车顾问H5', '已搁置', '1', null, null, null, null, null, null, '腰立辉', '2016-09-13 13:43:59', '2016-09-13 13:43:59');
-INSERT INTO `tp_system` VALUES ('8', 'OP.Brker', 'OP经纪人业务平台', '已搁置', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-13 13:44:08', '2016-09-13 13:44:08');
-INSERT INTO `tp_system` VALUES ('9', 'OP.Check', 'OP经纪人结算系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:24', '2016-04-18 17:25:56');
-INSERT INTO `tp_system` VALUES ('10', 'OP.Counselor', 'OP买车顾问管理后台', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:26', '2016-03-25 17:26:40');
-INSERT INTO `tp_system` VALUES ('11', 'OP.CRM', 'OP惠买车电商CRM', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:27', '2016-03-25 17:16:03');
-INSERT INTO `tp_system` VALUES ('12', 'OP.DealerCRM', 'OP惠买车商家运营系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:29', '2016-03-25 17:26:26');
-INSERT INTO `tp_system` VALUES ('13', 'OP.DealerOP', 'OP经销商信息管理', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:31', '2016-03-25 17:26:47');
-INSERT INTO `tp_system` VALUES ('14', 'OP.Deposit', 'OP惠买车商家订金管理系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:32', '2016-03-25 17:26:11');
-INSERT INTO `tp_system` VALUES ('15', 'OP.Gift', 'OP买车网礼品管理后台', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:34', '2016-03-25 17:34:14');
-INSERT INTO `tp_system` VALUES ('16', 'OP.Giftop', 'OP惠买车礼品管理系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:38', '2016-03-25 17:32:37');
-INSERT INTO `tp_system` VALUES ('17', 'OP.Groupon', 'OP团购管理后台', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:41', '2016-03-25 17:27:05');
-INSERT INTO `tp_system` VALUES ('18', 'OP.HMCcrm', 'OP惠买车CRM', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:43', '2016-05-19 10:40:17');
-INSERT INTO `tp_system` VALUES ('19', 'OP.HmcCrmOp', 'OP惠买车电商CRM后台管理系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:45', '2016-05-12 17:18:02');
-INSERT INTO `tp_system` VALUES ('20', 'OP.Ipayment', 'OP惠买车支付管理系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:50', '2016-03-25 17:33:00');
-INSERT INTO `tp_system` VALUES ('21', 'OP.Security', 'OP权限系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:52', '2016-03-25 17:04:43');
-INSERT INTO `tp_system` VALUES ('22', 'OP.User', 'OP惠买车用户管理系统', '正常', '1', null, null, null, '域账号', null, null, null, '2016-08-05 22:44:53', '2016-03-25 17:32:45');
+INSERT INTO `tp_system` VALUES ('8', 'OP.Brker', '经纪人业务平台', '已搁置', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:43', '2016-09-21 10:14:43');
+INSERT INTO `tp_system` VALUES ('9', 'OP.Check', '经纪人结算系统', '已搁置', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:33', '2016-09-21 10:14:33');
+INSERT INTO `tp_system` VALUES ('10', 'OP.Counselor', '买车顾问管理后台', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:53', '2016-09-21 10:14:53');
+INSERT INTO `tp_system` VALUES ('11', 'OP.CRM', '电商CRM', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:16', '2016-09-21 10:14:16');
+INSERT INTO `tp_system` VALUES ('12', 'OP.DealerCRM', '惠买车商家运营系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:15', '2016-09-21 10:15:15');
+INSERT INTO `tp_system` VALUES ('13', 'OP.DealerOP', '经销商信息管理', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:26', '2016-09-21 10:15:26');
+INSERT INTO `tp_system` VALUES ('14', 'OP.Deposit', '商家订金管理系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:35', '2016-09-21 10:15:35');
+INSERT INTO `tp_system` VALUES ('15', 'OP.Gift', '买车网礼品管理后台', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:41', '2016-09-21 10:15:41');
+INSERT INTO `tp_system` VALUES ('16', 'OP.Giftop', '惠买车礼品管理系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:54', '2016-09-21 10:15:54');
+INSERT INTO `tp_system` VALUES ('17', 'OP.Groupon', '团购管理后台', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:15:48', '2016-09-21 10:15:48');
+INSERT INTO `tp_system` VALUES ('18', 'OP.HMCcrm', '惠买车CRM', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:16:04', '2016-09-21 10:16:04');
+INSERT INTO `tp_system` VALUES ('19', 'OP.HmcCrmOp', '电商CRM后台管理系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:14:01', '2016-09-21 10:14:01');
+INSERT INTO `tp_system` VALUES ('20', 'OP.Ipayment', '惠买车支付管理系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:16:14', '2016-09-21 10:16:14');
+INSERT INTO `tp_system` VALUES ('21', 'OP.Security', 'OP权限系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:16:55', '2016-09-21 10:16:55');
+INSERT INTO `tp_system` VALUES ('22', 'OP.User', '惠买车用户管理系统', '正常', '1', null, null, null, '域账号', null, null, '腰立辉', '2016-09-21 10:16:22', '2016-09-21 10:16:22');
 INSERT INTO `tp_system` VALUES ('23', 'Web.hmc', '惠买车', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-13 13:35:06', '2016-09-13 13:35:06');
 INSERT INTO `tp_system` VALUES ('46', 'yao.tpTest', '测试管理平台', '正常', '2', '暂无', 'V1.00', 'http://192.168.43.61:81/tpTest/admin.php', 'yaolh', '654321', '腰立辉', '腰立辉', '2016-09-13 11:57:50', '2016-09-13 11:57:50');
 INSERT INTO `tp_system` VALUES ('49', '1231', '12312', '正常', null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-13 11:07:56', '0000-00-00 00:00:00');

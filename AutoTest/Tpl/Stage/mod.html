@@ -1,4 +1,4 @@
-    <layout name="layout" />
+<layout name="layout" />
         <div class="place">
                                  所在位置：
              <a href="__URL__/Program">项目</a>
@@ -17,44 +17,20 @@
                     </volist>
               </div>
               <div class="midd" width="50%" align="right" >
-                 <form action="__URL__/update" method="post" >
-                 <input type="hidden" name="id" value="<{$stage.id}>" />
                   <table border="0" width="500" align="left">
-                     <tr>
-                         <td> 顺序：</td>
-                         <td><input type="text" name="sn" value="<{$stage.sn}>"  class="input200"/></td>
-                     </tr>
-                     <tr>
-                         <td>阶段</td>
-                         <td><input type="text" name="stage" value="<{$stage.stage}>"  class="input200"/></td>
-                     </tr>
-                     <tr>
-                         <td>状态</td>
-                         <td><{$state}></td>                            
-                     </tr>
-                      <tr>
-                         <td>文档</td>
-                         <td><{$document}></td>                           
-                     </tr> 
-                      <tr>
-                         <td>开始</td>
-                         <td>
-                            <{$startDate}>
-                         </td>
-                     </tr>
-                      <tr>
-                         <td>结束</td>
-                         <td>
-                           <{$endDate}>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                   <form action="__URL__/update" method="post" >
+                   <input type="hidden" name="id" value="<{$stage.id}>" />
+                     <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$stage.sn}>"  class="input200"/></td></tr>
+                     <tr><td>阶段</td><td><input type="text" name="stage" value="<{$stage.stage}>"  class="input200"/></td> </tr>
+                     <tr><td>状态</td><td><{$state}></td></tr>
+                     <tr><td>文档</td><td><{$document}></td></tr>
+                     <tr><td>开始</td><td><{$startDate}></td></tr>
+                     <tr><td>结束</td><td><{$endDate}></td></tr>
+                     <tr><td></td>
+                         <td><input type="submit" class="btn" name="do_submit" value="提 交"> </form>
+                             <a href="__URL__/index/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
                          </td>
                      </tr>
                   </table>
-                 </form>
-
               </div><!-- midd -->
            </div><!-- main -->

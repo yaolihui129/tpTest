@@ -20,10 +20,11 @@
                     </volist>
               </div>
               <div class="midd" width="50%" align="right" >
-                 <form action="__URL__/update" method="post" >
-                 <input type="hidden" name="funcid" value="<{$rule.funcid}>" />
-                 <input type="hidden" name="id" value="<{$rule.id}>" />
+
                   <table border="0" width="700" align="left">
+                  <form action="__URL__/update" method="post" >
+                  <input type="hidden" name="funcid" value="<{$rule.funcid}>" />
+                  <input type="hidden" name="id" value="<{$rule.id}>" />
                      <tr>
                          <td> 顺序：</td>
                          <td><input type="text" name="sn" value="<{$rule.sn}>"  class="input500"/></td>
@@ -47,12 +48,12 @@
                      </tr>
                      <tr>
                          <td></td>
-                         <td> <input type="submit" class="btn" name="do_submit" value="提 交">
+                         <td>
+                            <input type="submit" class="btn" name="do_submit" value="提 交"> </form>
+                             <a href="__URL__"><button  class="btn" >返回</button></a>
                          </td>
                      </tr>
                   </table>
-                 </form>
-
               </div><!-- midd -->
            </div><!-- main -->
 

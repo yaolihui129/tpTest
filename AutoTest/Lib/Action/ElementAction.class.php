@@ -112,11 +112,19 @@ class ElementAction extends CommonAction {
         $data=$m->where($where)->select();
         $this->assign('data',$data);
         $m=D('element');
+        $m=D("prosys");
         $where=array("proid"=>$proid);
-        $elements=$m->where($where)->select();
-        $this->assign('elements',$elements);               
+        $elements=$m
+        ->join('inner JOIN tp_system ON tp_system.id = tp_prosys.sysid')
+        ->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+        ->join(' inner JOIN tp_func ON tp_path.id = tp_func.pathid')
+        ->join(' inner JOIN tp_element ON tp_func.id = tp_element.funcid')
+        ->where($where)
+        ->order("tp_system.sysno,tp_path.sn,tp_path.id,tp_func.sn,tp_func.id,tp_element.sn,tp_element.id")
+        ->select();
+        $this->assign('elements',$elements);
         $this->assign('w',$where);
-        
+
         $this->display();
     }
 
