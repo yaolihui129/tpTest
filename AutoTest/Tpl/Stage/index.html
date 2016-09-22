@@ -9,21 +9,14 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">里程碑
-                <span style="float:right;">
-                                             当前项目：<{$w.proid|getProNo=###}>
-                 </span>
+              <div class="top" style="margin-left:280px;">里程碑<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="left" align="left" style="width:25%;">
+                 <volist name='pros' id='pro' empty="没有数据"><ur><li>
+                   <a href="__URL__/index/proid/<{$pro.id}>"><{$pro.prono}>-<{$pro.program}>：<{$pro.id|countStage=###}>【<{$pro.prost}>】</a><br>
+                 </li></ur></volist>
               </div>
-              <div class="left" width="30%">
-                    <volist name='pros' id='pro' empty="没有数据">
-                      <ur>
-                       <a href="__URL__/index/proid/<{$pro.id}>"><{$pro.prono}>-<{$pro.program}><{$pro.id|countStage=###}>:<{$pro.prost}></a><br>
-                      </ur>
-                    </volist>
-              </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="80%" align="center">
-
+              <div class="midd" >
+                   <table border="1" width="74%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
                        <th width=15% align="left"  bgcolor="#ccc">阶段
@@ -40,21 +33,15 @@
                        <!--  <th width=5% align="center" bgcolor="#ccc">操作 </th>-->
                      </tr>
                      <volist name='stages' id='st' empty="没有数据">
-
                     <tr>
                        <td align="center" ><{$st.sn}></td>
-                       <td >
-                         <a href="__APP__/Path/index/proid/<{$st.proid}>" >
-                            <{$st.stage}>
-                         </a>
+                       <td ><a href="__APP__/Path/index/proid/<{$st.proid}>" ><{$st.stage}></a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__APP__/Exescene/index/proid/<{$st.proid}>/stageid/<{$st.id}>" >列队</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>
                        </td>
-                       <td align="center" >
-                       <a href="#"><{$st.state}></a>
-                       </td>
+                       <td align="center" ><a href="#"><{$st.state}></a></td>
                        <td align="center" ><{$st.start}></td>
                        <td align="center" ><{$st.end}></td>
                        <td align="center" ><{$st.document}></td>

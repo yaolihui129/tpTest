@@ -1,8 +1,6 @@
-      <layout name="layout" />
+<layout name="layout" />
         <div class="place">
                                  所在位置：
-            <empty name="w.w">                                                      
-            <empty name="w.proid">
                   <a href="__APP__/Product">产品</a>
                   ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
                   ><a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
@@ -10,33 +8,16 @@
                   <span style="float:right;margin-right:60px;">
                   <a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
                   </span>
-            <else />
-                   <a href="__APP__/Program">项目</a>
-                   ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
-                   ><a href="__URL__/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">路径</a>
-                   >添加
-                  <span style="float:right;margin-right:60px;">
-                  <a href="__URL__/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"> 返回</a>
-                  </span>
-            </empty>
-            <else />
-                  <a href="__APP__/Program">项目</a>
-                  ><a href="__APP__/Func/func/proid/<{$w.proid}>">功能点</a>
-                  >路径添加
-                  <span style="float:right;margin-right:60px;">
-                  <a href="__APP__/Func/func/proid/<{$w.proid}>"> 返回</a>
-                  </span>
-           </empty> 
         </div>
         <div class="content">
            <div class="main">
               <div class="top" >路径添加</div>
-              <div class="left"  width="20%" align="left">
+              <div class="left"  align="left">
                   <volist name='data' id='vo' empty="没有数据"><ul><li>
-                     <a href="__URL__/mod/id/<{$vo.id}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/w/<{$w.w}>"><{$vo.sn}>.<{$vo.path}></a>
+                     <a href="__URL__/mod/id/<{$vo.id}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"><{$vo.sn}>.<{$vo.path}></a>
                   </li></ul></volist>
               </div>
-              <div class="midd" width="50%" align="right" >
+              <div class="midd"  align="left" >
                   <table border="0" width="500" align="left">
                    <form action="__URL__/insert" method="post" >
                    <input type="hidden" name="sysid" value="<{$w.sysid}>" />
@@ -45,15 +26,7 @@
                      <tr><td>状态:</td><td><{$pstate}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"> </form>
-                         <empty name="w.w">  
-                             <empty name="w.proid">
-                                 <a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
-                             <else />
-                                 <a href="__URL__/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
-                             </empty>
-                         <else />
-                                <a href="__APP__/Func/func/proid/<{$w.proid}>"><button  class="btn" >返回</button></a>
-                         </empty>
+                             <a href="__URL__/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
                          </td>
                      </tr>
                   </table>

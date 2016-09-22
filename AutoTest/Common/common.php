@@ -21,6 +21,22 @@ function formselect($value="正常",$name="state",$type="state") {
     $html .='<select>';
     return $html;
 }
+function selectgpuer($value="腰立辉",$testgp="Auto",$name="state"){
+    $html = '<select name="'.$name.'" class="inputselect">';
+    $m =M('user');
+    $where=array("usergp"=>$testgp,"state"=>"在职");
+    //获取所有分类
+    $users = $m->where($where)->select();
+    foreach($users as $v) {
+        $selected = ($v['realname']==$value) ? "selected" : "";
+        $html .= '<option '.$selected.' value="'.$v['realname'].'">'.$v['realname'].'</option>';
+    }
+    $html .='<select>';
+    return $html;
+
+}
+
+
 /**
  * 产品选择
  *
@@ -71,12 +87,14 @@ function proselect($value=1,$name=prono) {
  * 根据id获取项目编号
  */
 function getProNo($id){
-
+   if ($id){
     $m=M('program');
     $data=$m->find($id);
     //dump($data);
     return $data['prono'];
-
+   }else {
+       return ;
+   }
 }
 
 /**

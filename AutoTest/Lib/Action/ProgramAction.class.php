@@ -44,6 +44,7 @@ class ProgramAction extends CommonAction {
         $this -> assign("selectptype", formselect("简要","ptype","ptype"));
         $this -> assign("selectgp", formselect($testgp,"testgp","testgp"));
         $this -> assign("select", formselect("进行中","prost","prost"));
+        $this -> assign("selectgpuer", selectgpuer($_SESSION['realname'],$_SESSION['testgp'],"manager"));
         $this->assign("startDate",PublicAction::date("start",$start));
         $this->assign("endDate",PublicAction::date("end",$end));
 
@@ -82,9 +83,11 @@ class ProgramAction extends CommonAction {
 
         $arr=$m->find($id);
         $this->assign('p',$arr);
+        $this -> assign("prod", prodselect($arr['prodid']));
         $this -> assign("selectptype", formselect($arr['ptype'],"ptype","ptype"));
         $this -> assign("selectgp", formselect($arr['testgp'],"testgp","testgp"));
         $this -> assign("select", formselect($arr['prost'],"prost","prost"));
+        $this -> assign("selectgpuer", selectgpuer($arr['manager'],$_SESSION['testgp'],"manager"));
         $this->assign("startDate",PublicAction::date("start",$arr['start']));
         $this->assign("endDate",PublicAction::date("end",$arr['end']));
 

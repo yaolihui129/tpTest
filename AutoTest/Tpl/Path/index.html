@@ -1,6 +1,5 @@
       <layout name="layout" />
-        <div class="place">
-                                 所在位置：
+        <div class="place">所在位置：
              <a href="__APP__/Product">产品</a>
              ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
              >路径
@@ -11,26 +10,20 @@
         <div class="content">
            <div class="main">
               <div class="top" style="margin-left:200px;">路径管理</div>
-              <div class="left" width="30%">
-
-                    <volist name='data' id='vo' empty="没有数据">
-                      <ur>
-                         <li>
-                            <a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>">
-                             <{$vo.sysno}><{$vo.id|countPath=###}>:<{$vo.state}></a>
-                         </li>
-                       </ur>
-                    </volist>
+              <div class="left"  align="left">
+                  <volist name='data' id='vo' empty="没有数据"><ur><li>
+                     <a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>">
+                     <{$vo.sysno}>:<{$vo.system}>:<{$vo.id|countPath=###}></a>
+                  </li></ur></volist>
               </div>
-              <div class="midd" width="60%">
+              <div class="midd"  align="left">
                    <table border="1" width="80%" align="center">
-
                      <tr>
                        <th width=5% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
                        <th width=30% align="left"  bgcolor="#ccc">路径
                           <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/add/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$proid}>"  >添加 </a>
+                             <a href="__URL__/add/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$proid}>">添加 </a>
                           </span>
                        </th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>

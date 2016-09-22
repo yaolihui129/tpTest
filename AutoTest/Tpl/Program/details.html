@@ -1,6 +1,5 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
+<layout name="layout" />
+        <div class="place"> 所在位置：
              <a href="__URL__">项目</a>
              >详情
             <span style="float:right;margin-right:60px;">
@@ -9,17 +8,13 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;"> 项目详情
-                <span style="float:right;">
-                                             当前项目：<{$p.prono}>
-                </span></div>
-                 <div class="left">
-                    <volist name='pros' id='pro' empty="没有数据">
-                       <a href="__URL__/details/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
-                    </volist>
+              <div class="top" > 项目详情<span style="float:right;">当前项目：<{$p.prono}></span></div>
+              <div class="left" align="left" style="width:30%">
+                <volist name='pros' id='pro' empty="没有数据">
+                  <a href="__URL__/details/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>【<{$pro.prost}>】</a><br>
+                </volist>
               </div>
-              <div class="midd">
-
+              <div class="midd" align="left">
                   <table border="0" width="700" align="left">
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="id" value="<{$p.id}>" />
@@ -30,10 +25,9 @@
                          <td><{$p.prono}>：<{$p.program}></td>
                      </tr>
                      <tr><td>PM：</td>
-                         <td><input type="text" name="pm" value="<{$p.pm}>" class="input200"/></td>
+                         <td><input type="text" name="pm" value="<{$p.pm}>" class="input100"/>
+                                                                            类型：<{$reType}><{$reLevel}>期望上线日期：<{$online}></td>
                      </tr>
-                     <tr><td>类型：</td><td><{$reType}><{$reLevel}></td></tr>
-                     <tr><td>上线：</td><td><{$online}></td></tr>
                      <tr><td>简介：</td><td><{$jianjie}></td></tr>
                      <tr><td></td>
                          <td>
@@ -42,6 +36,5 @@
                          </td>
                      </tr>
                   </table>
-
               </div><!-- midd -->
            </div><!-- main -->

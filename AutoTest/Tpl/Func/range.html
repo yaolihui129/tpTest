@@ -3,27 +3,26 @@
         <div class="place">
                                  所在位置：
              <a href="__APP__/Program">项目</a>
-             >风险
+             >范围
             <span style="float:right;margin-right:60px;">
              <a href="__APP__/Program"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">项目范围
+              <div class="top" style="margin-left:280px;">项目范围
                    <span style="float:right;">
                                              当前项目：<{$w.proid|getProNo=###}>
                    </span>
               </div>
-               <div class="left" width="30%">
-                    <volist name='pros' id='pro' empty="没有数据">
-                      <ur>
-                       <a href="__URL__/range/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countRange=###}> :<{$pro.prost}></a><br>
-                      </ur>
-                    </volist>
+               <div class="left" align="left" style="width:25%;">
+                    <volist name='pros' id='pro' empty="没有数据"><ur><li>
+                       <a href="__URL__/range/proid/<{$pro.id}>"">
+                       <{$pro.prono}>-<{$pro.program}>:<{$pro.id|countRange=###}>【<{$pro.prost}>】</a>
+                     </li> </ur> </volist>
               </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="80%" align="center">
+              <div class="midd" align="right"  >
+                   <table border="1" width="74%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=7% align="left" bgcolor="#ccc">系统</th>
@@ -42,12 +41,12 @@
                        <td align="center" ><{$st.pstate}></td>
                        <td align="left" ><{$st.func}>
                           <span style="float:right;margin-right:5px;">
-                            <a href="__APP__/Func/mod/id/<{$st.id}>/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/range">修改</a></span></td>
+                            <a href="__APP__/Func/modr/id/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range">修改</a></span></td>
                        <td align="center" ><{$st.state}></td>
                        <td align="center" ><{$st.moder}></td>
                        <td align="center" >
-                          <a href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
-                          <a href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >用例<{$st.id|countFCase=###}></a>
+                          <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
+                          <a href="__APP__/Case/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >用例<{$st.id|countFCase=###}></a>
                        </td>
                     </tr>
                     </volist>

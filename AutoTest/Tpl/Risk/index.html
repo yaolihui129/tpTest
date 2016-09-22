@@ -1,29 +1,22 @@
-      <layout name="layout" />
-    <body>
-        <div class="place">
-                                 所在位置：
-             <a href="__APP__/Program">项目</a>
-             >风险
+<layout name="layout" />
+        <div class="place">所在位置：
+            <a href="__APP__/Program">项目</a>
+            >风险
             <span style="float:right;margin-right:60px;">
              <a href="__APP__/Program"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;">项目风险
-                 <span style="float:right;">
-                                             当前项目：<{$w.proid|getProNo=###}>
-                </span>
+              <div class="top" style="margin-left:280px;">项目风险<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+               <div class="left" align="left" style="width:30%">
+                 <volist name='pros' id='pro' empty="没有数据"><ur><li>
+                    <a href="__URL__/index/proid/<{$pro.id}>"">
+                    <{$pro.prono}>-<{$pro.program}><{$pro.id|countRisk=###}>【<{$pro.prost}>】</a>
+                 </li></ur></volist>
               </div>
-               <div class="left" width="30%">
-                    <volist name='pros' id='pro' empty="没有数据">
-                      <ur>
-                       <a href="__URL__/index/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countRisk=###}>:<{$pro.prost}></a><br>
-                      </ur>
-                    </volist>
-              </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="80%" align="center">
+              <div class="midd" >
+                   <table border="1" width="70%" align="center">
 
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -39,25 +32,15 @@
                        <th width=3% align="center" bgcolor="#ccc">创建</th>
                        <th width=3% align="center" bgcolor="#ccc">维护</th>
                        <th width=10% align="center" bgcolor="#ccc">更新时间</th>
-                      <!--  <th width=5% align="center" bgcolor="#ccc">操作 </th>--> 
+                      <!--  <th width=5% align="center" bgcolor="#ccc">操作 </th>-->
                      </tr>
                      <volist name='risks' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.sn}></td>
-                       <td >
-                         <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>" >
-                            <{$st.risk}>
-                         </a>
-                       </td>
+                       <td ><a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>" ><{$st.risk}></a></td>
                        <td align="center" ><{$st.level}></td>
-                       <td align="center" >
-                       <a href="#"><{$st.state}></a>
-                       </td>
-                       <td align="center" >
-                       <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>" >
-                       <{$st.amethod}>
-                       </a>
-                       </td>
+                       <td align="center" ><a href="#"><{$st.state}></a></td>
+                       <td align="center" ><a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>" ><{$st.amethod}></a></td>
                        <td align="center" ><{$st.adder}></td>
                        <td align="center" ><{$st.moder}></td>
                        <td align="center" ><{$st.updateTime}></td>

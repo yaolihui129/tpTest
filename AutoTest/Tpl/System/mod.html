@@ -19,12 +19,12 @@
         <div class="content">
            <div class="main">
               <div class="top">系统编辑</div>
-              <div class="left"  width="30%" >
+              <div class="left"  align="left">
                  <volist name='data' id='vo' empty="没有数据">
                     <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"><{$vo.sysno}></a><br>
                  </volist>
               </div>
-              <div class="midd" width="50%" align="right" >
+              <div class="midd" align="left" >
                   <table border="0" width="500" align="left">
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="id" value="<{$sys.id}>" />
@@ -35,6 +35,7 @@
                      <tr><td>状态</td><td><{$state}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"></form>
+                             <a href="__URL__/add/prodid/<{$w.prodid}>/proid/<{$w.proid}>" ><button  class="btn" >添加</button> </a>
                               <empty name="w.proid">
                                  <a href="__URL__/index/prodid/<{$w.prodid}>"><button  class="btn" >返回</button></a>
                               <else />

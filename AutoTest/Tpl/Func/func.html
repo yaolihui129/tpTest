@@ -1,5 +1,4 @@
-      <layout name="layout" />
-    <body>
+<layout name="layout" />
         <div class="place">
                                  所在位置：
              <a href="__APP__/Program">项目</a>
@@ -10,21 +9,18 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">项目功能点
+              <div class="top" style="margin-left:280px;">项目功能点
                   <span style="float:right;">
                                              当前项目：<{$w.proid|getProNo=###}>
                   </span>
               </div>
-               <div class="left" width="30%">
-                    <volist name='pros' id='pro' empty="没有数据">
-                      <ur>
-                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a><br>
-                      </ur>
-                    </volist>
+               <div class="left" align="left" style="width:25%;">
+                    <volist name='pros' id='pro' empty="没有数据"><ur><li>
+                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>【<{$pro.prost}>】</a>
+                      </li></ur></volist>
               </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="75%" align="center">
-
+              <div class="midd"  align="right">
+                   <table border="1" width="74%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=7% align="left" bgcolor="#ccc">系统</th>
@@ -45,31 +41,31 @@
                        <empty name="st.pathid">
                           <{$st.path}>
                           <span style="float:right;margin-right:5px;">
-                          <a href="__APP__/Path/add/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                          <a href="__APP__/Path/addf/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
                         <else />
-                          <a href="__APP__/Path/mod/id/<{$st.pathid}>/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func"><{$st.path}></a>
+                          <a href="__APP__/Path/modf/id/<{$st.pathid}>/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func"><{$st.path}></a>
                           <span style="float:right;margin-right:5px;">
-                          <a href="__APP__/Path/add/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
-                        </empty> 
-                        </empty>   
+                          <a href="__APP__/Path/addf/sysid/<{$st.sysid}>/prodid/<{$st.prodid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                        </empty>
+                        </empty>
                        <td align="center" ><{$st.pstate}></td>
                        <td align="left" >
                        <empty name="st.pathid">
                        <else />
                        <empty name="st.funcid">
-                               <a href="__APP__/Func/mod/id/<{$st.id}>/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func"><{$st.func}></a>
+                               <a href="__APP__/Func/modf/id/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func"><{$st.func}></a>
                                <span style="float:right;margin-right:5px;">
-                              <a href="__APP__/Func/add/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                              <a href="__APP__/Func/addf/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
                         <else />
-                               <span style="float:right;margin-right:5px;">                             
-                              <a href="__APP__/Func/add/pathid/<{$st.pathid}>/sysid/<{$st.sysid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
-                         </empty> 
-                        </empty>      
+                               <span style="float:right;margin-right:5px;">
+                              <a href="__APP__/Func/addf/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func">添加</a></span></td>
+                         </empty>
+                        </empty>
                        <td align="center" ><{$st.state}></td>
                        <td align="center" ><{$st.fproid|getProNo=###}></td>
                        <td align="center" >
-                          <a href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func" >规则<{$st.id|countFRules=###}></a>
-                          <a href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/func" >用例<{$st.id|countFCase=###}></a>                      
+                          <a href="__APP__/Rules/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
+                          <a href="__APP__/Case/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >用例<{$st.id|countFCase=###}></a>
                        </td>
                     </tr>
                     </volist>

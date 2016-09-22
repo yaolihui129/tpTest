@@ -31,7 +31,7 @@ class DictAction extends CommonAction {
         $this->assign('data',$arr);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
-
+        $this -> assign("state", formselect("","state"));
         $this->assign('w',$where);
 
         $this->display();
@@ -69,6 +69,7 @@ class DictAction extends CommonAction {
         /* 输出数据*/
         $this->assign('data',$arr);
         $this->assign('dic',$dic);
+        $this -> assign("state", formselect($dic['state'],"state"));
         $this->assign('w',$where);
 
         $this->display();

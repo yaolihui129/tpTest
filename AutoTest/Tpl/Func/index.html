@@ -1,7 +1,6 @@
 ﻿      <layout name="layout" />
         <div class="place">
                                  所在位置：
-            <empty name="w.proid">
                   <a href="__APP__/Product">产品</a>
                   ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
                   ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
@@ -9,36 +8,18 @@
                   <span style="float:right;margin-right:60px;">
                       <a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
                   </span>
-             <else />
-                   <a href="__APP__/Program">项目</a>
-                   ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
-                   ><a href="__APP__/Path/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">路径</a>
-                   >功能点
-                  <span style="float:right;margin-right:60px;">
-                     <a href="__APP__/Path/pindex/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"> 返回</a>
-                  </span>
-            </empty>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;">功能点管理
-                   <span style="float:right;">
-                                                           当前项目：<{$w.proid|getProNo=###}>
-                  </span>
+              <div class="top" style="margin-left:280px;">功能点管理</div>
+              <div class="left" align="left" style="width:25%;margin-left:0px;">
+                    <volist name='data' id='vo' empty="没有数据"><ur><li>
+                        <a href="__URL__/index/pathid/<{$vo.id}>/sysid/<{$vo.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">
+                        <{$vo.sn}>:<{$vo.path}>:【<{$vo.pstate}>】:<{$vo.id|countFunc=###}></a>
+                    </li></ur></volist>
               </div>
-              <div class="left" align="left" style="widtht:25%;margin-left:0px;">
-                    <volist name='data' id='vo' empty="没有数据">
-                      <ur>
-                         <li>
-                            <a href="__URL__/index/pathid/<{$vo.id}>/sysid/<{$vo.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">
-                           <{$vo.sn}>:<{$vo.path}>:<{$vo.id|countFunc=###}></a>
-                        </li>
-                       </ur>
-                    </volist>
-              </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="80%" align="center">
-
+              <div class="midd" align="right">
+                   <table border="1" width="74%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -59,8 +40,7 @@
                        <td align="center" ><{$func.sn}></td>
                        <td >
                          <a href="__APP__/Case/index/funcid/<{$func.id}>/pathid/<{$func.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>" >
-                            <{$func.func}>
-                         </a>
+                            <{$func.func}></a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__APP__/Case/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">用例  <{$func.id|countFCase=###}></a>
                            <a href="__APP__/Rules/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">规则 <{$func.id|countFRules=###}></a>

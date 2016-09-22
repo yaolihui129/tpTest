@@ -20,12 +20,12 @@
         <div class="content">
            <div class="main">
               <div class="top">系统添加</div>
-              <div class="left"  width="20%" align="center">
+              <div class="left"  align="left">
                     <volist name='data' id='vo' empty="没有数据">
                        <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"><{$vo.sysno}></a><br>
                     </volist>
               </div>
-              <div class="midd" width="50%" align="right" >
+              <div class="midd"  align="left" >
                   <table border="0" width="500" align="left">
                    <form action="__URL__/insert" method="post" >
                      <tr><td> 编号：</td><td><input type="text" name="sysno" value=""  class="input200"/>*如：APP.HMC、Web.CRM</td></tr>
