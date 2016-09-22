@@ -10,16 +10,14 @@ class ScenefuncAction extends CommonAction {
         $where=array("proid"=>"$proid");
         $data=$m->where($where)->select();
         $this->assign("data",$data);
-        
-        
-//         $m=D('scenefunc');
+                
         $m=D('system');
         $where=array("tp_scenefunc.sceneid"=>$sceneid);
         $sfunc=$m
         ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
         ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
         ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
-        ->where($where)->select();
+        ->where($where)->order('tp_scenefunc.sn')->select();
         $this->assign("sfunc",$sfunc);
 //         dump($sfunc);
         $where=array("proid"=>"$proid","sceneid"=>$sceneid);
@@ -33,6 +31,28 @@ class ScenefuncAction extends CommonAction {
 
     public function add(){
         $this->display();
+    }
+    
+    public function addscene(){
+        /* 接收参数*/
+        $sceneid=$_GET['sceneid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=D('scenefunc');
+        $where=array("sceneid"=>$sceneid);
+        $sn=$m->where($where)->count()+1;
+        $arr=array("sn"=>$sn,"funcid"=>$funcid,"sceneid"=>$sceneid,"author"=>$_SESSION['realname']);
+        if(!$m->create($arr)){
+            $this->error($m->getError());
+        }
+        $lastId=$m->add($arr);
+        if($lastId){
+            $this->success("添加成功");
+        }else{
+            $this->error("添加失败");
+        }
+        
+    
     }
 
     public function insert(){

@@ -74,7 +74,7 @@ select{border: 1px solid #000000;font-size:17px;}
 
 .logo{font-size:28px; line-height:28px; color:#fff; margin-top:2px;}
 .pagetop{margin:0 auto; height:60px; overflow:hidden; background:url(__PUBLIC__/Images/head_bg.gif) repeat-x bottom;}
-.content{width:1118px; margin:0 auto;}
+.content{width:100%; margin:0 auto;}
 .main_bot{background:url(__PUBLIC__/Iimages/main_bot.png) no-repeat; height:9px; overflow:hidden;}
 .main{background:#fff; padding:5px; width:1100px;_height:600px; min-height:600px;}
 .place{background:#eee;margin-bottom:10;width:100%;font-size:9px;}

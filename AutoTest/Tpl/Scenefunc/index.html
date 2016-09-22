@@ -1,28 +1,28 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-             <a href="__APP__/Program">项目</a>
-             ><a href="__APP__/Scene/index/proid/<{$w.proid}>">场景</a>
-            <span style="float:right;margin-right:60px;">
+<layout name="layout" />
+        <div class="place">所在位置：
+           <a href="__APP__/Program">项目</a>
+           ><a href="__APP__/Scene/index/proid/<{$w.proid}>">场景</a>
+           >场景功能
+           <span style="float:right;margin-right:60px;">
               <a href="__APP__/Scene/index/proid/<{$w.proid}>"> 返回</a>
-            </span>
+           </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top">场景功能
-                  <span style="float:right;">
-                  <a href="#">功能库</a>
+              <span style="float:right;">
+                  <a href="__APP__/Func/library/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">功能库</a>
                   <a href="#">场景数据</a>
                                              当前项目：<{$w.proid|getProNo=###}>
                  </span>
               </div>
               <div class="left" align="left" style="width:20%">
-                    <volist name='data' id='vo' empty="没有数据">
+                    <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/index/sceneid/<{$vo.id}>/proid/<{$w.proid}>">
-                       <{$vo.sn}>.<{$vo.type}>-<{$vo.swho}>[<{$vo.swhen}>]<{$vo.scene}></a><br>
-                    </volist>
+                       <{$vo.sn}>.<{$vo.type}>-<{$vo.swho}>[<{$vo.swhen}>]<{$vo.scene}></a><hr>
+                    </li></ul></volist>
               </div>
-              <div class="midd" width="70%">
+              <div class="midd" >
                    <table border="1" width="80%" align="center">
 
                      <tr>

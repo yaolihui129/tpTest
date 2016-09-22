@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 43.61:3307
+Source Server         : mysql:3306
 Source Server Version : 50532
-Source Host           : localhost:3307
+Source Host           : localhost:3306
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-22 18:05:11
+Date: 2016-09-23 00:16:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -557,7 +557,7 @@ CREATE TABLE `tp_scenefunc` (
   `sceneid` int(11) DEFAULT NULL,
   `author` varchar(20) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
-  `sourceid` int(11) DEFAULT NULL,
+  `sourceid` int(11) DEFAULT '0',
   `caseid` int(11) DEFAULT NULL,
   `casestate` varchar(3) DEFAULT '未绑定',
   `casemain` varchar(50) DEFAULT NULL,
@@ -587,11 +587,16 @@ CREATE TABLE `tp_scenefunc` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10000 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10005 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scenefunc
 -- ----------------------------
+INSERT INTO `tp_scenefunc` VALUES ('10000', '1', '10000', '10000', '腰立辉', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:43:00', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10001', '2', '10007', '10000', '腰立辉', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:47:38', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10002', '4', '10024', '10000', '腰立辉', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:48:29', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10003', '3', '10013', '10000', '腰立辉', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:48:27', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10004', '5', '10001', '10000', '腰立辉', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-23 00:03:09', '0000-00-00 00:00:00');
 
 -- ----------------------------
 -- Table structure for `tp_stage`

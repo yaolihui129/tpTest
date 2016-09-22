@@ -49,6 +49,7 @@ class FuncAction extends CommonAction {
 
         /* 接收参数*/
         $prodid=$_GET['prodid'];
+        $proid=$_GET['proid'];
         $sysid=$_GET['sysid'];
         $pathid=$_GET['pathid'];
         /* 实例化模型*/
@@ -284,6 +285,45 @@ class FuncAction extends CommonAction {
         $this->display();
 
     }
+    
+    public function library(){
+        /* 接收参数*/        
+        $proid=$_GET['proid']; 
+       
+        $sceneid=$_GET['sceneid'];
+        /* 实例化模型*/
+        $m= D("prosys");
+        $where=array("tp_prosys.proid"=>"$proid");
+        $data=$m->join('inner JOIN tp_system ON tp_system.id = tp_prosys.sysid')
+        ->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+        ->where($where)
+        ->order("tp_system.sysno,tp_path.sn,tp_path.id")
+        ->select();
+        $this->assign("data",$data);
+//         dump($data);        
+        $m= D("func");
+        $pathid=!empty($_GET['pathid'])?$_GET['pathid']:$data[0]['id'];
+        $where=array("pathid"=>"$pathid");
+        $funcs=$m->where($where)->order("sn")->select();
+        $this->assign("funcs",$funcs);
+        $m=D('system');
+        $where=array("tp_scenefunc.sceneid"=>$sceneid);
+        $sfunc=$m
+        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
+        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
+        ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
+        ->where($where)->order('tp_scenefunc.sn')->select();
+        $this->assign("sfunc",$sfunc);
+        
+        $where=array("proid"=>"$proid","sceneid"=>$sceneid,"pathid"=>$pathid);
+        $this->assign('w',$where);
+        
+               
+        $this->display();             
+    }
+    
+  
+    
 
     public function del(){
         /* 接收参数*/
