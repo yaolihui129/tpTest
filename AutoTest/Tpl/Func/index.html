@@ -32,7 +32,7 @@
                        <th width=5% align="center" bgcolor="#ccc">项目</th>
                        <th width=5% align="center" bgcolor="#ccc">维护</th>
                        <th width=7% align="center" bgcolor="#ccc">更新时间</th>
-                       <!-- <th width=3% align="center" bgcolor="#ccc">操作 </th> -->
+                        <th width=3% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='funcs' id='func' empty="没有数据">
                     <tr>
@@ -51,9 +51,9 @@
                        <td align="center" ><{$func.fproid|getProNo=###}></td>
                        <td align="center" ><{$func.moder}></td>
                        <td align="center" ><{$func.updateTime}></td>
-                       <!-- <td align="center" >
+                       <td align="center" >
                           <a href="__URL__/del/id/<{$func.id}>" onclick="return confirm('你确定要删除功能点：<{$func.func}>？')">删除</a>
-                       </td> -->
+                       </td>
                     </tr>
                     </volist>
                 </table>

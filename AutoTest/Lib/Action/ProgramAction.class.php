@@ -56,6 +56,7 @@ class ProgramAction extends CommonAction {
         $m=D('program');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
+        $_POST['expOnline']=$_POST['end'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($m->create()){
             $count=$m->add($_POST);

@@ -1,0 +1,30 @@
+ <layout name="layout" />
+       <div class="place"> 所在位置：
+          <a href="__APP__/Program">项目</a>
+             ><a href="__APP__/Stage/index/proid/<{$w.proid}>">里程碑</a>
+             >安排测试者
+            <span style="float:right;margin-right:60px;">
+            <a href="__APP__/Stage/index/proid/<{$w.proid}>"> 返回</a>
+            </span>
+       </div>
+        <div class="content">
+           <div class="main">
+              <div class="top" style="margin-left:200px;">安排测试者
+                  <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
+              </div>
+              <div class="left" align="left" style="widtht:20%;">
+                    <volist name='data' id='vo' empty="没有数据"><ul>
+                      <li><a href="__URL__/tester/stageid/<{$vo.id}>/proid/<{$vo.proid}>"><{$vo.sn}>.<{$vo.stage}>:<{$vo.state}></a></li>
+                   </ul> </volist>
+              </div>
+                <div class="midd"  align="left">
+                   <table border="1" width="80%" align="center">
+                       <tr>
+                         <th width=3% align="center" bgcolor="#ccc">ID</th>
+                         <th width=2% align="center" bgcolor="#ccc">顺序</th>
+                       </tr>
+
+                  </table>
+
+              </div><!-- midd -->
+           </div><!-- main -->
