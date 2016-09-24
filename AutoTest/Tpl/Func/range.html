@@ -18,7 +18,7 @@
                <div class="left" align="left" style="width:25%;">
                     <volist name='pros' id='pro' empty="没有数据"><ur><li>
                        <a href="__URL__/range/proid/<{$pro.id}>"">
-                       <{$pro.prono}>-<{$pro.program}>:<{$pro.id|countRange=###}>【<{$pro.prost}>】</a>
+                       <{$pro.prono}>【<{$pro.prost}>】<{$pro.program}>:<{$pro.id|countRange=###}></a>
                      </li> </ur> </volist>
               </div>
               <div class="midd" align="right"  >
@@ -45,8 +45,10 @@
                        <td align="center" ><{$st.state}></td>
                        <td align="center" ><{$st.moder}></td>
                        <td align="center" >
-                          <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
+                          
                           <a href="__APP__/Case/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >用例<{$st.id|countFCase=###}></a>
+                          <a href="#">数据模板</a>
+                          <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
                        </td>
                     </tr>
                     </volist>

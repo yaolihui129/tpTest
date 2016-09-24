@@ -11,15 +11,15 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:280px;">功能点管理</div>
-              <div class="left" align="left" style="width:25%;margin-left:0px;">
+              <div class="top" style="margin-left:330px;">功能点管理</div>
+              <div class="left" align="left" style="width:30%;">
                     <volist name='data' id='vo' empty="没有数据"><ur><li>
                         <a href="__URL__/index/pathid/<{$vo.id}>/sysid/<{$vo.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">
-                        <{$vo.sn}>:<{$vo.path}>:【<{$vo.pstate}>】:<{$vo.id|countFunc=###}></a>
+                        <{$vo.sn}>.【<{$vo.pstate}>】<{$vo.path}>:<{$vo.id|countFunc=###}></a>
                     </li></ur></volist>
               </div>
               <div class="midd" align="right">
-                   <table border="1" width="74%" align="center">
+                   <table border="1" width="70%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -30,9 +30,9 @@
                        </th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=5% align="center" bgcolor="#ccc">项目</th>
-                       <th width=5% align="center" bgcolor="#ccc">维护</th>
-                       <th width=7% align="center" bgcolor="#ccc">更新时间</th>
-                        <th width=3% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=9% align="center" bgcolor="#ccc">更新时间</th>
+                        <th width=5% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='funcs' id='func' empty="没有数据">
                     <tr>
@@ -43,6 +43,7 @@
                             <{$func.func}></a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__APP__/Case/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">用例  <{$func.id|countFCase=###}></a>
+                           <a href="#">数据模板</a>
                            <a href="__APP__/Rules/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">规则 <{$func.id|countFRules=###}></a>
                            <a href="__URL__/mod/id/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">修改</a>
                          </span>

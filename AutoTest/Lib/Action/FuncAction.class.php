@@ -322,7 +322,20 @@ class FuncAction extends CommonAction {
         $this->display();             
     }
     
-  
+    public function modproid(){
+        /* 实例化模型*/
+                      
+        $db=D('func');
+       
+        if ($db->save($_GET)){
+            $this->success("修改成功！");
+        }else{
+            $this->error("修改失败！");
+        }
+           
+    }
+    
+    
     
 
     public function del(){
@@ -333,9 +346,9 @@ class FuncAction extends CommonAction {
 
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

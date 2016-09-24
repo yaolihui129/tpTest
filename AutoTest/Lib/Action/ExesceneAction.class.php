@@ -45,61 +45,62 @@ class ExesceneAction extends CommonAction {
         $where=array("proid"=>$proid,"stageid"=>$stageid);
         $this->assign('w',$where);
 
-
         $this->display();
-
    }
 
-   public function tester(){
 
-       /* 接收参数*/
-       $stageid=$_GET['stageid'];
-       $proid=$_GET['proid'];
-       /* 实例化模型*/
-       $m=D('stage');
-       $where=array("proid"=>$proid);
-       $data=$m->where($where)->order("sn")->select();
-       $this->assign('data',$data);
-      // dump($data);
-
-       $m=D('exescene');
-       $where=array("stageid"=>$stageid);
-       $exe=$m->where($where)->select();
-       $this->assign('exe',$exe);
-
-       $m=D('user');
-       $where=array("state"=>"在职");
-       $users=$m->where($where)->select();
-       $this->assign('users',$users);
-       $where=array("proid"=>$proid,"$stageid"=>$stageid);
-        $this->assign('w',$where);
-
-dump($users);
-
-       $this->display();
-
-   }
 
 public function queue(){
     /* 接收参数*/
-    $stageid=$_GET['stageid'];
     $proid=$_GET['proid'];
+    $stageid=$_GET['stageid'];
+    $stagetesterid=$_GET['stagetesterid'];
+    $type=$_GET['type'];
+    $tester=$_GET['tester'];
     /* 实例化模型*/
     $m=D('stage');
-    $where=array("tp_stage.proid"=>$proid);
-    $data=$m->join(" tp_exescene ON tp_stage.id = tp_exescene.stageid")
-    ->where($where)->order("tp_stage.sn")->select();
+    $where=array("tp_stage.proid"=>$proid,"tp_stagetester.type"=>$type);
+    $data=$m->join(" tp_stagetester ON tp_stage.id = tp_stagetester.stageid")
+    ->where($where)->order("tp_stagetester.sn")->select();
     $this->assign('data',$data);
-    dump($data);
-
-   $where=array("proid"=>$proid,"$stageid"=>$stageid);
-   $this->assign('w',$where);
+//     dump($data);
+    
+    $m=D('exescene');
+    $where=array("stagetesterid"=>$stagetesterid);
+    $exe=$m->where($where)->order("sn")->select();
+    $this->assign('exe',$exe);
+    
+    
+    $m=D('scene');
+    $where=array("proid"=>$proid,"type"=>$type);
+    $scene=$m->where($where)->order("sn")->select();
+    $this->assign('scene',$scene);
+    $where=array("proid"=>$proid,"stageid"=>$stageid,"stagetesterid"=>$stagetesterid,"tester"=>$tester,"type"=>$type);
+    $this->assign('w',$where);
 
    $this->display();
 
 }
 
+public function insert(){
 
+    $m=D('exescene');
+    $where=array("stagetesterid"=>$_GET['stagetesterid'],"type"=>$_GET['type']);
+    $_GET['sn']=$m->where($where)->count()+1;      
+    $_GET['adder']=$_SESSION['realname'];
+    $_GET['moder']=$_SESSION['realname'];
+    $_GET['updateTime']=date("Y-m-d H:i:s",time());
+//             dump($_GET);
+    if(!$m->create($_GET)){
+        $this->error($m->getError());
+    }
+    $lastId=$m->add($_GET);
+    if($lastId){
+        $this->success("添加成功");
+    }else{
+        $this->error("添加失败");
+    }
+}
 
 
 }

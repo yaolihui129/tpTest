@@ -19,7 +19,7 @@
                    <table border="1" width="74%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
-                       <th width=15% align="left"  bgcolor="#ccc">阶段
+                       <th width=20% align="left"  bgcolor="#ccc">阶段
                           <span style="float:right;margin-right:5px;">
                              <a href="__URL__/add/proid/<{$w.proid}>"  >添加 </a>
                           </span>
@@ -35,13 +35,14 @@
                      <volist name='stages' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.sn}></td>
-                       <td ><a href="__APP__/Path/index/proid/<{$st.proid}>" ><{$st.stage}></a>
+                       <td ><a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/M" ><{$st.stage}></a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Exescene/tester/proid/<{$st.proid}>/stageid/<{$st.id}>" >人员列队</a>
+                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/M" >人员M</a>
+                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/A" >人员A</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>
                        </td>
-                       <td align="center" ><a href="#"><{$st.state}></a></td>
+                       <td align="center" ><a href="__URL__/modstate/id/<{$st.id}>/state/<{$st.state}>"><{$st.state}></a></td>
                        <td align="center" ><{$st.start}></td>
                        <td align="center" ><{$st.end}></td>
                        <td align="center" ><{$st.document}></td>

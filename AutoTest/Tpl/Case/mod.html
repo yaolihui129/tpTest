@@ -13,10 +13,10 @@
         <div class="content">
            <div class="main">
               <div class="top" >用例编辑</div>
-              <div class="left"  align="left">
+              <div class="left"  align="left" style="width:30%">
                     <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/mod/id/<{$vo.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">
-                       <{$vo.sn}>.<{$vo.main}></a>
+                       <{$vo.sn}>.【<{$vo.state}>】<{$vo.main}></a>
                     </li></ul></volist>
               </div>
               <div class="midd" align="right" >
@@ -24,11 +24,12 @@
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="funcid" value="<{$case.funcid}>" />
                   <input type="hidden" name="id" value="<{$case.id}>" />
-                     <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$case.sn}>"  class="input500"/></td></tr>
+                     <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$case.sn}>"  class="input60"/>
+                                                                    项目：<{$fproid}>状态:<{$state}>级别：<input type="text" name="level" value="<{$case.level}>"  class="input60"/>来源：<{$case.source}>
+                     </td></tr>
                      <tr><td>意图：</td><td><input type="text" name="main" value="<{$case.main}>"  class="input500"/></td></tr>
-                     <tr><td>预期：</td><td><input type="text" name="expected" value="<{$case.expected}>"  class="input500"/></td></tr>
-                     <tr><td>项目：</td><td><{$fproid}>状态:<{$state}>来源：<{$case.source}></td></tr>
-                     <tr><td>操作：</td><td><{$caozuo}></td></tr>
+                     <tr><td>预期：</td><td><input type="text" name="expected" value="<{$case.expected}>"  class="input500"/></td></tr>                    
+                     <tr><td colspan="2"><{$caozuo}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"></form>
                             <a href="__URL__/index/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">

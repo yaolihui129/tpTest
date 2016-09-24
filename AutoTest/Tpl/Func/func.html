@@ -16,7 +16,7 @@
               </div>
                <div class="left" align="left" style="width:25%;">
                     <volist name='pros' id='pro' empty="没有数据"><ur><li>
-                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>【<{$pro.prost}>】</a>
+                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>【<{$pro.prost}>】<{$pro.program}></a>
                       </li></ur></volist>
               </div>
               <div class="midd"  align="right">
@@ -24,12 +24,12 @@
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=7% align="left" bgcolor="#ccc">系统</th>
-                       <th width=20% align="left"  bgcolor="#ccc">路径(编辑)</th>
+                       <th width=18% align="left"  bgcolor="#ccc">路径(编辑)</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=12% align="left" bgcolor="#ccc">功能（编辑）</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=5% align="center" bgcolor="#ccc">项目</th>
-                       <th width=8% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=12% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
                     <tr>
@@ -62,10 +62,11 @@
                          </empty>
                         </empty>
                        <td align="center" ><{$st.state}></td>
-                       <td align="center" ><{$st.fproid|getProNo=###}></td>
-                       <td align="center" >
-                          <a href="__APP__/Rules/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
+                       <td align="center" ><a href="__URL__/modproid/id/<{$st.id}>/fproid/<{$w.proid}>"><{$st.fproid|getProNo=###}></a></td>
+                       <td align="center" >                          
                           <a href="__APP__/Case/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >用例<{$st.id|countFCase=###}></a>
+                          <a href="#">数据模板</a>
+                          <a href="__APP__/Rules/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
                        </td>
                     </tr>
                     </volist>

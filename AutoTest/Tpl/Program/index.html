@@ -40,13 +40,11 @@
                            <a href="__APP__/Prosys/index/proid/<{$pro.id}>/prodid/<{$pro.prodid}>">系统<{$pro.id|countProsys=###}> </a>
                            <a href="__APP__/Func/func/proid/<{$pro.id}>">功能点&nbsp; </a>
                            <a href="__APP__/Func/range/proid/<{$pro.id}>">范围 <{$pro.id|countRange=###}> </a>
-                           <a href="__APP__/Scene/index/proid/<{$pro.id}>">场景<{$pro.id|countScene=###}></a>
-                           <a href="__APP__/Case/library/proid/<{$pro.id}>">用例库 <{$pro.id|countCase=###}></a>
-                           <a href="__APP__/Element/library/proid/<{$pro.id}>">控件库</a>
+                           <a href="__APP__/Scene/index/proid/<{$pro.id}>">场景<{$pro.id|countScene=###}></a>                           
                            <a href="__URL__/mod/id/<{$pro.id}>">修改</a>
                          </span>
                        </td>
-                       <td align="center"><a href="#"><{$pro.prost}></a></td>
+                       <td align="center"><a href="__URL__/modprost/id/<{$pro.id}>/prost/<{$pro.prost}>"><{$pro.prost}></a></td>
                        <td align="center"><a href="#"><{$pro.manager}></a></td>
                        <td align="center"><{$pro.start}></td>
                        <td align="center"><{$pro.end}></td>

@@ -105,20 +105,25 @@ class StageAction extends CommonAction {
 
     }
 
+    
+    public function modstate(){
+        /* 实例化模型*/
+        $db=D('stage'); 
+        if ($_GET['state']=="未开始"){
+            $_GET['state']="进行中";
+        }elseif ($_GET['state']=="进行中"){
+            $_GET['state']="已完成";
+        }
+    
+        if ($db->save($_GET)){
+            $this->success("修改成功！");
+        }else{
+            $this->error("修改失败！");
+        }
 
-    public function test(){
-        $proid=$_GET['proid'];
-
-
-        $this->display();
     }
-
-
-    public function autotest(){
-
-
-        $this->display();
-    }
+    
+    
 
 
     public function del(){

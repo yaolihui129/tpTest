@@ -5,7 +5,7 @@ class ProgramAction extends CommonAction {
         /* 接收参数*/
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
         $m=M('dict');
-        $where=array("type"=>"testgp");
+        $where=array("type"=>"testgp","state"=>"正常");
         $data=$m->where($where)->select();
         $this->assign('data',$data);
         if (!empty($_GET['testgp'])) {
@@ -17,6 +17,24 @@ class ProgramAction extends CommonAction {
 	     $this->assign('Pros',$arr);
 	     $this -> assign("selectgp", formselect($_SESSION['testgp'],"testgp","testgp"));
 	     $this->display();
+    }
+    
+    public function indexl(){
+        /* 接收参数*/
+        $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
+        $m=M('dict');
+        $where=array("type"=>"testgp","state"=>"正常");
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        if (!empty($_GET['testgp'])) {
+            $_SESSION['testgp']=$_GET['testgp'];
+        }
+        /* 实例化模型*/
+        $m=M('program');
+        $arr=$m->where(array("testgp"=>"$testgp"))->order("end desc")->select();
+        $this->assign('Pros',$arr);
+        $this -> assign("selectgp", formselect($_SESSION['testgp'],"testgp","testgp"));
+        $this->display();
     }
 
 
@@ -130,7 +148,28 @@ class ProgramAction extends CommonAction {
         $this->display() ;
     }
 
-
+    public function modprost(){ 
+        /* 实例化模型*/
+        $db=D('program');
+        $prost=$_GET['prost'];
+        
+        if ($prost=="未开始"){
+            $_GET['prost']="进行中";
+            if ($db->save($_GET)){
+                $this->success("修改成功！");
+            }else{
+                $this->error("修改失败！");
+            }
+        }elseif ($prost=="进行中"){
+            $_GET['prost']="已完成";
+            if ($db->save($_GET)){
+                $this->success("修改成功！");
+            }else{
+                $this->error("修改失败！");
+            }
+        }
+              
+    }
 
     public function del(){
         /* 接收参数*/

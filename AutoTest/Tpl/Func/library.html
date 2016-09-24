@@ -11,73 +11,105 @@
         <div class="content">
            <div class="main">
               <div class="top" style="margin-left:270px;">功能库  &nbsp; 路径：<{$w.pathid}>
-              <span style="float:right;">
-                   <a href="#"> 缓存</a>                 
+              <span style="float:right;">                                
                                              当前项目：<{$w.proid|getProNo=###}>
                  </span>
               </div>
               <div class="left" align="left" style="width:25%">
                     <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/library/pathid/<{$vo.id}>/sceneid/<{$w.sceneid}>/proid/<{$w.proid}>">
-                       <{$vo.sysno}>-<{$vo.path}>【<{$vo.id|countFunc=###}>】</a>
+                       <{$vo.sysno}>-<{$vo.path}>:<{$vo.id|countFunc=###}></a>
                     </li></ul></volist>
               </div>
-               <div class="midd"  align="left">                                           
-                   <table border="1" width="30%" align="left">                                                  
-                     <tr>
-                       <th width=2% align="center" bgcolor="#ccc">ID</th>
-                       <th width=2% align="center" bgcolor="#ccc">顺序</th>                       
-                       <th width=9% align="left" bgcolor="#ccc">功能
-                            <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/adds/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
-                          </span>
-                       </th>                      
-                       <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
-                     </tr>
-                     <volist name='funcs' id='st' empty="没有数据">
-                    <tr>
-                       <td align="center" ><{$st.id}></td>
-                       <td align="center" ><{$st.sn}></td>                      
-                       <td align="left" ><a href="#" ><{$st.func}></a>
-                            <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/mods/id/<{$st.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
-                          </span>
-                       </td>                       
-                       <td align="center" ><{$st.state}></td>
-                       <td align="center" >                         
-                          <a href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>" >场景</a>
-                          <a href="#" >缓存</a>
-                       </td>
-                    </tr>
-                    </volist>
-                </table>                                                       
-              </div><!-- midd -->
-              <div class="midd" >
-              
-                  场景：<{$w.sceneid}>
-                   <table border="1" width="43%" align="center">
-                     <tr>                      
-                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
-                       <th width=5% align="center" bgcolor="#ccc">系统</th>
-                       <th width=10% align="left"  bgcolor="#ccc">路径</th>
-                       <th width=7% align="left" bgcolor="#ccc">功能</th>
-                       <th width=7% align="left" bgcolor="#ccc">功能备注</th>
-                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
-                     </tr>
-                     <volist name='sfunc' id='st' empty="没有数据">
-                    <tr>                      
-                       <td align="center" ><{$st.sn}></td>
-                       <td align="center" ><{$st.sysno}></td>
-                       <td align="left" ><{$st.path}></td>
-                       <td align="left" ><{$st.func}></td>
-                       <td align="left" ><{$st.remarks}></td>
-                       <td align="center" >
-                          <a href="#" >移除</a>
-                       </td>
-                    </tr>
-                    </volist>
-                </table>
+               <div class="midd"  align="left">
+                 <table border="0" width="75%" align="left">
+                      <tr>
+                          <th width="30%" align="left">功能点 </th>
+                          <th width="35%" align="left"> 场景：<{$w.sceneid}></th>
+                          <th width="35%" align="left"> 缓存</th>
+                      </tr>
+                      <tr>
+                          <td valign="top">
+                             <table border="1" width="97%" align="left">                                                  
+                                 <tr>                                    
+                                    <th width=2% align="center" bgcolor="#ccc">sn</th>                       
+                                    <th width=9% align="left" bgcolor="#ccc">功能
+                                       <!-- <span style="float:right;margin-right:5px;">
+                                           <a href="__URL__/adds/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
+                                       </span> -->
+                                   </th>                      
+                                   <th width=3% align="center" bgcolor="#ccc">状态</th>
+                                  <!--  <th width=5% align="center" bgcolor="#ccc">操作 </th>--> 
+                                </tr>
+                               <volist name='funcs' id='st' empty="没有数据">
+                                <tr>                                  
+                                   <td align="center" ><{$st.sn}></td>                      
+                                   <td align="left" ><a href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>">+缓存</a>&nbsp;<br>
+                                                     <a href="#" ><{$st.func}></a>&nbsp;<br>
+                                                      <a  href="#"> +场景</a> 
+                                     <!--<span style="float:right;margin-right:5px;">
+                                        <a href="__URL__/mods/id/<{$st.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >修改 </a>
+                                     </span>-->
+                                   </td>                       
+                                   <td align="center" ><{$st.state}></td>
+                                   <!--  <td align="center" >                         
+                                      <a  >场景</a>
+                                      <a href="#" >缓存</a>
+                                   </td>-->
+                                 </tr>
+                                </volist>
+                             </table>                        
+                          </td>
+                          <td valign="top">                         
+                            <table border="1" width="97%" align="center">
+                               <tr>                      
+                                 <th width=2% align="center" bgcolor="#ccc">sn</th>
+                                 <th width=5% align="center" bgcolor="#ccc">系统</th>
+                                 <th width=10% align="left"  bgcolor="#ccc">路径</th>
+                                 <th width=7% align="left" bgcolor="#ccc">功能</th>
+                                 <th width=7% align="left" bgcolor="#ccc">备注</th>
+                                 <th width=5% align="center" bgcolor="#ccc">操作 </th>
+                               </tr>
+                            <volist name='sfunc' id='st' empty="没有数据">
+                               <tr>                      
+                                 <td align="center" ><{$st.sn}></td>
+                                 <td align="center" ><{$st.sysno}></td>
+                                 <td align="left" ><{$st.path}></td>
+                                 <td align="left" ><{$st.func}></td>
+                                 <td align="left" ><{$st.remarks}></td>
+                                 <td align="center" >
+                                    <a href="#" >移除</a>
+                                 </td>
+                              </tr>
+                             </volist>
+                           </table>
+                          </td>
+                          <td valign="top">
+                             <table border="1" width="100%" align="center">
+                               <tr>                      
+                                 <th width=2% align="center" bgcolor="#ccc">sn</th>
+                                 <th width=5% align="center" bgcolor="#ccc">系统</th>
+                                 <th width=10% align="left"  bgcolor="#ccc">路径</th>
+                                 <th width=7% align="left" bgcolor="#ccc">功能</th>
+                                 <th width=7% align="left" bgcolor="#ccc">备注</th>
+                                 <th width=5% align="center" bgcolor="#ccc">操作 </th>
+                               </tr>
+                            <volist name='hunc' id='hc' empty="没有数据">
+                               <tr>                      
+                                 <td align="center" ><{$hc.sn}></td>
+                                 <td align="center" ><{$hc.sysno}></td>
+                                 <td align="left" ><{$hc.path}></td>
+                                 <td align="left" ><{$hc.func}></td>
+                                 <td align="left" ><{$hc.remarks}></td>
+                                 <td align="center" >
+                                    <a href="#" >移除</a>
+                                 </td>
+                              </tr>
+                             </volist>
+                           </table>                                                                            
+                          </td>
+                      </tr>
+                 </table>
                 </div><!-- midd -->
            </div><!-- main -->
               

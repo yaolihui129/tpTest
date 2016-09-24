@@ -19,9 +19,10 @@
         <div class="content">
            <div class="main">
               <div class="top">系统编辑</div>
-              <div class="left"  align="left">
+              <div class="left"  align="left" style="width:25%">
                  <volist name='data' id='vo' empty="没有数据">
-                    <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"><{$vo.sysno}></a><br>
+                    <a href="__URL__/mod/id/<{$vo.id}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">
+                                                  【<{$vo.state}>】 <{$vo.sysno}>:<{$vo.system}></a><br>
                  </volist>
               </div>
               <div class="midd" align="left" >

@@ -11,14 +11,14 @@
         <div class="content">
            <div class="main">
               <div class="top">功能点编辑</div>
-              <div class="left" align="left">
+              <div class="left" align="left" style="width:25%">
                     <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/modf/id/<{$vo.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">
-                       <{$vo.sn}>.<{$vo.func}></a>
+                       <{$vo.sn}>.【<{$vo.state}>】<{$vo.func}></a>
                     </li></ul></volist>
               </div>
               <div class="midd" align="right" >
-                  <table border="0" width="500" align="left">
+                  <table border="0" width="40%" align="left">
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="pathid" value="<{$func.pathid}>" />
                   <input type="hidden" name="id" value="<{$func.id}>" />

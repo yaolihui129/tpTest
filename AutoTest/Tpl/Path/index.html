@@ -9,15 +9,15 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;">路径管理</div>
-              <div class="left"  align="left">
+              <div class="top" style="margin-left:300px;">路径管理</div>
+              <div class="left"   align="left" style="width:27%" >
                   <volist name='data' id='vo' empty="没有数据"><ur><li>
                      <a href="__URL__/index/sysid/<{$vo.id}>/prodid/<{$vo.prodid}>">
-                     <{$vo.sysno}>:<{$vo.system}>:<{$vo.id|countPath=###}></a>
+                                                   【<{$vo.state}>】<{$vo.sysno}>:<{$vo.system}>:<{$vo.id|countPath=###}></a>
                   </li></ur></volist>
               </div>
               <div class="midd"  align="left">
-                   <table border="1" width="80%" align="center">
+                   <table border="1" width="72%" align="center">
                      <tr>
                        <th width=5% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
