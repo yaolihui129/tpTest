@@ -83,19 +83,7 @@ function proselect($value=1,$name=prono) {
 
     return $html;
 }
-/**
- * 根据id获取项目编号
- */
-function getProNo($id){
-   if ($id){
-    $m=M('program');
-    $data=$m->find($id);
-    //dump($data);
-    return $data['prono'];
-   }else {
-       return ;
-   }
-}
+
 
 /**
  * 系统选择
@@ -119,17 +107,33 @@ function sysselect($value=1) {
 
     return $html;
 }
+/**
+ * 根据id获取项目编号
+ */
+function getProNo($id){
+    if ($id){
+        $m=M('program');
+        $data=$m->find($id);
+        //dump($data);
+        return $data['prono'];
+    }else {
+        return ;
+    }
+}
+
 
 /**
- * 根据id获取场景
+ * 根据id获取功能名
  */
- function getScene($id){
-
-    $m=M('scene');
-    $data=$m->find($id);
-    $str='角色:'.$data['swho'].';时间:'.$data['swhen'].';场景:'.$data['scene'];
-    return $str;
-
+function getFunc($id){
+    if ($id){
+        $m=M('func');
+        $data=$m->find($id);
+        //dump($data);
+        return $data['func'];
+    }else {
+        return ;
+    }
 }
 
 /**

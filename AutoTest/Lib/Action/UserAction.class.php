@@ -39,7 +39,7 @@ class UserAction extends CommonAction {
         $upload = new UploadFile();// 实例化上传类
         $upload->maxSize  = 3145728 ;// 设置附件上传大小
         $upload->allowExts  = array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
-        $upload->savePath =  './Upload/';// 设置附件上传目录
+        $upload->savePath =  './Public/Upload/';// 设置附件上传目录
         $upload->thumb = true;//开启缩略图
         $upload->thumbPrefix = 'tb'; //设置前缀
 //         $upload->thumbPath =  './Upload/tb/';// 设置缩略图上传目录
@@ -89,13 +89,12 @@ class UserAction extends CommonAction {
         
         import('ORG.Net.UploadFile');
         $upload = new UploadFile();// 实例化上传类
-        $upload->savePath =  './Upload/';// 设置附件上传目录
+        $upload->savePath =  './Public/Upload/';// 设置附件上传目录
         if(!$upload->upload()) {// 上传错误提示错误信息
             $this->error($upload->getErrorMsg());
         }else{// 上传成功 获取上传文件信息
             $info =  $upload->getUploadFileInfo();
-        }
-        //$db->filename=$info[0]['savename'];
+        }        
         
         $_POST['filename']=$info[0]['savename'];
         

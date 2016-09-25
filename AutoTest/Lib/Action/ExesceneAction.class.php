@@ -2,47 +2,53 @@
 
 class ExesceneAction extends CommonAction {
     public function index(){
+        $type=$_GET['type'];
+       
 
     	 $m=M('program');
-    	 $where=array("tp_stage.state"=>"已完成");
+    	 $where=array("tp_stage.state"=>"进行中","tp_stagetester.tester"=>$_SESSION['realname'],"tp_stagetester.type"=>$type);
     	 $data=$m->join("tp_stage ON tp_program.id = tp_stage.proid")
-    	 ->order("prono desc")
+    	 ->join("tp_stagetester ON tp_stage.id = tp_stagetester.stageid")
+    	 ->order("tp_program.end desc")
          ->where($where)
     	 ->select();
 	     $this->assign('data',$data);
 // 	    dump($data);
-
-	     $stageid=!empty($_GET['stageid'])?$_GET['stageid']:$data[0]['id'];
+	     $stagetesterid=!empty($_GET['stagetesterid'])?$_GET['stagetesterid']:$data[0]['id'];
+	     $proid=!empty($_GET['proid'])?$_GET['proid']:$data[0]['proid'];
 	     $m=D('exescene');
-	     $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Manual");
+	     $where=array("stagetesterid"=>$stagetesterid);
 	     $exe=$m->where($where)->order("sn")->select();
 	     $this->assign('exe',$exe);
-	     $proid=!empty($_GET['proid'])?$_GET['proid']:$data[0]['proid'];
-	     $where=array("proid"=>$proid,"stageid"=>$stageid);
+	    
+	     $where=array("proid"=>$proid,"stagetesterid"=>$stagetesterid,"type"=>$type);
 	     $this->assign('w',$where);
-
+// dump($exe);
 
 	     $this->display();
     }
 
     public function test(){
+        
+        $type=$_GET['type'];
 
         $m=M('program');
-        $where=array("tp_stage.state"=>"已完成");
+        $where=array("tp_stage.state"=>"进行中","tp_stagetester.tester"=>$_SESSION['realname'],"tp_stagetester.type"=>$type);
         $data=$m->join("tp_stage ON tp_program.id = tp_stage.proid")
-        ->order("prono desc")
+        ->join("tp_stagetester ON tp_stage.id = tp_stagetester.stageid")
+    	->order("tp_program.end desc")
         ->where($where)
         ->select();
         $this->assign('data',$data);
         // 	    dump($data);
 
-        $stageid=!empty($_GET['stageid'])?$_GET['stageid']:$data[0]['id'];
+        $stagetesterid=!empty($_GET['stagetesterid'])?$_GET['stagetesterid']:$data[0]['id'];
         $m=D('exescene');
-        $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Auto");
+        $where=array("stagetesterid"=>$stagetesterid);
         $exe=$m->where($where)->order("sn")->select();
         $this->assign('exe',$exe);
         $proid=!empty($_GET['proid'])?$_GET['proid']:$data[0]['proid'];
-        $where=array("proid"=>$proid,"stageid"=>$stageid);
+        $where=array("proid"=>$proid,"stagetesterid"=>$stagetesterid,"type"=>$type);
         $this->assign('w',$where);
 
         $this->display();
@@ -61,7 +67,7 @@ public function queue(){
     $m=D('stage');
     $where=array("tp_stage.proid"=>$proid,"tp_stagetester.type"=>$type);
     $data=$m->join(" tp_stagetester ON tp_stage.id = tp_stagetester.stageid")
-    ->where($where)->order("tp_stagetester.sn")->select();
+    ->where($where)->order("tp_stage.id,tp_stagetester.sn")->select();
     $this->assign('data',$data);
 //     dump($data);
     
@@ -82,8 +88,19 @@ public function queue(){
 
 }
 
-public function insert(){
+public function modsn(){
+    
+    dump($_POST);
+}
 
+public function insert(){
+    $m=D('scene');    
+    $data=$m->find($_GET[sceneid]);
+    $_GET['level']=$data['level'];
+    $_GET['swho']=$data['swho'];
+    $_GET['swhen']=$data['swhen'];
+    $_GET['scene']=$data['scene'];
+    $_GET['testip']=$data['testip'];
     $m=D('exescene');
     $where=array("stagetesterid"=>$_GET['stagetesterid'],"type"=>$_GET['type']);
     $_GET['sn']=$m->where($where)->count()+1;      
@@ -101,6 +118,34 @@ public function insert(){
         $this->error("添加失败");
     }
 }
+
+
+public function library(){
+    /* 接收参数*/
+    $proid=$_GET['proid'];
+    $stageid=$_GET['stageid'];
+    $stagetesterid=$_GET['stagetesterid'];
+    $type=$_GET['type'];
+    $tester=$_GET['tester'];
+    /* 实例化模型*/
+    
+    $m=D('exescene');
+    $where=array("stagetesterid"=>$stagetesterid);
+    $exe=$m->where($where)->order("sn")->select();
+    $this->assign('exe',$exe);
+
+
+    $m=D('scene');
+    $where=array("proid"=>$proid,"type"=>$type);
+    $scene=$m->where($where)->order("sn")->select();
+    $this->assign('scene',$scene);
+    $where=array("proid"=>$proid,"stageid"=>$stageid,"stagetesterid"=>$stagetesterid,"tester"=>$tester,"type"=>$type);
+    $this->assign('w',$where);
+
+    $this->display();
+
+}
+
 
 
 }

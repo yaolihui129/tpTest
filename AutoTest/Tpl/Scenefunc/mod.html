@@ -1,15 +1,38 @@
-      <layout name="layout" />
+ <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__URL__">用户</a>
-             >添加
-            <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
-            </span>
+              <a href="__APP__/Program">项目</a>
+              ><a href="__APP__/Scene/index/proid/<{$w.proid}>">场景</a>
+              ><a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">场景功能</a>
+              >修改
+              <span style="float:right;margin-right:60px;">
+                <a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"> 返回</a>
+              </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">用户添加</div>
+              <div class="top">场景功能修改</div>
+              <div class="left"  align="left">
+              <hr />
+                    <volist name='data' id='vo' empty="没有数据"><ul><li>
+                       <a href="__URL__/mod/id/<{$vo.id}>/sceneid/<{$w.sceneid}>/proid/<{$w.proid}>">
+                       <{$vo.sysno}><{$vo.path}><br /><{$vo.sn}>.<{$vo.func}></a><hr />
+                   </li></ul> </volist>
+              </div>
+              <div class="midd"  align="right" >
 
+                  <table border="0" width="450" align="left">
+                   <form action="__URL__/update" method="post" >
+                   <input type="hidden" name="id" value="<{$sfunc.id}>" />
+                     <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$sfunc.sn}>"  class="input60"/></td></tr>
+                     <tr><td>功能：</td><td><{$sfunc.funcid|getFunc=###}></td></tr>
+                     <tr><td>备注</td><td><input type="text" name="remarks" value="<{$sfunc.remarks}>"  class="input300"/></td></tr>
+                     <tr><td></td>
+                         <td>
+                            <input type="submit" class="btn" name="do_submit" value="提 交"> </form>
+                             <a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"><button  class="btn" >返回</button></a>
+                         </td>
+                     </tr>
+                  </table>
               </div><!-- midd -->
            </div><!-- main -->

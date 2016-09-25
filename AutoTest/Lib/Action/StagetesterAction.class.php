@@ -50,6 +50,7 @@ class StagetesterAction extends CommonAction {
         }
         $lastId=$m->add($_GET);
         if($lastId){
+          //  $this->redirect('Stagetester/index');
             $this->success("添加成功");
         }else{
             $this->error("添加失败");

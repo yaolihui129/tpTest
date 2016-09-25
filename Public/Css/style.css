@@ -14,6 +14,7 @@ img{border:0;}
 table{border-collapse:collapse;}
 table th{bgcolor:#ccc;align:center;}
 input {border: 1px solid #000000;font-size:17px;}
+.input20{width:20px;}
 .input40{width:40px;}
 .input50{width:50px;}
 .input60{width:60px;}

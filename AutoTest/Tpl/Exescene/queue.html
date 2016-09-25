@@ -10,74 +10,49 @@
        </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:200px;">规划列队:<{$w.tester}>:<{$w.type}>
-                  <span style="float:right;"><a href="">场景库</a>  当前项目：<{$w.proid|getProNo=###}></span>
+              <div class="top" style="margin-left:200px;">规划列队:
+                  <span style="float:right;">
+                  <a href="__URL__/library/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">
+                                                  待测<{$w.type}>场景库<{$w.proid}></a>
+                                                  当前项目：<{$w.proid|getProNo=###}>
+                  </span>
               </div>
               <div class="left" align="left" style="width:20%;">
                     <volist name='data' id='vo' empty="没有数据"><ol>
-                      <li><a href="__URL__/queue/stagetesterid/<{$vo.id}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>">
-                      <{$vo.stage}>【<{$vo.state}>】:<{$vo.id}></a></li>
+                      <li><a href="__URL__/queue/stagetesterid/<{$vo.id}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">
+                      <{$vo.stage}>【<{$vo.state}>】<{$vo.tester}>:<{$vo.id}></a></li>
                    </ol> </volist>
               </div>
-                <div class="midd"  align="left" >
-                 <table border="0" width="80%" align="center">
-                    <tr>
-                       <th width=45% align="left">列队场景</th>
-                       <th width=55% align="left">待测场景</th>
-                    </tr>
-                    <tr>
-                      <td  valign="top">
-                          <table border="1" width="95%" align="left">
+                <div class="midd"  align="left" >                
+                          <table border="1" width="80%" align="left">
                             <tr>
                               <th width=3% align="center" bgcolor="#ccc">ID</th>
                               <th width=2% align="center" bgcolor="#ccc">顺序</th>                        
-                              <th width=10% align="center" bgcolor="#ccc">角色</th>
-                              <th width=2% align="center" bgcolor="#ccc">时间</th>
-                              <th width=2% align="center" bgcolor="#ccc">场景</th>
-                              <th width=2% align="center" bgcolor="#ccc">结果</th>
+                              <th width=7% align="center" bgcolor="#ccc">角色</th>
+                              <th width=7% align="center" bgcolor="#ccc">时间</th>
+                              <th width=30% align="center" bgcolor="#ccc">场景</th>
+                              <th width=5% align="center" bgcolor="#ccc">结果</th>
+                              <th width=10% align="center" bgcolor="#ccc">更新时间</th>
                            </tr>
+                            <form action="__URL__/modsn" method="post" >
                            <volist name='exe' id='ex'>
-                           <tr>
+                           <tr>                          
+                           <input type="hidden" name="id" value="<{$ex.id}>" />
                              <td align="center" ><{$ex.id}></td>
-                             <td align="center" ><{$ex.sn}></td>
+                             <td align="center" ><input  type="text" name="sn" value="<{$ex.sn}>" style="width:20px;" /></td>
                              <td align="center" ><{$ex.swho}></td>
                              <td align="center" ><{$ex.swhen}></td>
                              <td ><a href="#" ><{$ex.scene}></a>
                                  <span style="float:right;margin-right:5px;">
-                                    <a href="#" >查看<{$ex.id|countFunc=###}></a>                          
+                                    <a href="#" >查看<{$ex.id}></a>                          
                                  </span>
                              </td>                                          
-                             <td align="center" ><{$ex.results}></td>                     
+                             <td align="center" ><{$ex.results}></td>
+                             <td align="center" ><{$ex.updateTime}></td>                       
                            </tr>
-                           </volist>
-                         </table>
-                      </td>
-                      <td  valign="top">
-                          <table border="1" width="100%" align="left">
-                            <tr>                             
-                              <th width=2% align="center" bgcolor="#ccc">顺序</th>                        
-                              <th width=5% align="center" bgcolor="#ccc">角色</th>
-                              <th width=5% align="center" bgcolor="#ccc">时间</th>
-                              <th width=15% align="center" bgcolor="#ccc">场景</th>
-                              <th width=2% align="center" bgcolor="#ccc">次数</th>
-                           </tr>
-                           <volist name='scene' id='se'>
-                           <tr>                           
-                             <td align="center" ><{$se.sn}></td>
-                             <td align="center" ><{$se.swho}></td>
-                             <td align="center" ><{$se.swhen}></td>
-                             <td ><a href="__APP__/Exescene/insert/sceneid/<{$se.id}>/stagetesterid/<{$w.stagetesterid}>/type/<{$w.type}>" ><{$se.scene}></a>
-                                 <span style="float:right;margin-right:5px;">
-                                    <a href="__APP__/Exescene/insert/sceneid/<{$se.id}>/stagetesterid/<{$w.stagetesterid}>/type/<{$w.type}>" >加入</a>
-                                    <a href="#" >查看<{$se.id|countFunc=###}></a>                          
-                                 </span>
-                             </td>                                          
-                             <td align="center" ><{$se.id}></td>                     
-                           </tr>
-                           </volist>
-                         </table>                                          
-                      </td>                   
-                   </tr>                 
-                 </table>                                  
+                           </volist>                           
+                        
+                         </table> 
+                          <input type="submit" class="btn" name="do_submit" value="提 交"></form>                                
               </div><!-- midd -->
            </div><!-- main -->

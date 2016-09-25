@@ -17,7 +17,8 @@
               <div class="left" align="left" style="widtht:15%;">
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li><a href="__URL__/index/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>"><{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
+                         <li><a href="__URL__/index/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>">
+                         <{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
                        </ur>
                     </volist>
               </div>

@@ -11,13 +11,14 @@
            <div class="main">
               <div class="top">测试场景
                  <span style="float:right;">
+                                             复制目标：<{$w.copy|getProNo=###}>
                                              当前项目：<{$w.proid|getProNo=###}>
                  </span>
               </div>
               <div class="left" >
                     <volist name='pros' id='pro' empty="没有数据">
                       <ur>
-                       <a href="__URL__/index/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countScene=###}>:<{$pro.prost}></a><br>
+                       <a href="__URL__/index/proid/<{$pro.id}>/copy/<{$w.copy}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countScene=###}>:<{$pro.prost}></a><br>
                       </ur>
                     </volist>
               </div>
@@ -26,8 +27,7 @@
 
                      <tr>
                       <th width=3% align="center" bgcolor="#ccc">ID</th>
-                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
-                       <th width=3% align="center" bgcolor="#ccc">类型</th>
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>                      
                        <th width=5% align="center"  bgcolor="#ccc">角色</th>
                        <th width=5% align="center" bgcolor="#ccc">时间</th>
                        <th width=3% align="center" bgcolor="#ccc">级别</th>
@@ -38,29 +38,28 @@
                        </th>
 
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=10% align="center" bgcolor="#ccc">流程</th>
+                       <!--  <th width=10% align="center" bgcolor="#ccc">流程</th>-->
                        <th width=3% align="center" bgcolor="#ccc">来源</th>
                       <!--  <th width=3% align="center" bgcolor="#ccc">操作 </th> -->
                      </tr>
                      <volist name='scene' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.id}></td>
-                       <td align="center" ><{$st.sn}></td>
-                       <td align="center" ><{$st.type}></td>
+                       <td align="center" ><{$st.sn}></td>                       
                        <td align="center" ><{$st.swho}></td>
                        <td align="center" ><{$st.swhen}></td>
                        <td align="center" ><{$st.level}></td>
                        <td align="left" >
-                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>"><{$st.scene}></a>
+                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>"><{$st.type}>:<{$st.scene}></a>
                          <span style="float:right;margin-right:5px;">                      
                            <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>" >场景功能</a>
-                           <a href="#" >复制</a>
+                           <a href="__URL__/copy/sceneid/<{$st.id}>/proid/<{$w.copy}>" >复制</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>
                        </td>
 
                        <td align="center" ><{$st.state}></td>
-                       <td align="center" ><{$st.flow}></td>
+                      <!--  <td align="center" ><{$st.flow}></td> -->
                        <td align="center" ><{$st.sourceid}></td>
                        <!-- <td align="center" >
                           <a href="__URL__/del/id/<{$st.id}>" onclick="return confirm('你确定要删除场景：<{$st.swho}>:<{$swhen}><{$st.risk}>？')">删除</a>

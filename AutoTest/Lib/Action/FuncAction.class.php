@@ -288,9 +288,9 @@ class FuncAction extends CommonAction {
     
     public function library(){
         /* 接收参数*/        
-        $proid=$_GET['proid']; 
-       
+        $proid=$_GET['proid'];      
         $sceneid=$_GET['sceneid'];
+//         echo $proid,$sceneid;
         /* 实例化模型*/
         $m= D("prosys");
         $where=array("tp_prosys.proid"=>"$proid");
@@ -314,7 +314,14 @@ class FuncAction extends CommonAction {
         ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
         ->where($where)->order('tp_scenefunc.sn')->select();
         $this->assign("sfunc",$sfunc);
-        
+        $where=array("tp_hcfunc.adder"=>$_SESSION['realname']);
+        $hfunc=$m
+        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
+        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
+        ->join("inner JOIN tp_hcfunc ON tp_func.id = tp_hcfunc.funcid")
+        ->where($where)->order('tp_hcfunc.sn')->select();
+        $this->assign("hfunc",$hfunc);
+    
         $where=array("proid"=>"$proid","sceneid"=>$sceneid,"pathid"=>$pathid);
         $this->assign('w',$where);
         

@@ -5,6 +5,7 @@ class SceneAction extends CommonAction {
         /* 接收参数*/
         $proid=$_GET['proid'];
     	$gp=$_SESSION['testgp'];
+    	$copy=$_GET['copy'];
          /* 实例化模型*/
         $m= D("program");
         $where=array("testgp"=>"$gp");
@@ -16,8 +17,8 @@ class SceneAction extends CommonAction {
         $where=array("proid"=>"$proid");
         $scene=$s->where($where)->select();
         $this->assign("scene",$scene);
+        $where=array("proid"=>"$proid","copy"=>$copy);
         $this->assign('w',$where);
-
 	     $this->display();
     }
 
@@ -43,7 +44,7 @@ class SceneAction extends CommonAction {
 
     public function insert(){
         $m=D('scene');
-    $_POST['adder']=$_SESSION['realname'];
+        $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
@@ -92,6 +93,31 @@ class SceneAction extends CommonAction {
 
     public function library(){
         $this->display();
+    }
+    
+    
+    public function copy(){
+        /* 接收参数*/
+        $sceneid=$_GET['sceneid'];
+        $proid=$_GET['proid'];
+        /* 实例化模型*/
+        $m=M('scene');
+        $data=$m->field("type,level,swho,swhen,testip,scene,state,flow")->find($sceneid);
+        $where=array("proid"=>$proid);
+        $data['sourceid']=$sceneid;
+        $data['sn']=$m->where($where)->count()+1;
+        $data['proid']=$proid;
+        $data['adder']=$_SESSION['realname'];              
+        if(!$m->create($data)){
+            $this->error($m->getError());
+        }
+        $lastId=$m->add($data);
+        if($lastId){
+            $this->success("复制成功");
+        }else{
+            $this->error("复制失败");
+        }
+        
     }
 
     public function del(){

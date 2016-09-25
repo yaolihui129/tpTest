@@ -44,7 +44,28 @@ class ExefuncAction extends CommonAction {
         $this->display();
     }
 
+    public function importm(){
+        
+        $m=D('scenefunc');
+        $where=array("sceneid"=>$_GET['sceneid']);
+        $arr=$m->where($where)->order("sn")->select();
+        //         $m=D('exefunc');
+        foreach ($arr as $a){
+            dump($a);
+            //     if(!$m->create($a)){
+            //         $this->error($m->getError());
+            //     }
+            //     $lastId=$m->add($a);
+        }
 
+
+
+//     if($lastId){
+//         $this->success("添加成功");
+//     }else{
+//         $this->error("添加失败");
+//     }
+   }
 
     public function update(){
 
