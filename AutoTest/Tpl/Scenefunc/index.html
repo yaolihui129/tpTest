@@ -34,7 +34,7 @@
                        <th width=7% align="left" bgcolor="#ccc">功能备注</th>
                        <th width=7% align="left" bgcolor="#ccc">意图</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=7% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=12% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='sfunc' id='st' empty="没有数据">
                     <tr>
@@ -47,9 +47,11 @@
                        <td align="left" ><{$st.main}></td>
                        <td align="center" ><{$st.casestate}></td>
                        <td align="center" >
-                          <a href="#" >用例库</a>
+                          <a href="__APP__/Scenecase/index/funcid/<{$st.id}>//proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
+                          <a href="#" >数据模板</a>
+                          <a href="__APP__/Rules/indexs/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >规则</a>
                           <a href="__URL__/mod/id/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >修改</a>
-                          <a href="#" >移除</a>
+                          <a href="__URL__/del/id/<{$st.id}>" >移除</a>
                        </td>
                     </tr>
                     </volist>

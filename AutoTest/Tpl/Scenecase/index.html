@@ -1,0 +1,37 @@
+<layout name="layout" />
+        <div class="place">所在位置：
+           <a href="__APP__/Program">项目</a>
+           ><a href="__APP__/Scene/index/proid/<{$w.proid}>">场景</a>
+           ><a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">场景功能</a>
+           >用例库
+           <span style="float:right;margin-right:60px;">
+              <a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"> 返回</a>
+           </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">功能用例库
+              <span style="float:right;">                  
+                                             当前项目：<{$w.proid|getProNo=###}>
+                 </span>
+              </div>
+              <div class="left" align="left" style="width:20%">
+                    <volist name='data' id='vo' empty="没有数据"><ul><li>
+                       <a href="__URL__/index/funcid/<{$vo.id}>/sceneid/<{$w.sceneid}>/proid/<{$w.proid}>">
+                       <{$vo.sn}>.<{$vo.sysno}>-<{$vo.path}>-<{$vo.func}>-<{$vo.remarks}></a><hr>
+                    </li></ul></volist>
+              </div>
+              <div class="midd" >
+                 <table border="1" width="80%" align="center">
+                     <tr>
+                       <th width=2% align="center" bgcolor="#ccc">ID</th>
+                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
+                       
+                                           
+                    </tr>
+                   
+                </table>
+
+              </div><!-- midd -->
+           </div><!-- main -->
+                       

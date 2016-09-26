@@ -60,7 +60,7 @@ class ScenefuncAction extends CommonAction {
         $sceneid=$_GET['sceneid'];
         $m=D('scenefunc');
         $where=array("sceneid"=>$sceneid);
-        $arr=$m->where($where)->field("funcid,sn")->select();
+        $arr=$m->where($where)->field("funcid,sn,remarks")->select();
         $m=D('hcfunc');
         foreach ($arr as $a){
             $a['adder']= $_SESSION['realname'];
@@ -87,7 +87,8 @@ class ScenefuncAction extends CommonAction {
         $funcid=$_GET['funcid'];
         /* 实例化模型*/
         $m=D('hcfunc');
-        $sn=$m->count()+1;
+        $where=array("adder"=>$_SESSION['realname']);
+        $sn=$m->where($where)->count()+1;
         $arr=array("sn"=>$sn,"funcid"=>$funcid,"adder"=>$_SESSION['realname']);
         if(!$m->create($arr)){
             $this->error($m->getError());
@@ -104,7 +105,7 @@ class ScenefuncAction extends CommonAction {
 
     public function insert(){
         $m=D('scenefunc');
-    $_POST['adder']=$_SESSION['realname'];
+        $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
@@ -157,24 +158,7 @@ class ScenefuncAction extends CommonAction {
         }
 
     }
-    public function addfunc(){
-
-        $m=D('hcfunc');
-        $data=$m->field("sn,funcid,remarks,adder")->find($_GET['id']);
-        $data['sceneid']=$_GET['sceneid'];
-        dump($data);
-
-        $m=D('scenefunc');
-        if(!$m->create($data)){
-            $this->error($m->getError());
-        }
-        $lastId=$m->add($data);
-        if($lastId){
-            $this->success("添加成功");
-        }else{
-            $this->error("添加失败");
-        }
-    }
+   
 
     public function del(){
         /* 接收参数*/
