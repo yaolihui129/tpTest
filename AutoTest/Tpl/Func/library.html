@@ -11,7 +11,7 @@
         <div class="content">
            <div class="main">
               <div class="top" style="margin-left:270px;">功能库  &nbsp; 路径：<{$w.pathid}>
-              <span style="float:right;">                                
+              <span style="float:right;">
                                              当前项目：<{$w.proid|getProNo=###}>
                  </span>
               </div>
@@ -31,40 +31,40 @@
                       </tr>
                       <tr>
                           <td valign="top">
-                             <table border="1" width="97%" align="left">                                                  
-                                 <tr>                                                         
+                             <table border="1" width="97%" align="left">
+                                 <tr>
                                     <th align="left" bgcolor="#ccc">功能
                                        <!-- <span style="float:right;margin-right:5px;">
                                            <a href="__URL__/adds/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
                                        </span> -->
-                                   </th>                       
+                                   </th>
                                 </tr>
                                <volist name='funcs' id='st' empty="没有数据">
-                                <tr>                                                      
+                                <tr>
                                    <td align="left" ><a href="__APP__/Scenefunc/addhc/funcid/<{$st.id}>"><button>+缓存</button></a>&nbsp;<br>
                                                      <a href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>" ><{$st.sn}>.<{$st.func}>【<{$st.state}>】</a>&nbsp;<br>
-                                                      <a  href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>"><button> +场景</button></a> 
+                                                      <a  href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>"><button> +场景</button></a>
                                      <!--<span style="float:right;margin-right:5px;">
                                         <a href="__URL__/mods/id/<{$st.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >修改 </a>
                                      </span>-->
-                                   </td>                                                         
+                                   </td>
                                  </tr>
                                 </volist>
-                             </table>                        
+                             </table>
                           </td>
-                          <td valign="top">                         
+                          <td valign="top">
                             <table border="1" width="97%" align="center">
-                               <tr>                      
+                               <tr>
                                  <th width=70% align="left" bgcolor="#ccc">功能点<a href="__APP__/Scenefunc/addAllhc/sceneid/<{$w.sceneid}>"><button> +缓存</button></a></th>
                                  <th width=20% align="left" bgcolor="#ccc">备注</th>
                                  <th width=10% align="center" bgcolor="#ccc">操作 </th>
                                </tr>
                             <volist name='sfunc' id='st' empty="没有数据">
-                               <tr>                      
+                               <tr>
                                  <td align="left" ><{$st.sn}>.<{$st.sysno}>-<{$st.path}>-<{$st.func}>
-                                   <span style="float:right;margin-right:5px;"> 
-                                     <a href="__APP__/Scenefunc/addhc/funcid/<{$st.funcid}>" ><button>+缓存</button></a> 
-                                   </span>                                                
+                                   <span style="float:right;margin-right:5px;">
+                                     <a href="__APP__/Scenefunc/addhc/funcid/<{$st.funcid}>" ><button>+缓存</button></a>
+                                   </span>
                                  </td>
                                  <td align="left" ><{$st.remarks}></td>
                                  <td align="center" >
@@ -76,16 +76,16 @@
                           </td>
                           <td valign="top">
                              <table border="1" width="100%" align="center">
-                               <tr>                      
+                               <tr>
                                  <th width=70% align="left" bgcolor="#ccc">功能点 <a href="#"><button>+场景</button></a></th>
                                  <th width=20% align="left" bgcolor="#ccc">备注</th>
                                  <th width=10% align="center" bgcolor="#ccc">操作 </th>
                                </tr>
                             <volist name='hfunc' id='hc' empty="没有数据">
-                               <tr>                      
+                               <tr>
                                  <td align="left" ><{$hc.sn}>.<{$hc.sysno}>-<{$hc.path}>-<{$hc.func}>
                                    <span style="float:right;margin-right:5px;">
-                                     <a href="#" ><button>+场景</button></a> 
+                                     <a href="__APP__/Scenefunc/addfunc/id/<{$hc.id}>/sceneid/<{$w.sceneid}>" ><button>+场景</button></a>
                                     </span>
                                  </td>
                                  <td align="left" ><{$hc.remarks}></td>
@@ -94,10 +94,9 @@
                                  </td>
                               </tr>
                              </volist>
-                           </table>                                                                            
+                           </table>
                           </td>
                       </tr>
                  </table>
                 </div><!-- midd -->
            </div><!-- main -->
-              

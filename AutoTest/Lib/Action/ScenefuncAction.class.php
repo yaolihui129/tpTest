@@ -10,7 +10,7 @@ class ScenefuncAction extends CommonAction {
         $where=array("proid"=>"$proid");
         $data=$m->where($where)->select();
         $this->assign("data",$data);
-                
+
         $m=D('system');
         $where=array("tp_scenefunc.sceneid"=>$sceneid);
         $sfunc=$m
@@ -32,7 +32,7 @@ class ScenefuncAction extends CommonAction {
     public function add(){
         $this->display();
     }
-    
+
     public function addscene(){
         /* 接收参数*/
         $sceneid=$_GET['sceneid'];
@@ -51,10 +51,10 @@ class ScenefuncAction extends CommonAction {
         }else{
             $this->error("添加失败");
         }
-        
-    
+
+
     }
-    
+
     public function addAllhc(){
         /* 接收参数*/
         $sceneid=$_GET['sceneid'];
@@ -69,24 +69,24 @@ class ScenefuncAction extends CommonAction {
                   $this->error($m->getError());
             }
            $lastId=$m->add($a);
-            
+
         }
-       
+
         if($lastId){
             $this->success("添加成功");
         }else{
             $this->error("添加失败");
         }
-        
-        
+
+
     }
-    
-    
+
+
     public function addhc(){
-        /* 接收参数*/       
+        /* 接收参数*/
         $funcid=$_GET['funcid'];
         /* 实例化模型*/
-        $m=D('hcfunc');     
+        $m=D('hcfunc');
         $sn=$m->count()+1;
         $arr=array("sn"=>$sn,"funcid"=>$funcid,"adder"=>$_SESSION['realname']);
         if(!$m->create($arr)){
@@ -98,8 +98,8 @@ class ScenefuncAction extends CommonAction {
         }else{
             $this->error("添加失败");
         }
-    
-    
+
+
     }
 
     public function insert(){
@@ -134,16 +134,16 @@ class ScenefuncAction extends CommonAction {
         ->where($where)->order('tp_scenefunc.sn')->select();
         $this->assign("data",$data);
 //         dump($data);
-        
+
         $m=D(scenefunc);
         $sfunc=$m->find($id);
         $this->assign("sfunc",$sfunc);
         $where=array("proid"=>"$proid","sceneid"=>"$sceneid");
         $this->assign("w",$where);
 //         dump($sfunc);
-        
+
         $this->display();
-    
+
    }
 
     public function update(){
@@ -156,6 +156,24 @@ class ScenefuncAction extends CommonAction {
             $this->error("修改失败！");
         }
 
+    }
+    public function addfunc(){
+
+        $m=D('hcfunc');
+        $data=$m->field("sn,funcid,remarks,adder")->find($_GET['id']);
+        $data['sceneid']=$_GET['sceneid'];
+        dump($data);
+
+        $m=D('scenefunc');
+        if(!$m->create($data)){
+            $this->error($m->getError());
+        }
+        $lastId=$m->add($data);
+        if($lastId){
+            $this->success("添加成功");
+        }else{
+            $this->error("添加失败");
+        }
     }
 
     public function del(){
