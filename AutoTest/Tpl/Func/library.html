@@ -16,10 +16,9 @@
                  </span>
               </div>
               <div class="left" align="left" style="width:20%">
-              <hr />
-                    <volist name='data' id='vo' empty="没有数据"><ul><li>
+                    <volist name='data' id='vo' empty="没有数据"><ul><li style="border:1px solid #eee">
                        <a href="__URL__/library/pathid/<{$vo.id}>/sceneid/<{$w.sceneid}>/proid/<{$w.proid}>">
-                       <{$vo.sysno}>:<br /><{$vo.path}>:<{$vo.id|countFunc=###}></a><hr />
+                       <{$vo.sysno}>:<br /><{$vo.path}>:<{$vo.id|countFunc=###}></a>
                     </li></ul></volist>
               </div>
                <div class="midd"  align="left">
@@ -34,19 +33,17 @@
                              <table border="1" width="97%" align="left">
                                  <tr>
                                     <th align="left" bgcolor="#ccc">功能
-                                       <!-- <span style="float:right;margin-right:5px;">
-                                           <a href="__URL__/adds/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
-                                       </span> -->
                                    </th>
                                 </tr>
                                <volist name='funcs' id='st' empty="没有数据">
                                 <tr>
-                                   <td align="left" ><a href="__APP__/Scenefunc/addhc/funcid/<{$st.id}>"><button>+缓存</button></a>&nbsp;<br>
-                                                     <a href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>" ><{$st.sn}>.<{$st.func}>【<{$st.state}>】</a>&nbsp;<br>
-                                                      <a  href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>"><button> +场景</button></a>
-                                     <!--<span style="float:right;margin-right:5px;">
-                                        <a href="__URL__/mods/id/<{$st.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >修改 </a>
-                                     </span>-->
+                                   <td align="left" >
+                                       <a href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>" >
+                                           <{$st.sn}>.<{$st.func}>【<{$st.state}>】</a>&nbsp;<br>
+                                      <a href="__APP__/Hcfunc/addhc/funcid/<{$st.id}>"><button>+缓存</button></a>
+                                      <span style="float:right;margin-right:5px;">
+                                          <a  href="__APP__/Scenefunc/addscene/funcid/<{$st.id}>/sceneid/<{$w.sceneid}>"><button> +场景</button></a>
+                                     </span>
                                    </td>
                                  </tr>
                                 </volist>
@@ -63,7 +60,7 @@
                                <tr>
                                  <td align="left" ><{$st.sn}>.<{$st.sysno}>-<{$st.path}>-<{$st.func}>
                                    <span style="float:right;margin-right:5px;">
-                                     <a href="__APP__/Scenefunc/addhc/funcid/<{$st.funcid}>" ><button>+缓存</button></a>
+                                     <a href="__APP__/Scenefunc/addhc/id/<{$st.id}>" ><button>+缓存</button></a>
                                    </span>
                                  </td>
                                  <td align="left" ><{$st.remarks}></td>
@@ -77,7 +74,7 @@
                           <td valign="top">
                              <table border="1" width="100%" align="center">
                                <tr>
-                                 <th width=70% align="left" bgcolor="#ccc">功能点 
+                                 <th width=70% align="left" bgcolor="#ccc">功能点
                                  <a href="__APP__/Hcfunc/addAllsf/sceneid/<{$w.sceneid}>"><button>+场景</button></a>
                                  <span style="float:right;margin-right:5px;">
                                    <a href="__APP__/Hcfunc/delAll"><button> 清空缓存</button></a>

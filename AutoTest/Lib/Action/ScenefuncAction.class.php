@@ -23,25 +23,32 @@ class ScenefuncAction extends CommonAction {
         $where=array("proid"=>"$proid","sceneid"=>$sceneid);
         $this->assign("w",$where);
 
-
 	     $this->display();
     }
 
 
-
-    public function add(){
-        $this->display();
-    }
-
+/*
+ * 功能库加入场景
+ */
     public function addscene(){
         /* 接收参数*/
         $sceneid=$_GET['sceneid'];
         $funcid=$_GET['funcid'];
         /* 实例化模型*/
+        $m=D('system');
+        $where=array("tp_func.id"=>$funcid);
+        $arr=$m->join("tp_path ON tp_system.id = tp_path.sysid ")
+        ->join('tp_func ON tp_path.id =tp_func.pathid')
+        ->field("sysno,path,func")
+        ->where($where)
+        ->find();
+        $arr['funcid']=$funcid;
+        $arr['adder']=$_SESSION['realname'];
+        $arr['sceneid']=$sceneid;
         $m=D('scenefunc');
         $where=array("sceneid"=>$sceneid);
-        $sn=$m->where($where)->count()+1;
-        $arr=array("sn"=>$sn,"funcid"=>$funcid,"sceneid"=>$sceneid,"author"=>$_SESSION['realname']);
+        $arr['sn']=$m->where($where)->count()+1;
+//         dump($arr);
         if(!$m->create($arr)){
             $this->error($m->getError());
         }
@@ -60,7 +67,8 @@ class ScenefuncAction extends CommonAction {
         $sceneid=$_GET['sceneid'];
         $m=D('scenefunc');
         $where=array("sceneid"=>$sceneid);
-        $arr=$m->where($where)->field("funcid,sn,remarks")->select();
+        $arr=$m->where($where)->field("funcid,sysno,path,func,remarks,casestate,casemain,caseexpected,
+            num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")->select();
         $m=D('hcfunc');
         foreach ($arr as $a){
             $a['adder']= $_SESSION['realname'];
@@ -84,12 +92,18 @@ class ScenefuncAction extends CommonAction {
 
     public function addhc(){
         /* 接收参数*/
-        $funcid=$_GET['funcid'];
+        $id=$_GET['id'];
         /* 实例化模型*/
+        $m=D('scenefunc');
+        $arr=$m
+        ->field("funcid,sysno,path,func,remarks,casestate,casemain,caseexpected,
+            num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")
+        ->find($id);
+        $arr['adder']=$_SESSION['realname'];
         $m=D('hcfunc');
         $where=array("adder"=>$_SESSION['realname']);
-        $sn=$m->where($where)->count()+1;
-        $arr=array("sn"=>$sn,"funcid"=>$funcid,"adder"=>$_SESSION['realname']);
+        $arr['sn']=$m->where($where)->count()+1;
+
         if(!$m->create($arr)){
             $this->error($m->getError());
         }
@@ -120,32 +134,7 @@ class ScenefuncAction extends CommonAction {
 
     }
 
-    public function mod(){
-        /* 接收参数*/
-        $proid=$_GET['proid'];
-        $sceneid=$_GET['sceneid'];
-        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
-        /* 实例化模型*/
-        $m=D('system');
-        $where=array("tp_scenefunc.sceneid"=>$sceneid);
-        $data=$m
-        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
-        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
-        ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
-        ->where($where)->order('tp_scenefunc.sn')->select();
-        $this->assign("data",$data);
-//         dump($data);
 
-        $m=D(scenefunc);
-        $sfunc=$m->find($id);
-        $this->assign("sfunc",$sfunc);
-        $where=array("proid"=>"$proid","sceneid"=>"$sceneid");
-        $this->assign("w",$where);
-//         dump($sfunc);
-
-        $this->display();
-
-   }
 
     public function update(){
         $db=D('scenefunc');
@@ -158,7 +147,7 @@ class ScenefuncAction extends CommonAction {
         }
 
     }
-   
+
 
     public function del(){
         /* 接收参数*/

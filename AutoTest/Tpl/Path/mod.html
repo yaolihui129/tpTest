@@ -23,6 +23,7 @@
                    <form action="__URL__/update" method="post" >
                    <input type="hidden" name="sysid" value="<{$path.sysid}>" />
                    <input type="hidden" name="id" value="<{$path.id}>" />
+                   <tr><td>更新：</td><td><{$path.moder}>更新于:<{$path.updateTime}></td></tr>
                      <tr><td>顺序：</td><td><input type="text" name="sn" value="<{$path.sn}>"  class="input300"/></td></tr>
                      <tr><td>路径:</td><td><input type="text" name="path" value="<{$path.path}>"  class="input300"/></td></tr>
                      <tr><td>状态:</td><td><{$pstate}></td></tr>

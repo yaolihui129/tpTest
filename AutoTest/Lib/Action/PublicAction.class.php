@@ -65,7 +65,7 @@ class PublicAction extends Action{
      * @param string $height 编辑器高度
      * @param string $disabled_page 是否禁用分页和子标题
      */
-    public static function editor($textareaid = 'content', $value='', $toolbar = 'basic', $height = 200, $color = '', $up=true) {
+    public static function editor($textareaid = 'content', $value='', $toolbar = 'desc', $height = 200, $color = '', $up=true) {
         $str ='<textarea id="'.$textareaid.'" name="'.$textareaid.'">'.$value.'</textarea>';
         if(!defined('EDITOR_INIT')) {
             $str .= '<script type="text/javascript" src="'.__PUBLIC__.'/js/ckeditor/ckeditor.js"></script>';

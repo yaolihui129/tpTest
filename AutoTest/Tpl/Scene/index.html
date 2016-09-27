@@ -18,7 +18,7 @@
               <div class="left" >
                     <volist name='pros' id='pro' empty="没有数据">
                       <ur>
-                       <a href="__URL__/index/proid/<{$pro.id}>/copy/<{$w.copy}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countScene=###}>:<{$pro.prost}></a><br>
+                       <a href="__URL__/index/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}><{$pro.id|countScene=###}>:<{$pro.prost}></a><br>
                       </ur>
                     </volist>
               </div>
@@ -27,7 +27,7 @@
 
                      <tr>
                       <th width=3% align="center" bgcolor="#ccc">ID</th>
-                       <th width=3% align="center" bgcolor="#ccc">顺序</th>                      
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
                        <th width=5% align="center"  bgcolor="#ccc">角色</th>
                        <th width=5% align="center" bgcolor="#ccc">时间</th>
                        <th width=3% align="center" bgcolor="#ccc">级别</th>
@@ -45,13 +45,13 @@
                      <volist name='scene' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.id}></td>
-                       <td align="center" ><{$st.sn}></td>                       
+                       <td align="center" ><{$st.sn}></td>
                        <td align="center" ><{$st.swho}></td>
                        <td align="center" ><{$st.swhen}></td>
                        <td align="center" ><{$st.level}></td>
                        <td align="left" >
                            <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>"><{$st.type}>:<{$st.scene}></a>
-                         <span style="float:right;margin-right:5px;">                      
+                         <span style="float:right;margin-right:5px;">
                            <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>" >场景功能</a>
                            <a href="__URL__/copy/sceneid/<{$st.id}>/proid/<{$w.copy}>" >复制</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>

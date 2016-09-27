@@ -20,6 +20,7 @@
                   <table border="0" width="500" align="left">
                    <form action="__URL__/update" method="post" >
                    <input type="hidden" name="id" value="<{$stage.id}>" />
+                   <tr><td>更新：</td><td><{$stage.moder}>更新于:<{$stage.updateTime}></td></tr>
                      <tr><td>顺序：</td><td><input type="text" name="sn" value="<{$stage.sn}>"  class="input200"/></td></tr>
                      <tr><td>阶段：</td><td><input type="text" name="stage" value="<{$stage.stage}>"  class="input200"/></td> </tr>
                      <tr><td>状态：</td><td><{$state}></td></tr>

@@ -24,6 +24,7 @@
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="pathid" value="<{$func.pathid}>" />
                   <input type="hidden" name="id" value="<{$func.id}>" />
+                  <tr><td>更新：</td><td><{$func.moder}>更新于:<{$func.updateTime}></td></tr>
                      <tr><td>顺序：</td><td><input type="text" name="sn" value="<{$func.sn}>"  class="input300"/></td></tr>
                      <tr><td>功能：</td><td><input type="text" name="func" value="<{$func.func}>"  class="input300"/></td></tr>
                      <tr><td>项目：</td><td><{$fproid}>状态:<{$state}></td></tr>

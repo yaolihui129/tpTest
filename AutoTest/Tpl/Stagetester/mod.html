@@ -22,6 +22,7 @@
                   <table border="0" width="500" align="left">
                    <form action="__URL__/update" method="post" >
                    <input type="hidden" name="id" value="<{$tester.id}>" />
+                   <tr><td>更新：</td><td><{$tester.moder}>更新于:<{$tester.updateTime}></td></tr>
                      <tr><td>顺序：</td><td><input type="text" name="sn" value="<{$tester.sn}>"  class="input200"/></td></tr>
                      <tr><td>类型：</td><td><{$tester.type}>测试者：<{$tester.tester}></td></tr>
                      <tr><td>时间：</td><td><{$startDate}>-<{$endDate}></td></tr>

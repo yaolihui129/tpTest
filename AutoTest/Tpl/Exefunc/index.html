@@ -1,10 +1,10 @@
       <layout name="layout" />
         <div class="place">
                                  所在位置：
-             <a href="__APP__/Exescene">手工测试</a>
+             <a href="__APP__/Exescene/index/type/M">手工测试</a>
              >测试执行
                <span style="float:right;margin-right:60px;">
-                   <a href="__APP__/Exescene"> 返回</a>
+                   <a href="__APP__/Exescene/index/type/M"> 返回</a>
               </span>
         </div>
         <div class="content">
@@ -12,50 +12,53 @@
               <div class="top">手工测试执行
                   <span style="float:right;">
                                              当前项目：<{$w.proid|getProNo=###}>
-                 </span>             
+                 </span>
               </div>
-              <div class="left" align="left" style="widtht:15%;">
+              <div class="left" align="left" style="width:20%;">
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li><a href="__URL__/index/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>">
-                         <{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
+                         <li><a href="__URL__/index/id/<{$vo.id}>/stagetesterid/<{$w.stagetesterid}>/proid/<{$w.proid}>/type/<{$w.type}>">
+                         <{$vo.sn}>:<{$vo.swho}>【<{$vo.swhen}>】<{$vo.scene}><br />
+                         <{$vo.results}>:<{$vo.id|countExeFunc=###}></a><hr /></li>
                        </ur>
                     </volist>
               </div>
-              
-               <div class="midd" width="75%">
-                   <table border="1" width="80%" align="center">
 
+               <div class="midd" align="right" >
+                   <table border="1" width="80%" align="center">
                      <tr>
                        <th width=2% align="center" bgcolor="#ccc">ID</th>
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
                        <th width=2% align="center" bgcolor="#ccc">功能ID</th>
                        <th width=5% align="left"  bgcolor="#ccc">系统</th>
-                       <th width=7% align="center" bgcolor="#ccc">路径</th>
-                       <th width=5% align="center" bgcolor="#ccc">功能</th>
-                       <th width=5% align="center" bgcolor="#ccc">备注</th>
-                       <th width=5% align="center" bgcolor="#ccc">意图</th>
+                       <th width=7% align="left" bgcolor="#ccc">路径</th>
+                       <th width=15% align="left" bgcolor="#ccc">功能</th>
+                       <th width=5% align="left" bgcolor="#ccc">备注</th>
                        <th width=3% align="center" bgcolor="#ccc">结果</th>
-                       <th width=3% align="center" bgcolor="#ccc">说明</th>
+                       <th width=3% align="left" bgcolor="#ccc">说明</th>
+                       <th width=5% align="left" bgcolor="#ccc">意图</th>
                        <th width=3% align="center" bgcolor="#ccc">num1</th>
-                       <th width=2% align="center" bgcolor="#ccc">操作 </th>
+
                      </tr>
                      <volist name='exe' id='ex' empty="没有数据">
                     <tr>
                        <td align="center" ><{$ex.id}></td>
                        <td align="center" ><{$ex.sn}></td>
                        <td align="center" ><{$ex.funcid}></td>
-                       <td align="center" ><{$ex.system}></td>
-                       <td align="center" ><{$ex.path}></td>
-                       <td align="center" ><{$ex.func}></td>
-                       <td align="center" ><{$ex.funcremark}></td>
-                       <td align="center" ><{$ex.main}></td>
-                       <td align="center" ><{$ex.result}></td>
-                       <td align="center" ><{$ex.remarks}></td>
-                       <td align="center" ><{$ex.num1}></td>                      
-                       <td align="center" >
-                          <a href="#" >数据</a>
+                       <td align="left" ><{$ex.sysno}></td>
+                       <td align="left" ><{$ex.path}></td>
+                       <td align="left" ><{$ex.func}>
+                         <span style="float:right;margin-right:5px;">
+                              <a href="#" >用例</a>
+                              <a href="#" >规则</a>
+                              <a href="#" >模板</a>
+                         </span>
                        </td>
+                       <td align="left" ><{$ex.funcremarks}></td>
+                       <td align="center" ><{$ex.result}></td>
+                       <td align="left" ><{$ex.remarks}></td>
+                       <td align="left" ><{$ex.main}></td>
+                       <td align="center" ><{$ex.num1}></td>
                     </tr>
                     </volist>
                 </table>

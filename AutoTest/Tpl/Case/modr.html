@@ -22,11 +22,12 @@
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="funcid" value="<{$case.funcid}>" />
                   <input type="hidden" name="id" value="<{$case.id}>" />
+                  <tr><td>更新：</td><td><{$case.moder}>更新于:<{$case.updateTime}></td></tr>
                      <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$case.sn}>"  class="input60"/>
                                                                       项目：<{$fproid}>状态:<{$state}>级别：<input type="text" name="level" value="<{$case.level}>"  class="input60"/>来源：<{$case.source}>
                      </td></tr>
                      <tr><td>意图：</td><td><input type="text" name="main" value="<{$case.main}>"  class="input500"/></td></tr>
-                     <tr><td>预期：</td><td><input type="text" name="expected" value="<{$case.expected}>"  class="input500"/></td></tr>                     
+                     <tr><td>预期：</td><td><input type="text" name="expected" value="<{$case.expected}>"  class="input500"/></td></tr>
                      <tr><td colspan="2"><{$caozuo}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"></form>

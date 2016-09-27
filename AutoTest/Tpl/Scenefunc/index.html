@@ -27,30 +27,37 @@
 
                      <tr>
                        <th width=2% align="center" bgcolor="#ccc">ID</th>
-                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
+
                        <th width=5% align="center" bgcolor="#ccc">系统</th>
                        <th width=10% align="left"  bgcolor="#ccc">路径</th>
                        <th width=7% align="left" bgcolor="#ccc">功能</th>
-                       <th width=7% align="left" bgcolor="#ccc">功能备注</th>
+                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=12% align="left" bgcolor="#ccc">功能备注</th>
                        <th width=7% align="left" bgcolor="#ccc">意图</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=12% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='sfunc' id='st' empty="没有数据">
+
                     <tr>
+                    <form action="__URL__/update" method="post" >
+                       <input type="hidden" name="id" value="<{$st.id}>" />
                        <td align="center" ><{$st.id}></td>
-                       <td align="center" ><{$st.sn}></td>
+
                        <td align="center" ><{$st.sysno}></td>
                        <td align="left" ><{$st.path}></td>
                        <td align="left" ><{$st.func}></td>
-                       <td align="left" ><{$st.remarks}></td>
+                       <td align="center" ><input type="text" name="sn" value="<{$st.sn}>"  class="input20"/></td>
+                       <td align="left" >
+                       <input type="text" name="remarks" value="<{$st.remarks}>"  class="input100"/>
+                       <input type="submit" name="do_submit" value="提 交"> </form>
+                       </td>
                        <td align="left" ><{$st.main}></td>
                        <td align="center" ><{$st.casestate}></td>
                        <td align="center" >
-                          <a href="__APP__/Scenecase/index/funcid/<{$st.id}>//proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
-                          <a href="#" >数据模板</a>
+                          <a href="__APP__/Scenecase/index/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
+                          <a href="#" >模板</a>
                           <a href="__APP__/Rules/indexs/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >规则</a>
-                          <a href="__URL__/mod/id/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >修改</a>
                           <a href="__URL__/del/id/<{$st.id}>" >移除</a>
                        </td>
                     </tr>

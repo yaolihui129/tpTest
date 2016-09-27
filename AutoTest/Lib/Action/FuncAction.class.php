@@ -285,10 +285,10 @@ class FuncAction extends CommonAction {
         $this->display();
 
     }
-    
+
     public function library(){
-        /* 接收参数*/        
-        $proid=$_GET['proid'];      
+        /* 接收参数*/
+        $proid=$_GET['proid'];
         $sceneid=$_GET['sceneid'];
 //         echo $proid,$sceneid;
         /* 实例化模型*/
@@ -300,50 +300,44 @@ class FuncAction extends CommonAction {
         ->order("tp_system.sysno,tp_path.sn,tp_path.id")
         ->select();
         $this->assign("data",$data);
-//         dump($data);        
+//         dump($data);
         $m= D("func");
         $pathid=!empty($_GET['pathid'])?$_GET['pathid']:$data[0]['id'];
         $where=array("pathid"=>"$pathid");
         $funcs=$m->where($where)->order("sn")->select();
         $this->assign("funcs",$funcs);
-        $m=D('system');
-        $where=array("tp_scenefunc.sceneid"=>$sceneid);
-        $sfunc=$m
-        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
-        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
-        ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
-        ->where($where)->order('tp_scenefunc.sn')->select();
+        $m=D('scenefunc');
+        $where=array("sceneid"=>$sceneid);
+        $sfunc=$m->where($where)->order('sn')->select();
         $this->assign("sfunc",$sfunc);
-        $where=array("tp_hcfunc.adder"=>$_SESSION['realname']);
-        $hfunc=$m
-        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
-        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
-        ->join("inner JOIN tp_hcfunc ON tp_func.id = tp_hcfunc.funcid")
-        ->where($where)->order('tp_hcfunc.sn')->select();
+
+        $m=D('hcfunc');
+        $where=array("adder"=>$_SESSION['realname']);
+        $hfunc=$m->where($where)->order('sn')->select();
         $this->assign("hfunc",$hfunc);
-    
+
         $where=array("proid"=>"$proid","sceneid"=>$sceneid,"pathid"=>$pathid);
         $this->assign('w',$where);
-        
-               
-        $this->display();             
+
+
+        $this->display();
     }
-    
+
     public function modproid(){
         /* 实例化模型*/
-                      
+
         $db=D('func');
-       
+
         if ($db->save($_GET)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
-           
+
     }
-    
-    
-    
+
+
+
 
     public function del(){
         /* 接收参数*/

@@ -2,73 +2,53 @@
 
 class ExefuncAction extends CommonAction {
     public function index(){
-
-        $stageid=$_GET['stageid'];
+        /* 接收参数*/
+        $stagetesterid=$_GET['stagetesterid'];
         $proid=$_GET['proid'];
+        $type=$_GET['type'];
         $id=$_GET['id'];
+        /* 实例化模型*/
         $m=D('exescene');
-        $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Manual");
+        $where=array("stagetesterid"=>$stagetesterid,"type"=>$type);
         $data=$m->where($where)->order("sn")->select();
         $this->assign('data',$data);
-        
-
+        /* 实例化模型*/
     	 $m=M('exefunc');
-    	 $where=array("testsceneid"=>$id);
-    	 $exe=$m->where($where)->select();
+    	 $where=array("exesceneid"=>$id);
+    	 $exe=$m->where($where)->order('sn')->select();
     	 $this->assign('exe',$exe);
-    	 $where=array("stageid"=>$stageid,"testsceneid"=>$id,"proid"=>$proid);
+    	 $where=array("stagetesterid"=>$stagetesterid,"exesceneid"=>$id,"proid"=>$proid,"type"=>$type);
     	 $this->assign('w',$where);
-    	 
+
 	     $this->display();
     }
-    
-    
+
+
     public function test(){
-        
-        $stageid=$_GET['stageid'];
+        /* 接收参数*/
+        $stagetesterid=$_GET['stagetesterid'];
         $proid=$_GET['proid'];
+        $type=$_GET['type'];
         $id=$_GET['id'];
+        /* 实例化模型*/
         $m=D('exescene');
-        $where=array("stageid"=>$stageid,"tester"=>$_SESSION['realname'],"type"=>"Auto");
+        $where=array("stagetesterid"=>$stagetesterid,"type"=>$type);
         $data=$m->where($where)->order("sn")->select();
         $this->assign('data',$data);
-        
-        
+        /* 实例化模型*/
         $m=M('exefunc');
-        $where=array("testsceneid"=>$id);
+        $where=array("exesceneid"=>$id);
         $exe=$m->where($where)->select();
         $this->assign('exe',$exe);
-        $where=array("stageid"=>$stageid,"testsceneid"=>$id,"proid"=>$proid);
+         $where=array("stagetesterid"=>$stagetesterid,"exesceneid"=>$id,"proid"=>$proid,"type"=>$type);
         $this->assign('w',$where);
-    
+
         $this->display();
     }
 
-    public function importm(){
-        
-        $m=D('scenefunc');
-        $where=array("sceneid"=>$_GET['sceneid']);
-        $arr=$m->where($where)->order("sn")->select();
-        //         $m=D('exefunc');
-        foreach ($arr as $a){
-            dump($a);
-            //     if(!$m->create($a)){
-            //         $this->error($m->getError());
-            //     }
-            //     $lastId=$m->add($a);
-        }
-
-
-
-//     if($lastId){
-//         $this->success("添加成功");
-//     }else{
-//         $this->error("添加失败");
-//     }
-   }
 
     public function update(){
-
+        /* 实例化模型*/
         $db=D('exefunc');
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());

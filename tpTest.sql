@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : mysql:3306
+Source Server         : 43.61:3307
 Source Server Version : 50532
-Source Host           : localhost:3306
+Source Host           : localhost:3307
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-26 23:46:19
+Date: 2016-09-27 17:34:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -166,8 +166,9 @@ DROP TABLE IF EXISTS `tp_exefunc`;
 CREATE TABLE `tp_exefunc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sn` int(11) DEFAULT NULL,
+  `exesceneid` int(11) DEFAULT NULL,
   `funcid` int(50) DEFAULT NULL,
-  `system` varchar(255) DEFAULT NULL,
+  `sysno` varchar(255) DEFAULT NULL,
   `path` varchar(255) DEFAULT NULL,
   `func` varchar(255) DEFAULT NULL,
   `funcremarks` varchar(200) DEFAULT NULL,
@@ -175,9 +176,8 @@ CREATE TABLE `tp_exefunc` (
   `caseexpected` varchar(255) DEFAULT NULL,
   `tester` varchar(10) DEFAULT NULL,
   `bugid` varchar(8) DEFAULT NULL,
-  `result` varchar(50) DEFAULT NULL,
-  `remarks` varchar(100) DEFAULT NULL,
-  `exesceneid` int(11) DEFAULT NULL,
+  `result` varchar(50) DEFAULT '未测试',
+  `remark` varchar(100) DEFAULT NULL,
   `num1` varchar(255) DEFAULT NULL,
   `num2` varchar(255) DEFAULT NULL,
   `num3` varchar(255) DEFAULT NULL,
@@ -203,13 +203,23 @@ CREATE TABLE `tp_exefunc` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10002 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10045 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exefunc
 -- ----------------------------
-INSERT INTO `tp_exefunc` VALUES ('10000', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-25 17:50:21', '0000-00-00 00:00:00');
-INSERT INTO `tp_exefunc` VALUES ('10001', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-25 17:57:08', '0000-00-00 00:00:00');
+INSERT INTO `tp_exefunc` VALUES ('10033', '3', '10018', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exefunc` VALUES ('10034', '1', '10018', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exefunc` VALUES ('10035', '4', '10018', '10002', 'Auto.Access', '产品库', '产品列表', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exefunc` VALUES ('10036', '4', '10018', '10001', 'Auto.Access', '登陆模块', '注销', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exefunc` VALUES ('10037', '3', '10019', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
+INSERT INTO `tp_exefunc` VALUES ('10038', '1', '10019', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
+INSERT INTO `tp_exefunc` VALUES ('10039', '4', '10019', '10002', 'Auto.Access', '产品库', '产品列表', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
+INSERT INTO `tp_exefunc` VALUES ('10040', '4', '10019', '10001', 'Auto.Access', '登陆模块', '注销', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
+INSERT INTO `tp_exefunc` VALUES ('10041', '3', '10020', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 16:25:55', '2016-09-27 16:25:55');
+INSERT INTO `tp_exefunc` VALUES ('10042', '1', '10020', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 16:25:55', '2016-09-27 16:25:55');
+INSERT INTO `tp_exefunc` VALUES ('10043', '4', '10020', '10002', 'Auto.Access', '产品库', '产品列表', '', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 16:25:55', '2016-09-27 16:25:55');
+INSERT INTO `tp_exefunc` VALUES ('10044', '4', '10020', '10001', 'Auto.Access', '登陆模块', '注销', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 16:25:55', '2016-09-27 16:25:55');
 
 -- ----------------------------
 -- Table structure for `tp_exescene`
@@ -236,15 +246,14 @@ CREATE TABLE `tp_exescene` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10004 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10021 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exescene
 -- ----------------------------
-INSERT INTO `tp_exescene` VALUES ('10000', '1', 'M', '10006', '10000', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', null, 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-25 15:11:09', '2016-09-25 15:11:09');
-INSERT INTO `tp_exescene` VALUES ('10001', '2', 'M', '10006', '10001', '2', '默认', '无对应产品时', '正常创建测试项目并制定里程碑选定测试系统', '未测试', null, 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-25 15:43:59', '2016-09-25 15:43:59');
-INSERT INTO `tp_exescene` VALUES ('10002', '1', 'M', '10016', '10000', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', null, 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-25 16:05:23', '2016-09-25 16:05:23');
-INSERT INTO `tp_exescene` VALUES ('10003', '2', 'M', '10016', '10001', '2', '默认', '无对应产品时', '正常创建测试项目并制定里程碑选定测试系统', '未测试', null, 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-25 16:05:25', '2016-09-25 16:05:25');
+INSERT INTO `tp_exescene` VALUES ('10018', '1', 'M', '10016', '10000', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exescene` VALUES ('10019', '2', 'M', '10016', '10000', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
+INSERT INTO `tp_exescene` VALUES ('10020', '1', 'A', '10024', '10000', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-09-27 16:25:55', '2016-09-27 16:25:55');
 
 -- ----------------------------
 -- Table structure for `tp_func`
@@ -262,7 +271,7 @@ CREATE TABLE `tp_func` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10266 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10273 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_func
@@ -521,6 +530,13 @@ INSERT INTO `tp_func` VALUES ('10262', '1', '产品列表', '正常', '10079', '
 INSERT INTO `tp_func` VALUES ('10263', '2', '产品-添加', '正常', '10079', '24', '腰立辉', '腰立辉', '2016-09-26 16:35:35', '2016-09-26 16:35:35');
 INSERT INTO `tp_func` VALUES ('10264', '3', '产品-编辑', '正常', '10079', '24', '腰立辉', '腰立辉', '2016-09-26 16:35:42', '2016-09-26 16:35:42');
 INSERT INTO `tp_func` VALUES ('10265', '4', '系统-入口', '正常', '10079', '24', '腰立辉', '腰立辉', '2016-09-26 16:35:52', '2016-09-26 16:35:52');
+INSERT INTO `tp_func` VALUES ('10266', '1', '登录', '正常', '10106', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:35', '2016-09-27 17:16:17');
+INSERT INTO `tp_func` VALUES ('10267', '2', '记住密码', '正常', '10106', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:37', '2016-09-27 17:16:24');
+INSERT INTO `tp_func` VALUES ('10268', '3', '个人信息', '正常', '10106', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:38', '2016-09-27 17:16:37');
+INSERT INTO `tp_func` VALUES ('10269', '4', '修改个人信息', '正常', '10106', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:40', '2016-09-27 17:16:44');
+INSERT INTO `tp_func` VALUES ('10270', '5', '退出', '正常', '10106', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:42', '2016-09-27 17:16:53');
+INSERT INTO `tp_func` VALUES ('10271', '1', '权限管理-入口', '正常', '10107', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:44', '2016-09-27 17:17:36');
+INSERT INTO `tp_func` VALUES ('10272', '2', '惠买车电商CRM-入口', '正常', '10107', '0', '腰立辉', '腰立辉', '2016-09-27 17:18:45', '2016-09-27 17:18:05');
 
 -- ----------------------------
 -- Table structure for `tp_hcfunc`
@@ -530,9 +546,9 @@ CREATE TABLE `tp_hcfunc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sn` smallint(2) DEFAULT NULL,
   `funcid` smallint(6) DEFAULT NULL,
-  `ssysno` varchar(255) DEFAULT NULL,
-  `spath` varchar(255) DEFAULT NULL,
-  `sfunc` varchar(255) DEFAULT NULL,
+  `sysno` varchar(255) DEFAULT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `func` varchar(255) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
   `caseid` int(11) DEFAULT NULL,
   `casestate` varchar(255) DEFAULT NULL,
@@ -560,12 +576,11 @@ CREATE TABLE `tp_hcfunc` (
   `num20` varchar(255) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=64 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_hcfunc
 -- ----------------------------
-INSERT INTO `tp_hcfunc` VALUES ('44', '1', '10004', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉');
 
 -- ----------------------------
 -- Table structure for `tp_path`
@@ -582,7 +597,7 @@ CREATE TABLE `tp_path` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10106 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10108 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_path
@@ -685,6 +700,8 @@ INSERT INTO `tp_path` VALUES ('10102', '27', '自动化测试', '正常', '54', 
 INSERT INTO `tp_path` VALUES ('10103', '28', '自动化测试-测试数据', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:28:12', '2016-09-26 16:28:12');
 INSERT INTO `tp_path` VALUES ('10104', '4', '测试库-项目用例库', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:28:43', '2016-09-26 16:28:43');
 INSERT INTO `tp_path` VALUES ('10105', '4', '测试库-项目控件库', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:29:09', '2016-09-26 16:29:09');
+INSERT INTO `tp_path` VALUES ('10106', '1', '登录模块', '正常', '57', '腰立辉', '腰立辉', '2016-09-27 17:15:49', '2016-09-27 17:15:49');
+INSERT INTO `tp_path` VALUES ('10107', '2', '我的工作台', '正常', '57', '腰立辉', '腰立辉', '2016-09-27 17:16:06', '2016-09-27 17:16:06');
 
 -- ----------------------------
 -- Table structure for `tp_product`
@@ -844,12 +861,12 @@ CREATE TABLE `tp_scene` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10010 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10012 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scene
 -- ----------------------------
-INSERT INTO `tp_scene` VALUES ('10000', '1', 'M', '2', '默认', '默认', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建项目-建里程碑', '0', '腰立辉', '腰立辉', '2016-09-24 00:39:54', '2016-09-24 00:39:54');
+INSERT INTO `tp_scene` VALUES ('10000', '1', 'A', '2', '默认', '默认', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建项目-建里程碑', '0', '腰立辉', '腰立辉', '2016-09-27 16:25:28', '2016-09-27 16:25:28');
 INSERT INTO `tp_scene` VALUES ('10001', '2', 'M', '2', '默认', '无对应产品时', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建产品-建项目-建里程碑-选系统', '0', '腰立辉', '腰立辉', '2016-09-24 00:40:02', '2016-09-24 00:40:02');
 INSERT INTO `tp_scene` VALUES ('10002', '3', 'M', '2', '默认', '无被测系统时', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建项目-建里程碑-建系统-选系统', '0', '腰立辉', '腰立辉', '2016-09-24 00:40:09', '2016-09-24 00:40:09');
 INSERT INTO `tp_scene` VALUES ('10003', '1', 'M', '2', '默认', '空白数据库', '', '建立测试项目', '正常', '48', '登录-件产品-建项目--详情-里程碑-关联系统-', '0', '腰立辉', '腰立辉', '2016-09-24 21:23:31', '2016-09-24 21:23:31');
@@ -859,6 +876,8 @@ INSERT INTO `tp_scene` VALUES ('10006', '5', 'M', '2', '默认', '默认', 'http
 INSERT INTO `tp_scene` VALUES ('10007', '6', 'M', '2', '默认', '无对应产品时', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建产品-建项目-建里程碑-选系统', '10001', '腰立辉', null, '2016-09-25 21:46:13', '0000-00-00 00:00:00');
 INSERT INTO `tp_scene` VALUES ('10008', '1', 'M', '2', '默认', '默认', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '47', '登录-建项目-建里程碑', '10000', '腰立辉', null, '2016-09-25 21:53:23', '0000-00-00 00:00:00');
 INSERT INTO `tp_scene` VALUES ('10009', '7', 'M', '2', '默认', '默认', '', '11', '正常', '45', '', '10004', '腰立辉', null, '2016-09-26 09:08:25', '0000-00-00 00:00:00');
+INSERT INTO `tp_scene` VALUES ('10010', '1', 'M', '2', '管理员', '默认', '', '添加TOP100车款', '正常', '46', '', '0', '腰立辉', '腰立辉', '2016-09-27 16:47:46', '2016-09-27 16:47:46');
+INSERT INTO `tp_scene` VALUES ('10011', '2', 'M', '2', '管理员', '默认', '', '给TOP100车款批量配置电销和买顾', '正常', '46', '', '0', '腰立辉', '腰立辉', '2016-09-27 16:57:28', '2016-09-27 16:57:28');
 
 -- ----------------------------
 -- Table structure for `tp_scenefunc`
@@ -868,9 +887,9 @@ CREATE TABLE `tp_scenefunc` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sn` int(11) DEFAULT NULL,
   `funcid` int(11) DEFAULT NULL,
-  `ssysno` varchar(255) DEFAULT NULL,
-  `spath` varchar(255) DEFAULT NULL,
-  `sfunc` varchar(255) DEFAULT NULL,
+  `sysno` varchar(255) DEFAULT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `func` varchar(255) DEFAULT NULL,
   `sceneid` int(11) DEFAULT NULL,
   `remarks` varchar(100) DEFAULT NULL,
   `sourceid` int(11) DEFAULT '0',
@@ -903,26 +922,28 @@ CREATE TABLE `tp_scenefunc` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10030 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10049 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scenefunc
 -- ----------------------------
-INSERT INTO `tp_scenefunc` VALUES ('10000', '1', '10000', null, null, null, '10000', '123', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '2016-09-25 22:57:52', '2016-09-25 22:57:52');
-INSERT INTO `tp_scenefunc` VALUES ('10001', '2', '10007', null, null, null, '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:47:38', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10002', '4', '10024', null, null, null, '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:48:29', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10003', '3', '10013', null, null, null, '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-22 23:48:27', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10004', '5', '10001', null, null, null, '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-23 00:03:09', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10005', '1', '10000', null, null, null, '10003', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-24 22:37:06', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10007', '1', '10000', null, null, null, '10001', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-25 19:30:57', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10008', '2', '10001', null, null, null, '10001', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-25 19:31:04', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10022', '1', '10003', null, null, null, '10002', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-26 22:12:28', '2016-09-26 22:12:28');
-INSERT INTO `tp_scenefunc` VALUES ('10023', '3', '10006', null, null, null, '10002', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-26 22:12:28', '2016-09-26 22:12:28');
-INSERT INTO `tp_scenefunc` VALUES ('10024', '2', '10002', null, null, null, '10002', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-26 22:12:28', '2016-09-26 22:12:28');
-INSERT INTO `tp_scenefunc` VALUES ('10026', '1', '10002', null, null, null, '10009', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-26 23:10:59', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10027', '2', '10004', null, null, null, '10009', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-26 23:11:33', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10028', '1', '10246', null, null, null, '10004', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-26 23:45:16', '0000-00-00 00:00:00');
-INSERT INTO `tp_scenefunc` VALUES ('10029', '2', '10247', null, null, null, '10004', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '2016-09-26 23:45:21', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10038', '3', '10206', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '新增车型', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:56:09', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10039', '4', '10209', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '编辑车型', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:56:13', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10036', '1', '10202', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '查询-按城市', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:55:50', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10033', '3', '10003', 'Auto.Access', '产品库', '产品-添加', '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 10:54:26', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10031', '1', '10000', 'Auto.Access', '登陆模块', '登录', '10000', '123', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 11:46:09', '2016-09-27 11:46:09');
+INSERT INTO `tp_scenefunc` VALUES ('10032', '4', '10002', 'Auto.Access', '产品库', '产品列表', '10000', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 11:50:08', '2016-09-27 11:50:08');
+INSERT INTO `tp_scenefunc` VALUES ('10037', '2', '10201', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '车型报价员配置列表', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:56:04', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10034', '4', '10001', 'Auto.Access', '登陆模块', '注销', '10000', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 10:54:38', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10040', '5', '10210', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '修改买顾', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:56:22', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10041', '6', '10211', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '修改电销', '10010', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:56:24', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10042', '1', '10202', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '查询-按城市', '10011', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:57:55', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10043', '2', '10201', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '车型报价员配置列表', '10011', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-09-27 16:57:57', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10044', '6', '10207', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '批量配置买顾报价员', '10011', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:03:02', '2016-09-27 17:03:02');
+INSERT INTO `tp_scenefunc` VALUES ('10045', '7', '10208', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '批量配置电销报价员', '10011', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:03:08', '2016-09-27 17:03:08');
+INSERT INTO `tp_scenefunc` VALUES ('10046', '3', '10203', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '查询-按买顾配置状态', '10011', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:02:44', '2016-09-27 17:02:44');
+INSERT INTO `tp_scenefunc` VALUES ('10047', '4', '10204', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '查询-按电销配置状态', '10011', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:02:50', '2016-09-27 17:02:50');
+INSERT INTO `tp_scenefunc` VALUES ('10048', '5', '10205', 'OP.HmcDSCRM', '价格库存管理-车型及报价配置管理', '查询-按品牌车型', '10011', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:02:54', '2016-09-27 17:02:54');
 
 -- ----------------------------
 -- Table structure for `tp_stage`
@@ -982,7 +1003,7 @@ CREATE TABLE `tp_stagetester` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10024 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10025 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_stagetester
@@ -1006,6 +1027,7 @@ INSERT INTO `tp_stagetester` VALUES ('10020', '1', 'M', '1005', '高小欠', '20
 INSERT INTO `tp_stagetester` VALUES ('10021', '2', 'M', '1005', '师冬冬', '2016-09-25', '2016-09-26', '8', '0', '腰立辉', '腰立辉', '2016-09-25 15:18:02', '2016-09-25 15:18:02');
 INSERT INTO `tp_stagetester` VALUES ('10022', '1', 'A', '1004', '郭佩佩', '2016-09-25', '2016-09-26', '8', '0', '腰立辉', '腰立辉', '2016-09-25 15:24:52', '2016-09-25 15:24:52');
 INSERT INTO `tp_stagetester` VALUES ('10023', '2', 'A', '1004', '田亮', '2016-09-25', '2016-09-26', '8', '0', '腰立辉', '腰立辉', '2016-09-25 15:24:56', '2016-09-25 15:24:56');
+INSERT INTO `tp_stagetester` VALUES ('10024', '2', 'A', '1003', '腰立辉', '2016-09-27', '2016-09-28', '8', '0', '腰立辉', '腰立辉', '2016-09-27 16:24:18', '2016-09-27 16:24:18');
 
 -- ----------------------------
 -- Table structure for `tp_system`
@@ -1027,7 +1049,7 @@ CREATE TABLE `tp_system` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_system
@@ -1053,6 +1075,7 @@ INSERT INTO `tp_system` VALUES ('22', 'OP.User', '惠买车用户管理系统', 
 INSERT INTO `tp_system` VALUES ('23', 'Web.hmc', '惠买车', '正常', '1', null, null, null, null, null, null, '腰立辉', '2016-09-13 13:35:06', '2016-09-13 13:35:06');
 INSERT INTO `tp_system` VALUES ('46', 'yao.tpTest', '测试管理平台', '正常', '2', '暂无', 'V1.00', 'http://192.168.43.61:81/tpTest/autotest.php', 'yaolh', '654321', '腰立辉', '腰立辉', '2016-09-22 10:29:31', '2016-09-22 10:29:31');
 INSERT INTO `tp_system` VALUES ('56', 'GDAPP', '信用卡APP', '正常', '2', null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-24 20:47:50', '2016-09-24 20:47:50');
+INSERT INTO `tp_system` VALUES ('57', 'OP.maiche', '易车运营支持中心', '正常', '1', null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 17:15:00', '2016-09-27 17:15:00');
 
 -- ----------------------------
 -- Table structure for `tp_user`

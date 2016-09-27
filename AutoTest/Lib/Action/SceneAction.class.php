@@ -12,12 +12,16 @@ class SceneAction extends CommonAction {
         $pros=$m->where($where)->order("end desc")->select();
         $this->assign("pros",$pros);
 
+        if (!empty($_GET['copy'])) {
+            $_SESSION['copy']=$_GET['copy'];
+        }
+
         /* 实例化模型*/
         $s = D("scene");
         $where=array("proid"=>"$proid");
         $scene=$s->where($where)->select();
         $this->assign("scene",$scene);
-        $where=array("proid"=>"$proid","copy"=>$copy);
+        $where=array("proid"=>"$proid","copy"=>$_SESSION['copy']);
         $this->assign('w',$where);
 	     $this->display();
     }
@@ -94,8 +98,8 @@ class SceneAction extends CommonAction {
     public function library(){
         $this->display();
     }
-    
-    
+
+
     public function copy(){
         /* 接收参数*/
         $sceneid=$_GET['sceneid'];
@@ -107,7 +111,7 @@ class SceneAction extends CommonAction {
         $data['sourceid']=$sceneid;
         $data['sn']=$m->where($where)->count()+1;
         $data['proid']=$proid;
-        $data['adder']=$_SESSION['realname'];              
+        $data['adder']=$_SESSION['realname'];
         if(!$m->create($data)){
             $this->error($m->getError());
         }
@@ -117,7 +121,7 @@ class SceneAction extends CommonAction {
         }else{
             $this->error("复制失败");
         }
-        
+
     }
 
     public function del(){

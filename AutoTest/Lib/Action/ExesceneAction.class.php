@@ -3,7 +3,7 @@
 class ExesceneAction extends CommonAction {
     public function index(){
         $type=$_GET['type'];
-       
+
 
     	 $m=M('program');
     	 $where=array("tp_stage.state"=>"进行中","tp_stagetester.tester"=>$_SESSION['realname'],"tp_stagetester.type"=>$type);
@@ -20,7 +20,7 @@ class ExesceneAction extends CommonAction {
 	     $where=array("stagetesterid"=>$stagetesterid);
 	     $exe=$m->where($where)->order("sn")->select();
 	     $this->assign('exe',$exe);
-	    
+
 	     $where=array("proid"=>$proid,"stagetesterid"=>$stagetesterid,"type"=>$type);
 	     $this->assign('w',$where);
 // dump($exe);
@@ -29,7 +29,7 @@ class ExesceneAction extends CommonAction {
     }
 
     public function test(){
-        
+
         $type=$_GET['type'];
 
         $m=M('program');
@@ -70,13 +70,13 @@ public function queue(){
     ->where($where)->order("tp_stage.id,tp_stagetester.sn")->select();
     $this->assign('data',$data);
 //     dump($data);
-    
+
     $m=D('exescene');
     $where=array("stagetesterid"=>$stagetesterid);
     $exe=$m->where($where)->order("sn")->select();
     $this->assign('exe',$exe);
-    
-    
+
+
     $m=D('scene');
     $where=array("proid"=>$proid,"type"=>$type);
     $scene=$m->where($where)->order("sn")->select();
@@ -89,34 +89,52 @@ public function queue(){
 }
 
 public function modsn(){
-    
+
     dump($_POST);
 }
 
 public function insert(){
-    $m=D('scene');    
-    $data=$m->find($_GET[sceneid]);
-    $_GET['level']=$data['level'];
-    $_GET['swho']=$data['swho'];
-    $_GET['swhen']=$data['swhen'];
-    $_GET['scene']=$data['scene'];
-    $_GET['testip']=$data['testip'];
+    $sceneid=$_GET['sceneid'];
+    $m=D('scene');
+    $data=$m->field("type,level,swho,swhen,testip,scene,flow")->find($sceneid);
+
     $m=D('exescene');
     $where=array("stagetesterid"=>$_GET['stagetesterid'],"type"=>$_GET['type']);
-    $_GET['sn']=$m->where($where)->count()+1;      
-    $_GET['adder']=$_SESSION['realname'];
-    $_GET['moder']=$_SESSION['realname'];
-    $_GET['updateTime']=date("Y-m-d H:i:s",time());
-//             dump($_GET);
-    if(!$m->create($_GET)){
+    $data['sn']=$m->where($where)->count()+1;
+    $data['adder']=$_SESSION['realname'];
+    $data['moder']=$_SESSION['realname'];
+    $data['updateTime']=date("Y-m-d H:i:s",time());
+    $data['stagetesterid']=$_GET['stagetesterid'];
+    $data['sceneid']=$sceneid;
+
+    /*插入执行场景数据 */
+    if(!$m->create($data)){
         $this->error($m->getError());
     }
-    $lastId=$m->add($_GET);
-    if($lastId){
+    $lastId=$m->add($data);
+     $m=D("scenefunc");
+     $where=array("sceneid"=>$sceneid);
+     $arr=$m->field("sn,funcid,sysno,path,func,remarks as funcremarks,casestate,casemain,caseexpected,
+            num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")
+     ->where($where)->select();
+     /*插入执行场景功能数据 */
+     foreach ($arr as $a){
+         $a['exesceneid']=$lastId;
+         $a['adder']=$_SESSION['realname'];
+         $a['moder']=$_SESSION['realname'];
+         $a['updateTime']=date("Y-m-d H:i:s",time());
+         $m=D('exefunc');
+         if(!$m->create($a)){
+             $this->error($m->getError());
+         }
+         $lastfId=$m->add($a);
+     }
+    if($lastfId){
         $this->success("添加成功");
     }else{
         $this->error("添加失败");
     }
+
 }
 
 
@@ -128,7 +146,7 @@ public function library(){
     $type=$_GET['type'];
     $tester=$_GET['tester'];
     /* 实例化模型*/
-    
+
     $m=D('exescene');
     $where=array("stagetesterid"=>$stagetesterid);
     $exe=$m->where($where)->order("sn")->select();

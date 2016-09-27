@@ -20,6 +20,7 @@
                   <form action="__URL__/update" method="post" >
                   <input type="hidden" name="funcid" value="<{$rule.funcid}>" />
                   <input type="hidden" name="id" value="<{$rule.id}>" />
+                  <tr><td>更新：</td><td><{$rule.moder}>更新于:<{$rule.updateTime}></td></tr>
                      <tr><td> 顺序：</td><td><input type="text" name="sn" value="<{$rule.sn}>"  class="input500"/></td></tr>
                      <tr><td>规则：</td><td><input type="text" name="rules" value="<{$rule.rules}>"  class="input500"/></td></tr>
                      <tr><td>来源：</td><td><input type="text" name="source" value="<{$rule.source}>"  class="input500"/></td></tr>
