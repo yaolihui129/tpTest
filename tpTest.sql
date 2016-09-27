@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 43.61:3307
+Source Server         : mysql:3306
 Source Server Version : 50532
-Source Host           : localhost:3307
+Source Host           : localhost:3306
 Source Database       : tptest
 
 Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-09-27 17:34:09
+Date: 2016-09-27 23:47:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -208,9 +208,9 @@ CREATE TABLE `tp_exefunc` (
 -- ----------------------------
 -- Records of tp_exefunc
 -- ----------------------------
-INSERT INTO `tp_exefunc` VALUES ('10033', '3', '10018', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
-INSERT INTO `tp_exefunc` VALUES ('10034', '1', '10018', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
-INSERT INTO `tp_exefunc` VALUES ('10035', '4', '10018', '10002', 'Auto.Access', '产品库', '产品列表', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
+INSERT INTO `tp_exefunc` VALUES ('10033', '3', '10018', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, '失败', 'asd', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 22:20:50', '2016-09-27 22:20:50');
+INSERT INTO `tp_exefunc` VALUES ('10034', '1', '10018', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, '失败', 'asd', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 22:20:54', '2016-09-27 22:20:54');
+INSERT INTO `tp_exefunc` VALUES ('10035', '4', '10018', '10002', 'Auto.Access', '产品库', '产品列表', '', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 22:21:23', '2016-09-27 22:21:23');
 INSERT INTO `tp_exefunc` VALUES ('10036', '4', '10018', '10001', 'Auto.Access', '登陆模块', '注销', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:25:54', '2016-09-27 15:25:54');
 INSERT INTO `tp_exefunc` VALUES ('10037', '3', '10019', '10003', 'Auto.Access', '产品库', '产品-添加', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
 INSERT INTO `tp_exefunc` VALUES ('10038', '1', '10019', '10000', 'Auto.Access', '登陆模块', '登录', '123', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-09-27 15:58:20', '2016-09-27 15:58:20');
@@ -807,11 +807,12 @@ CREATE TABLE `tp_risk` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1000 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_risk
 -- ----------------------------
+INSERT INTO `tp_risk` VALUES ('1000', '1', '不提交测试，无法完成验收', 'A', '<p>\r\n	暂无方案</p>\r\n', '45', '打开', '', '腰立辉', '腰立辉', '2016-09-27 21:07:26', '2016-09-27 21:07:26');
 
 -- ----------------------------
 -- Table structure for `tp_rules`

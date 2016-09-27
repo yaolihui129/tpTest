@@ -15,10 +15,12 @@
                  </span>
               </div>
               <div class="left" align="left" style="width:20%;">
+              <hr />
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li><a href="__URL__/test/id/<{$vo.id}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>">
-                         <{$vo.sn}>:<{$vo.sceneid}>:<{$vo.results}>:<{$vo.id|countExeFunc=###}></a></li>
+                         <li><a href="__URL__/test/id/<{$vo.id}>/stagetesterid/<{$w.stagetesterid}>/proid/<{$w.proid}>/type/<{$w.type}>">
+                        <{$vo.sn}>:<{$vo.swho}>【<{$vo.swhen}>】<{$vo.scene}><br />
+                         <{$vo.results}>:<{$vo.id|countExeFunc=###}></a><hr /></li>
                        </ur>
                     </volist>
               </div>
@@ -37,7 +39,7 @@
                        <th width=3% align="center" bgcolor="#ccc">结果</th>
                        <th width=3% align="left" bgcolor="#ccc">说明</th>
                        <th width=3% align="center" bgcolor="#ccc">num1</th>
-                       <th width=7% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='exe' id='ex' empty="没有数据">
                     <tr>

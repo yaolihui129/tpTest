@@ -92,6 +92,22 @@ class RulesAction extends CommonAction {
 
         $this->display();
     }
+    
+    public function indexe(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $rules=$m->where($where)->select();
+        $this->assign('rules',$rules);
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+    
+    
+        $this->display();
+    }
 
     public function add(){
         /* 接收参数*/
