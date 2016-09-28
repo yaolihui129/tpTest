@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN""http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+    <head>
+         <title>测试管理平台</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <import type="css" file="Css.style" />
+          <import type="js" file="Js.jquery" />
+          <import type="js" file="Js.global" />
+    </head>
+    <body>
+        <div class="place">
+                                 所在位置：测试管理平台><a href="__APP__/Index/index/testgp/<{$w.testgp}>">项目</a>>场景
+           <span style="float:right;margin-right:60px;">
+              <a href="__APP__/Index/index/testgp/<{$w.testgp}>"> 返回</a>
+           </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">项目场景<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="midd" >
+                 <table border="1" width="100%" align="center">
+                     <tr>
+                      <th width=3% align="center" bgcolor="#ccc">ID</th>
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=5% align="center"  bgcolor="#ccc">角色</th>
+                       <th width=5% align="center" bgcolor="#ccc">时间</th>
+                       <th width=3% align="center" bgcolor="#ccc">级别</th>
+                       <th width=20% align="left" bgcolor="#ccc">场景</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=10% align="center" bgcolor="#ccc">流程</th>
+                       <th width=3% align="center" bgcolor="#ccc">来源</th>
+                     </tr>
+                     <volist name='scene' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.id}></td>
+                       <td align="center" ><{$st.sn}></td>
+                       <td align="center" ><{$st.swho}></td>
+                       <td align="center" ><{$st.swhen}></td>
+                       <td align="center" ><{$st.level}></td>
+                       <td align="left" >
+                           <{$st.type}>:<{$st.scene}>
+                         <span style="float:right;margin-right:5px;">
+                           <a href="#" >场景功能</a>
+
+                         </span>
+                       </td>
+                       <td align="center" ><{$st.state}></td>
+                      <td align="center" ><{$st.flow}></td>
+                       <td align="center" ><{$st.sourceid}></td>
+                    </tr>
+                    </volist>
+                </table>
+               </div><!-- midd -->
+           </div><!-- main -->
+       </div><!-- content -->
+       <div class="foot">
+      Copyright <span class="num">&copy;</span> 2015-2018<a target="_blank" href="http://yaolh.esy.es/test/admin.php"><b>yaolh</b></a> 版权所有</div>
+    </div><!-- foot -->
+    </body>
+</html>

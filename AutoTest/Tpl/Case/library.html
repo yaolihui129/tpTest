@@ -1,3 +1,4 @@
+
       <layout name="layout" />
         <div class="place">
                                  所在位置：
@@ -11,6 +12,7 @@
            <div class="main">
               <div class="top">用例库
                  <span style="float:right;">
+                  <a href="__APP__/Func/range/proid/<{$w.proid}>"><button  class="btn" >测试范围</button></a>
                                              当前项目：<{$w.proid|getProNo=###}>
                    </span>
                </div>
@@ -26,30 +28,34 @@
 
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
-                       <th width=5% align="center" bgcolor="#ccc">系统</th>
-                       <th width=10% align="center" bgcolor="#ccc">路径</th>
-                       <th width=5% align="center" bgcolor="#ccc">功能</th>
-                       <th width=10% align="center"  bgcolor="#ccc">意图 </th>
-                       <th width=10% align="center"  bgcolor="#ccc">预期</th>
+                       <th width=5% align="left" bgcolor="#ccc">系统</th>
+                       <th width=10% align="left" bgcolor="#ccc">路径</th>
+                       <th width=7% align="left" bgcolor="#ccc">功能</th>
+                       <th width=7% align="left"  bgcolor="#ccc">意图 </th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=5% align="center" bgcolor="#ccc">项目</th>
+                       <th width=10% align="left"  bgcolor="#ccc">预期</th>
+
+                     <!-- <th width=5% align="center" bgcolor="#ccc">项目</th> -->
                        <th width=7% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='cases' id='case' empty="没有数据">
 
                     <tr>
                        <td align="center" ><{$case.id}></td>
-                       <td align="center" ><{$case.sysno}></td>
-                       <td align="center" ><{$case.path}></td>
-                       <td align="center" ><{$case.func}></td>
-                       <td align="center" ><{$case.main}></td>
-                       <td align="center" ><{$case.expected}></td>
-                       <td align="center" ><{$case.state}></td>
-                       <td align="center" ><{$case.fproid|getProNo=###}></td>
+                       <td align="left" ><{$case.sysno}></td>
+                       <td align="left" ><{$case.path}></td>
+                       <td align="left" ><{$case.func}></td>
+                       <form action="__URL__/update" method="post" >
+                       <input type="hidden" name="id" value="<{$case.id}>" />
+                       <td align="left" ><textarea rows="2" cols="30" name="main" ><{$case.main}></textarea></td>
+                        <td align="center" ><{$case.state}></td>
+                       <td align="left" ><textarea rows="2" cols="30" name="expected"><{$case.expected}></textarea></td>
+
+                      <!-- <td align="center" ><{$case.fproid|getProNo=###}></td> -->
                        <td align="center" >
-                          <a href="__URL__/add/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>"  >添加 </a>
+                          <button>修改</button></form>
                           <a href="__APP__/Element/index/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">模板</a>
-                          <a href="__URL__/mod/id/<{$case.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">修改</a>
+
                        </td>
                     </tr>
                   </volist>

@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN""http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+    <head>
+         <title>测试管理平台</title>
+          <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+          <import type="css" file="Css.style" />
+          <import type="js" file="Js.jquery" />
+          <import type="js" file="Js.global" />
+    </head>
+    <body>
+        <div class="place">
+                                 所在位置：测试管理平台<a href="__APP__/Index/index/testgp/<{$w.testgp}>">>项目</a>>用例库
+           <span style="float:right;margin-right:60px;">
+              <a href="__APP__/Index/index/testgp/<{$w.testgp}>"> 返回</a>
+           </span>
+        </div>
+        <div class="content">
+           <div class="main">
+              <div class="top">项目用例库<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="midd" >
+                   <table border="1" width="100%" align="center">
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">编号</th>
+                       <th width=5% align="left" bgcolor="#ccc">系统</th>
+                       <th width=10% align="left" bgcolor="#ccc">模块</th>
+                       <th width=7% align="left" bgcolor="#ccc">功能</th>
+                       <th width=7% align="left"  bgcolor="#ccc">意图 </th>
+                       <th width=10% align="left"  bgcolor="#ccc">预期</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=7% align="center"  bgcolor="#ccc">评审建议</th>
+                       <th width=2% align="center" bgcolor="#ccc">操作</th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=5% align="center" bgcolor="#ccc">更新时间</th>
+                     </tr>
+                     <volist name='cases' id='case' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$case.id}></td>
+                       <td align="left" ><{$case.system}></td>
+                       <td align="left" ><{$case.path}></td>
+                       <td align="left" ><{$case.func}></td>
+                       <td align="left" ><{$case.main}></td>
+                       <td align="left" ><{$case.expected}></td>
+                       <td align="center" ><{$case.state}></td>
+                       <form action="__URL__/update" method="post" >
+                        <input type="hidden" name="id" value="<{$case.id}>" />
+                       <td align="center" ><textarea rows="2" cols="40" name="remarks"><{$case.remarks}></textarea></td>
+                       <td align="center" ><button>保存</button></td></form>
+                       <td align="center" ><{$case.moder}></td>
+                       <td align="center" ><{$case.updateTime}></td>
+                    </tr>
+                  </volist>
+                </table>
+              </div><!-- midd -->
+           </div><!-- main -->
+       </div><!-- content -->
+       <div class="foot">
+      Copyright <span class="num">&copy;</span> 2015-2018<a target="_blank" href="http://yaolh.esy.es/test/admin.php"><b>yaolh</b></a> 版权所有</div>
+    </div><!-- foot -->
+    </body>
+</html>
