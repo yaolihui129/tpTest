@@ -32,11 +32,12 @@
                        <th width=10% align="left" bgcolor="#ccc">路径</th>
                        <th width=7% align="left" bgcolor="#ccc">功能</th>
                        <th width=7% align="left"  bgcolor="#ccc">意图 </th>
+                        <th width=7% align="left"  bgcolor="#ccc">评审建议 </th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=10% align="left"  bgcolor="#ccc">预期</th>
 
                      <!-- <th width=5% align="center" bgcolor="#ccc">项目</th> -->
-                       <th width=7% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=5% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='cases' id='case' empty="没有数据">
 
@@ -47,7 +48,8 @@
                        <td align="left" ><{$case.func}></td>
                        <form action="__URL__/update" method="post" >
                        <input type="hidden" name="id" value="<{$case.id}>" />
-                       <td align="left" ><textarea rows="2" cols="30" name="main" ><{$case.main}></textarea></td>
+                        <td align="left" ><textarea rows="2" cols="30" name="main" ><{$case.main}></textarea></td>
+                       <td align="left" ><textarea rows="2" cols="30" name="remarks" ><{$case.remarks}></textarea></td>
                         <td align="center" ><{$case.state}></td>
                        <td align="left" ><textarea rows="2" cols="30" name="expected"><{$case.expected}></textarea></td>
 
