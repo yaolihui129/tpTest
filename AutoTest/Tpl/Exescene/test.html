@@ -15,7 +15,7 @@
                     <volist name='data' id='vo' empty="没有数据">
                       <ur>
                          <li><a href="__URL__/test/stagetesterid/<{$vo.id}>/proid/<{$vo.proid}>/type/<{$w.type}>">
-                         <{$vo.prono}>:<{$vo.stage}>:<{$vo.state}>:<{$vo.id|countEsceneA=###}></a></li>
+                         <{$vo.prono}>:<{$vo.stage}>:<{$vo.state}>:<{$vo.id|countExescene=###}></a></li>
                        </ur>
                     </volist>
               </div>
@@ -36,7 +36,7 @@
                        <td > <a href="__APP__/Exefunc/test/id/<{$ex.id}>/stagetesterid/<{$w.stagetesterid}>/proid/<{$w.proid}>/type/A" >
                        <{$ex.swho}>【<{$ex.swhen}>】<{$ex.scene}></a></td>
                        <td align="center" ><{$ex.results}></td>
-                       <td align="center" >
+                       <td align="left" >
                           <a href="__APP__/Exefunc/test/id/<{$ex.id}>/stagetesterid/<{$w.stagetesterid}>/proid/<{$w.proid}>/type/A" >详情:<{$ex.id|countExeFunc=###}></a>
                        </td>
                     </tr>

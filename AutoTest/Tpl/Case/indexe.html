@@ -1,27 +1,26 @@
     <layout name="layout" />
         <div class="place"> 所在位置：
-             <a href="__APP__/Program">项目</a>
-                  ><a href="__APP__/Func/range/proid/<{$w.proid}>">范围</a>
-                  >用例
-                  <span style="float:right;margin-right:60px;">
-                  <a href="__APP__/Func/range/proid/<{$w.proid}>"> 返回</a>
-                  </span>
+             <a href="__APP__/Exescene/index/type/M">手工测试</a>
+             >测试执行
+               <span style="float:right;margin-right:60px;">
+                   <a href="__APP__/Exescene/index/type/M"> 返回</a>
+              </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:170px;">测试用例
+              <div class="top" >测试用例
                 <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
-              </div>              
+              </div>
               <div class="midd" align="right" >
                    <table border="1" width="100%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
                        <th width=15% align="left"  bgcolor="#ccc">意图
-                          <span style="float:right;margin-right:5px;">
+                         <!--   <span style="float:right;margin-right:5px;">
                              <a href="__APP__/Element/indexp/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">模板</a>
                              <a href="__URL__/addp/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>"  >添加 </a>
-                          </span>
+                          </span>-->
                        </th>
                        <th width=10% align="left"  bgcolor="#ccc">预期</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
@@ -35,9 +34,9 @@
                        <td align="center" ><{$case.id}></td>
                        <td align="center" ><{$case.sn}></td>
                        <td ><a href="#" ><{$case.main}></a>
-                         <span style="float:right;margin-right:5px;">
+                        <!--  <span style="float:right;margin-right:5px;">
                            <a href="__URL__/modp/id/<{$case.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>w/<{$w.w}>">修改</a>
-                         </span>
+                         </span> -->
                        </td>
                        <td align="left" ><{$case.expected}></td>
                        <td align="center" ><{$case.state}></td>

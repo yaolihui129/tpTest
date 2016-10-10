@@ -14,7 +14,7 @@ class ExefuncAction extends CommonAction {
         $this->assign('data',$data);
 //         echo $id;
         $arr=$m->find($id);
-        
+
         $this->assign('arr',$arr);
         /* 实例化模型*/
     	 $m=M('exefunc');
@@ -51,11 +51,11 @@ class ExefuncAction extends CommonAction {
     }
 
     public function pass(){
-        
+
         $_GET['result']="通过";
         $_GET['moder']=$_SESSION['realname'];
         $_GET['updateTime']=date("Y-m-d H:i:s",time());
-        
+
         $db=D('exefunc');
         if ($db->save($_GET)){
             $this->success("修改成功！");
@@ -63,9 +63,9 @@ class ExefuncAction extends CommonAction {
             $this->error("修改失败！");
         }
     }
-    
- 
-    
+
+
+
     public function update(){
         /* 实例化模型*/
         $db=D('exefunc');
@@ -79,5 +79,18 @@ class ExefuncAction extends CommonAction {
 
     }
 
+
+    public function supdate(){
+        /* 实例化模型*/
+        $db=D('exescene');
+        $_POST['moder']=$_SESSION['realname'];
+        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        if ($db->save($_POST)){
+            $this->success("修改成功！");
+        }else{
+            $this->error("修改失败！");
+        }
+
+    }
 
 }

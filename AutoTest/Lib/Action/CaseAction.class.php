@@ -91,6 +91,28 @@ class CaseAction extends CommonAction {
         $this->display();
     }
 
+    public function indexe(){
+        /* 接收参数*/
+
+
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('func');
+
+        $data=$m->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $where=array("funcid"=>$funcid);
+        $cases=$m->where($where)->select();
+        $this->assign('cases',$cases);
+        $where=array("funcid"=>$funcid);
+        $this->assign('w',$where);
+
+
+        $this->display();
+    }
+
+
     public function add(){
         /* 接收参数*/
         $prodid=$_GET['prodid'];

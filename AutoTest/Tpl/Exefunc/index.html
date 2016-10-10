@@ -25,19 +25,19 @@
               </div>
 
                <div class="midd" align="right" >
-               
+
                 <table border="0" width="80%" align="center">
                    <tr>
                        <td>
                           <table border="1" width="100%" align="center">
                           <h1>测试场景</h1>
                              <tr>
-                                <th width=2% align="center" bgcolor="#ccc">sn</th>
+                                <th width=2% align="center" bgcolor="#ccc">顺序</th>
                                 <th width=5% align="left" bgcolor="#ccc">角色</th>
                                 <th width=5% align="left" bgcolor="#ccc">时间</th>
                                 <th width=13% align="left" bgcolor="#ccc">场景</th>
                                 <th width=10% align="left" bgcolor="#ccc">流程</th>
-                                <th width=3% align="center" bgcolor="#ccc">结果</th>
+                                <th width=3% align="left" bgcolor="#ccc">结果</th>
                                 <th width=2% align="center" bgcolor="#ccc">操作</th>
                              </tr>
                              <tr>
@@ -46,11 +46,13 @@
                                 <td align="left"><{$arr.swhen}></td>
                                 <td align="left"><{$arr.scene}></td>
                                 <td align="left"><{$arr.flow}></td>
-                                <td align="center"><{$arr.results}></td>
-                                <td align="center"><button>保存</button></td>
+                             <form action="__URL__/supdate" method="post" >
+                                <input type="hidden" name="id" value="<{$arr.id}>" />
+                                <td align="left"> <input type="text" name="results"  value="<{$arr.results}>" class="input80" /></td>
+                                <td align="center"><button>保存</button></td></form>
                              </tr>
                           </table>
-                       
+
                        </td>
                    </tr>
                    <tr>
@@ -69,7 +71,7 @@
                            <th width=2% align="center" bgcolor="#ccc">num1</th>
                         </tr>
                      <volist name='exe' id='ex' empty="没有数据">
-                        <tr>                     
+                        <tr>
                           <td align="center" ><{$ex.sn}></td>
                           <td align="left" ><{$ex.sysno}></td>
                           <td align="left" ><{$ex.path}></td>
@@ -83,15 +85,15 @@
                          <td align="left" ><{$ex.funcremarks}></td>
                          <td align="left" ><{$ex.result}>
                           <span style="float:right;margin-right:5px;">
-                              <a href="__URL__/pass/id/<{$ex.id}>" ><button>标记</button></a>                            
-                          </span>                     
+                              <a href="__URL__/pass/id/<{$ex.id}>" ><button>标记</button></a>
+                          </span>
                          </td>
                           <form action="__URL__/update" method="post" >
                             <input type="hidden" name="id" value="<{$ex.id}>" />
                             <input type="hidden" name="result" value="失败" />
                          <td align="left" ><input type="text" name="remark" value="<{$ex.remark}>"  class="input100"/>
                           <span style="float:right;margin-right:5px;">
-                              <a href="#" ><button>保存</button></a> </form>                           
+                              <button>保存</button> </form>
                           </span>
                          </td>
                          <td align="left" ><{$ex.main}></td>
@@ -99,15 +101,15 @@
                        </tr>
                     </volist>
                      </table>
-                      
-                      
+
+
                       </td>
                    </tr>
-                
+
                 </table>
-               
-               
-                  
+
+
+
 
               </div><!-- midd -->
            </div><!-- main -->
