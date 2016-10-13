@@ -85,16 +85,14 @@
                          <td align="left" ><{$ex.funcremarks}></td>
                          <td align="left" ><{$ex.result}>
                           <span style="float:right;margin-right:5px;">
-                              <a href="__URL__/pass/id/<{$ex.id}>" ><button>标记</button></a>
+                              <a href="__URL__/pass/id/<{$ex.id}>" >标记</a>
                           </span>
                          </td>
                           <form action="__URL__/update" method="post" >
                             <input type="hidden" name="id" value="<{$ex.id}>" />
                             <input type="hidden" name="result" value="失败" />
                          <td align="left" ><input type="text" name="remark" value="<{$ex.remark}>"  class="input100"/>
-                          <span style="float:right;margin-right:5px;">
-                              <button>保存</button> </form>
-                          </span>
+                          <span style="float:right;margin-right:5px;"><button>保存 </button></form></span>
                          </td>
                          <td align="left" ><{$ex.main}></td>
                          <td align="center" ><{$ex.num1}></td>

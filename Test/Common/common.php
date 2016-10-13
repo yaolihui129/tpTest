@@ -130,21 +130,25 @@ function countFRules($id){
 }
 
 /**
- * 根据阶段获列队数(M)
+ * 根据列队获取执行功能数
  */
-function countEsceneM($id){
-    $m=M("exescene");
-    $where=array("stageid"=>$id,"type"=>"Manual","tester"=>$_SESSION['realname']);
+function countExeFunc($id){
+    $m=M("exefunc");
+    $where=array("exesceneid"=>$id);
     $count=$m->where($where)->count();
     return $count;
 }
 
+
+
 /**
- * 根据阶段获列队数(A)
+ * 执行场景数
  */
-function countEsceneA($id){
+function countExescene($id){
     $m=M("exescene");
-    $where=array("stageid"=>$id,"type"=>"Auto","tester"=>$_SESSION['realname']);
+    $where=array("stagetesterid"=>$id);
     $count=$m->where($where)->count();
     return $count;
 }
+
+
