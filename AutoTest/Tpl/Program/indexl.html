@@ -3,7 +3,7 @@
         <div class="content">
            <div class="main">
               <div class="top">
-                <span style="margin-left:180px;">项目库</span>
+                <span style="margin-left:10%;">项目库</span>
                 <span style="float:right;">
                                              当前分组：<{$_SESSION['testgp']}>
                 </span>
@@ -22,21 +22,21 @@
                        <th width=5% align="center" bgcolor="#ccc">编号</th>
                        <th width=33% align="left" bgcolor="#ccc">项目</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=3% align="center" bgcolor="#ccc">负责人</th>                      
+                       <th width=3% align="center" bgcolor="#ccc">负责人</th>
                      </tr>
                 <volist name='Pros' id='pro' empty="没有数据">
                     <tr>
                        <td align="center"><{$pro.prono}></td>
                        <td><a href="__APP__/Case/library/proid/<{$pro.id}>"><{$pro.program}>（<{$pro.ptype}>）</a>
-                         <span style="float:right;margin-right:5px;">                           
-                           <a href="__APP__/Func/func/proid/<{$pro.id}>/type/l">功能库&nbsp; </a> 
-                           <a href="#">场景库&nbsp; </a>                             
+                         <span style="float:right;margin-right:5px;">
+                           <a href="__APP__/Func/func/proid/<{$pro.id}>/type/l">功能库&nbsp; </a>
+                           <a href="#">场景库&nbsp; </a>
                            <a href="__APP__/Case/library/proid/<{$pro.id}>">用例库 <{$pro.id|countCase=###}></a>
-                           <a href="__APP__/Element/library/proid/<{$pro.id}>">控件库</a>                          
+                           <a href="__APP__/Element/library/proid/<{$pro.id}>">控件库</a>
                          </span>
                        </td>
                        <td align="center"><{$pro.prost}></td>
-                       <td align="center"><{$pro.manager}></td>                                          
+                       <td align="center"><{$pro.manager}></td>
                     </tr>
                </volist>
                 </table>

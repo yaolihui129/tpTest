@@ -123,6 +123,35 @@ function getProNo($id){
 
 
 /**
+ * 根据id获取场景信息
+ */
+function getScene($id){
+    if ($id){
+        $m=M('scene');
+        $data=$m->find($id);
+        //dump($data);
+        $str=$data['sn'].$data['swho']."-".$data['swhen']."-".$data['scene'];
+        return $str;
+    }else {
+        return ;
+    }
+}
+
+/**
+ * 根据id获取路径信息
+ */
+function getPath($id){
+    if ($id){
+        $m=M('path');
+        $data=$m->find($id);
+        $str= $data['sn'].".".$data['path'];
+        return $str;
+    }else {
+        return ;
+    }
+}
+
+/**
  * 根据id获取功能名
  */
 function getFunc($id){
@@ -135,6 +164,48 @@ function getFunc($id){
         return ;
     }
 }
+
+/**
+ * 根据功能id获取功能信息
+ */
+function getSPFunc($id){
+    if ($id){
+        $s = D("system");
+        $where=array("tp_func.id"=>$id);
+        $data=$s->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+                ->join(' inner JOIN tp_func ON tp_path.id = tp_func.pathid')
+                ->where($where)
+                ->select();
+
+        $str=$data[0]['system'].">".$data[0]['path'].">".$data[0]['func'];
+        return $str;
+    }else {
+        return ;
+    }
+}
+
+
+/**
+ * 根据场景功能id获取场景功能信息
+ */
+function getSceneFunc($id){
+    if ($id){
+        $m=D('system');
+        $where=array("tp_scenefunc.id"=>$id);
+        $data=$m
+        ->join("inner JOIN tp_path ON tp_system.id = tp_path.sysid")
+        ->join("inner JOIN tp_func ON tp_path.id = tp_func.pathid")
+        ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
+        ->where($where)->order('tp_scenefunc.sn')->select();
+
+        $str=$data[0]['system'].">".$data[0]['path'].">".$data[0]['func']."【".$data[0]['remarks']."】";
+        return $str;
+    }else {
+        return ;
+    }
+
+}
+
 
 /**
 * 根据列队获取执行功能数

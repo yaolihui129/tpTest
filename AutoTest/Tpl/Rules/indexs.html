@@ -1,17 +1,18 @@
 <layout name="layout" />
         <div class="place">所在位置：
             <a href="__APP__/Program">项目</a>
-            ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
-            ><a href="__APP__/Path/indexp/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">路径</a>
-            ><a href="__APP__/Func/indexp/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">功能点</a>
+            ><a href="__APP__/Scene/index/proid/<{$w.proid}>">场景</a>
+            ><a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">场景功能</a>
             >规则
             <span style="float:right;margin-right:60px;">
-               <a href="__APP__/Func/indexp/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>"> 返回</a>
+               <a href="__APP__/Scenefunc/index/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:170px;">需求规则<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="top" style="margin-left:15%;">需求规则
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
               <div class="left" align="left" style="width:15%;">
                     <volist name='data' id='vo' empty="没有数据"><ur>
                          <li><a href="__URL__/indexs/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">
@@ -25,7 +26,7 @@
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
                        <th width=15% align="left"  bgcolor="#ccc">规则
                           <span style="float:right;margin-right:5px;">
-                             <a href="__URL__/adds/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>"  >添加 </a>
+                             <a href="__URL__/adds/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"  >添加 </a>
                           </span>
                        </th>
                        <th width=10% align="center"  bgcolor="#ccc">来源</th>
@@ -41,7 +42,7 @@
                        <td align="center" ><{$rule.sn}></td>
                        <td ><a href="#" ><{$rule.rules}></a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__URL__/mods/id/<{$rule.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">修改</a>
+                           <a href="__URL__/mods/id/<{$rule.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">修改</a>
                          </span>
                        </td>
                        <td align="center" ><{$rule.source}></td>

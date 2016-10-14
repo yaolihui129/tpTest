@@ -9,7 +9,8 @@
         </div>
         <div class="content">
            <div class="main">
-             <div class="top" style="margin-left:170px;">测试用例
+             <div class="top" style="margin-left:15%;">测试用例
+               <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
                <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
              </div>
               <div class="left" align="left" style="width:15%;">
@@ -25,7 +26,7 @@
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
                        <th width=15% align="left"  bgcolor="#ccc">意图
                           <span style="float:right;margin-right:5px;">
-                             <a href="__APP__/Element/indexf/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">模板</a>
+                             <a href="__APP__/Element/indexf/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>">模板</a>
                              <a href="__URL__/addf/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>"  >添加 </a>
                           </span>
                        </th>

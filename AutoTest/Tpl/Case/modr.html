@@ -10,7 +10,9 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" >用例编辑</div>
+              <div class="top" >用例编辑
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              </div>
               <div class="left"  align="left" style="width:30%">
                     <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/modr/id/<{$vo.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">

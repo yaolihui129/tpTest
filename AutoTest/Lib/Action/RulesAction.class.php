@@ -92,7 +92,30 @@ class RulesAction extends CommonAction {
 
         $this->display();
     }
-    
+
+    public function indexs(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $pathid=$_GET['pathid'];
+        $sceneid=$_GET['sceneid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('func');
+        $where=array("pathid"=>$pathid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $rules=$m->where($where)->select();
+        $this->assign('rules',$rules);
+        $where=array("proid"=>$proid,"pathid"=>$pathid,"funcid"=>$funcid,"sceneid"=>$sceneid);
+        $this->assign('w',$where);
+
+
+        $this->display();
+    }
+
     public function indexe(){
         /* 接收参数*/
         $proid=$_GET['proid'];
@@ -104,8 +127,8 @@ class RulesAction extends CommonAction {
         $this->assign('rules',$rules);
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
-    
-    
+
+
         $this->display();
     }
 
@@ -187,6 +210,28 @@ class RulesAction extends CommonAction {
         $data=$m->where($where)->select();
         $this->assign('data',$data);
         $where=array("proid"=>$proid,"pathid"=>$pathid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $this -> assign("fproid", proselect($proid,"fproid"));
+        $this->assign("beizhu",PublicAction::editor("remark"));
+
+        $this->display();
+    }
+
+    public function adds(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $sceneid=$_GET['sceneid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("proid"=>$proid,"pathid"=>$pathid,"funcid"=>$funcid,"sceneid"=>$sceneid);
         $this->assign('w',$where);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
@@ -306,6 +351,29 @@ class RulesAction extends CommonAction {
         $this->display();
     }
 
+
+    public function mods(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $sceneid=$_GET['sceneid'];
+        $pathid=$_GET['pathid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
+        $m=M('rules');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->select();
+        $this->assign('data',$data);
+        $where=array("proid"=>$proid,"pathid"=>$pathid,"funcid"=>$funcid,"sceneid"=>$sceneid);
+        $this->assign('w',$where);
+        $rule=$m->find($id);
+        $this->assign("rule",$rule);
+        $this -> assign("state", formselect($rule['state']));
+        $this -> assign("fproid", proselect($rule['fproid'],"fproid"));
+        $this->assign("beizhu",PublicAction::editor("remark",$rule['remark']));;
+
+        $this->display();
+    }
     public function update(){
         $db=D('rules');
         $_POST['moder']=$_SESSION['realname'];

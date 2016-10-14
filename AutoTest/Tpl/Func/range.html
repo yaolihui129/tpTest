@@ -10,10 +10,11 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:280px;">项目范围
+              <div class="top" style="margin-left:25%;">项目：<{$w.proid|getProNo=###}>范围
                    <span style="float:right;">
-                   <a href="__APP__/Case/library/proid/<{$w.proid}>"><button  class="btn" >项目用例库</button></a>
-                                             当前项目：<{$w.proid|getProNo=###}>
+                   <a href="__APP__/Func/func/proid/<{$w.proid}>"><button  class="btn" >功能点</button></a>
+                   <a href="__APP__/Case/library/proid/<{$w.proid}>"><button  class="btn" >用例库</button></a>
+                                                    当前项目：<{$w.proid|getProNo=###}>
                    </span>
               </div>
                <div class="left" align="left" style="width:25%;">
@@ -46,7 +47,7 @@
                        <td align="center" >
 
                           <a href="__APP__/Case/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >用例<{$st.id|countFCase=###}></a>
-                          <a href="#">数据模板</a>
+                          <a href="__APP__/Element/indexr/funcid/<{$st.id}>/proid/<{$w.proid}>">数据模板</a>
                           <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
                        </td>
                     </tr>

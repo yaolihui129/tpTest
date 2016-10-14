@@ -9,10 +9,11 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">场景功能
+              <div class="top">
+              <span style="margin-left:20%;">场景功能(<{$w.sceneid|getScene=###}>)</span>
               <span style="float:right;">
-                  <a href="__APP__/Func/library/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">功能库</a>
-                  <a href="#">场景数据</a>
+                  <a href="__APP__/Func/library/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>"><button  class="btn" >功能库</button></a>
+                  <a href="#"><button  class="btn" >场景数据</button></a>
                                              当前项目：<{$w.proid|getProNo=###}>
                  </span>
               </div>
@@ -35,7 +36,7 @@
                        <th width=12% align="left" bgcolor="#ccc">功能备注</th>
                        <th width=7% align="left" bgcolor="#ccc">意图</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
-                       <th width=12% align="center" bgcolor="#ccc">操作 </th>
+                       <th width=8% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='sfunc' id='st' empty="没有数据">
 
@@ -49,15 +50,15 @@
                        <td align="left" ><{$st.func}></td>
                        <td align="center" ><input type="text" name="sn" value="<{$st.sn}>"  class="input20"/></td>
                        <td align="left" >
-                       <input type="text" name="remarks" value="<{$st.remarks}>"  class="input100"/>
+                       <input type="text" name="remarks" value="<{$st.remarks}>"  class="input200"/>
                        <input type="submit" name="do_submit" value="提 交"> </form>
                        </td>
-                       <td align="left" ><{$st.main}></td>
+                       <td align="left" ><{$st.casemain}></td>
                        <td align="center" ><{$st.casestate}></td>
                        <td align="center" >
-                          <a href="__APP__/Scenecase/index/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
-                          <a href="#" >模板</a>
-                          <a href="__APP__/Rules/indexs/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >规则</a>
+                          <a href="__APP__/Scenecase/index/sfuncid/<{$st.id}>/funcid/<{$st.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
+                          <a href="__APP__/Element/indexs/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >模板</a>
+                          <a href="__APP__/Rules/indexs/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >规则</a>
                           <a href="__URL__/del/id/<{$st.id}>" onclick="return confirm('你确定要场景中移除这个功能点吗？')">移除</a>
                        </td>
                     </tr>

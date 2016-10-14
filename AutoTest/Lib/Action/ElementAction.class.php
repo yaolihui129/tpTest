@@ -11,20 +11,74 @@ class ElementAction extends CommonAction {
         /* 实例化模型*/
         $m=M('element');
         $where=array("funcid"=>$funcid);
-        $data=$m->where($where)->select();
+        $data=$m->where($where)->order('sn')->select();
         $this->assign('data',$data);
         $m=M('case');
         $dcases=$m->where($where)->select();
         $this->assign('dcases',$dcases);
 
         $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
+
         $this->assign('w',$where);
-
-
 
 	     $this->display();
     }
 
+    public function indexr(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $dcases=$m->where($where)->select();
+        $this->assign('dcases',$dcases);
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+
+    public function indexf(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $dcases=$m->where($where)->select();
+        $this->assign('dcases',$dcases);
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+    public function indexs(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $sceneid=$_GET['sceneid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $m=M('case');
+        $dcases=$m->where($where)->select();
+        $this->assign('dcases',$dcases);
+        $where=array("proid"=>$proid,"funcid"=>$funcid,"sceneid"=>$sceneid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
 
     public function add(){
         /* 接收参数*/
@@ -36,7 +90,7 @@ class ElementAction extends CommonAction {
         /* 实例化模型*/
         $m=M('element');
         $where=array("funcid"=>$funcid);
-        $data=$m->where($where)->select();
+        $data=$m->where($where)->order('sn')->select();
         $this->assign('data',$data);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
@@ -44,6 +98,64 @@ class ElementAction extends CommonAction {
         $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
+
+        $this->display();
+    }
+
+    public function addr(){
+        /* 接收参数*/
+
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+    public function addf(){
+        /* 接收参数*/
+
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+    public function adds(){
+        /* 接收参数*/
+
+        $proid=$_GET['proid'];
+        $sceneid=$_GET['sceneid'];
+        $funcid=$_GET['funcid'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $count=$m->where($where)->count()+1;
+        $this->assign("c",$count);
+        $this -> assign("state", formselect());
+        $where=array("proid"=>$proid,"funcid"=>$funcid,"sceneid"=>$sceneid);
+        $this->assign('w',$where);
 
         $this->display();
     }
@@ -76,7 +188,7 @@ class ElementAction extends CommonAction {
         /* 实例化模型*/
         $m=M('element');
         $where=array("funcid"=>$funcid);
-        $data=$m->where($where)->select();
+        $data=$m->where($where)->order('sn')->select();
         $this->assign('data',$data);
         $element=$m->find($id);
         $this->assign('element',$element);
@@ -86,6 +198,65 @@ class ElementAction extends CommonAction {
         $this->assign('w',$where);
 
 
+
+        $this->display();
+    }
+
+    public function modr(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $element=$m->find($id);
+        $this->assign('element',$element);
+        $this -> assign("state", formselect($element['state']));
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+    public function modf(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $element=$m->find($id);
+        $this->assign('element',$element);
+        $this -> assign("state", formselect($element['state']));
+        $where=array("proid"=>$proid,"funcid"=>$funcid);
+        $this->assign('w',$where);
+
+        $this->display();
+    }
+
+
+    public function mods(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $sceneid=$_GET['sceneid'];
+        $funcid=$_GET['funcid'];
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
+        $m=M('element');
+        $where=array("funcid"=>$funcid);
+        $data=$m->where($where)->order('sn')->select();
+        $this->assign('data',$data);
+        $element=$m->find($id);
+        $this->assign('element',$element);
+        $this -> assign("state", formselect($element['state']));
+        $where=array("proid"=>$proid,"funcid"=>$funcid,"sceneid"=>$sceneid);
+        $this->assign('w',$where);
 
         $this->display();
     }

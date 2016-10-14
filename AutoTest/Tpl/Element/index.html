@@ -5,15 +5,16 @@
               ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
               ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
               ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
-              ><a href="__APP__/Case/index/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">用例</a>
               >数据模板
                <span style="float:right;margin-right:60px;">
-                 <a href="__APP__/Case/index/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+                 <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
                </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top"  style="margin-left:200px;">数据用例模板</div>
+              <div class="top"  style="margin-left:15%;">数据用例模板
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              </div>
               <div class="left" align="left" style="widtht:15%;">
                <h1>功能控件<span style="float:right;margin-right:55px;">
                             <a href="__URL__/add/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">添加</a>
@@ -51,7 +52,7 @@
                        <th width=3% align="center" bgcolor="#ccc">Num8</th>
                        <th width=3% align="center" bgcolor="#ccc">Num9</th>
                        <th width=3% align="center" bgcolor="#ccc">Num10</th>
-                       <th width=3% align="center" bgcolor="#ccc">操作 </th> 
+                       <th width=3% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='dcases' id='case' empty="没有数据">
                     <tr>

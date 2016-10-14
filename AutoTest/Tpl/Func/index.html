@@ -11,7 +11,7 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:330px;">功能点管理</div>
+              <div class="top" style="margin-left:30%;">功能点管理</div>
               <div class="left" align="left" style="width:30%;">
                     <volist name='data' id='vo' empty="没有数据"><ur><li>
                         <a href="__URL__/index/pathid/<{$vo.id}>/sysid/<{$vo.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">
@@ -43,7 +43,7 @@
                             <{$func.func}></a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__APP__/Case/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">用例  <{$func.id|countFCase=###}></a>
-                           <a href="#">数据模板</a>
+                           <a href="__APP__/Element/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">数据模板</a>
                            <a href="__APP__/Rules/index/funcid/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">规则 <{$func.id|countFRules=###}></a>
                            <a href="__URL__/mod/id/<{$func.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">修改</a>
                          </span>

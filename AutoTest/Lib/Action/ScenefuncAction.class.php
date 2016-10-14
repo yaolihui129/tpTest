@@ -19,7 +19,7 @@ class ScenefuncAction extends CommonAction {
         ->join("inner JOIN tp_scenefunc ON tp_func.id = tp_scenefunc.funcid")
         ->where($where)->order('tp_scenefunc.sn')->select();
         $this->assign("sfunc",$sfunc);
-//         dump($sfunc);
+//        dump($sfunc);
         $where=array("proid"=>"$proid","sceneid"=>$sceneid);
         $this->assign("w",$where);
 

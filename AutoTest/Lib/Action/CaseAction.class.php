@@ -129,7 +129,7 @@ class CaseAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
-        $this -> assign("fproid", proselect($proid,"fproid"));
+
         $this->assign("caozuo",PublicAction::editor("steps"));
 
         $this->display();

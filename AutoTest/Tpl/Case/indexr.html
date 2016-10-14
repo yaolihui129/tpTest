@@ -1,15 +1,16 @@
      <layout name="layout" />
         <div class="place"> 所在位置：
              <a href="__APP__/Program">项目</a>
-                  ><a href="__APP__/Func/range/proid/<{$w.proid}>">范围</a>
-                  >用例
-                  <span style="float:right;margin-right:60px;">
+             ><a href="__APP__/Func/range/proid/<{$w.proid}>">范围</a>
+             >用例
+             <span style="float:right;margin-right:60px;">
                   <a href="__APP__/Func/range/proid/<{$w.proid}>"> 返回</a>
-                  </span>
+             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:170px;">测试用例
+              <div class="top" style="margin-left:15%;">测试用例
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
                 <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:15%;">

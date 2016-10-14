@@ -10,7 +10,9 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" >用例添加</div>
+              <div class="top" >用例添加
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              </div>
               <div class="left" align="left" style="width:30%">
                   <volist name='data' id='vo' empty="没有数据"><ul><li>
                      <a href="__URL__/modf/id/<{$vo.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">
@@ -26,7 +28,7 @@
                                                                  项目：<{$fproid}>状态:<{$state}>级别：<input type="text" name="level" value="2"  class="input80"/>
                      </td></tr>
                      <tr><td>意图：</td><td><input type="text" name="main" value=""  class="input500"/></td></tr>
-                     <tr><td>预期：</td><td><input type="text" name="expected" value=""  class="input500"/></td></tr>                    
+                     <tr><td>预期：</td><td><input type="text" name="expected" value=""  class="input500"/></td></tr>
                      <tr><td colspan="2"><{$caozuo}></td></tr>
                      <tr><td></td>
                          <td><input type="submit" class="btn" name="do_submit" value="提 交"> </form>

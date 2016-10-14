@@ -201,6 +201,39 @@ class PathAction extends CommonAction {
 
     }
 
+    public function library(){
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $stageid=$_GET['stageid'];
+        $stagetesterid=$_GET['stagetesterid'];
+        $type=$_GET['type'];
+        $tester=$_GET['tester'];
+        /* 实例化模型*/
+
+        $m=D('exescene');
+        $where=array("stagetesterid"=>$stagetesterid);
+        $exe=$m->where($where)->order("sn")->select();
+        $this->assign('exe',$exe);
+
+
+        $m= D("prosys");
+        $where=array("tp_prosys.proid"=>"$proid");
+        $data=$m->join('inner JOIN tp_system ON tp_system.id = tp_prosys.sysid')
+        ->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+        ->where($where)
+        ->order("tp_system.sysno,tp_path.sn,tp_path.id")
+        ->select();
+        $this->assign("data",$data);
+dump($data);
+
+        $where=array("proid"=>$proid,"stageid"=>$stageid,"stagetesterid"=>$stagetesterid,"tester"=>$tester,"type"=>$type);
+        $this->assign('w',$where);
+
+        $this->display();
+
+    }
+
+
     public function del(){
         /* 接收参数*/
         $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];

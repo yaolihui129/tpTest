@@ -34,7 +34,7 @@ class UserAction extends CommonAction {
         if(!$m->create()){
             $this->error($m->getError());
         }
-        
+
         import('ORG.Net.UploadFile');
         $upload = new UploadFile();// 实例化上传类
         $upload->maxSize  = 3145728 ;// 设置附件上传大小
@@ -43,15 +43,15 @@ class UserAction extends CommonAction {
         $upload->thumb = true;//开启缩略图
         $upload->thumbPrefix = 'tb'; //设置前缀
 //         $upload->thumbPath =  './Upload/tb/';// 设置缩略图上传目录
-        
+
         if(!$upload->upload()) {// 上传错误提示错误信息
             $this->error($upload->getErrorMsg());
         }else{// 上传成功 获取上传文件信息
             $info =  $upload->getUploadFileInfo();
         }
         $m->filename=$info[0]['savename'];
-        
-        
+
+
         $lastId=$m->add();
         if($lastId){
            $this->success("添加成功");
@@ -59,7 +59,7 @@ class UserAction extends CommonAction {
             $this->error('用户注册失败');
         }
 
-       
+
     }
 
     public function mod(){
@@ -74,7 +74,7 @@ class UserAction extends CommonAction {
         $this->assign('user',$user);
         $this -> assign("usergp", formselect($user['usergp'],"usergp","testgp"));
         $this -> assign("position", formselect($user['position'],"position","position"));
-        
+
 
         $this->display();
     }
@@ -86,7 +86,7 @@ class UserAction extends CommonAction {
 
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
-        
+
         import('ORG.Net.UploadFile');
         $upload = new UploadFile();// 实例化上传类
         $upload->savePath =  './Public/Upload/';// 设置附件上传目录
@@ -94,11 +94,11 @@ class UserAction extends CommonAction {
             $this->error($upload->getErrorMsg());
         }else{// 上传成功 获取上传文件信息
             $info =  $upload->getUploadFileInfo();
-        }        
-        
+        }
+
         $_POST['filename']=$info[0]['savename'];
-        
-        
+
+
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
@@ -118,8 +118,8 @@ class UserAction extends CommonAction {
         /* 实例化模型*/
         $db=M('user');
         $_POST['password']=md5(123456);
-        var_dump($_POST);
-
+        $_POST['moder']=$_SESSION['realname'];
+        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("密码已重置为：123456！");
         }else{

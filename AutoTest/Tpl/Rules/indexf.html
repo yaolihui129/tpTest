@@ -9,7 +9,9 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:170px;">需求规则<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="top" style="margin-left:15%;">需求规则
+              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
               <div class="left" align="left" style="width:15%;">
                     <volist name='data' id='vo' empty="没有数据"><ur>
                          <li><a href="__URL__/indexf/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>">
