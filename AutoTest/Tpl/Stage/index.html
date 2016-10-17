@@ -37,8 +37,9 @@
                        <td align="center" ><{$st.sn}></td>
                        <td ><a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/M" ><{$st.stage}></a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/M" >人员M</a>
-                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/A" >人员A</a>
+                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/C" >用例<{$st.id|countCTester=###}></a>
+                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/M" >手工<{$st.id|countMTester=###}></a>
+                           <a href="__APP__/Stagetester/index/proid/<{$st.proid}>/stageid/<{$st.id}>/type/A" >自动化<{$st.id|countATester=###}></a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>
                        </td>

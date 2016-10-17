@@ -20,7 +20,7 @@
               <div class="left" align="left" style="width:20%">
                     <volist name='data' id='vo' empty="没有数据"><ul><li>
                        <a href="__URL__/index/sceneid/<{$vo.id}>/proid/<{$w.proid}>">
-                       <{$vo.sn}>.<{$vo.type}>-<{$vo.swho}>[<{$vo.swhen}>]<{$vo.scene}></a><hr>
+                       <{$vo.sn}>.<{$vo.type}>-<{$vo.swho}>[<{$vo.swhen}>]<{$vo.scene}>:<{$vo.id|countSFunc=###}></a><hr>
                     </li></ul></volist>
               </div>
               <div class="midd" >
@@ -28,8 +28,6 @@
 
                      <tr>
                        <th width=2% align="center" bgcolor="#ccc">ID</th>
-
-                       <th width=5% align="center" bgcolor="#ccc">系统</th>
                        <th width=10% align="left"  bgcolor="#ccc">路径</th>
                        <th width=7% align="left" bgcolor="#ccc">功能</th>
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
@@ -44,8 +42,6 @@
                     <form action="__URL__/update" method="post" >
                        <input type="hidden" name="id" value="<{$st.id}>" />
                        <td align="center" ><{$st.id}></td>
-
-                       <td align="center" ><{$st.sysno}></td>
                        <td align="left" ><{$st.path}></td>
                        <td align="left" ><{$st.func}></td>
                        <td align="center" ><input type="text" name="sn" value="<{$st.sn}>"  class="input20"/></td>
@@ -54,7 +50,7 @@
                        <input type="submit" name="do_submit" value="提 交"> </form>
                        </td>
                        <td align="left" ><{$st.casemain}></td>
-                       <td align="center" ><{$st.casestate}></td>
+                       <td align="center" ><a href="__APP__/Scenecase/index/sfuncid/<{$st.id}>/funcid/<{$st.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" ><{$st.casestate}></a></td>
                        <td align="center" >
                           <a href="__APP__/Scenecase/index/sfuncid/<{$st.id}>/funcid/<{$st.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >用例库</a>
                           <a href="__APP__/Element/indexs/funcid/<{$st.id}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>" >模板</a>

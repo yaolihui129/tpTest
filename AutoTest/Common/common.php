@@ -123,6 +123,22 @@ function getProNo($id){
 
 
 /**
+ * 根据id获取里程碑信息
+ */
+function getStage($id){
+    if ($id){
+        $m=M('stage');
+        $data=$m->find($id);
+        //dump($data);
+
+        $str=$data['stage']."【".$data['state']."】";
+        return $str;
+    }else {
+        return ;
+    }
+}
+
+/**
  * 根据id获取场景信息
  */
 function getScene($id){
@@ -184,6 +200,24 @@ function getSPFunc($id){
     }
 }
 
+
+/**
+ * 根据路径id获取功能信息
+ */
+function getSPath($id){
+    if ($id){
+        $s = D("system");
+        $where=array("tp_path.id"=>$id);
+        $data=$s->join('inner JOIN tp_path ON tp_system.id = tp_path.sysid')
+        ->where($where)
+        ->select();
+
+        $str=$data[0]['system']."-".$data[0]['path'];
+        return $str;
+    }else {
+        return ;
+    }
+}
 
 /**
  * 根据场景功能id获取场景功能信息
@@ -268,11 +302,46 @@ function countScene($id){
 }
 
 /**
+ * 根据id获取场景功能数
+ */
+function countSFunc($id){
+    $m=M("scenefunc");
+    $where=array("sceneid"=>$id);
+    $count=$m->where($where)->count();
+    return $count;
+}
+
+/**
  * 根据项目获取用例数
  */
 function countCase($id){
     $m=M("case");
     $where=array("fproid"=>$id);
+    $count=$m->where($where)->count();
+    return $count;
+}
+
+/**
+ * 根据阶段id获取测试人员
+ */
+function countATester($id){
+    $m=M("stagetester");
+    $where=array("stageid"=>$id,"type"=>"A");
+    $count=$m->where($where)->count();
+    return $count;
+}
+
+function countCTester($id){
+    $m=M("stagetester");
+    $where=array("stageid"=>$id,"type"=>"C");
+    $count=$m->where($where)->count();
+    return $count;
+}
+
+
+function countMTester($id){
+    $m=M("stagetester");
+    $where=array("stageid"=>$id,"type"=>"M");
     $count=$m->where($where)->count();
     return $count;
 }

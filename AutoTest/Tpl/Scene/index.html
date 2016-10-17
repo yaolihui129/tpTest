@@ -50,7 +50,7 @@
                        <td align="left" >
                            <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>"><{$st.type}>:<{$st.scene}></a>
                          <span style="float:right;margin-right:5px;">
-                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>" >场景功能</a>
+                           <a href="__APP__/Scenefunc/index/proid/<{$st.proid}>/sceneid/<{$st.id}>" >场景功能<{$st.id|countSFunc=###}></a>
                            <a href="__URL__/copy/sceneid/<{$st.id}>/proid/<{$w.copy}>" onclick="return confirm('你确定复制场景<{$st.id}>到：<{$w.copy|getProNo=###}>吗？')">复制</a>
                            <a href="__URL__/mod/id/<{$st.id}>/proid/<{$st.proid}>">修改</a>
                          </span>

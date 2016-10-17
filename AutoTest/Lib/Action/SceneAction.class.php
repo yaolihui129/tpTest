@@ -19,7 +19,7 @@ class SceneAction extends CommonAction {
         /* 实例化模型*/
         $s = D("scene");
         $where=array("proid"=>"$proid");
-        $scene=$s->where($where)->select();
+        $scene=$s->where($where)->order('sn')->select();
         $this->assign("scene",$scene);
         $where=array("proid"=>"$proid","copy"=>$_SESSION['copy']);
         $this->assign('w',$where);
@@ -111,12 +111,33 @@ class SceneAction extends CommonAction {
         $data['sourceid']=$sceneid;
         $data['sn']=$m->where($where)->count()+1;
         $data['proid']=$proid;
+        $data['state']='待确认';
         $data['adder']=$_SESSION['realname'];
+        $data['moder']=$_SESSION['realname'];
+        $data['updateTime']=date("Y-m-d H:i:s",time());
         if(!$m->create($data)){
             $this->error($m->getError());
         }
         $lastId=$m->add($data);
-        if($lastId){
+
+        $m=D('scenefunc');
+        $where=array("sceneid"=>$sceneid);
+        $arr=$m->where($where)
+             ->field("sn,funcid,sysno,path,func,remarks,caseid,casestate,casemain,caseexpected,num1,num2,num3,
+                 num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")
+             ->order('sn')->select();
+        foreach ($arr as $a){
+            $a['sceneid']=$lastId;
+            $a['adder']=$_SESSION['realname'];
+            $a['moder']=$_SESSION['realname'];
+            $a['updateTime']=date("Y-m-d H:i:s",time());
+            if(!$m->create($a)){
+                $this->error($m->getError());
+            }
+            $lastfId=$m->add($a);
+        }
+
+        if($lastfId){
             $this->success("复制成功");
         }else{
             $this->error("复制失败");

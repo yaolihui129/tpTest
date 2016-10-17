@@ -114,11 +114,12 @@ public function insert(){
     $lastId=$m->add($data);
      $m=D("scenefunc");
      $where=array("sceneid"=>$sceneid);
-     $arr=$m->field("sn,funcid,sysno,path,func,remarks as funcremarks,casestate,casemain,caseexpected,
+     $arr=$m->field("sn,funcid,func,path,remarks as funcremarks,casestate,casemain,caseexpected,
             num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")
      ->where($where)->select();
      /*插入执行场景功能数据 */
      foreach ($arr as $a){
+
          $a['exesceneid']=$lastId;
          $a['adder']=$_SESSION['realname'];
          $a['moder']=$_SESSION['realname'];

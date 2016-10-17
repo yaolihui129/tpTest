@@ -39,9 +39,10 @@ class ScenefuncAction extends CommonAction {
         $where=array("tp_func.id"=>$funcid);
         $arr=$m->join("tp_path ON tp_system.id = tp_path.sysid ")
         ->join('tp_func ON tp_path.id =tp_func.pathid')
-        ->field("sysno,path,func")
+        ->field("sysno,system,path,func")
         ->where($where)
         ->find();
+        $arr['path']=$arr['system']."-".$arr['path'];
         $arr['funcid']=$funcid;
         $arr['adder']=$_SESSION['realname'];
         $arr['sceneid']=$sceneid;

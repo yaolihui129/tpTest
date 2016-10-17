@@ -32,24 +32,15 @@
                           <table border="1" width="100%" align="center">
                           <h1>测试场景</h1>
                              <tr>
-                                <th width=2% align="center" bgcolor="#ccc">顺序</th>
-                                <th width=5% align="left" bgcolor="#ccc">角色</th>
-                                <th width=5% align="left" bgcolor="#ccc">时间</th>
-                                <th width=13% align="left" bgcolor="#ccc">场景</th>
-                                <th width=10% align="left" bgcolor="#ccc">流程</th>
-                                <th width=3% align="left" bgcolor="#ccc">结果</th>
-                                <th width=2% align="center" bgcolor="#ccc">操作</th>
-                             </tr>
-                             <tr>
-                                <td align="center"><{$arr.sn}></td>
-                                <td align="left"><{$arr.swho}></td>
-                                <td align="left"><{$arr.swhen}></td>
-                                <td align="left"><{$arr.scene}></td>
-                                <td align="left"><{$arr.flow}></td>
+                                <td width=2% align="center"><{$arr.sn}></td>
+                                <td width=5%  align="left">角色:<{$arr.swho}></td>
+                                <td width=5%  align="left">时间:<{$arr.swhen}></td>
+                                <td width=10% align="left">场景:<{$arr.scene}></td>
+                                <td  width=10% align="left">流程:<{$arr.flow}></td>
                              <form action="__URL__/supdate" method="post" >
                                 <input type="hidden" name="id" value="<{$arr.id}>" />
-                                <td align="left"> <input type="text" name="results"  value="<{$arr.results}>" class="input80" /></td>
-                                <td align="center"><button>保存</button></td></form>
+                                <td width=2%  align="left"><input type="text" name="results"  value="<{$arr.results}>" class="input80" /></td>
+                                <td width=2%  align="center"><button>保存</button></td></form>
                              </tr>
                           </table>
 
@@ -61,19 +52,17 @@
                        <h1>场景功能</h1>
                         <tr>
                            <th width=2% align="center" bgcolor="#ccc">顺序</th>
-                           <th width=5% align="left"  bgcolor="#ccc">系统</th>
-                           <th width=7% align="left" bgcolor="#ccc">路径</th>
+                           <th width=12% align="left" bgcolor="#ccc">路径</th>
                            <th width=12% align="left" bgcolor="#ccc">功能</th>
                            <th width=5% align="left" bgcolor="#ccc">备注</th>
-                           <th width=7% align="left" bgcolor="#ccc">结果</th>
-                           <th width=7% align="left" bgcolor="#ccc">说明</th>
+                           <th width=5% align="left" bgcolor="#ccc">结果</th>
+                           <th width=9% align="left" bgcolor="#ccc">说明</th>
                            <th width=5% align="left" bgcolor="#ccc">意图</th>
                            <th width=2% align="center" bgcolor="#ccc">num1</th>
                         </tr>
                      <volist name='exe' id='ex' empty="没有数据">
                         <tr>
                           <td align="center" ><{$ex.sn}></td>
-                          <td align="left" ><{$ex.sysno}></td>
                           <td align="left" ><{$ex.path}></td>
                           <td align="left" ><{$ex.func}>
                             <span style="float:right;margin-right:5px;">
@@ -91,7 +80,7 @@
                           <form action="__URL__/update" method="post" >
                             <input type="hidden" name="id" value="<{$ex.id}>" />
                             <input type="hidden" name="result" value="失败" />
-                         <td align="left" ><input type="text" name="remark" value="<{$ex.remark}>"  class="input100"/>
+                         <td align="left" ><input type="text" name="remark" value="<{$ex.remark}>"  class="input300"/>
                           <span style="float:right;margin-right:5px;"><button>保存 </button></form></span>
                          </td>
                          <td align="left" ><{$ex.main}></td>

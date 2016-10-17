@@ -9,19 +9,20 @@
        </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:20%;">里程碑：<{$w.stageid}>,<{$w.type}>测试者
+              <div class="top" style="margin-left:20%;">里程碑：<{$w.type}>测试人员<{$w.proid|getProNo=###}><{$w.stageid|getStage=###}>
                   <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:20%;">
                     <volist name='data' id='vo' empty="没有数据"><ul>
-                      <li><a href="__URL__/index/stageid/<{$vo.id}>/proid/<{$vo.proid}>/type/<{$w.type}>"><{$vo.sn}>.<{$vo.stage}>:<{$vo.state}></a></li>
+                      <li><a href="__URL__/index/stageid/<{$vo.id}>/proid/<{$vo.proid}>/type/<{$w.type}>">
+                      <{$vo.sn}>.<{$w.proid|getProNo=###}><{$vo.stage}>【<{$vo.state}>】</a></li>
                    </ul> </volist>
               </div>
                <div class="midd"  align="left">
               <table border="0" width="80%" valign="top">
                 <tr>
-                    <th width=80% align="left">测试人员</th>
-                    <th width=20% align="left">人员</th>
+                    <th width=80% align="left"></th>
+                    <th width=20% align="left">测试人员</th>
                 </tr>
                 <tr>
                  <td  valign="top">
@@ -43,7 +44,7 @@
                          <td align="left"><a href="__APP__/Exescene/queue/stagetesterid/<{$tester.id}>/tester/<{$tester.tester}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>" >
                             <{$tester.tester}></a>
                             <span style="float:right;margin-right:5px;">
-                                <a href="__APP__/Exescene/queue/stagetesterid/<{$tester.id}>/tester/<{$tester.tester}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>" >列队<{$tester.id}></a>
+                                <a href="__APP__/Exescene/queue/stagetesterid/<{$tester.id}>/tester/<{$tester.tester}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>" >列队<{$tester.id|countExescene=###}></a>
                                 <a href="__URL__/mod/id/<{$tester.id}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>" >修改</a>
                             </span>
                          </td>

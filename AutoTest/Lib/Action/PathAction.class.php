@@ -224,7 +224,7 @@ class PathAction extends CommonAction {
         ->order("tp_system.sysno,tp_path.sn,tp_path.id")
         ->select();
         $this->assign("data",$data);
-dump($data);
+// dump($data);
 
         $where=array("proid"=>$proid,"stageid"=>$stageid,"stagetesterid"=>$stagetesterid,"tester"=>$tester,"type"=>$type);
         $this->assign('w',$where);
@@ -232,6 +232,69 @@ dump($data);
         $this->display();
 
     }
+    public function jion(){
+
+        /* 接收参数*/
+        $proid=$_GET['proid'];
+        $stageid=$_GET['stageid'];
+        $stagetesterid=$_GET['stagetesterid'];
+        $pathid=$_GET['pathid'];
+        $type=$_GET['type'];
+        $tester=$_GET['tester'];
+        /* 实例化模型*/
+
+        $m=D('path');
+        $data=$m->find($pathid);
+
+
+        $arr['pathid']=$data['id'];
+        $arr['sceneid']=0;
+        $arr['level']=2;
+        $arr['stagetesterid']=$stagetesterid;
+        $arr['type']='M';
+        $arr['swho']='【功能】';
+        $arr['swhen']='默认';
+        $arr['scene']=getSPath($data['id']);
+        $arr['flow']='“'.$arr['scene'].'“下所有功能点';
+        $arr['results']='未测试';
+        $arr['moder']=$_SESSION['realname'];
+        $arr['updateTime']=date("Y-m-d H:i:s",time());
+        $m=D('exescene');
+        $where=array("stagetesterid"=>$_GET['stagetesterid'],"type"=>$_GET['type']);
+        $arr['sn']=$m->where($where)->count()+1;
+
+        /*插入执行场景数据 */
+        if(!$m->create($arr)){
+            $this->error($m->getError());
+        }
+        $lastId=$m->add($arr);
+        $m= D("func");
+        $where=array("pathid"=>$data['id']);
+        dump($where);
+        $funcs=$m->where($where)->field("sn,id as funcid,func")->order("sn")->select();
+
+        /*插入执行场景功能数据 */
+        foreach ($funcs as $a){
+            $a['path']=$arr['scene'];
+            $a['exesceneid']=$lastId;
+            $a['adder']=$_SESSION['realname'];
+            $a['moder']=$_SESSION['realname'];
+            $a['updateTime']=date("Y-m-d H:i:s",time());
+            $m=D('exefunc');
+            if(!$m->create($a)){
+                $this->error($m->getError());
+            }
+            $lastfId=$m->add($a);
+        }
+
+        if($lastfId){
+            $this->success("添加成功");
+        }else{
+            $this->error("添加失败");
+        }
+
+    }
+
 
 
     public function del(){

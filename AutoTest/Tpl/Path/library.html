@@ -3,10 +3,10 @@
           <a href="__APP__/Program">项目</a>
              ><a href="__APP__/Stage/index/proid/<{$w.proid}>">里程碑</a>
              ><a href="__APP__/Stagetester/index/proid/<{$w.proid}>/stageid/<{$w.stageid}>/type/<{$w.type}>">测试者</a>
-             ><a href="__URL__/queue/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/proid/<{$w.proid}>/stageid/<{$w.stageid}>/type/<{$w.type}>">列队</a>
+             ><a href="__APP__/Exescene/queue/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/proid/<{$w.proid}>/stageid/<{$w.stageid}>/type/<{$w.type}>">列队</a>
              >待测模块库
             <span style="float:right;margin-right:60px;">
-            <a href="__URL__/queue/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/proid/<{$w.proid}>/stageid/<{$w.stageid}>/type/<{$w.type}>"> 返回</a>
+            <a href="__APP__/Exescene/queue/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/proid/<{$w.proid}>/stageid/<{$w.stageid}>/type/<{$w.type}>"> 返回</a>
             </span>
        </div>
         <div class="content">
@@ -47,11 +47,11 @@
                            <volist name='data' id='pa'>
                            <tr>
                              <td align="center" ><{$pa.sn}></td>
-                             <td ><a href="#" >
+                             <td ><a href="__URL__/jion/pathid/<{$pa.id}>/stagetesterid/<{$w.stagetesterid}>/type/<{$w.type}>" >
                                <{$pa.system}>-<{$pa.path}>  <{$pa.state}></a>
                                  <span style="float:right;margin-right:5px;">
-                                    <a href="#" >加入</a>
-                                    <a href="#" >查看<{$se.id|countFunc=###}></a>
+                                    <a href="__URL__/jion/pathid/<{$pa.id}>/stagetesterid/<{$w.stagetesterid}>/type/<{$w.type}>" >加入</a>
+                                    <a href="#" >查看<{$pa.id|countFunc=###}></a>
                                  </span>
                              </td>
                              <td align="center" ><{$se.id}></td>

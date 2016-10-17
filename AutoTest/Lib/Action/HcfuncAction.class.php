@@ -12,9 +12,10 @@ class HcfuncAction extends CommonAction {
         $where=array("tp_func.id"=>$funcid);
         $arr=$m->join("tp_path ON tp_system.id = tp_path.sysid ")
         ->join('tp_func ON tp_path.id =tp_func.pathid')
-        ->field("sysno,path,func")
+        ->field("sysno,system,path,func")
         ->where($where)
         ->find();
+        $arr['path']=$arr['system']."-".$arr["path"];
         $arr['funcid']=$funcid;
         $m=D('hcfunc');
         $where=array("adder"=>$_SESSION['realname']);
@@ -43,7 +44,7 @@ class HcfuncAction extends CommonAction {
     public function addfunc(){
 
         $m=D('hcfunc');
-        $data=$m->field("sn,funcid,remarks,adder")->find($_GET['id']);
+        $data=$m->field("sn,funcid,path,func,remarks,adder")->find($_GET['id']);
         $data['sceneid']=$_GET['sceneid'];
         $data['moder']=$_SESSION['realname'];
         $data['updateTime']=date("Y-m-d H:i:s",time());
@@ -69,7 +70,7 @@ class HcfuncAction extends CommonAction {
         $sceneid=$_GET['sceneid'];
         $m=D('hcfunc');
         $where=array("adder"=>$_SESSION['realname']);
-        $arr=$m->where($where)->field("sn,funcid,remarks,adder")->select();
+        $arr=$m->where($where)->field("sn,path,funcid,func,remarks,adder")->select();
 
 //         dump($arr);
         $m=D('hcfunc');

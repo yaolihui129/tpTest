@@ -21,7 +21,7 @@
               <div class="left" align="left" style="width:20%;">
                     <volist name='data' id='vo' empty="没有数据"><ol>
                       <li><a href="__URL__/queue/stagetesterid/<{$vo.id}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">
-                      <{$vo.stage}>【<{$vo.state}>】<{$vo.tester}>:<{$vo.id|countExescene=###}></a></li>
+                       <{$vo.sn}>.<{$w.proid|getProNo=###}><{$vo.stage}>【<{$vo.state}>】<{$vo.tester}>:<{$vo.id|countExescene=###}></a></li>
                    </ol> </volist>
               </div>
                 <div class="midd"  align="left" >
