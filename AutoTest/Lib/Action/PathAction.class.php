@@ -245,8 +245,6 @@ class PathAction extends CommonAction {
 
         $m=D('path');
         $data=$m->find($pathid);
-
-
         $arr['pathid']=$data['id'];
         $arr['sceneid']=0;
         $arr['level']=2;
@@ -270,7 +268,6 @@ class PathAction extends CommonAction {
         $lastId=$m->add($arr);
         $m= D("func");
         $where=array("pathid"=>$data['id']);
-        dump($where);
         $funcs=$m->where($where)->field("sn,id as funcid,func")->order("sn")->select();
 
         /*插入执行场景功能数据 */

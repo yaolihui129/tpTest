@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-10-17 17:44:42
+Date: 2016-10-18 17:36:46
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -310,7 +310,7 @@ CREATE TABLE `tp_exefunc` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10205 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10219 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exefunc
@@ -472,6 +472,20 @@ INSERT INTO `tp_exefunc` VALUES ('10198', '4', '10039', '10025', 'Auto.Access', 
 INSERT INTO `tp_exefunc` VALUES ('10199', '5', '10039', '10027', 'Auto.Access', '项目-里程碑', '快速标记状态', null, null, null, null, null, '失败', '已完成后的提示有些多余', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:27', '2016-10-17 10:18:27');
 INSERT INTO `tp_exefunc` VALUES ('10200', '6', '10039', '10198', 'Auto.Access', '项目-里程碑', 'M人员-入口（手工）', null, null, null, null, null, '失败', '名字选其中之一即可', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:55', '2016-10-17 10:18:55');
 INSERT INTO `tp_exefunc` VALUES ('10201', '7', '10039', '10026', 'Auto.Access', '项目-里程碑', 'A人员-入口（自动化）', null, null, null, null, null, '失败', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:31', '2016-10-17 10:18:31');
+INSERT INTO `tp_exefunc` VALUES ('10205', '1', '10056', '10074', null, 'Access客户端-项目-里程碑-列队', '（M/A）人员列队场景列表', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10206', '2', '10056', '10075', null, 'Access客户端-项目-里程碑-列队', '切换阶段人员', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10207', '3', '10056', '10076', null, 'Access客户端-项目-里程碑-列队', '场景库-入口', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10208', '4', '10056', '10077', null, 'Access客户端-项目-里程碑-列队', '场景功能-入口', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10209', '5', '10056', '10078', null, 'Access客户端-项目-里程碑-列队', '列队场景-编辑', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10210', '6', '10056', '10079', null, 'Access客户端-项目-里程碑-列队', '列队场景-移除', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10211', '1', '10057', '10028', null, 'Access客户端-项目-系统', '项目涉及系统列表', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10212', '2', '10057', '10029', null, 'Access客户端-项目-系统', '待关联系统列表', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10213', '3', '10057', '10030', null, 'Access客户端-项目-系统', '关联系统到本项目', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10214', '4', '10057', '10031', null, 'Access客户端-项目-系统', '待关联系统-添加', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10215', '5', '10057', '10032', null, 'Access客户端-项目-系统', '待关联系统-修改', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10216', '6', '10057', '10033', null, 'Access客户端-项目-系统', '已关联系统-配置环境', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10217', '7', '10057', '10034', null, 'Access客户端-项目-系统', '已关联系统-路径入口', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
+INSERT INTO `tp_exefunc` VALUES ('10218', '8', '10057', '10035', null, 'Access客户端-项目-系统', '已关联系统-移除关联', null, null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
 
 -- ----------------------------
 -- Table structure for `tp_exescene`
@@ -499,7 +513,7 @@ CREATE TABLE `tp_exescene` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10056 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10058 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exescene
@@ -518,8 +532,10 @@ INSERT INTO `tp_exescene` VALUES ('10034', '6', 'M', '10028', '0', '10013', '2',
 INSERT INTO `tp_exescene` VALUES ('10035', '7', 'M', '10028', '0', '10014', '2', '默认', '默认', '【功能】车型价格库', '失败', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-10 17:12:42', '2016-10-10 17:12:42');
 INSERT INTO `tp_exescene` VALUES ('10031', '6', 'M', '10028', '0', '10015', '2', '默认', '默认', '【功能】价格库存管理', '未配置电销', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-10 17:44:44', '2016-10-10 17:44:44');
 INSERT INTO `tp_exescene` VALUES ('10032', '7', 'M', '10028', '0', '10016', '2', '默认', '默认', '【功能】库存价格收集', '失败', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-10 17:50:24', '2016-10-10 17:50:24');
+INSERT INTO `tp_exescene` VALUES ('10056', '5', 'M', '10016', '10029', '0', '2', '【功能】', '默认', 'Access客户端-项目-里程碑-列队', '未测试', '“Access客户端-项目-里程碑-列队“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
 INSERT INTO `tp_exescene` VALUES ('10054', '1', 'M', '10030', '0', '10008', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-10-17 15:59:38', '2016-10-17 15:59:38');
 INSERT INTO `tp_exescene` VALUES ('10055', '2', 'M', '10030', '0', '10008', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-10-17 15:59:42', '2016-10-17 15:59:42');
+INSERT INTO `tp_exescene` VALUES ('10057', '6', 'M', '10016', '10003', '0', '2', '【功能】', '默认', 'Access客户端-项目-系统', '未测试', '“Access客户端-项目-系统“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-18 09:20:32', '2016-10-18 09:20:32');
 
 -- ----------------------------
 -- Table structure for `tp_func`
