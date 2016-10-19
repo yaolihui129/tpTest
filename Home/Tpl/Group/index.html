@@ -1,0 +1,51 @@
+<layout name="layout" />
+
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+      <div class="nav" style="background:#ccc; height:38px; line-height:38px; width:980px; padding:0 2px; margin:0 auto; margin-top:12px; border-radius:2px; border:1px #ccc solid; border-bottom:0">
+        <volist name='data' id='vo' empty="没有数据">
+        <ul style="width:980px; margin:0 auto;">
+           <li style="float:left; height:38px; display:inline; background:url(../images/li_bg.gif) no-repeat right;">
+               <a href="__URL__/index/testgp/<{$vo.v}>">
+               <{$vo.v}>：<{$vo.v|countPro=###}></a></li>
+         </ul>
+         </volist>
+        </div>
+       <div class="clear"></div>
+	   <div class="danye_list" >
+         <table border="1" width="100%" align="center">
+                     <tr>
+                       <th width=5% align="center" bgcolor="#6495ED">编号</th>
+                       <th width=33% align="left" bgcolor="#6495ED">项目</th>
+                       <th width=3% align="center" bgcolor="#6495ED">状态</th>
+                       <th width=3% align="center" bgcolor="#6495ED">负责人</th>
+                       <th width=5% align="center" bgcolor="#6495ED">开始</th>
+                       <th width=5% align="center" bgcolor="#6495ED">结束</th>
+                     </tr>
+                <volist name='arr' id='pro' empty="没有数据">
+                    <tr>
+                       <td align="center"><{$pro.prono}></td>
+                       <td><a href="__APP__/Stage/index/proid/<{$pro.id}>/testgp/<{$w.testgp}>"><{$pro.program}></a>
+                         <span style="float:right;margin-right:5px;">
+                           <a target="_blank" href="__APP__/Index/details/id/<{$pro.id}>/testgp/<{$w.testgp}>">详情 </a>
+                           <a target="_blank" href="__APP__/Risk/index/proid/<{$pro.id}>/testgp/<{$w.testgp}>">风险 <{$pro.id|countRisk=###}></a>
+                           <a target="_blank" href="__APP__/Stage/index/proid/<{$pro.id}>/testgp/<{$w.testgp}>">里程碑 <{$pro.id|countStage=###}></a>
+                           <a target="_blank" href="__APP__/Func/func/proid/<{$pro.id}>/testgp/<{$w.testgp}>">功能点&nbsp; </a>
+                           <a target="_blank" href="__APP__/Func/range/proid/<{$pro.id}>/testgp/<{$w.testgp}>">范围 <{$pro.id|countRange=###}> </a>
+                           <a target="_blank" href="__APP__/Scene/index/proid/<{$pro.id}>/testgp/<{$w.testgp}>">场景<{$pro.id|countScene=###}></a>
+                           <a target="_blank" href="__APP__/Case/procase/proid/<{$pro.id}>/testgp/<{$w.testgp}>">用例 <{$pro.id|countCase=###}> </a>
+                         </span>
+                       </td>
+                       <td align="center"><{$pro.prost}></a></td>
+                       <td align="center"><{$pro.manager}></a></td>
+                       <td align="center"><{$pro.start}></td>
+                       <td align="center"><{$pro.end}></td>
+                    </tr>
+               </volist>
+                </table>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->

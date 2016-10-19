@@ -1,0 +1,45 @@
+<layout name="layout" />
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+       <div class="page_tt" style="border:0;"><{$w.proid|getProNo=###}>  </div>
+       <div class="danye_list" >
+          <table border="1" width="100%" align="center">
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">编号</th>
+                       <th width=5% align="left" bgcolor="#ccc">系统</th>
+                       <th width=10% align="left" bgcolor="#ccc">模块</th>
+                       <th width=7% align="left" bgcolor="#ccc">功能</th>
+                       <th width=7% align="left"  bgcolor="#ccc">意图 </th>
+                       <th width=10% align="left"  bgcolor="#ccc">预期</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=7% align="center"  bgcolor="#ccc">评审建议</th>
+                       <th width=3% align="center" bgcolor="#ccc">操作</th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=5% align="center" bgcolor="#ccc">更新时间</th>
+                     </tr>
+                     <volist name='cases' id='case' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$case.id}></td>
+                       <td align="left" ><{$case.system}></td>
+                       <td align="left" ><{$case.path}></td>
+                       <td align="left" ><{$case.func}></td>
+                       <td align="left" ><{$case.main}></td>
+                       <td align="left" ><{$case.expected}></td>
+                       <td align="center" ><{$case.state}></td>
+                       <form action="__URL__/update" method="post" >
+                        <input type="hidden" name="id" value="<{$case.id}>" />
+                       <td align="center" ><textarea rows="1" cols="25" name="remarks"><{$case.remarks}></textarea></td>
+                       <td align="center" ><button>保存</button></td></form>
+                       <td align="center" ><{$case.moder}></td>
+                       <td align="center" ><{$case.updateTime}></td>
+                    </tr>
+                  </volist>
+                </table>
+
+       <div class="clear"></div>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->

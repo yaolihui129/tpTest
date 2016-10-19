@@ -1,0 +1,46 @@
+<layout name="layout" />
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+       <div class="page_tt" style="border:0;"><{$w.proid|getProNo=###}>  </div>
+       <div class="danye_list" >
+          <table border="1" width="100%" align="left">
+                      <tr>
+                         <th width=3% align="center" bgcolor="#ccc">ID</th>
+                         <th width=3% align="center" bgcolor="#ccc">顺序</th>
+                         <th width=5% align="center" bgcolor="#ccc">测试类型</th>
+                         <th width=7% align="left" bgcolor="#ccc">人员</th>
+                         <th width=7% align="center" bgcolor="#ccc">开始</th>
+                         <th width=7% align="center" bgcolor="#ccc">结束</th>
+                         <th width=5% align="center" bgcolor="#ccc">计划/时</th>
+                         <th width=5% align="center" bgcolor="#ccc">实际/时</th>
+                         <th width=5% align="center" bgcolor="#ccc">维护</th>
+                         <th width=12% align="center" bgcolor="#ccc">更新时间</th>
+                      </tr>
+                    <volist name='testers' id='tester'>
+                      <tr>
+                         <td align="center"><{$tester.id}></td>
+                         <td align="center"><{$tester.sn}></td>
+                         <td align="center"><{$tester.type}></td>
+                         <td align="left"><a href="#" >
+                            <{$tester.tester}></a>
+                            <span style="float:right;margin-right:5px;">
+                                <a href="#" >列队<{$tester.id|countExescene=###}></a>
+                            </span>
+                         </td>
+                         <td align="center"><{$tester.start}></td>
+                         <td align="center"><{$tester.end}></td>
+                         <td align="center"><{$tester.plan}></td>
+                         <td align="center"><{$tester.actual}></td>
+                         <td align="center"><{$tester.moder}></td>
+                         <td align="center"><{$tester.updateTime}></td>
+                       </tr>
+                    </volist>
+                   </table>
+
+       <div class="clear"></div>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->

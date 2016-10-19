@@ -21,6 +21,7 @@ function formselect($value="正常",$name="state",$type="state") {
     $html .='<select>';
     return $html;
 }
+
 function selectgpuer($value="腰立辉",$testgp="Auto",$name="state"){
     $html = '<select name="'.$name.'" class="inputselect">';
     $m =M('user');

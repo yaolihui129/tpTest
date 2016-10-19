@@ -1,0 +1,37 @@
+<layout name="layout" />
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+       <div class="page_tt" style="border:0;"><{$w.proid|getProNo=###}>  </div>
+       <div class="danye_list" >
+
+         <table border="1" width="100%" align="center">
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=20% align="left"  bgcolor="#ccc">风险  </th>
+                       <th width=2% align="center" bgcolor="#ccc">级别</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=7% align="center" bgcolor="#ccc">规避方案</th>
+                       <th width=3% align="center" bgcolor="#ccc">创建</th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=10% align="center" bgcolor="#ccc">更新时间</th>
+                     <volist name='risks' id='st' empty="暂无风险数据">
+                    <tr>
+                       <td align="center" ><{$st.sn}></td>
+                       <td ><{$st.risk}></a></td>
+                       <td align="center" ><{$st.level}></td>
+                       <td align="center" ><a href="#"><{$st.state}></a></td>
+                       <td align="center" ><a href="#" ><{$st.amethod}></a></td>
+                       <td align="center" ><{$st.adder}></td>
+                       <td align="center" ><{$st.moder}></td>
+                       <td align="center" ><{$st.updateTime}></td>
+                    </tr>
+                    </volist>
+                </table>
+
+       <div class="clear"></div>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->

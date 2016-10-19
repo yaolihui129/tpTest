@@ -1,0 +1,39 @@
+<layout name="layout" />
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+       <div class="page_tt" style="border:0;"><{$w.proid|getProNo=###}>  </div>
+       <div class="danye_list" >
+                   <table border="1" width="84%" align="center">
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">ID</th>
+                       <th width=2% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=15% align="left"  bgcolor="#ccc">意图 </th>
+                       <th width=2% align="center" bgcolor="#ccc">级别</th>
+                       <th width=10% align="left"  bgcolor="#ccc">预期</th>
+                       <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=5% align="center" bgcolor="#ccc">项目</th>
+                       <th width=3% align="center" bgcolor="#ccc">维护</th>
+                       <th width=7% align="center" bgcolor="#ccc">更新时间</th>
+                     </tr>
+                     <volist name='cases' id='case' empty="没有数据">
+                     <tr>
+                       <td align="center" ><{$case.id}></td>
+                       <td align="center" ><{$case.sn}></td>
+                       <td align="center" ><{$case.main}></a></td>
+                       <td align="center" ><{$case.level}></td>
+                       <td align="left" ><{$case.expected}></td>
+                       <td align="center" ><{$case.state}></td>
+                       <td align="center" ><{$case.fproid|getProNo=###}></td>
+                       <td align="center" ><{$case.moder}></td>
+                       <td align="center" ><{$case.updateTime}></td>
+                    </tr>
+                    </volist>
+                </table>
+
+       <div class="clear"></div>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->
