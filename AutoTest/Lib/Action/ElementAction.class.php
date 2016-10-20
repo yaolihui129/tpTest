@@ -33,6 +33,7 @@ class ElementAction extends CommonAction {
         $where=array("funcid"=>$funcid);
         $data=$m->where($where)->order('sn')->select();
         $this->assign('data',$data);
+//         dump($data);
         $m=M('case');
         $dcases=$m->where($where)->select();
         $this->assign('dcases',$dcases);
@@ -95,6 +96,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
+        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -115,6 +117,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
+        $this -> assign("typeset", formselect($arr['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -134,6 +137,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
+         $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -193,7 +197,7 @@ class ElementAction extends CommonAction {
         $element=$m->find($id);
         $this->assign('element',$element);
         $this -> assign("state", formselect($element['state']));
-
+        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -215,6 +219,7 @@ class ElementAction extends CommonAction {
         $element=$m->find($id);
         $this->assign('element',$element);
         $this -> assign("state", formselect($element['state']));
+        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -234,6 +239,7 @@ class ElementAction extends CommonAction {
         $element=$m->find($id);
         $this->assign('element',$element);
         $this -> assign("state", formselect($element['state']));
+        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -255,6 +261,7 @@ class ElementAction extends CommonAction {
         $element=$m->find($id);
         $this->assign('element',$element);
         $this -> assign("state", formselect($element['state']));
+        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid,"sceneid"=>$sceneid);
         $this->assign('w',$where);
 
@@ -270,6 +277,34 @@ class ElementAction extends CommonAction {
         }else{
             $this->error("修改失败！");
         }
+
+    }
+
+    public function setdstate(){
+        $db=D('case');
+        if ($_GET['dstate']=='待维护'){
+            $_GET['dstate']='已完成';
+            $_GET['moder']=$_SESSION['realname'];
+            $_GET['updateTime']=date("Y-m-d H:i:s",time());
+            if ($db->save($_GET)){
+                 $this->success("修改成功！");
+            }else{
+                $this->error("修改失败！");
+            }
+
+        }else{
+            $_GET['dstate']='待维护';
+            $_GET['moder']=$_SESSION['realname'];
+            $_GET['updateTime']=date("Y-m-d H:i:s",time());
+            if ($db->save($_GET)){
+               $this->success("修改成功！");
+            }else{
+                  $this->error("修改失败！");
+           }
+        }
+
+
+
 
     }
 

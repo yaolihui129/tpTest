@@ -11,15 +11,15 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top"  style="margin-left:15%;">数据用例模板
+              <div class="top"  >数据用例模板
                   <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
                   <span style="float:right;">
                                                     当前项目：<{$w.proid|getProNo=###}>
                   </span>
 
               </div>
-              <div class="left" align="left" style="widtht:15%;">
-               <h1>功能控件<span style="float:right;margin-right:55px;">
+              <div class="left" align="left" style="widtht:20%;">
+               <h1>功能控件<span style="float:right;">
                             <a href="__URL__/adds/funcid/<{$w.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">添加</a>
                            </span>
               </h1>
@@ -27,7 +27,6 @@
                       <ur>
                          <li><a href="__URL__/mods/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">
                              <{$vo.sn}>.<{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>
-                             <a href="__URL__/mods/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>/sceneid/<{$w.sceneid}>">编辑</a>
                          </li>
                        </ur>
                     </volist>
@@ -44,17 +43,17 @@
                           </span>
                        </th>
                        <th width=10% align="center"  bgcolor="#ccc">预期</th>
-                       <th width=5% align="center" bgcolor="#ccc">状态</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num1</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num2</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num3</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num4</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num5</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num6</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num7</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num8</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num9</th>
-                       <th width=3% align="center" bgcolor="#ccc">Num10</th>
+                       <td align="center" ><a href="__URL__/setdstate/id/<{$case.id}>/dstate/<{$case.dstate}>" title="变更状态"><{$case.dstate}></a></td>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[0]['control']?$data[0]['control']:'Num1'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[1]['control']?$data[1]['control']:'Num2'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[2]['control']?$data[2]['control']:'Num3'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[3]['control']?$data[3]['control']:'Num4'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[4]['control']?$data[4]['control']:'Num5'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[5]['control']?$data[5]['control']:'Num6'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[6]['control']?$data[6]['control']:'Num7'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[7]['control']?$data[7]['control']:'Num8'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[8]['control']?$data[8]['control']:'Num9'}></th>
+                       <th width=3% align="center" bgcolor="#ccc"><{$data[9]['control']?$data[9]['control']:'Num10'}></th>
                        <th width=3% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='dcases' id='case' empty="没有数据">
