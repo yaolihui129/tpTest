@@ -183,6 +183,39 @@ function getFunc($id){
 }
 
 /**
+ * 根据id获取功能失败数
+ */
+function countFResult($id){
+    if ($id){
+        $where=array("proid"=>$_SESSION['copy'],"tp_exefunc.funcid"=>$id,"tp_exefunc.result"=>'失败');
+        $m=M('stage');
+        $data=$m ->where($where)
+        ->join('tp_stagetester ON tp_stage.id =tp_stagetester.stageid')
+        ->join('tp_exescene ON tp_stagetester.id=tp_exescene.stagetesterid')
+        ->join('tp_exefunc ON tp_exescene.id=tp_exefunc.exesceneid')
+        ->count();
+//        dump($data);
+        return $data;
+    }else {
+        return ;
+    }
+}
+
+/**
+ * 根据id获取功能结果
+ */
+function getFResult($id){
+    if ($id){
+        $m=M('func');
+        $data=$m->find($id);
+        //dump($data);
+        return $data['result'];
+    }else {
+        return ;
+    }
+}
+
+/**
  * 根据功能id获取功能信息
  */
 function getSPFunc($id){

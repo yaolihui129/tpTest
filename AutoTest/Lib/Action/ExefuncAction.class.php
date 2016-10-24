@@ -69,12 +69,25 @@ class ExefuncAction extends CommonAction {
     public function update(){
         /* 实例化模型*/
         $db=D('exefunc');
+        $data=$db->find($_POST['id']);
+        $funcid=$data['funcid'];
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
-            $this->success("修改成功！");
+           $arr['id']=$funcid;
+           $arr['result']='失败';
+           $arr['moder']=$_SESSION['realname'];
+           $arr['updateTime']=date("Y-m-d H:i:s",time());
+           $db=M('func');
+           if ($db->save($arr)){
+               $this->success("成功！");
+           }else{
+               $this->error("失败！");
+           }
+
+
         }else{
-            $this->error("修改失败！");
+            $this->error("失败！");
         }
 
     }
@@ -86,9 +99,9 @@ class ExefuncAction extends CommonAction {
         $_POST['moder']=$_SESSION['realname'];
         $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
-            $this->success("修改成功！");
+            $this->success("成功！");
         }else{
-            $this->error("修改失败！");
+            $this->error("失败！");
         }
 
     }

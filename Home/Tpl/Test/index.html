@@ -1,0 +1,41 @@
+<layout name="layout" />
+<div class="content">
+  <div class="index_main">
+   <div class="pro_tuijian">
+      <div class="page_tt" style="border:0;">测试结果:<{$w.funcid|getSPFunc=###}>【<{$w.funcid|getFResult=###}>】(<{$w.proid|getProNo=###}>)</div>
+       <div class="danye_list" >
+            <table border="1" width="100%" align="center">
+                     <tr>
+                       <th width=3% align="center" bgcolor="#ccc">里程碑</th>
+                       <th width=2% align="center" bgcolor="#ccc">人员</th>
+                       <th width=10% align="left"  bgcolor="#ccc">场景</th>
+                       <th width=1% align="center" bgcolor="#ccc">顺序</th>
+                       <th width=4% align="center" bgcolor="#ccc">功能</th>
+                       <th width=4% align="center" bgcolor="#ccc">意图</th>
+                       <th width=4% align="center" bgcolor="#ccc">预期</th>
+                       <th width=2% align="center" bgcolor="#ccc">结果</th>
+                        <th width=7% align="center" bgcolor="#ccc">备注</th>
+                       <th width=5% align="center" bgcolor="#ccc">更新时间 </th>
+                     </tr>
+                     <volist name='arr' id='st' empty="没有数据">
+                    <tr>
+                       <td align="center" ><{$st.stage}></td>
+                       <td align="center"><{$st.tester}></td>
+                       <td align="left" ><{$st.swho}>[<{$st.swhen}>]<{$st.scene}></td>
+                       <td align="left" ><{$st.sn}></td>
+                       <td align="center" ><{$st.func}></td>
+
+                       <td align="center" ><{$st.casemain}></td>
+                       <td align="center" ><{$st.casemain}></td>
+                       <td align="center" ><{$st.result}></td>
+                       <td align="left" ><{$st.remark}></td>
+                       <td align="center" ><{$st.updateTime}></td>
+                    </tr>
+                    </volist>
+                </table>
+       <div class="clear"></div>
+       </div>
+  </div>
+ </div>
+
+</div><!--content  -->

@@ -32,6 +32,7 @@
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
                        <th width=12% align="center" bgcolor="#ccc">功能</th>
                        <th width=3% align="center" bgcolor="#ccc">状态</th>
+                       <th width=3% align="center" bgcolor="#ccc">结果</th>
                        <th width=12% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
@@ -44,11 +45,12 @@
                           <span style="float:right;margin-right:5px;">
                             <a href="__APP__/Func/modr/id/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range">修改</a></span></td>
                        <td align="center" ><{$st.state}></td>
+                       <td align="center" ><{$st.result}></td>
                        <td align="center" >
-
-                          <a href="__APP__/Case/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >用例<{$st.id|countFCase=###}></a>
+                          <a href="__APP__/Test/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>">失败<{$st.id|countFResult=###}></a>
+                          <a href="__APP__/Case/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >用例<{$st.id|countFCase=###}></a>
                           <a href="__APP__/Element/indexr/funcid/<{$st.id}>/proid/<{$w.proid}>">数据模板</a>
-                          <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/w/range" >规则<{$st.id|countFRules=###}></a>
+                          <a href="__APP__/Rules/indexr/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>" >规则<{$st.id|countFRules=###}></a>
                        </td>
                     </tr>
                     </volist>

@@ -7,25 +7,27 @@
             <table border="1" width="100%" align="center">
                      <tr>
                        <th width=2% align="center" bgcolor="#ccc">ID</th>
-                       <th width=5% align="left" bgcolor="#ccc">系统</th>
+
                        <th width=15% align="left"  bgcolor="#ccc">路径</th>
                        <th width=2% align="center" bgcolor="#ccc">状态</th>
                        <th width=10% align="center" bgcolor="#ccc">功能</th>
                        <th width=2% align="center" bgcolor="#ccc">状态</th>
                        <th width=2% align="center" bgcolor="#ccc">结果</th>
-                       <th width=3% align="center" bgcolor="#ccc">历史</th>
+                       <th width=4% align="center" bgcolor="#ccc">历史</th>
                        <th width=4% align="center" bgcolor="#ccc">操作 </th>
                      </tr>
                      <volist name='data' id='st' empty="没有数据">
                     <tr>
                        <td align="center" ><{$st.id}></td>
-                       <td align="left" ><{$st.system}></td>
+
                        <td align="left"><{$st.path}></td>
                        <td align="center" ><{$st.pstate}></td>
                        <td align="left" ><{$st.func}></td>
                        <td align="center" ><{$st.state}></td>
-                       <td align="center" >失败</td>
-                       <td align="center" ><a target="_blank" href="#">失败：9</a></td>
+                       <td align="center" ><{$st.result}></td>
+                       <td align="center" >
+                         <a target="_blank" href="__APP__/Test/index/funcid/<{$st.id}>/proid/<{$w.proid}>/testgp/<{$w.testgp}>">失败：<{$st.id|countFResult=###}></a>
+                       </td>
                        <td align="center" >
                           <a target="_blank" href="__APP__/Case/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/testgp/<{$w.testgp}>" >用例<{$st.id|countFCase=###}></a>
                           <a target="_blank" href="__APP__/Rules/index/funcid/<{$st.id}>/pathid/<{$st.pathid}>/proid/<{$w.proid}>/testgp/<{$w.testgp}>" >规则<{$st.id|countFRules=###}></a>

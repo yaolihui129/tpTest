@@ -28,6 +28,7 @@ class FuncAction extends Action {
     public function range(){
         /* 接收参数*/
         $proid=$_GET['proid'];
+        $_SESSION['proid']=$proid;
         $testgp=$_GET['testgp'];
 
         /* 实例化模型*/
@@ -38,6 +39,8 @@ class FuncAction extends Action {
         ->where($where)
         ->order("tp_system.sysno,tp_path.sn,tp_path.id,tp_func.sn,tp_func.id")
         ->select();
+
+//         dump($_SESSION);
         $this->assign("data",$data);
         // dump($data);
         $where=array("proid"=>"$proid","testgp"=>$testgp);
