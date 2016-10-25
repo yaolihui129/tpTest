@@ -58,6 +58,15 @@ class ExefuncAction extends CommonAction {
 
         $db=D('exefunc');
         if ($db->save($_GET)){
+//             $db=M('func');
+//             $r=$db->find($funcid);
+//             $arr['id']=$funcid;
+//             $arr['result']='失败';
+//             $arr['moder']=$_SESSION['realname'];
+//             $arr['updateTime']=date("Y-m-d H:i:s",time());
+
+
+
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");

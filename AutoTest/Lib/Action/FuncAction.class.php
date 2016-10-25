@@ -10,7 +10,7 @@ class FuncAction extends CommonAction {
         /* 实例化模型*/
         $m=D('path');
         $where=array("sysid"=>"$sysid","state"=>"正常");
-        $data=$m->where($where)->order("sn")->select();
+        $data=$m->where($where)->order("sn,id")->select();
         $this->assign("data",$data);
         /* 实例化模型*/
         $m= D("func");
@@ -31,7 +31,7 @@ class FuncAction extends CommonAction {
         /* 实例化模型*/
         $m=D('path');
         $where=array("sysid"=>"$sysid","state"=>"正常");
-        $data=$m->where($where)->order("sn")->select();
+        $data=$m->where($where)->order("sn,id")->select();
         $this->assign("data",$data);
 
         /* 实例化模型*/
@@ -261,6 +261,7 @@ class FuncAction extends CommonAction {
     public function range(){
         /* 接收参数*/
         $proid=$_GET['proid'];
+        $_SESSION['proid']=$proid;
     	$gp=$_SESSION['testgp'];
          /* 实例化模型*/
         $m= D("program");

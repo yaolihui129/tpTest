@@ -187,7 +187,7 @@ function getFunc($id){
  */
 function countFResult($id){
     if ($id){
-        $where=array("proid"=>$_SESSION['copy'],"tp_exefunc.funcid"=>$id,"tp_exefunc.result"=>'失败');
+        $where=array("proid"=>$_SESSION['proid'],"tp_exefunc.funcid"=>$id,"tp_exefunc.result"=>'失败');
         $m=M('stage');
         $data=$m ->where($where)
         ->join('tp_stagetester ON tp_stage.id =tp_stagetester.stageid')

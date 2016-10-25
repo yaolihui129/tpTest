@@ -16,7 +16,7 @@ class PathAction extends CommonAction {
          /* 实例化模型*/
         $m=D('path');
         $where=array("sysid"=>"$sysid");
-        $pathes= $m->where($where)->order("sn")->select();
+        $pathes= $m->where($where)->order("sn,id")->select();
         $this->assign("pathes",$pathes);
         $where=array("prodid"=>"$prodid","proid"=>"$proid","sysid"=>"$sysid");
         $this->assign("w",$where);
@@ -40,7 +40,7 @@ class PathAction extends CommonAction {
         /* 实例化模型*/
         $m=D('path');
         $where=array("sysid"=>"$sysid");
-        $pathes= $m->where($where)->order("sn")->select();
+        $pathes= $m->where($where)->order("sn,id")->select();
         $this->assign("pathes",$pathes);
         $where=array("prodid"=>"$prodid","proid"=>"$proid","sysid"=>"$sysid");
         $this->assign("w",$where);

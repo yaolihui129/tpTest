@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-10-24 17:45:07
+Date: 2016-10-25 17:45:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -321,7 +321,7 @@ CREATE TABLE `tp_exefunc` (
   `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10219 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10279 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exefunc
@@ -483,7 +483,7 @@ INSERT INTO `tp_exefunc` VALUES ('10198', '4', '10039', '10025', 'Auto.Access', 
 INSERT INTO `tp_exefunc` VALUES ('10199', '5', '10039', '10027', 'Auto.Access', '项目-里程碑', '快速标记状态', null, null, null, null, '失败', '已完成后的提示有些多余', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:27', '2016-10-17 10:18:27');
 INSERT INTO `tp_exefunc` VALUES ('10200', '6', '10039', '10198', 'Auto.Access', '项目-里程碑', 'M人员-入口（手工）', null, null, null, null, '失败', '名字选其中之一即可', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:55', '2016-10-17 10:18:55');
 INSERT INTO `tp_exefunc` VALUES ('10201', '7', '10039', '10026', 'Auto.Access', '项目-里程碑', 'A人员-入口（自动化）', null, null, null, null, '失败', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 10:18:31', '2016-10-17 10:18:31');
-INSERT INTO `tp_exefunc` VALUES ('10205', '1', '10056', '10074', null, 'Access客户端-项目-里程碑-列队', '（M/A）人员列队场景列表', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
+INSERT INTO `tp_exefunc` VALUES ('10205', '1', '10056', '10074', null, 'Access客户端-项目-里程碑-列队', '（M/A）人员列队场景列表', null, null, null, null, '失败', '后改的需求，未完成', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 09:20:00', '2016-10-25 09:20:00');
 INSERT INTO `tp_exefunc` VALUES ('10206', '2', '10056', '10075', null, 'Access客户端-项目-里程碑-列队', '切换阶段人员', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
 INSERT INTO `tp_exefunc` VALUES ('10207', '3', '10056', '10076', null, 'Access客户端-项目-里程碑-列队', '场景库-入口', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
 INSERT INTO `tp_exefunc` VALUES ('10208', '4', '10056', '10077', null, 'Access客户端-项目-里程碑-列队', '场景功能-入口', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-18 09:15:52', '2016-10-18 09:15:52');
@@ -497,6 +497,66 @@ INSERT INTO `tp_exefunc` VALUES ('10215', '5', '10057', '10032', null, 'Access�
 INSERT INTO `tp_exefunc` VALUES ('10216', '6', '10057', '10033', null, 'Access客户端-项目-系统', '已关联系统-配置环境', null, null, null, null, '失败', '没找到', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-19 09:56:24', '2016-10-19 09:56:24');
 INSERT INTO `tp_exefunc` VALUES ('10217', '7', '10057', '10034', null, 'Access客户端-项目-系统', '已关联系统-路径入口', null, null, null, null, '失败', '没找到', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-19 09:56:34', '2016-10-19 09:56:34');
 INSERT INTO `tp_exefunc` VALUES ('10218', '8', '10057', '10035', null, 'Access客户端-项目-系统', '已关联系统-移除关联', null, null, null, null, '通过', '', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-19 09:52:40', '2016-10-19 09:52:40');
+INSERT INTO `tp_exefunc` VALUES ('10219', '1', '10058', '10338', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户姓名', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:49', '2016-10-25 17:04:49');
+INSERT INTO `tp_exefunc` VALUES ('10220', '2', '10058', '10339', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户手机', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:51', '2016-10-25 17:04:51');
+INSERT INTO `tp_exefunc` VALUES ('10221', '3', '10058', '10340', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按订单编号', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:05:21', '2016-10-25 17:05:21');
+INSERT INTO `tp_exefunc` VALUES ('10222', '4', '10058', '10341', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按媒体单号', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10223', '5', '10058', '10342', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按订单状态', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10224', '6', '10058', '10343', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按订单来源', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10225', '7', '10058', '10344', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按订单车型', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10226', '8', '10058', '10345', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按下单时间', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10227', '9', '10058', '10346', null, '惠买车电商CRM-订单管理-全部新车订单', '订单列表', null, null, null, null, '失败', '历史数据创建人为空，样式堆叠', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:05:55', '2016-10-25 17:05:55');
+INSERT INTO `tp_exefunc` VALUES ('10228', '10', '10058', '10347', null, '惠买车电商CRM-订单管理-全部新车订单', '【客户手机号】客户跟进', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10229', '11', '10058', '10348', null, '惠买车电商CRM-订单管理-全部新车订单', '详情', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10230', '12', '10058', '10349', null, '惠买车电商CRM-订单管理-全部新车订单', '赠送随手礼', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10231', '13', '10058', '10350', null, '惠买车电商CRM-订单管理-全部新车订单', '跟进', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10232', '14', '10058', '10351', null, '惠买车电商CRM-订单管理-全部新车订单', '查看金融产品', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:25', '2016-10-25 17:02:25');
+INSERT INTO `tp_exefunc` VALUES ('10233', '1', '10059', '10323', null, '惠买车电商CRM-任务管理-任务管理-跟进', '客户信息', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:03:41', '2016-10-25 17:03:41');
+INSERT INTO `tp_exefunc` VALUES ('10234', '2', '10059', '10324', null, '惠买车电商CRM-任务管理-任务管理-跟进', '转移', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10235', '3', '10059', '10325', null, '惠买车电商CRM-任务管理-任务管理-跟进', '战败', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10236', '4', '10059', '10326', null, '惠买车电商CRM-任务管理-任务管理-跟进', '创建待办', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:03:55', '2016-10-25 17:03:55');
+INSERT INTO `tp_exefunc` VALUES ('10237', '5', '10059', '10327', null, '惠买车电商CRM-任务管理-任务管理-跟进', '免打扰', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10238', '6', '10059', '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', null, null, null, null, '失败', '没有提示，全部是禁用状态', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:19', '2016-10-25 17:04:19');
+INSERT INTO `tp_exefunc` VALUES ('10239', '7', '10059', '10329', null, '惠买车电商CRM-任务管理-任务管理-跟进', '外出计划入口', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10240', '8', '10059', '10330', null, '惠买车电商CRM-任务管理-任务管理-跟进', '订单列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:25', '2016-10-25 17:04:25');
+INSERT INTO `tp_exefunc` VALUES ('10241', '9', '10059', '10331', null, '惠买车电商CRM-任务管理-任务管理-跟进', '查看已绑定礼包', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10242', '10', '10059', '10332', null, '惠买车电商CRM-任务管理-任务管理-跟进', '查看金融产品', null, null, null, null, '未测试', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:02:36', '2016-10-25 17:02:36');
+INSERT INTO `tp_exefunc` VALUES ('10243', '11', '10059', '10333', null, '惠买车电商CRM-任务管理-任务管理-跟进', '跟进待办', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:34', '2016-10-25 17:04:34');
+INSERT INTO `tp_exefunc` VALUES ('10244', '12', '10059', '10334', null, '惠买车电商CRM-任务管理-任务管理-跟进', '客户基本信息', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:04:36', '2016-10-25 17:04:36');
+INSERT INTO `tp_exefunc` VALUES ('10245', '1', '10060', '10335', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户信息', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:06:05', '2016-10-25 17:06:05');
+INSERT INTO `tp_exefunc` VALUES ('10246', '2', '10060', '10336', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户姓名调整信息页', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:06:22', '2016-10-25 17:06:22');
+INSERT INTO `tp_exefunc` VALUES ('10247', '3', '10060', '10337', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '创建买顾订单', null, null, null, null, '失败', '报500，提示少图片', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:06:46', '2016-10-25 17:06:46');
+INSERT INTO `tp_exefunc` VALUES ('10248', '2', '10061', '10277', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:31:47', '2016-10-25 17:31:47');
+INSERT INTO `tp_exefunc` VALUES ('10249', '1', '10061', '10273', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:28:46', '2016-10-25 17:28:46');
+INSERT INTO `tp_exefunc` VALUES ('10250', '3', '10061', '10289', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:31:49', '2016-10-25 17:31:49');
+INSERT INTO `tp_exefunc` VALUES ('10251', '4', '10061', '10292', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:31:52', '2016-10-25 17:31:52');
+INSERT INTO `tp_exefunc` VALUES ('10252', '5', '10061', '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:31:54', '2016-10-25 17:31:54');
+INSERT INTO `tp_exefunc` VALUES ('10253', null, '10062', '10277', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:14', '2016-10-25 17:32:14');
+INSERT INTO `tp_exefunc` VALUES ('10254', null, '10062', '10273', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:16', '2016-10-25 17:32:16');
+INSERT INTO `tp_exefunc` VALUES ('10255', null, '10062', '10289', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:18', '2016-10-25 17:32:18');
+INSERT INTO `tp_exefunc` VALUES ('10256', null, '10062', '10292', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:21', '2016-10-25 17:32:21');
+INSERT INTO `tp_exefunc` VALUES ('10257', null, '10062', '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:25', '2016-10-25 17:32:25');
+INSERT INTO `tp_exefunc` VALUES ('10258', '6', '10062', '10335', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户信息', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:27', '2016-10-25 17:32:27');
+INSERT INTO `tp_exefunc` VALUES ('10259', '7', '10062', '10336', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户姓名调整信息页', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:30', '2016-10-25 17:32:30');
+INSERT INTO `tp_exefunc` VALUES ('10260', '8', '10062', '10337', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '创建买顾订单', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:32', '2016-10-25 17:32:32');
+INSERT INTO `tp_exefunc` VALUES ('10261', '9', '10062', '10389', null, '惠买车商家版-订单管理-成交确认', '查询-按客户手机', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:36', '2016-10-25 17:32:36');
+INSERT INTO `tp_exefunc` VALUES ('10262', '10', '10062', '10396', null, '惠买车商家版-订单管理-成交确认', '订单列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:39', '2016-10-25 17:32:39');
+INSERT INTO `tp_exefunc` VALUES ('10263', '11', '10062', '10398', null, '惠买车商家版-订单管理-成交确认', '确认成交', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:41', '2016-10-25 17:32:41');
+INSERT INTO `tp_exefunc` VALUES ('10264', '12', '10062', '10338', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户姓名', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:43', '2016-10-25 17:32:43');
+INSERT INTO `tp_exefunc` VALUES ('10265', '13', '10062', '10346', null, '惠买车电商CRM-订单管理-全部新车订单', '订单列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:45', '2016-10-25 17:32:45');
+INSERT INTO `tp_exefunc` VALUES ('10266', null, '10063', '10277', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:09', '2016-10-25 17:33:09');
+INSERT INTO `tp_exefunc` VALUES ('10267', null, '10063', '10273', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:11', '2016-10-25 17:33:11');
+INSERT INTO `tp_exefunc` VALUES ('10268', null, '10063', '10289', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:13', '2016-10-25 17:33:13');
+INSERT INTO `tp_exefunc` VALUES ('10269', null, '10063', '10292', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:16', '2016-10-25 17:33:15');
+INSERT INTO `tp_exefunc` VALUES ('10270', null, '10063', '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:18', '2016-10-25 17:33:18');
+INSERT INTO `tp_exefunc` VALUES ('10271', '6', '10063', '10335', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户信息', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:20', '2016-10-25 17:33:20');
+INSERT INTO `tp_exefunc` VALUES ('10272', '7', '10063', '10336', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户姓名调整信息页', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:22', '2016-10-25 17:33:22');
+INSERT INTO `tp_exefunc` VALUES ('10273', '8', '10063', '10337', null, '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '创建买顾订单', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:24', '2016-10-25 17:33:24');
+INSERT INTO `tp_exefunc` VALUES ('10274', '9', '10063', '10389', null, '惠买车商家版-订单管理-成交确认', '查询-按客户手机', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:27', '2016-10-25 17:33:27');
+INSERT INTO `tp_exefunc` VALUES ('10275', '10', '10063', '10396', null, '惠买车商家版-订单管理-成交确认', '订单列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:29', '2016-10-25 17:33:29');
+INSERT INTO `tp_exefunc` VALUES ('10276', '11', '10063', '10399', null, '惠买车商家版-订单管理-成交确认', '取消交易', '', null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:31', '2016-10-25 17:33:31');
+INSERT INTO `tp_exefunc` VALUES ('10277', '12', '10063', '10338', null, '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户姓名', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:34', '2016-10-25 17:33:34');
+INSERT INTO `tp_exefunc` VALUES ('10278', '13', '10063', '10346', null, '惠买车电商CRM-订单管理-全部新车订单', '订单列表', null, null, null, null, '通过', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:33:36', '2016-10-25 17:33:36');
 
 -- ----------------------------
 -- Table structure for `tp_exescene`
@@ -524,7 +584,7 @@ CREATE TABLE `tp_exescene` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10058 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10064 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_exescene
@@ -547,6 +607,12 @@ INSERT INTO `tp_exescene` VALUES ('10056', '5', 'M', '10016', '10029', '0', '2',
 INSERT INTO `tp_exescene` VALUES ('10054', '1', 'M', '10030', '0', '10008', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-10-17 15:59:38', '2016-10-17 15:59:38');
 INSERT INTO `tp_exescene` VALUES ('10055', '2', 'M', '10030', '0', '10008', '2', '默认', '默认', '正常创建测试项目并制定里程碑选定测试系统', '未测试', '登录-建项目-建里程碑', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', null, null, null, '腰立辉', '腰立辉', '2016-10-17 15:59:42', '2016-10-17 15:59:42');
 INSERT INTO `tp_exescene` VALUES ('10057', '6', 'M', '10016', '10003', '0', '2', '【功能】', '默认', 'Access客户端-项目-系统', '失败', '“Access客户端-项目-系统“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-19 09:56:43', '2016-10-19 09:56:43');
+INSERT INTO `tp_exescene` VALUES ('10058', '1', 'M', '10033', '10052', '0', '2', '【功能】', '默认', '惠买车电商CRM-订单管理-全部新车订单', '失败', '“惠买车电商CRM-订单管理-全部新车订单“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-25 17:07:08', '2016-10-25 17:07:08');
+INSERT INTO `tp_exescene` VALUES ('10059', '2', 'M', '10033', '10115', '0', '2', '【功能】', '默认', '惠买车电商CRM-任务管理-任务管理-跟进', '失败', '“惠买车电商CRM-任务管理-任务管理-跟进“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-25 17:07:21', '2016-10-25 17:07:21');
+INSERT INTO `tp_exescene` VALUES ('10060', '3', 'M', '10033', '10116', '0', '2', '【功能】', '默认', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '失败', '“惠买车电商CRM-任务管理-任务管理-跟进-推送商家“下所有功能点', null, null, null, null, null, '腰立辉', '2016-10-25 17:06:59', '2016-10-25 17:06:59');
+INSERT INTO `tp_exescene` VALUES ('10061', '1', 'M', '10034', '0', '10026', '2', '买顾', '客户未注册', '推送商家', '通过', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:01', '2016-10-25 17:32:01');
+INSERT INTO `tp_exescene` VALUES ('10062', '2', 'M', '10034', '0', '10027', '2', '买顾', '客户已注册', '推送商家商家确认', '通过', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:32:52', '2016-10-25 17:32:52');
+INSERT INTO `tp_exescene` VALUES ('10063', '3', 'M', '10034', '0', '10028', '2', '买顾', '客户已注册', '推送商家商家取消交易', '通过', '', '', null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:34:03', '2016-10-25 17:34:03');
 
 -- ----------------------------
 -- Table structure for `tp_func`
@@ -565,272 +631,399 @@ CREATE TABLE `tp_func` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10273 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10401 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_func
 -- ----------------------------
-INSERT INTO `tp_func` VALUES ('10000', '1', '登录', '正常', '10000', '24', null, '腰立辉', '腰立辉', '2016-09-24 22:21:45', '2016-09-22 10:45:46');
-INSERT INTO `tp_func` VALUES ('10001', '2', '注销', '正常', '10000', '49', null, '腰立辉', '腰立辉', '2016-09-24 23:02:26', '2016-09-24 22:17:12');
+INSERT INTO `tp_func` VALUES ('10000', '1', '登录', '正常', '10000', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:02', '2016-09-22 10:45:46');
+INSERT INTO `tp_func` VALUES ('10001', '2', '注销', '正常', '10000', '49', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:04', '2016-09-24 22:17:12');
 INSERT INTO `tp_func` VALUES ('10002', '1', '产品列表', '正常', '10001', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:47:57', '2016-10-24 15:47:57');
-INSERT INTO `tp_func` VALUES ('10003', '2', '产品-添加', '正常', '10001', '45', null, '腰立辉', '腰立辉', '2016-09-22 15:58:02', '2016-09-22 15:58:02');
-INSERT INTO `tp_func` VALUES ('10004', '3', '产品-编辑', '正常', '10001', '45', null, '腰立辉', '腰立辉', '2016-09-22 15:58:11', '2016-09-22 15:58:11');
-INSERT INTO `tp_func` VALUES ('10005', '3', '改密', '已搁置', '10000', '24', null, '腰立辉', '腰立辉', '2016-09-25 13:33:58', '2016-09-25 13:33:58');
-INSERT INTO `tp_func` VALUES ('10006', '4', '系统-入口', '正常', '10001', '45', null, '腰立辉', '腰立辉', '2016-09-23 14:39:57', '2016-09-23 14:39:57');
+INSERT INTO `tp_func` VALUES ('10003', '2', '产品-添加', '正常', '10001', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:05', '2016-09-22 15:58:02');
+INSERT INTO `tp_func` VALUES ('10004', '3', '产品-编辑', '正常', '10001', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:06', '2016-09-22 15:58:11');
+INSERT INTO `tp_func` VALUES ('10005', '3', '改密', '已搁置', '10000', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:07', '2016-09-25 13:33:58');
+INSERT INTO `tp_func` VALUES ('10006', '4', '系统-入口', '正常', '10001', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:08', '2016-09-23 14:39:57');
 INSERT INTO `tp_func` VALUES ('10007', '3', '项目-添加', '正常', '10002', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:57:07', '2016-10-24 15:57:07');
 INSERT INTO `tp_func` VALUES ('10008', '4', '项目-编辑', '正常', '10002', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:57:17', '2016-10-24 15:57:17');
-INSERT INTO `tp_func` VALUES ('10009', '5', '项目-详情', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:42:26', '2016-09-22 17:42:26');
+INSERT INTO `tp_func` VALUES ('10009', '5', '项目-详情', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:10', '2016-09-22 17:42:26');
 INSERT INTO `tp_func` VALUES ('10010', '1', '分组项目列表', '正常', '10002', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:57:28', '2016-10-24 15:57:28');
 INSERT INTO `tp_func` VALUES ('10011', '2', '切换分组', '正常', '10002', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:57:33', '2016-10-24 15:57:33');
-INSERT INTO `tp_func` VALUES ('10012', '6', '快速标记状态', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-25 13:34:13', '2016-09-25 13:34:13');
-INSERT INTO `tp_func` VALUES ('10013', '7', '项目-里程碑入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:43:51', '2016-09-22 17:43:51');
-INSERT INTO `tp_func` VALUES ('10014', '8', '项目-风险入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-25 13:34:23', '2016-09-25 13:34:23');
-INSERT INTO `tp_func` VALUES ('10015', '9', '项目-系统入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:46:32', '2016-09-22 17:46:32');
-INSERT INTO `tp_func` VALUES ('10016', '10', '项目-功能点入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:45:02', '2016-09-22 17:45:02');
-INSERT INTO `tp_func` VALUES ('10017', '11', '项目-范围入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:45:11', '2016-09-22 17:45:11');
-INSERT INTO `tp_func` VALUES ('10018', '12', '项目-场景入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:45:25', '2016-09-22 17:45:25');
-INSERT INTO `tp_func` VALUES ('10019', '13', '项目-控件库入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:45:46', '2016-09-22 17:45:46');
-INSERT INTO `tp_func` VALUES ('10020', '14', '项目-用例库入口', '正常', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:45:56', '2016-09-22 17:45:56');
-INSERT INTO `tp_func` VALUES ('10021', '15', '项目-报告入口', '已搁置', '10002', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:46:11', '2016-09-22 17:46:11');
+INSERT INTO `tp_func` VALUES ('10012', '6', '快速标记状态', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:11', '2016-09-25 13:34:13');
+INSERT INTO `tp_func` VALUES ('10013', '7', '项目-里程碑入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:12', '2016-09-22 17:43:51');
+INSERT INTO `tp_func` VALUES ('10014', '8', '项目-风险入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:13', '2016-09-25 13:34:23');
+INSERT INTO `tp_func` VALUES ('10015', '9', '项目-系统入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:14', '2016-09-22 17:46:32');
+INSERT INTO `tp_func` VALUES ('10016', '10', '项目-功能点入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:15', '2016-09-22 17:45:02');
+INSERT INTO `tp_func` VALUES ('10017', '11', '项目-范围入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:16', '2016-09-22 17:45:11');
+INSERT INTO `tp_func` VALUES ('10018', '12', '项目-场景入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:17', '2016-09-22 17:45:25');
+INSERT INTO `tp_func` VALUES ('10019', '13', '项目-控件库入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:19', '2016-09-22 17:45:46');
+INSERT INTO `tp_func` VALUES ('10020', '14', '项目-用例库入口', '正常', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:20', '2016-09-22 17:45:56');
+INSERT INTO `tp_func` VALUES ('10021', '15', '项目-报告入口', '已搁置', '10002', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:22', '2016-09-22 17:46:11');
 INSERT INTO `tp_func` VALUES ('10022', '1', '里程碑列表', '正常', '10028', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:57:57', '2016-10-24 15:57:57');
 INSERT INTO `tp_func` VALUES ('10023', '2', '切换项目', '正常', '10028', '45', '未测试', '腰立辉', '腰立辉', '2016-10-24 16:03:31', '2016-10-24 16:03:31');
-INSERT INTO `tp_func` VALUES ('10024', '3', '里程碑-添加', '正常', '10028', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:48:11', '2016-09-22 17:48:11');
-INSERT INTO `tp_func` VALUES ('10025', '4', '里程碑-修改', '正常', '10028', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:48:27', '2016-09-22 17:48:27');
-INSERT INTO `tp_func` VALUES ('10026', '7', 'A人员-入口（自动化）', '正常', '10028', '45', null, '腰立辉', '腰立辉', '2016-09-25 13:36:43', '2016-09-25 13:36:43');
-INSERT INTO `tp_func` VALUES ('10027', '5', '快速标记状态', '正常', '10028', '45', null, '腰立辉', '腰立辉', '2016-09-25 13:34:39', '2016-09-25 13:34:39');
-INSERT INTO `tp_func` VALUES ('10028', '1', '项目涉及系统列表', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:49:40', '2016-09-22 17:49:40');
-INSERT INTO `tp_func` VALUES ('10029', '2', '待关联系统列表', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:50:05', '2016-09-22 17:50:05');
-INSERT INTO `tp_func` VALUES ('10030', '3', '关联系统到本项目', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:50:22', '2016-09-22 17:50:22');
-INSERT INTO `tp_func` VALUES ('10031', '4', '待关联系统-添加', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:50:36', '2016-09-22 17:50:36');
-INSERT INTO `tp_func` VALUES ('10032', '5', '待关联系统-修改', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:50:46', '2016-09-22 17:50:46');
-INSERT INTO `tp_func` VALUES ('10033', '6', '已关联系统-配置环境', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:51:11', '2016-09-22 17:51:11');
-INSERT INTO `tp_func` VALUES ('10034', '7', '已关联系统-路径入口', '正常', '10003', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:51:28', '2016-09-22 17:51:28');
+INSERT INTO `tp_func` VALUES ('10024', '3', '里程碑-添加', '正常', '10028', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:23', '2016-09-22 17:48:11');
+INSERT INTO `tp_func` VALUES ('10025', '4', '里程碑-修改', '正常', '10028', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:24', '2016-09-22 17:48:27');
+INSERT INTO `tp_func` VALUES ('10026', '7', 'A人员-入口（自动化）', '正常', '10028', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:26', '2016-09-25 13:36:43');
+INSERT INTO `tp_func` VALUES ('10027', '5', '快速标记状态', '正常', '10028', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:27', '2016-09-25 13:34:39');
+INSERT INTO `tp_func` VALUES ('10028', '1', '项目涉及系统列表', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:29', '2016-09-22 17:49:40');
+INSERT INTO `tp_func` VALUES ('10029', '2', '待关联系统列表', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:30', '2016-09-22 17:50:05');
+INSERT INTO `tp_func` VALUES ('10030', '3', '关联系统到本项目', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:32', '2016-09-22 17:50:22');
+INSERT INTO `tp_func` VALUES ('10031', '4', '待关联系统-添加', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:33', '2016-09-22 17:50:36');
+INSERT INTO `tp_func` VALUES ('10032', '5', '待关联系统-修改', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:34', '2016-09-22 17:50:46');
+INSERT INTO `tp_func` VALUES ('10033', '6', '已关联系统-配置环境', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:35', '2016-09-22 17:51:11');
+INSERT INTO `tp_func` VALUES ('10034', '7', '已关联系统-路径入口', '正常', '10003', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:36', '2016-09-22 17:51:28');
 INSERT INTO `tp_func` VALUES ('10035', '8', '已关联系统-移除关联', '正常', '10003', '45', '通过', '腰立辉', '腰立辉', '2016-10-24 15:58:27', '2016-10-24 15:58:27');
-INSERT INTO `tp_func` VALUES ('10036', '1', '项目风险列表', '正常', '10030', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:52:20', '2016-09-22 17:52:20');
-INSERT INTO `tp_func` VALUES ('10037', '2', '切换项目', '正常', '10030', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:52:27', '2016-09-22 17:52:27');
-INSERT INTO `tp_func` VALUES ('10038', '3', '风险-添加', '正常', '10030', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:52:43', '2016-09-22 17:52:43');
-INSERT INTO `tp_func` VALUES ('10039', '4', '风险-维护', '正常', '10030', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:52:59', '2016-09-22 17:52:59');
-INSERT INTO `tp_func` VALUES ('10040', '1', '系统路径列表', '正常', '10004', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:53:55', '2016-09-22 17:53:55');
-INSERT INTO `tp_func` VALUES ('10041', '2', '切换关联系统', '正常', '10004', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:54:05', '2016-09-22 17:54:05');
-INSERT INTO `tp_func` VALUES ('10042', '3', '路径-添加', '正常', '10004', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:54:21', '2016-09-22 17:54:21');
-INSERT INTO `tp_func` VALUES ('10043', '4', '路径-修改', '正常', '10004', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:54:28', '2016-09-22 17:54:28');
-INSERT INTO `tp_func` VALUES ('10044', '5', '路径-功能点入口', '正常', '10004', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:54:44', '2016-09-22 17:54:44');
-INSERT INTO `tp_func` VALUES ('10045', '1', '路径功能点列表', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:55:13', '2016-09-22 17:55:13');
-INSERT INTO `tp_func` VALUES ('10046', '2', '切换路径', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:55:20', '2016-09-22 17:55:20');
-INSERT INTO `tp_func` VALUES ('10047', '3', '功能点-添加（默认当前项目）', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:56:43', '2016-09-22 17:56:43');
-INSERT INTO `tp_func` VALUES ('10048', '4', '功能点-修改', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:56:03', '2016-09-22 17:56:03');
-INSERT INTO `tp_func` VALUES ('10049', '5', '功能点-用例入口', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-23 13:27:11', '2016-09-23 13:27:11');
-INSERT INTO `tp_func` VALUES ('10050', '6', '功能点-规则入口', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:56:29', '2016-09-22 17:56:29');
-INSERT INTO `tp_func` VALUES ('10051', '7', '快速标记当前项目', '正常', '10005', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:57:20', '2016-09-22 17:57:20');
-INSERT INTO `tp_func` VALUES ('10052', '1', '功能点用例列表', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:58:03', '2016-09-22 17:58:03');
-INSERT INTO `tp_func` VALUES ('10053', '2', '切换功能点', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:58:13', '2016-09-22 17:58:13');
-INSERT INTO `tp_func` VALUES ('10054', '3', '用例-添加', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:58:30', '2016-09-22 17:58:30');
-INSERT INTO `tp_func` VALUES ('10055', '4', '用例-维护', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:58:37', '2016-09-22 17:58:37');
-INSERT INTO `tp_func` VALUES ('10056', '5', '快速标记当前项目', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:59:13', '2016-09-22 17:59:13');
-INSERT INTO `tp_func` VALUES ('10057', '6', '数据模板-编辑', '正常', '10006', '45', null, '腰立辉', '腰立辉', '2016-09-23 13:40:21', '2016-09-23 13:40:21');
-INSERT INTO `tp_func` VALUES ('10058', '1', '功能点规则列表', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 17:59:51', '2016-09-22 17:59:51');
-INSERT INTO `tp_func` VALUES ('10059', '2', '切换功能点', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:00:04', '2016-09-22 18:00:04');
-INSERT INTO `tp_func` VALUES ('10060', '3', '规则-添加', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:00:15', '2016-09-22 18:00:15');
-INSERT INTO `tp_func` VALUES ('10061', '4', '规则-修改', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:00:27', '2016-09-22 18:00:27');
-INSERT INTO `tp_func` VALUES ('10062', '5', '来源-维护', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:00:45', '2016-09-22 18:00:45');
-INSERT INTO `tp_func` VALUES ('10063', '6', '快速标记当前项目', '正常', '10007', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:00:58', '2016-09-22 18:00:58');
-INSERT INTO `tp_func` VALUES ('10064', '1', '项目-功能点列表', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:01:32', '2016-09-22 18:01:32');
-INSERT INTO `tp_func` VALUES ('10065', '2', '切换项目', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:01:41', '2016-09-22 18:01:41');
-INSERT INTO `tp_func` VALUES ('10066', '3', '添加路径', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:02:05', '2016-09-22 18:02:05');
-INSERT INTO `tp_func` VALUES ('10067', '4', '维护路径', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:02:13', '2016-09-22 18:02:13');
-INSERT INTO `tp_func` VALUES ('10068', '5', '添加功能点', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:02:20', '2016-09-22 18:02:20');
-INSERT INTO `tp_func` VALUES ('10069', '6', '维护功能点', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:02:27', '2016-09-22 18:02:27');
-INSERT INTO `tp_func` VALUES ('10070', '7', '快速标记当前项目', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:02:34', '2016-09-22 18:02:34');
-INSERT INTO `tp_func` VALUES ('10071', '8', '功能点-用例入口', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-23 13:32:47', '2016-09-23 13:32:47');
-INSERT INTO `tp_func` VALUES ('10072', '9', '功能点-规则入口', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-22 18:03:07', '2016-09-22 18:03:07');
-INSERT INTO `tp_func` VALUES ('10073', '10', '功能点-模板入口', '正常', '10008', '45', null, '腰立辉', '腰立辉', '2016-09-23 13:32:57', '2016-09-23 13:32:57');
-INSERT INTO `tp_func` VALUES ('10074', '1', '（M/A）人员列队场景列表', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:06', '2016-09-25 13:37:26');
-INSERT INTO `tp_func` VALUES ('10075', '2', '切换阶段人员', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:18', '2016-09-25 13:37:45');
-INSERT INTO `tp_func` VALUES ('10076', '3', '场景库-入口', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:43', '2016-09-23 13:07:32');
-INSERT INTO `tp_func` VALUES ('10077', '4', '场景功能-入口', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:45', '2016-09-23 13:07:42');
-INSERT INTO `tp_func` VALUES ('10078', '5', '列队场景-编辑', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:47', '2016-09-23 14:53:06');
-INSERT INTO `tp_func` VALUES ('10079', '6', '列队场景-移除', '正常', '10029', '45', null, '腰立辉', '腰立辉', '2016-10-24 16:06:49', '2016-09-23 13:08:11');
-INSERT INTO `tp_func` VALUES ('10080', '1', '已分派场景列表', '已搁置', '10031', '47', null, '腰立辉', '腰立辉', '2016-09-24 15:15:08', '2016-09-24 15:15:08');
-INSERT INTO `tp_func` VALUES ('10081', '2', '切换测试人员', '已搁置', '10031', '47', null, '腰立辉', '腰立辉', '2016-09-24 15:15:43', '2016-09-24 15:15:43');
-INSERT INTO `tp_func` VALUES ('10082', '3', '待分派场景列表（含次数）', '已搁置', '10031', '47', null, '腰立辉', '腰立辉', '2016-09-23 09:57:09', '2016-09-23 09:57:09');
-INSERT INTO `tp_func` VALUES ('10083', '4', '场景分派', '正常', '10031', '47', null, '腰立辉', '腰立辉', '2016-09-23 09:56:52', '2016-09-23 09:56:52');
-INSERT INTO `tp_func` VALUES ('10084', '1', '场景功能列表', '正常', '10032', '47', null, '腰立辉', '腰立辉', '2016-09-23 09:59:09', '2016-09-23 09:59:09');
-INSERT INTO `tp_func` VALUES ('10085', '2', '切换场景', '正常', '10032', '47', null, '腰立辉', '腰立辉', '2016-09-23 09:59:17', '2016-09-23 09:59:17');
-INSERT INTO `tp_func` VALUES ('10086', '3', '标记场景测试结果', '正常', '10032', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:00:10', '2016-09-23 10:00:10');
-INSERT INTO `tp_func` VALUES ('10115', '1', '功能点-控件列表', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:56:43', '2016-09-23 10:56:43');
-INSERT INTO `tp_func` VALUES ('10116', '2', '控件-添加', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:54:55', '2016-09-23 10:54:55');
-INSERT INTO `tp_func` VALUES ('10117', '3', '控件-维护', '正常', '10033', '45', null, '腰立辉', '腰立辉', '2016-09-23 10:52:35', '2016-09-23 10:52:35');
-INSERT INTO `tp_func` VALUES ('10118', '4', '功能点-数据模板列表', '正常', '10033', '45', null, '腰立辉', '腰立辉', '2016-09-23 10:52:57', '2016-09-23 10:52:57');
-INSERT INTO `tp_func` VALUES ('10119', '5', '标记-数据状态', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:01:05', '2016-09-23 11:01:05');
-INSERT INTO `tp_func` VALUES ('10120', '6', '模板数据-清除', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 15:11:00', '2016-09-23 15:11:00');
-INSERT INTO `tp_func` VALUES ('10121', '7', '模板数据-维护（更多）', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 15:11:07', '2016-09-23 15:11:07');
-INSERT INTO `tp_func` VALUES ('10122', '8', '编写用例入口', '正常', '10033', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:02:11', '2016-09-23 11:02:11');
-INSERT INTO `tp_func` VALUES ('10123', '1', '项目-场景列表', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:06:09', '2016-09-23 11:06:09');
-INSERT INTO `tp_func` VALUES ('10124', '2', '切换项目', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:06:33', '2016-09-23 11:06:33');
-INSERT INTO `tp_func` VALUES ('10099', '1', '项目-测试范围列表', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:07:01', '2016-09-23 10:07:01');
-INSERT INTO `tp_func` VALUES ('10100', '2', '功能点-编辑', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:07:27', '2016-09-23 10:07:27');
-INSERT INTO `tp_func` VALUES ('10101', '3', '范围-用例入口', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:08:56', '2016-09-23 10:08:56');
-INSERT INTO `tp_func` VALUES ('10102', '4', '范围-规则入口', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:09:08', '2016-09-23 10:09:08');
-INSERT INTO `tp_func` VALUES ('10103', '5', '范围-数据模板入口', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:10:18', '2016-09-23 10:10:18');
-INSERT INTO `tp_func` VALUES ('10104', '1', '执行阶段场景列队', '正常', '10024', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:12:05', '2016-09-23 10:12:05');
-INSERT INTO `tp_func` VALUES ('10105', '2', '切换阶段', '正常', '10024', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:12:27', '2016-09-23 10:12:27');
-INSERT INTO `tp_func` VALUES ('10106', '3', '执行测试-入口', '正常', '10024', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:12:49', '2016-09-23 10:12:49');
-INSERT INTO `tp_func` VALUES ('10107', '1', '执行场景功能点列表', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:18:35', '2016-09-23 10:18:35');
-INSERT INTO `tp_func` VALUES ('10108', '2', '切换执行场景', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:18:44', '2016-09-23 10:18:44');
-INSERT INTO `tp_func` VALUES ('10109', '3', '测试结果-标记通过', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:20:21', '2016-09-23 10:20:21');
-INSERT INTO `tp_func` VALUES ('10110', '4', '测试结果-标记失败（说明）', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:23:12', '2016-09-23 10:23:12');
-INSERT INTO `tp_func` VALUES ('10111', '5', '测试结果-重置', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:21:06', '2016-09-23 10:21:06');
-INSERT INTO `tp_func` VALUES ('10112', '6', '用例库-入口', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:22:30', '2016-09-23 10:22:30');
-INSERT INTO `tp_func` VALUES ('10113', '7', '规则-入口', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 10:22:42', '2016-09-23 10:22:42');
-INSERT INTO `tp_func` VALUES ('10114', '9', '标记-场景执行结果', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:08:13', '2016-09-23 14:08:13');
-INSERT INTO `tp_func` VALUES ('10125', '3', '场景-添加', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:07:00', '2016-09-23 11:07:00');
-INSERT INTO `tp_func` VALUES ('10126', '4', '场景-编辑', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:07:17', '2016-09-23 11:07:17');
-INSERT INTO `tp_func` VALUES ('10127', '6', '场景功能-入口', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:09:04', '2016-09-23 11:09:04');
-INSERT INTO `tp_func` VALUES ('10128', '5', '场景-复制', '正常', '10017', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:08:32', '2016-09-23 11:08:32');
-INSERT INTO `tp_func` VALUES ('10129', '1', '场景功能列表', '正常', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:13:12', '2016-09-23 11:13:12');
-INSERT INTO `tp_func` VALUES ('10130', '2', '场景功能-编辑', '正常', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:14:32', '2016-09-23 11:14:32');
-INSERT INTO `tp_func` VALUES ('10131', '3', '场景功能-移除', '正常', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:14:44', '2016-09-23 11:14:44');
-INSERT INTO `tp_func` VALUES ('10132', '4', '功能库-入口', '正常', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:14:56', '2016-09-23 11:14:56');
-INSERT INTO `tp_func` VALUES ('10133', '5', '场景数据-入口', '正常', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:15:07', '2016-09-23 11:15:07');
-INSERT INTO `tp_func` VALUES ('10134', '6', '功能用例库-入口', '已搁置', '10018', '47', null, '腰立辉', '腰立辉', '2016-09-24 15:14:45', '2016-09-24 15:14:45');
-INSERT INTO `tp_func` VALUES ('10135', '1', '功能库-功能列表', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:17:04', '2016-09-23 11:17:04');
-INSERT INTO `tp_func` VALUES ('10136', '2', '切换系统路径', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:17:15', '2016-09-23 11:17:15');
-INSERT INTO `tp_func` VALUES ('10137', '3', '功能-加入场景', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:17:43', '2016-09-23 11:17:43');
-INSERT INTO `tp_func` VALUES ('10138', '4', '功能-加入缓存', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:17:56', '2016-09-23 11:17:56');
-INSERT INTO `tp_func` VALUES ('10139', '5', '场景功能列表', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:18:14', '2016-09-23 11:18:14');
-INSERT INTO `tp_func` VALUES ('10140', '6', '场景功能-编辑', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:18:31', '2016-09-23 11:18:31');
-INSERT INTO `tp_func` VALUES ('10141', '7', '场景功能-移除', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:18:48', '2016-09-23 11:18:48');
-INSERT INTO `tp_func` VALUES ('10142', '8', '场景功能-加入缓存', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:19:01', '2016-09-23 11:19:01');
-INSERT INTO `tp_func` VALUES ('10143', '9', '场景功能-全部加入缓存', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:19:12', '2016-09-23 11:19:12');
-INSERT INTO `tp_func` VALUES ('10144', '10', '缓存功能列表', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:19:26', '2016-09-23 11:19:26');
-INSERT INTO `tp_func` VALUES ('10145', '11', '缓存功能-编辑', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:19:52', '2016-09-23 11:19:52');
-INSERT INTO `tp_func` VALUES ('10146', '12', '缓存功能-移除', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:20:09', '2016-09-23 11:20:09');
-INSERT INTO `tp_func` VALUES ('10147', '13', '缓存功能-全部移除', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:20:26', '2016-09-23 11:20:26');
-INSERT INTO `tp_func` VALUES ('10148', '14', '缓存功能-加入场景', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:20:42', '2016-09-23 11:20:42');
-INSERT INTO `tp_func` VALUES ('10149', '15', '缓存功能-全部加入场景', '正常', '10019', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:20:59', '2016-09-23 11:20:59');
-INSERT INTO `tp_func` VALUES ('10150', '1', '功能用例列表（库）', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:26:12', '2016-09-23 11:26:12');
-INSERT INTO `tp_func` VALUES ('10151', '2', '绑定用例', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:24:27', '2016-09-23 11:24:27');
-INSERT INTO `tp_func` VALUES ('10152', '3', '用例-添加', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:24:48', '2016-09-23 11:24:48');
-INSERT INTO `tp_func` VALUES ('10153', '4', '用例-编辑', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:24:58', '2016-09-23 11:24:58');
-INSERT INTO `tp_func` VALUES ('10154', '5', '用例-数据', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:25:31', '2016-09-23 11:25:31');
-INSERT INTO `tp_func` VALUES ('10155', '6', '场景用例列表', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:26:28', '2016-09-23 11:26:28');
-INSERT INTO `tp_func` VALUES ('10156', '7', '场景用例-移除', '正常', '10020', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:27:01', '2016-09-23 11:27:01');
-INSERT INTO `tp_func` VALUES ('10157', '1', '场景模板数据列表', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:29:59', '2016-09-23 11:29:59');
-INSERT INTO `tp_func` VALUES ('10158', '2', '场景模板数据-维护', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:30:15', '2016-09-23 11:30:15');
-INSERT INTO `tp_func` VALUES ('10159', '3', '模板状态快速标记', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:30:56', '2016-09-23 11:30:56');
-INSERT INTO `tp_func` VALUES ('10160', '4', '场景数据-列表', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:32:06', '2016-09-23 11:32:06');
-INSERT INTO `tp_func` VALUES ('10161', '5', '场景数据-锁定', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:32:20', '2016-09-23 11:32:20');
-INSERT INTO `tp_func` VALUES ('10162', '6', '场景数据-模板同步', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:32:41', '2016-09-23 11:32:41');
-INSERT INTO `tp_func` VALUES ('10163', '7', '场景数据-维护', '正常', '10021', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:32:53', '2016-09-23 11:32:53');
-INSERT INTO `tp_func` VALUES ('10164', '1', '功能控件列表', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:36:35', '2016-09-23 11:36:35');
-INSERT INTO `tp_func` VALUES ('10165', '2', '切换功能', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:36:45', '2016-09-23 11:36:45');
-INSERT INTO `tp_func` VALUES ('10166', '3', '控件-添加', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:37:11', '2016-09-23 11:37:11');
-INSERT INTO `tp_func` VALUES ('10167', '4', '控件-维护', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:37:21', '2016-09-23 11:37:21');
-INSERT INTO `tp_func` VALUES ('10168', '5', '控件状态快速标记', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:37:51', '2016-09-23 11:37:51');
-INSERT INTO `tp_func` VALUES ('10169', '6', '功能控件状态维护', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:38:08', '2016-09-23 11:38:08');
-INSERT INTO `tp_func` VALUES ('10170', '7', '项目控件展开列表', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:38:45', '2016-09-23 11:38:45');
-INSERT INTO `tp_func` VALUES ('10171', '9', '控件展开列表-维护', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:20:34', '2016-09-23 14:20:34');
-INSERT INTO `tp_func` VALUES ('10172', '1', '项目-用例库列表', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:39:51', '2016-09-23 11:39:51');
-INSERT INTO `tp_func` VALUES ('10173', '2', '切换项目', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:40:21', '2016-09-23 11:40:21');
-INSERT INTO `tp_func` VALUES ('10174', '3', '查询-按级别', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:40:35', '2016-09-23 11:40:35');
-INSERT INTO `tp_func` VALUES ('10175', '6', '用例-导出', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:41:23', '2016-09-23 11:41:23');
-INSERT INTO `tp_func` VALUES ('10176', '4', '用例-添加', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:41:29', '2016-09-23 11:41:29');
-INSERT INTO `tp_func` VALUES ('10177', '5', '用例-维护', '正常', '10022', '47', null, '腰立辉', '腰立辉', '2016-09-23 11:41:35', '2016-09-23 11:41:35');
-INSERT INTO `tp_func` VALUES ('10178', '1', '列队场景列表', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:20:10', '2016-09-23 12:20:10');
-INSERT INTO `tp_func` VALUES ('10179', '2', '导入场景数据', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:20:31', '2016-09-23 12:20:31');
-INSERT INTO `tp_func` VALUES ('10180', '3', '查看场景数据-入口', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:20:57', '2016-09-23 12:20:57');
-INSERT INTO `tp_func` VALUES ('10181', '4', '执行数据-清除', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:09:50', '2016-09-23 14:09:50');
-INSERT INTO `tp_func` VALUES ('10182', '6', '执行测试', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:24:20', '2016-09-23 12:24:20');
-INSERT INTO `tp_func` VALUES ('10183', '7', '停止测试', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:24:29', '2016-09-23 12:24:29');
-INSERT INTO `tp_func` VALUES ('10184', '8', '暂停测试', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:24:35', '2016-09-23 12:24:35');
-INSERT INTO `tp_func` VALUES ('10185', '1', '场景-执行数据列表', '正常', '10027', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:23:15', '2016-09-23 12:23:15');
-INSERT INTO `tp_func` VALUES ('10186', '2', '执行数据维护', '正常', '10027', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:23:27', '2016-09-23 12:23:27');
-INSERT INTO `tp_func` VALUES ('10187', '5', '选择执行场景', '正常', '10026', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:24:13', '2016-09-23 12:24:13');
-INSERT INTO `tp_func` VALUES ('10188', '1', '阶段执行人员列表', '正常', '10034', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:25:00', '2016-09-23 12:25:00');
-INSERT INTO `tp_func` VALUES ('10189', '2', '执行人员-从列表选择', '正常', '10034', '47', null, '腰立辉', '腰立辉', '2016-09-24 15:08:23', '2016-09-24 15:08:23');
-INSERT INTO `tp_func` VALUES ('10190', '3', '执行人员-编辑', '正常', '10034', '47', null, '腰立辉', '腰立辉', '2016-09-23 13:02:35', '2016-09-23 13:02:35');
-INSERT INTO `tp_func` VALUES ('10191', '4', '人员列队-入口', '正常', '10034', '47', null, '腰立辉', '腰立辉', '2016-09-23 12:25:56', '2016-09-23 12:25:56');
-INSERT INTO `tp_func` VALUES ('10192', '11', '项目-功能点-导出', '正常', '10008', '47', null, '腰立辉', '腰立辉', '2016-09-23 13:33:12', '2016-09-23 13:33:12');
-INSERT INTO `tp_func` VALUES ('10193', '6', '测试范围-导出', '正常', '10013', '47', null, '腰立辉', '腰立辉', '2016-09-23 13:34:56', '2016-09-23 13:34:56');
-INSERT INTO `tp_func` VALUES ('10194', '8', '数据模板-入口', '正常', '10025', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:08:19', '2016-09-23 14:08:19');
-INSERT INTO `tp_func` VALUES ('10195', '8', '切换项目', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:20:28', '2016-09-23 14:20:28');
-INSERT INTO `tp_func` VALUES ('10196', '10', '展开-控件状态快速标记', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:19:54', '2016-09-23 14:19:54');
-INSERT INTO `tp_func` VALUES ('10197', '11', '展开-功能控件状态快速标记', '正常', '10023', '47', null, '腰立辉', '腰立辉', '2016-09-23 14:20:14', '2016-09-23 14:20:14');
-INSERT INTO `tp_func` VALUES ('10198', '6', 'M人员-入口（手工）', '正常', '10028', '47', null, '腰立辉', '腰立辉', '2016-09-25 13:36:07', '2016-09-25 13:36:07');
-INSERT INTO `tp_func` VALUES ('10200', '1', 'dfdf', '正常', '10035', '49', null, '腰立辉', '腰立辉', '2016-09-24 21:18:06', '2016-09-24 21:18:06');
-INSERT INTO `tp_func` VALUES ('10199', '5', '测试人员列表', '正常', '10034', '47', null, '腰立辉', '腰立辉', '2016-09-24 15:08:09', '2016-09-24 15:08:09');
-INSERT INTO `tp_func` VALUES ('10201', '1', '车型报价员配置列表', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:24:45', '2016-09-26 10:24:45');
-INSERT INTO `tp_func` VALUES ('10202', '2', '查询-按城市', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:24:59', '2016-09-26 10:24:59');
-INSERT INTO `tp_func` VALUES ('10203', '3', '查询-按买顾配置状态', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:25:10', '2016-09-26 10:25:10');
-INSERT INTO `tp_func` VALUES ('10204', '4', '查询-按电销配置状态', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:25:22', '2016-09-26 10:25:22');
-INSERT INTO `tp_func` VALUES ('10205', '5', '查询-按品牌车型', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:25:51', '2016-09-26 10:25:51');
-INSERT INTO `tp_func` VALUES ('10206', '6', '新增车型', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:26:05', '2016-09-26 10:26:05');
-INSERT INTO `tp_func` VALUES ('10207', '7', '批量配置买顾报价员', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:27:04', '2016-09-26 10:27:04');
-INSERT INTO `tp_func` VALUES ('10208', '8', '批量配置电销报价员', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:27:22', '2016-09-26 10:27:22');
-INSERT INTO `tp_func` VALUES ('10209', '9', '编辑车型', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:28:45', '2016-09-26 10:28:45');
-INSERT INTO `tp_func` VALUES ('10210', '10', '修改买顾', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:28:53', '2016-09-26 10:28:53');
-INSERT INTO `tp_func` VALUES ('10211', '11', '修改电销', '正常', '10067', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:29:03', '2016-09-26 10:29:03');
-INSERT INTO `tp_func` VALUES ('10212', '1', '城市买顾价格收集表', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:29', '2016-09-26 10:38:39');
-INSERT INTO `tp_func` VALUES ('10213', '2', '查询-按城市', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:31', '2016-09-26 10:38:48');
-INSERT INTO `tp_func` VALUES ('10214', '3', '查询-按买顾', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:34', '2016-09-26 10:38:58');
-INSERT INTO `tp_func` VALUES ('10215', '4', '明细-买顾入口', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:37', '2016-09-26 10:39:22');
-INSERT INTO `tp_func` VALUES ('10216', '5', '明细-未报价车款入口', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:41', '2016-09-26 10:39:49');
-INSERT INTO `tp_func` VALUES ('10217', '6', '明细-价格过期车款入口', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:44', '2016-09-26 10:40:03');
-INSERT INTO `tp_func` VALUES ('10218', '7', '明细-查询按选择城市', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:48', '2016-09-26 10:40:41');
-INSERT INTO `tp_func` VALUES ('10219', '8', '明细-查询按车型车款', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:51', '2016-09-26 10:40:50');
-INSERT INTO `tp_func` VALUES ('10220', '9', '明细-查询按价格状态', '正常', '10071', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:18:53', '2016-09-26 10:40:59');
-INSERT INTO `tp_func` VALUES ('10221', '1', '车型价格列表', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:45:23', '2016-09-26 10:45:23');
-INSERT INTO `tp_func` VALUES ('10222', '2', '查询-按选择城市', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:46:02', '2016-09-26 10:46:02');
-INSERT INTO `tp_func` VALUES ('10223', '3', '查询-按价格状态', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 10:46:12', '2016-09-26 10:46:12');
-INSERT INTO `tp_func` VALUES ('10224', '4', '查询-按车型车款', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:06:15', '2016-09-26 11:06:15');
-INSERT INTO `tp_func` VALUES ('10225', '5', '添加价格信息', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:06:27', '2016-09-26 11:06:27');
-INSERT INTO `tp_func` VALUES ('10226', '6', '设置显示列', '正常', '10069', '46', null, '腰立辉', '腰立辉', '2016-09-26 11:06:56', '2016-09-26 11:06:56');
-INSERT INTO `tp_func` VALUES ('10227', '1', '价格即将过期-车款列表', '正常', '10070', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:32:18', '2016-09-26 13:32:18');
-INSERT INTO `tp_func` VALUES ('10228', '2', '提交报价入口', '正常', '10070', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:32:48', '2016-09-26 13:32:48');
-INSERT INTO `tp_func` VALUES ('10229', '1', '价格新增车款-车款列表', '正常', '10072', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:33:37', '2016-09-26 13:33:37');
-INSERT INTO `tp_func` VALUES ('10230', '2', '提交报价-入口', '正常', '10072', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:33:50', '2016-09-26 13:33:50');
-INSERT INTO `tp_func` VALUES ('10231', '1', '报价列表', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:41:17', '2016-09-26 13:41:17');
-INSERT INTO `tp_func` VALUES ('10232', '2', '查询-按价格状态', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:41:36', '2016-09-26 13:41:36');
-INSERT INTO `tp_func` VALUES ('10233', '3', '查询-按车型车款', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:41:46', '2016-09-26 13:41:46');
-INSERT INTO `tp_func` VALUES ('10234', '4', '添加价格信息', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:42:03', '2016-09-26 13:42:03');
-INSERT INTO `tp_func` VALUES ('10235', '5', '设置显示列', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:42:17', '2016-09-26 13:42:17');
-INSERT INTO `tp_func` VALUES ('10236', '6', '价格修改', '正常', '10073', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:42:35', '2016-09-26 13:42:35');
-INSERT INTO `tp_func` VALUES ('10237', '1', '待确定价格-车款列表', '正常', '10074', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:50:35', '2016-09-26 13:50:35');
-INSERT INTO `tp_func` VALUES ('10238', '2', '确认价格', '正常', '10074', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:51:00', '2016-09-26 13:51:00');
-INSERT INTO `tp_func` VALUES ('10239', '1', '显示报价城市', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:52:59', '2016-09-26 13:52:59');
-INSERT INTO `tp_func` VALUES ('10240', '2', '选择品牌车型报价（NO车款）', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:56:29', '2016-09-26 13:56:29');
-INSERT INTO `tp_func` VALUES ('10241', '3', '选择车款报价', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:53:45', '2016-09-26 13:53:45');
-INSERT INTO `tp_func` VALUES ('10242', '4', '选择优惠金额报价', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:54:27', '2016-09-26 13:54:27');
-INSERT INTO `tp_func` VALUES ('10243', '5', '选择优惠百分比报价', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:54:42', '2016-09-26 13:54:42');
-INSERT INTO `tp_func` VALUES ('10244', '6', '保存报价', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:55:52', '2016-09-26 13:55:52');
-INSERT INTO `tp_func` VALUES ('10245', '7', '保存并创建下一条', '正常', '10075', '46', null, '腰立辉', '腰立辉', '2016-09-26 13:56:13', '2016-09-26 13:56:13');
-INSERT INTO `tp_func` VALUES ('10246', '1', '登录', '正常', '10076', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:29:42', '2016-09-26 16:29:42');
-INSERT INTO `tp_func` VALUES ('10247', '2', '注销', '正常', '10076', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:29:48', '2016-09-26 16:29:48');
-INSERT INTO `tp_func` VALUES ('10248', '3', '修改密码', '正常', '10076', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:29:55', '2016-09-26 16:29:55');
-INSERT INTO `tp_func` VALUES ('10249', '1', '角色列表', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:32:47', '2016-09-26 16:30:26');
-INSERT INTO `tp_func` VALUES ('10250', '2', '角色-添加', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:32:52', '2016-09-26 16:30:34');
-INSERT INTO `tp_func` VALUES ('10251', '3', '角色-修改', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:32:56', '2016-09-26 16:30:45');
-INSERT INTO `tp_func` VALUES ('10252', '4', '角色-分配权限', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:32:58', '2016-09-26 16:31:13');
-INSERT INTO `tp_func` VALUES ('10253', '5', '角色-更改状态', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:33:01', '2016-09-26 16:31:27');
-INSERT INTO `tp_func` VALUES ('10254', '6', '角色-删除', '正常', '10077', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:33:02', '2016-09-26 16:31:35');
-INSERT INTO `tp_func` VALUES ('10255', '1', '用户列表', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:33:50', '2016-09-26 16:33:50');
-INSERT INTO `tp_func` VALUES ('10256', '2', '查询-按工号', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:00', '2016-09-26 16:34:00');
-INSERT INTO `tp_func` VALUES ('10257', '3', '查询-按姓名', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:09', '2016-09-26 16:34:09');
-INSERT INTO `tp_func` VALUES ('10258', '4', '查询-按状态', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:17', '2016-09-26 16:34:17');
-INSERT INTO `tp_func` VALUES ('10259', '5', '用户-添加', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:24', '2016-09-26 16:34:24');
-INSERT INTO `tp_func` VALUES ('10260', '6', '用户-修改', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:32', '2016-09-26 16:34:32');
-INSERT INTO `tp_func` VALUES ('10261', '7', '用户-变更状态', '正常', '10078', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:34:47', '2016-09-26 16:34:47');
-INSERT INTO `tp_func` VALUES ('10262', '1', '产品列表', '正常', '10079', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:35:24', '2016-09-26 16:35:24');
-INSERT INTO `tp_func` VALUES ('10263', '2', '产品-添加', '正常', '10079', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:35:35', '2016-09-26 16:35:35');
-INSERT INTO `tp_func` VALUES ('10264', '3', '产品-编辑', '正常', '10079', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:35:42', '2016-09-26 16:35:42');
-INSERT INTO `tp_func` VALUES ('10265', '4', '系统-入口', '正常', '10079', '24', null, '腰立辉', '腰立辉', '2016-09-26 16:35:52', '2016-09-26 16:35:52');
-INSERT INTO `tp_func` VALUES ('10266', '1', '登录', '正常', '10106', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:35', '2016-09-27 17:16:17');
-INSERT INTO `tp_func` VALUES ('10267', '2', '记住密码', '正常', '10106', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:37', '2016-09-27 17:16:24');
-INSERT INTO `tp_func` VALUES ('10268', '3', '个人信息', '正常', '10106', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:38', '2016-09-27 17:16:37');
-INSERT INTO `tp_func` VALUES ('10269', '4', '修改个人信息', '正常', '10106', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:40', '2016-09-27 17:16:44');
-INSERT INTO `tp_func` VALUES ('10270', '5', '退出', '正常', '10106', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:42', '2016-09-27 17:16:53');
-INSERT INTO `tp_func` VALUES ('10271', '1', '权限管理-入口', '正常', '10107', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:44', '2016-09-27 17:17:36');
-INSERT INTO `tp_func` VALUES ('10272', '2', '惠买车电商CRM-入口', '正常', '10107', '0', null, '腰立辉', '腰立辉', '2016-09-27 17:18:45', '2016-09-27 17:18:05');
+INSERT INTO `tp_func` VALUES ('10036', '1', '项目风险列表', '正常', '10030', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:46', '2016-09-22 17:52:20');
+INSERT INTO `tp_func` VALUES ('10037', '2', '切换项目', '正常', '10030', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:47', '2016-09-22 17:52:27');
+INSERT INTO `tp_func` VALUES ('10038', '3', '风险-添加', '正常', '10030', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:48', '2016-09-22 17:52:43');
+INSERT INTO `tp_func` VALUES ('10039', '4', '风险-维护', '正常', '10030', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:49', '2016-09-22 17:52:59');
+INSERT INTO `tp_func` VALUES ('10040', '1', '系统路径列表', '正常', '10004', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:50', '2016-09-22 17:53:55');
+INSERT INTO `tp_func` VALUES ('10041', '2', '切换关联系统', '正常', '10004', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:51', '2016-09-22 17:54:05');
+INSERT INTO `tp_func` VALUES ('10042', '3', '路径-添加', '正常', '10004', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:52', '2016-09-22 17:54:21');
+INSERT INTO `tp_func` VALUES ('10043', '4', '路径-修改', '正常', '10004', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:53', '2016-09-22 17:54:28');
+INSERT INTO `tp_func` VALUES ('10044', '5', '路径-功能点入口', '正常', '10004', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:54', '2016-09-22 17:54:44');
+INSERT INTO `tp_func` VALUES ('10045', '1', '路径功能点列表', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:56', '2016-09-22 17:55:13');
+INSERT INTO `tp_func` VALUES ('10046', '2', '切换路径', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:57', '2016-09-22 17:55:20');
+INSERT INTO `tp_func` VALUES ('10047', '3', '功能点-添加（默认当前项目）', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:58', '2016-09-22 17:56:43');
+INSERT INTO `tp_func` VALUES ('10048', '4', '功能点-修改', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:08:59', '2016-09-22 17:56:03');
+INSERT INTO `tp_func` VALUES ('10049', '5', '功能点-用例入口', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:00', '2016-09-23 13:27:11');
+INSERT INTO `tp_func` VALUES ('10050', '6', '功能点-规则入口', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:01', '2016-09-22 17:56:29');
+INSERT INTO `tp_func` VALUES ('10051', '7', '快速标记当前项目', '正常', '10005', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:02', '2016-09-22 17:57:20');
+INSERT INTO `tp_func` VALUES ('10052', '1', '功能点用例列表', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:03', '2016-09-22 17:58:03');
+INSERT INTO `tp_func` VALUES ('10053', '2', '切换功能点', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:05', '2016-09-22 17:58:13');
+INSERT INTO `tp_func` VALUES ('10054', '3', '用例-添加', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:06', '2016-09-22 17:58:30');
+INSERT INTO `tp_func` VALUES ('10055', '4', '用例-维护', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:07', '2016-09-22 17:58:37');
+INSERT INTO `tp_func` VALUES ('10056', '5', '快速标记当前项目', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:08', '2016-09-22 17:59:13');
+INSERT INTO `tp_func` VALUES ('10057', '6', '数据模板-编辑', '正常', '10006', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:09', '2016-09-23 13:40:21');
+INSERT INTO `tp_func` VALUES ('10058', '1', '功能点规则列表', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:10', '2016-09-22 17:59:51');
+INSERT INTO `tp_func` VALUES ('10059', '2', '切换功能点', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:12', '2016-09-22 18:00:04');
+INSERT INTO `tp_func` VALUES ('10060', '3', '规则-添加', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:13', '2016-09-22 18:00:15');
+INSERT INTO `tp_func` VALUES ('10061', '4', '规则-修改', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:14', '2016-09-22 18:00:27');
+INSERT INTO `tp_func` VALUES ('10062', '5', '来源-维护', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:15', '2016-09-22 18:00:45');
+INSERT INTO `tp_func` VALUES ('10063', '6', '快速标记当前项目', '正常', '10007', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:17', '2016-09-22 18:00:58');
+INSERT INTO `tp_func` VALUES ('10064', '1', '项目-功能点列表', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:19', '2016-09-22 18:01:32');
+INSERT INTO `tp_func` VALUES ('10065', '2', '切换项目', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:55', '2016-09-22 18:01:41');
+INSERT INTO `tp_func` VALUES ('10066', '3', '添加路径', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:55', '2016-09-22 18:02:05');
+INSERT INTO `tp_func` VALUES ('10067', '4', '维护路径', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:56', '2016-09-22 18:02:13');
+INSERT INTO `tp_func` VALUES ('10068', '5', '添加功能点', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:57', '2016-09-22 18:02:20');
+INSERT INTO `tp_func` VALUES ('10069', '6', '维护功能点', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:58', '2016-09-22 18:02:27');
+INSERT INTO `tp_func` VALUES ('10070', '7', '快速标记当前项目', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:59', '2016-09-22 18:02:34');
+INSERT INTO `tp_func` VALUES ('10071', '8', '功能点-用例入口', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:00', '2016-09-23 13:32:47');
+INSERT INTO `tp_func` VALUES ('10072', '9', '功能点-规则入口', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:02', '2016-09-22 18:03:07');
+INSERT INTO `tp_func` VALUES ('10073', '10', '功能点-模板入口', '正常', '10008', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:03', '2016-09-23 13:32:57');
+INSERT INTO `tp_func` VALUES ('10074', '1', '（M/A）人员列队场景列表', '正常', '10029', '45', '失败', '腰立辉', '腰立辉', '2016-10-25 09:20:00', '2016-10-25 09:20:00');
+INSERT INTO `tp_func` VALUES ('10075', '2', '切换阶段人员', '正常', '10029', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:05', '2016-09-25 13:37:45');
+INSERT INTO `tp_func` VALUES ('10076', '3', '场景库-入口', '正常', '10029', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:05', '2016-09-23 13:07:32');
+INSERT INTO `tp_func` VALUES ('10077', '4', '场景功能-入口', '正常', '10029', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:06', '2016-09-23 13:07:42');
+INSERT INTO `tp_func` VALUES ('10078', '5', '列队场景-编辑', '正常', '10029', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:07', '2016-09-23 14:53:06');
+INSERT INTO `tp_func` VALUES ('10079', '6', '列队场景-移除', '正常', '10029', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:08', '2016-09-23 13:08:11');
+INSERT INTO `tp_func` VALUES ('10080', '1', '已分派场景列表', '已搁置', '10031', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:09', '2016-09-24 15:15:08');
+INSERT INTO `tp_func` VALUES ('10081', '2', '切换测试人员', '已搁置', '10031', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:10', '2016-09-24 15:15:43');
+INSERT INTO `tp_func` VALUES ('10082', '3', '待分派场景列表（含次数）', '已搁置', '10031', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:11', '2016-09-23 09:57:09');
+INSERT INTO `tp_func` VALUES ('10083', '4', '场景分派', '正常', '10031', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:13', '2016-09-23 09:56:52');
+INSERT INTO `tp_func` VALUES ('10084', '1', '场景功能列表', '正常', '10032', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:14', '2016-09-23 09:59:09');
+INSERT INTO `tp_func` VALUES ('10085', '2', '切换场景', '正常', '10032', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:15', '2016-09-23 09:59:17');
+INSERT INTO `tp_func` VALUES ('10086', '3', '标记场景测试结果', '正常', '10032', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:16', '2016-09-23 10:00:10');
+INSERT INTO `tp_func` VALUES ('10115', '1', '功能点-控件列表', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:17', '2016-09-23 10:56:43');
+INSERT INTO `tp_func` VALUES ('10116', '2', '控件-添加', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:18', '2016-09-23 10:54:55');
+INSERT INTO `tp_func` VALUES ('10117', '3', '控件-维护', '正常', '10033', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:19', '2016-09-23 10:52:35');
+INSERT INTO `tp_func` VALUES ('10118', '4', '功能点-数据模板列表', '正常', '10033', '45', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:20', '2016-09-23 10:52:57');
+INSERT INTO `tp_func` VALUES ('10119', '5', '标记-数据状态', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:21', '2016-09-23 11:01:05');
+INSERT INTO `tp_func` VALUES ('10120', '6', '模板数据-清除', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:22', '2016-09-23 15:11:00');
+INSERT INTO `tp_func` VALUES ('10121', '7', '模板数据-维护（更多）', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:23', '2016-09-23 15:11:07');
+INSERT INTO `tp_func` VALUES ('10122', '8', '编写用例入口', '正常', '10033', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:24', '2016-09-23 11:02:11');
+INSERT INTO `tp_func` VALUES ('10123', '1', '项目-场景列表', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:25', '2016-09-23 11:06:09');
+INSERT INTO `tp_func` VALUES ('10124', '2', '切换项目', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:26', '2016-09-23 11:06:33');
+INSERT INTO `tp_func` VALUES ('10099', '1', '项目-测试范围列表', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:27', '2016-09-23 10:07:01');
+INSERT INTO `tp_func` VALUES ('10100', '2', '功能点-编辑', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:28', '2016-09-23 10:07:27');
+INSERT INTO `tp_func` VALUES ('10101', '3', '范围-用例入口', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:29', '2016-09-23 10:08:56');
+INSERT INTO `tp_func` VALUES ('10102', '4', '范围-规则入口', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:30', '2016-09-23 10:09:08');
+INSERT INTO `tp_func` VALUES ('10103', '5', '范围-数据模板入口', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:32', '2016-09-23 10:10:18');
+INSERT INTO `tp_func` VALUES ('10104', '1', '执行阶段场景列队', '正常', '10024', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:37', '2016-09-23 10:12:05');
+INSERT INTO `tp_func` VALUES ('10105', '2', '切换阶段', '正常', '10024', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:39', '2016-09-23 10:12:27');
+INSERT INTO `tp_func` VALUES ('10106', '3', '执行测试-入口', '正常', '10024', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:40', '2016-09-23 10:12:49');
+INSERT INTO `tp_func` VALUES ('10107', '1', '执行场景功能点列表', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:41', '2016-09-23 10:18:35');
+INSERT INTO `tp_func` VALUES ('10108', '2', '切换执行场景', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:43', '2016-09-23 10:18:44');
+INSERT INTO `tp_func` VALUES ('10109', '3', '测试结果-标记通过', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:44', '2016-09-23 10:20:21');
+INSERT INTO `tp_func` VALUES ('10110', '4', '测试结果-标记失败（说明）', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:45', '2016-09-23 10:23:12');
+INSERT INTO `tp_func` VALUES ('10111', '5', '测试结果-重置', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:46', '2016-09-23 10:21:06');
+INSERT INTO `tp_func` VALUES ('10112', '6', '用例库-入口', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:47', '2016-09-23 10:22:30');
+INSERT INTO `tp_func` VALUES ('10113', '7', '规则-入口', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:50', '2016-09-23 10:22:42');
+INSERT INTO `tp_func` VALUES ('10114', '9', '标记-场景执行结果', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:52', '2016-09-23 14:08:13');
+INSERT INTO `tp_func` VALUES ('10125', '3', '场景-添加', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:53', '2016-09-23 11:07:00');
+INSERT INTO `tp_func` VALUES ('10126', '4', '场景-编辑', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:54', '2016-09-23 11:07:17');
+INSERT INTO `tp_func` VALUES ('10127', '6', '场景功能-入口', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:55', '2016-09-23 11:09:04');
+INSERT INTO `tp_func` VALUES ('10128', '5', '场景-复制', '正常', '10017', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:56', '2016-09-23 11:08:32');
+INSERT INTO `tp_func` VALUES ('10129', '1', '场景功能列表', '正常', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:57', '2016-09-23 11:13:12');
+INSERT INTO `tp_func` VALUES ('10130', '2', '场景功能-编辑', '正常', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:58', '2016-09-23 11:14:32');
+INSERT INTO `tp_func` VALUES ('10131', '3', '场景功能-移除', '正常', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:11:59', '2016-09-23 11:14:44');
+INSERT INTO `tp_func` VALUES ('10132', '4', '功能库-入口', '正常', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:00', '2016-09-23 11:14:56');
+INSERT INTO `tp_func` VALUES ('10133', '5', '场景数据-入口', '正常', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:02', '2016-09-23 11:15:07');
+INSERT INTO `tp_func` VALUES ('10134', '6', '功能用例库-入口', '已搁置', '10018', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:03', '2016-09-24 15:14:45');
+INSERT INTO `tp_func` VALUES ('10135', '1', '功能库-功能列表', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:04', '2016-09-23 11:17:04');
+INSERT INTO `tp_func` VALUES ('10136', '2', '切换系统路径', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:05', '2016-09-23 11:17:15');
+INSERT INTO `tp_func` VALUES ('10137', '3', '功能-加入场景', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:11', '2016-09-23 11:17:43');
+INSERT INTO `tp_func` VALUES ('10138', '4', '功能-加入缓存', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:14', '2016-09-23 11:17:56');
+INSERT INTO `tp_func` VALUES ('10139', '5', '场景功能列表', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:15', '2016-09-23 11:18:14');
+INSERT INTO `tp_func` VALUES ('10140', '6', '场景功能-编辑', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:16', '2016-09-23 11:18:31');
+INSERT INTO `tp_func` VALUES ('10141', '7', '场景功能-移除', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:17', '2016-09-23 11:18:48');
+INSERT INTO `tp_func` VALUES ('10142', '8', '场景功能-加入缓存', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:18', '2016-09-23 11:19:01');
+INSERT INTO `tp_func` VALUES ('10143', '9', '场景功能-全部加入缓存', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:19', '2016-09-23 11:19:12');
+INSERT INTO `tp_func` VALUES ('10144', '10', '缓存功能列表', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:20', '2016-09-23 11:19:26');
+INSERT INTO `tp_func` VALUES ('10145', '11', '缓存功能-编辑', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:21', '2016-09-23 11:19:52');
+INSERT INTO `tp_func` VALUES ('10146', '12', '缓存功能-移除', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:34', '2016-09-23 11:20:09');
+INSERT INTO `tp_func` VALUES ('10147', '13', '缓存功能-全部移除', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:35', '2016-09-23 11:20:26');
+INSERT INTO `tp_func` VALUES ('10148', '14', '缓存功能-加入场景', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:36', '2016-09-23 11:20:42');
+INSERT INTO `tp_func` VALUES ('10149', '15', '缓存功能-全部加入场景', '正常', '10019', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:37', '2016-09-23 11:20:59');
+INSERT INTO `tp_func` VALUES ('10150', '1', '功能用例列表（库）', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:37', '2016-09-23 11:26:12');
+INSERT INTO `tp_func` VALUES ('10151', '2', '绑定用例', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:38', '2016-09-23 11:24:27');
+INSERT INTO `tp_func` VALUES ('10152', '3', '用例-添加', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:41', '2016-09-23 11:24:48');
+INSERT INTO `tp_func` VALUES ('10153', '4', '用例-编辑', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:42', '2016-09-23 11:24:58');
+INSERT INTO `tp_func` VALUES ('10154', '5', '用例-数据', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:43', '2016-09-23 11:25:31');
+INSERT INTO `tp_func` VALUES ('10155', '6', '场景用例列表', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:44', '2016-09-23 11:26:28');
+INSERT INTO `tp_func` VALUES ('10156', '7', '场景用例-移除', '正常', '10020', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:44', '2016-09-23 11:27:01');
+INSERT INTO `tp_func` VALUES ('10157', '1', '场景模板数据列表', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:45', '2016-09-23 11:29:59');
+INSERT INTO `tp_func` VALUES ('10158', '2', '场景模板数据-维护', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:46', '2016-09-23 11:30:15');
+INSERT INTO `tp_func` VALUES ('10159', '3', '模板状态快速标记', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:47', '2016-09-23 11:30:56');
+INSERT INTO `tp_func` VALUES ('10160', '4', '场景数据-列表', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:48', '2016-09-23 11:32:06');
+INSERT INTO `tp_func` VALUES ('10161', '5', '场景数据-锁定', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:50', '2016-09-23 11:32:20');
+INSERT INTO `tp_func` VALUES ('10162', '6', '场景数据-模板同步', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:51', '2016-09-23 11:32:41');
+INSERT INTO `tp_func` VALUES ('10163', '7', '场景数据-维护', '正常', '10021', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:53', '2016-09-23 11:32:53');
+INSERT INTO `tp_func` VALUES ('10164', '1', '功能控件列表', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:53', '2016-09-23 11:36:35');
+INSERT INTO `tp_func` VALUES ('10165', '2', '切换功能', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:54', '2016-09-23 11:36:45');
+INSERT INTO `tp_func` VALUES ('10166', '3', '控件-添加', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:56', '2016-09-23 11:37:11');
+INSERT INTO `tp_func` VALUES ('10167', '4', '控件-维护', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:57', '2016-09-23 11:37:21');
+INSERT INTO `tp_func` VALUES ('10168', '5', '控件状态快速标记', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:12:58', '2016-09-23 11:37:51');
+INSERT INTO `tp_func` VALUES ('10169', '6', '功能控件状态维护', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:01', '2016-09-23 11:38:08');
+INSERT INTO `tp_func` VALUES ('10170', '7', '项目控件展开列表', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:09', '2016-09-23 11:38:45');
+INSERT INTO `tp_func` VALUES ('10171', '9', '控件展开列表-维护', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:17', '2016-09-23 14:20:34');
+INSERT INTO `tp_func` VALUES ('10172', '1', '项目-用例库列表', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:18', '2016-09-23 11:39:51');
+INSERT INTO `tp_func` VALUES ('10173', '2', '切换项目', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:19', '2016-09-23 11:40:21');
+INSERT INTO `tp_func` VALUES ('10174', '3', '查询-按级别', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:21', '2016-09-23 11:40:35');
+INSERT INTO `tp_func` VALUES ('10175', '6', '用例-导出', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:23', '2016-09-23 11:41:23');
+INSERT INTO `tp_func` VALUES ('10176', '4', '用例-添加', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:24', '2016-09-23 11:41:29');
+INSERT INTO `tp_func` VALUES ('10177', '5', '用例-维护', '正常', '10022', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:25', '2016-09-23 11:41:35');
+INSERT INTO `tp_func` VALUES ('10178', '1', '列队场景列表', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:26', '2016-09-23 12:20:10');
+INSERT INTO `tp_func` VALUES ('10179', '2', '导入场景数据', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:27', '2016-09-23 12:20:31');
+INSERT INTO `tp_func` VALUES ('10180', '3', '查看场景数据-入口', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:28', '2016-09-23 12:20:57');
+INSERT INTO `tp_func` VALUES ('10181', '4', '执行数据-清除', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:29', '2016-09-23 14:09:50');
+INSERT INTO `tp_func` VALUES ('10182', '6', '执行测试', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:30', '2016-09-23 12:24:20');
+INSERT INTO `tp_func` VALUES ('10183', '7', '停止测试', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:40', '2016-09-23 12:24:29');
+INSERT INTO `tp_func` VALUES ('10184', '8', '暂停测试', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:41', '2016-09-23 12:24:35');
+INSERT INTO `tp_func` VALUES ('10185', '1', '场景-执行数据列表', '正常', '10027', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:42', '2016-09-23 12:23:15');
+INSERT INTO `tp_func` VALUES ('10186', '2', '执行数据维护', '正常', '10027', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:43', '2016-09-23 12:23:27');
+INSERT INTO `tp_func` VALUES ('10187', '5', '选择执行场景', '正常', '10026', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:44', '2016-09-23 12:24:13');
+INSERT INTO `tp_func` VALUES ('10188', '1', '阶段执行人员列表', '正常', '10034', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:44', '2016-09-23 12:25:00');
+INSERT INTO `tp_func` VALUES ('10189', '2', '执行人员-从列表选择', '正常', '10034', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:45', '2016-09-24 15:08:23');
+INSERT INTO `tp_func` VALUES ('10190', '3', '执行人员-编辑', '正常', '10034', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:46', '2016-09-23 13:02:35');
+INSERT INTO `tp_func` VALUES ('10191', '4', '人员列队-入口', '正常', '10034', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:49', '2016-09-23 12:25:56');
+INSERT INTO `tp_func` VALUES ('10192', '11', '项目-功能点-导出', '正常', '10008', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:50', '2016-09-23 13:33:12');
+INSERT INTO `tp_func` VALUES ('10193', '6', '测试范围-导出', '正常', '10013', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:51', '2016-09-23 13:34:56');
+INSERT INTO `tp_func` VALUES ('10194', '8', '数据模板-入口', '正常', '10025', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:52', '2016-09-23 14:08:19');
+INSERT INTO `tp_func` VALUES ('10195', '8', '切换项目', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:53', '2016-09-23 14:20:28');
+INSERT INTO `tp_func` VALUES ('10196', '10', '展开-控件状态快速标记', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:55', '2016-09-23 14:19:54');
+INSERT INTO `tp_func` VALUES ('10197', '11', '展开-功能控件状态快速标记', '正常', '10023', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:56', '2016-09-23 14:20:14');
+INSERT INTO `tp_func` VALUES ('10198', '6', 'M人员-入口（手工）', '正常', '10028', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:58', '2016-09-25 13:36:07');
+INSERT INTO `tp_func` VALUES ('10200', '1', 'dfdf', '正常', '10035', '49', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:13:59', '2016-09-24 21:18:06');
+INSERT INTO `tp_func` VALUES ('10199', '5', '测试人员列表', '正常', '10034', '47', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:01', '2016-09-24 15:08:09');
+INSERT INTO `tp_func` VALUES ('10201', '1', '车型报价员配置列表', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:02', '2016-09-26 10:24:45');
+INSERT INTO `tp_func` VALUES ('10202', '2', '查询-按城市', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:03', '2016-09-26 10:24:59');
+INSERT INTO `tp_func` VALUES ('10203', '3', '查询-按买顾配置状态', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:05', '2016-09-26 10:25:10');
+INSERT INTO `tp_func` VALUES ('10204', '4', '查询-按电销配置状态', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:07', '2016-09-26 10:25:22');
+INSERT INTO `tp_func` VALUES ('10205', '5', '查询-按品牌车型', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:08', '2016-09-26 10:25:51');
+INSERT INTO `tp_func` VALUES ('10206', '6', '新增车型', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:09', '2016-09-26 10:26:05');
+INSERT INTO `tp_func` VALUES ('10207', '7', '批量配置买顾报价员', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:10', '2016-09-26 10:27:04');
+INSERT INTO `tp_func` VALUES ('10208', '8', '批量配置电销报价员', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:11', '2016-09-26 10:27:22');
+INSERT INTO `tp_func` VALUES ('10209', '9', '编辑车型', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:14', '2016-09-26 10:28:45');
+INSERT INTO `tp_func` VALUES ('10210', '10', '修改买顾', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:15', '2016-09-26 10:28:53');
+INSERT INTO `tp_func` VALUES ('10211', '11', '修改电销', '正常', '10067', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:16', '2016-09-26 10:29:03');
+INSERT INTO `tp_func` VALUES ('10212', '1', '城市买顾价格收集表', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:17', '2016-09-26 10:38:39');
+INSERT INTO `tp_func` VALUES ('10213', '2', '查询-按城市', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:18', '2016-09-26 10:38:48');
+INSERT INTO `tp_func` VALUES ('10214', '3', '查询-按买顾', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:14:19', '2016-09-26 10:38:58');
+INSERT INTO `tp_func` VALUES ('10215', '4', '明细-买顾入口', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:43', '2016-09-26 10:39:22');
+INSERT INTO `tp_func` VALUES ('10216', '5', '明细-未报价车款入口', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:41', '2016-09-26 10:39:49');
+INSERT INTO `tp_func` VALUES ('10217', '6', '明细-价格过期车款入口', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:40', '2016-09-26 10:40:03');
+INSERT INTO `tp_func` VALUES ('10218', '7', '明细-查询按选择城市', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:39', '2016-09-26 10:40:41');
+INSERT INTO `tp_func` VALUES ('10219', '8', '明细-查询按车型车款', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:37', '2016-09-26 10:40:50');
+INSERT INTO `tp_func` VALUES ('10220', '9', '明细-查询按价格状态', '正常', '10071', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:36', '2016-09-26 10:40:59');
+INSERT INTO `tp_func` VALUES ('10221', '1', '车型价格列表', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:34', '2016-09-26 10:45:23');
+INSERT INTO `tp_func` VALUES ('10222', '2', '查询-按选择城市', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:32', '2016-09-26 10:46:02');
+INSERT INTO `tp_func` VALUES ('10223', '3', '查询-按价格状态', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:31', '2016-09-26 10:46:12');
+INSERT INTO `tp_func` VALUES ('10224', '4', '查询-按车型车款', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:30', '2016-09-26 11:06:15');
+INSERT INTO `tp_func` VALUES ('10225', '5', '添加价格信息', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:28', '2016-09-26 11:06:27');
+INSERT INTO `tp_func` VALUES ('10226', '6', '设置显示列', '正常', '10069', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:27', '2016-09-26 11:06:56');
+INSERT INTO `tp_func` VALUES ('10227', '1', '价格即将过期-车款列表', '正常', '10070', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:26', '2016-09-26 13:32:18');
+INSERT INTO `tp_func` VALUES ('10228', '2', '提交报价入口', '正常', '10070', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:25', '2016-09-26 13:32:48');
+INSERT INTO `tp_func` VALUES ('10229', '1', '价格新增车款-车款列表', '正常', '10072', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:24', '2016-09-26 13:33:37');
+INSERT INTO `tp_func` VALUES ('10230', '2', '提交报价-入口', '正常', '10072', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:23', '2016-09-26 13:33:50');
+INSERT INTO `tp_func` VALUES ('10231', '1', '报价列表', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:22', '2016-09-26 13:41:17');
+INSERT INTO `tp_func` VALUES ('10232', '2', '查询-按价格状态', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:21', '2016-09-26 13:41:36');
+INSERT INTO `tp_func` VALUES ('10233', '3', '查询-按车型车款', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:20', '2016-09-26 13:41:46');
+INSERT INTO `tp_func` VALUES ('10234', '4', '添加价格信息', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:19', '2016-09-26 13:42:03');
+INSERT INTO `tp_func` VALUES ('10235', '5', '设置显示列', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:18', '2016-09-26 13:42:17');
+INSERT INTO `tp_func` VALUES ('10236', '6', '价格修改', '正常', '10073', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:09', '2016-09-26 13:42:35');
+INSERT INTO `tp_func` VALUES ('10237', '1', '待确定价格-车款列表', '正常', '10074', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:08', '2016-09-26 13:50:35');
+INSERT INTO `tp_func` VALUES ('10238', '2', '确认价格', '正常', '10074', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:07', '2016-09-26 13:51:00');
+INSERT INTO `tp_func` VALUES ('10239', '1', '显示报价城市', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:06', '2016-09-26 13:52:59');
+INSERT INTO `tp_func` VALUES ('10240', '2', '选择品牌车型报价（NO车款）', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:05', '2016-09-26 13:56:29');
+INSERT INTO `tp_func` VALUES ('10241', '3', '选择车款报价', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:04', '2016-09-26 13:53:45');
+INSERT INTO `tp_func` VALUES ('10242', '4', '选择优惠金额报价', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:03', '2016-09-26 13:54:27');
+INSERT INTO `tp_func` VALUES ('10243', '5', '选择优惠百分比报价', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:02', '2016-09-26 13:54:42');
+INSERT INTO `tp_func` VALUES ('10244', '6', '保存报价', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:01', '2016-09-26 13:55:52');
+INSERT INTO `tp_func` VALUES ('10245', '7', '保存并创建下一条', '正常', '10075', '46', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:10:00', '2016-09-26 13:56:13');
+INSERT INTO `tp_func` VALUES ('10246', '1', '登录', '正常', '10076', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:58', '2016-09-26 16:29:42');
+INSERT INTO `tp_func` VALUES ('10247', '2', '注销', '正常', '10076', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:57', '2016-09-26 16:29:48');
+INSERT INTO `tp_func` VALUES ('10248', '3', '修改密码', '正常', '10076', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:56', '2016-09-26 16:29:55');
+INSERT INTO `tp_func` VALUES ('10249', '1', '角色列表', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:55', '2016-09-26 16:30:26');
+INSERT INTO `tp_func` VALUES ('10250', '2', '角色-添加', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:54', '2016-09-26 16:30:34');
+INSERT INTO `tp_func` VALUES ('10251', '3', '角色-修改', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:52', '2016-09-26 16:30:45');
+INSERT INTO `tp_func` VALUES ('10252', '4', '角色-分配权限', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:51', '2016-09-26 16:31:13');
+INSERT INTO `tp_func` VALUES ('10253', '5', '角色-更改状态', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:50', '2016-09-26 16:31:27');
+INSERT INTO `tp_func` VALUES ('10254', '6', '角色-删除', '正常', '10077', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:49', '2016-09-26 16:31:35');
+INSERT INTO `tp_func` VALUES ('10255', '1', '用户列表', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:48', '2016-09-26 16:33:50');
+INSERT INTO `tp_func` VALUES ('10256', '2', '查询-按工号', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:47', '2016-09-26 16:34:00');
+INSERT INTO `tp_func` VALUES ('10257', '3', '查询-按姓名', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:46', '2016-09-26 16:34:09');
+INSERT INTO `tp_func` VALUES ('10258', '4', '查询-按状态', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:44', '2016-09-26 16:34:17');
+INSERT INTO `tp_func` VALUES ('10259', '5', '用户-添加', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:45', '2016-09-26 16:34:24');
+INSERT INTO `tp_func` VALUES ('10260', '6', '用户-修改', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:42', '2016-09-26 16:34:32');
+INSERT INTO `tp_func` VALUES ('10261', '7', '用户-变更状态', '正常', '10078', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:43', '2016-09-26 16:34:47');
+INSERT INTO `tp_func` VALUES ('10262', '1', '产品列表', '正常', '10079', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:34', '2016-09-26 16:35:24');
+INSERT INTO `tp_func` VALUES ('10263', '2', '产品-添加', '正常', '10079', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:33', '2016-09-26 16:35:35');
+INSERT INTO `tp_func` VALUES ('10264', '3', '产品-编辑', '正常', '10079', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:32', '2016-09-26 16:35:42');
+INSERT INTO `tp_func` VALUES ('10265', '4', '系统-入口', '正常', '10079', '24', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:31', '2016-09-26 16:35:52');
+INSERT INTO `tp_func` VALUES ('10266', '1', '登录', '正常', '10106', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:31', '2016-09-27 17:16:17');
+INSERT INTO `tp_func` VALUES ('10267', '2', '记住密码', '正常', '10106', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:30', '2016-09-27 17:16:24');
+INSERT INTO `tp_func` VALUES ('10268', '3', '个人信息', '正常', '10106', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:29', '2016-09-27 17:16:37');
+INSERT INTO `tp_func` VALUES ('10269', '4', '修改个人信息', '正常', '10106', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:28', '2016-09-27 17:16:44');
+INSERT INTO `tp_func` VALUES ('10270', '5', '退出', '正常', '10106', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:26', '2016-09-27 17:16:53');
+INSERT INTO `tp_func` VALUES ('10271', '1', '权限管理-入口', '正常', '10107', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:27', '2016-09-27 17:17:36');
+INSERT INTO `tp_func` VALUES ('10272', '2', '惠买车电商CRM-入口', '正常', '10107', '0', '未测试', '腰立辉', '腰立辉', '2016-10-25 09:09:25', '2016-09-27 17:18:05');
+INSERT INTO `tp_func` VALUES ('10273', '1', '数量统计', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:31:12', '2016-10-25 10:31:12');
+INSERT INTO `tp_func` VALUES ('10274', '2', '查询-按客户姓名', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:31:30', '2016-10-25 10:31:30');
+INSERT INTO `tp_func` VALUES ('10275', '3', '查询-按客户手机', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:31:37', '2016-10-25 10:31:37');
+INSERT INTO `tp_func` VALUES ('10276', '4', '查询-按待办类型', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:32:03', '2016-10-25 10:32:03');
+INSERT INTO `tp_func` VALUES ('10277', '5', '查询-按待办来源', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:32:14', '2016-10-25 10:32:14');
+INSERT INTO `tp_func` VALUES ('10278', '6', '查询-按客户级别', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:32:22', '2016-10-25 10:32:22');
+INSERT INTO `tp_func` VALUES ('10279', '7', '查询-按跟进阶段', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:32:41', '2016-10-25 10:32:41');
+INSERT INTO `tp_func` VALUES ('10280', '8', '查询-按是否成交', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:32:50', '2016-10-25 10:32:50');
+INSERT INTO `tp_func` VALUES ('10281', '9', '查询-按是否置换', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:33:55', '2016-10-25 10:33:55');
+INSERT INTO `tp_func` VALUES ('10282', '10', '查询-按购车城市', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:03', '2016-10-25 10:34:03');
+INSERT INTO `tp_func` VALUES ('10283', '11', '查询-按客户来源', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:10', '2016-10-25 10:34:10');
+INSERT INTO `tp_func` VALUES ('10284', '12', '上牌城市', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:18', '2016-10-25 10:34:18');
+INSERT INTO `tp_func` VALUES ('10285', '13', '按手机归属地', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:34', '2016-10-25 10:34:34');
+INSERT INTO `tp_func` VALUES ('10286', '14', '查询-按待办时间', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:45', '2016-10-25 10:34:45');
+INSERT INTO `tp_func` VALUES ('10287', '15', '查询-按意向车型', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:34:55', '2016-10-25 10:34:55');
+INSERT INTO `tp_func` VALUES ('10288', '16', '查询-按客户标签', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:35:05', '2016-10-25 10:35:05');
+INSERT INTO `tp_func` VALUES ('10289', '17', '今日待办列表', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:35:28', '2016-10-25 10:35:28');
+INSERT INTO `tp_func` VALUES ('10290', '18', '添加客户入口', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:36:34', '2016-10-25 10:36:34');
+INSERT INTO `tp_func` VALUES ('10291', '19', '查看外出计划', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:36:14', '2016-10-25 10:36:14');
+INSERT INTO `tp_func` VALUES ('10292', '20', '客户跟进入口', '正常', '10051', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:36:49', '2016-10-25 10:36:49');
+INSERT INTO `tp_func` VALUES ('10293', '1', '查询', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:38:38', '2016-10-25 10:38:38');
+INSERT INTO `tp_func` VALUES ('10294', '2', '添加客户入口', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 10:38:46', '2016-10-25 10:38:46');
+INSERT INTO `tp_func` VALUES ('10299', '1', '查询', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:39:34', '2016-10-25 13:39:34');
+INSERT INTO `tp_func` VALUES ('10296', '4', '查看外出计划入口', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:38:12', '2016-10-25 13:38:12');
+INSERT INTO `tp_func` VALUES ('10297', '5', '过期待办列表', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:38:26', '2016-10-25 13:38:26');
+INSERT INTO `tp_func` VALUES ('10298', '6', '跟进入口', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:38:39', '2016-10-25 13:38:39');
+INSERT INTO `tp_func` VALUES ('10300', '2', '添加客户入口', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:39:41', '2016-10-25 13:39:41');
+INSERT INTO `tp_func` VALUES ('10301', '3', '查看外出计划入口', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:39:55', '2016-10-25 13:39:55');
+INSERT INTO `tp_func` VALUES ('10302', '4', '全部待办列表', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:40:13', '2016-10-25 13:40:13');
+INSERT INTO `tp_func` VALUES ('10303', '5', '跟进入口', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:41:24', '2016-10-25 13:41:24');
+INSERT INTO `tp_func` VALUES ('10304', '0', '待办数统计', '正常', '10109', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:42:40', '2016-10-25 13:42:40');
+INSERT INTO `tp_func` VALUES ('10305', '0', '待办数统计', '正常', '10108', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:43:06', '2016-10-25 13:43:06');
+INSERT INTO `tp_func` VALUES ('10306', '1', '待办数统计', '正常', '10110', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:48:16', '2016-10-25 13:48:16');
+INSERT INTO `tp_func` VALUES ('10307', '2', '金融待办列表', '正常', '10110', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:48:33', '2016-10-25 13:48:33');
+INSERT INTO `tp_func` VALUES ('10308', '3', '跟进入口', '正常', '10110', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:48:47', '2016-10-25 13:48:47');
+INSERT INTO `tp_func` VALUES ('10309', '1', '客户数统计', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:49:21', '2016-10-25 13:49:21');
+INSERT INTO `tp_func` VALUES ('10310', '2', '常规查询', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:49:36', '2016-10-25 13:49:36');
+INSERT INTO `tp_func` VALUES ('10311', '3', '查询-按订单类型', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:49:53', '2016-10-25 13:49:53');
+INSERT INTO `tp_func` VALUES ('10312', '4', '客户列表', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:50:00', '2016-10-25 13:50:00');
+INSERT INTO `tp_func` VALUES ('10313', '5', '添加客户入口', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:50:09', '2016-10-25 13:50:09');
+INSERT INTO `tp_func` VALUES ('10314', '6', '赠送优惠券', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:50:28', '2016-10-25 13:50:28');
+INSERT INTO `tp_func` VALUES ('10315', '7', '查看全部金融产品', '正常', '10111', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:50:43', '2016-10-25 13:50:43');
+INSERT INTO `tp_func` VALUES ('10316', '1', '客户统计数', '正常', '10112', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:51:25', '2016-10-25 13:51:25');
+INSERT INTO `tp_func` VALUES ('10317', '2', '常规查询', '正常', '10112', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 13:51:37', '2016-10-25 13:51:37');
+INSERT INTO `tp_func` VALUES ('10318', '3', '查询-按订单类型', '正常', '10112', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 14:00:48', '2016-10-25 14:00:48');
+INSERT INTO `tp_func` VALUES ('10319', '4', '客户列表', '正常', '10112', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 14:00:59', '2016-10-25 14:00:59');
+INSERT INTO `tp_func` VALUES ('10320', '1', '号码查询', '正常', '10113', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:10:05', '2016-10-25 15:10:05');
+INSERT INTO `tp_func` VALUES ('10321', '2', '添加客户', '正常', '10113', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:10:20', '2016-10-25 15:10:20');
+INSERT INTO `tp_func` VALUES ('10322', '1', '外出计划', '正常', '10114', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:11:11', '2016-10-25 15:11:11');
+INSERT INTO `tp_func` VALUES ('10323', '1', '客户信息', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:12:32', '2016-10-25 15:12:32');
+INSERT INTO `tp_func` VALUES ('10324', '2', '转移', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:12:39', '2016-10-25 15:12:39');
+INSERT INTO `tp_func` VALUES ('10325', '3', '战败', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:12:45', '2016-10-25 15:12:45');
+INSERT INTO `tp_func` VALUES ('10326', '4', '创建待办', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:12:54', '2016-10-25 15:12:54');
+INSERT INTO `tp_func` VALUES ('10327', '5', '免打扰', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:13:04', '2016-10-25 15:13:04');
+INSERT INTO `tp_func` VALUES ('10328', '6', '推送商家入口', '正常', '10115', '51', '通过', '腰立辉', '腰立辉', '2016-10-25 17:35:12', '2016-10-25 17:35:12');
+INSERT INTO `tp_func` VALUES ('10329', '7', '外出计划入口', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:13:21', '2016-10-25 15:13:21');
+INSERT INTO `tp_func` VALUES ('10330', '8', '订单列表', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:13:40', '2016-10-25 15:13:40');
+INSERT INTO `tp_func` VALUES ('10331', '9', '查看已绑定礼包', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:14:08', '2016-10-25 15:14:08');
+INSERT INTO `tp_func` VALUES ('10332', '10', '查看金融产品', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:14:21', '2016-10-25 15:14:21');
+INSERT INTO `tp_func` VALUES ('10333', '11', '跟进待办', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:14:36', '2016-10-25 15:14:36');
+INSERT INTO `tp_func` VALUES ('10334', '12', '客户基本信息', '正常', '10115', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 15:14:48', '2016-10-25 15:14:48');
+INSERT INTO `tp_func` VALUES ('10335', '1', '客户信息', '正常', '10116', '51', '通过', '腰立辉', '腰立辉', '2016-10-25 17:35:23', '2016-10-25 17:35:23');
+INSERT INTO `tp_func` VALUES ('10336', '2', '客户姓名调整信息页', '正常', '10116', '51', '通过', '腰立辉', '腰立辉', '2016-10-25 17:35:27', '2016-10-25 17:35:27');
+INSERT INTO `tp_func` VALUES ('10337', '3', '创建买顾订单', '正常', '10116', '51', '通过', '腰立辉', '腰立辉', '2016-10-25 17:35:32', '2016-10-25 17:35:32');
+INSERT INTO `tp_func` VALUES ('10338', '1', '查询-按客户姓名', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:37:30', '2016-10-25 16:37:30');
+INSERT INTO `tp_func` VALUES ('10339', '2', '查询-按客户手机', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:37:46', '2016-10-25 16:37:46');
+INSERT INTO `tp_func` VALUES ('10340', '3', '查询-按订单编号', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:38:06', '2016-10-25 16:38:06');
+INSERT INTO `tp_func` VALUES ('10341', '4', '查询-按媒体单号', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:38:24', '2016-10-25 16:38:24');
+INSERT INTO `tp_func` VALUES ('10342', '5', '查询-按订单状态', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:38:40', '2016-10-25 16:38:40');
+INSERT INTO `tp_func` VALUES ('10343', '6', '查询-按订单来源', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:38:51', '2016-10-25 16:38:51');
+INSERT INTO `tp_func` VALUES ('10344', '7', '查询-按订单车型', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:39:09', '2016-10-25 16:39:09');
+INSERT INTO `tp_func` VALUES ('10345', '8', '查询-按下单时间', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:39:19', '2016-10-25 16:39:19');
+INSERT INTO `tp_func` VALUES ('10346', '9', '订单列表', '正常', '10052', '51', '通过', '腰立辉', '腰立辉', '2016-10-25 17:35:41', '2016-10-25 17:35:41');
+INSERT INTO `tp_func` VALUES ('10347', '10', '【客户手机号】客户跟进', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:40:12', '2016-10-25 16:40:12');
+INSERT INTO `tp_func` VALUES ('10348', '11', '详情', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:40:24', '2016-10-25 16:40:24');
+INSERT INTO `tp_func` VALUES ('10349', '12', '赠送随手礼', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:40:38', '2016-10-25 16:40:38');
+INSERT INTO `tp_func` VALUES ('10350', '13', '跟进', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:40:49', '2016-10-25 16:40:49');
+INSERT INTO `tp_func` VALUES ('10351', '14', '查看金融产品', '正常', '10052', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:40:58', '2016-10-25 16:40:58');
+INSERT INTO `tp_func` VALUES ('10352', '1', '查询-按客户姓名', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:45:10', '2016-10-25 16:45:10');
+INSERT INTO `tp_func` VALUES ('10353', '2', '查询-按客户手机号', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:45:19', '2016-10-25 16:45:19');
+INSERT INTO `tp_func` VALUES ('10354', '3', '查询-按车主姓名', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:45:32', '2016-10-25 16:45:32');
+INSERT INTO `tp_func` VALUES ('10355', '4', '查询-按订单编号', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:45:44', '2016-10-25 16:45:44');
+INSERT INTO `tp_func` VALUES ('10356', '5', '查询-按订单来源', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:45:54', '2016-10-25 16:45:54');
+INSERT INTO `tp_func` VALUES ('10357', '6', '查询-按订单品牌', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:05', '2016-10-25 16:46:05');
+INSERT INTO `tp_func` VALUES ('10358', '7', '查询-按订单车型', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:16', '2016-10-25 16:46:16');
+INSERT INTO `tp_func` VALUES ('10359', '8', '查询-按信息状态', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:24', '2016-10-25 16:46:24');
+INSERT INTO `tp_func` VALUES ('10360', '9', '查询-按买顾大区', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:33', '2016-10-25 16:46:33');
+INSERT INTO `tp_func` VALUES ('10361', '10', '查询-按买顾城市', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:41', '2016-10-25 16:46:41');
+INSERT INTO `tp_func` VALUES ('10362', '11', '查询-按买顾姓名', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:46:52', '2016-10-25 16:46:52');
+INSERT INTO `tp_func` VALUES ('10363', '12', '查询-按成交状态', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:47:04', '2016-10-25 16:47:04');
+INSERT INTO `tp_func` VALUES ('10364', '13', '查询-按成交时间', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:47:21', '2016-10-25 16:47:21');
+INSERT INTO `tp_func` VALUES ('10365', '14', '成交订单列表', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:47:33', '2016-10-25 16:47:33');
+INSERT INTO `tp_func` VALUES ('10366', '15', '【订单ID】订单详情', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:47:48', '2016-10-25 16:47:48');
+INSERT INTO `tp_func` VALUES ('10367', '16', '【客户手机号】跟进', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:48:11', '2016-10-25 16:48:11');
+INSERT INTO `tp_func` VALUES ('10368', '17', '填写成交信息', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:48:26', '2016-10-25 16:48:26');
+INSERT INTO `tp_func` VALUES ('10369', '18', '转顾问', '正常', '10117', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:48:32', '2016-10-25 16:48:32');
+INSERT INTO `tp_func` VALUES ('10370', '1', '查询-按借贷人姓名', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:55:44', '2016-10-25 16:55:44');
+INSERT INTO `tp_func` VALUES ('10371', '2', '查询-按借贷人手机号', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:55:58', '2016-10-25 16:55:58');
+INSERT INTO `tp_func` VALUES ('10372', '3', '查询-按融资单ID', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:56:15', '2016-10-25 16:56:15');
+INSERT INTO `tp_func` VALUES ('10373', '4', '查询-按状态', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:56:24', '2016-10-25 16:56:24');
+INSERT INTO `tp_func` VALUES ('10374', '5', '查询-按融资单车型', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:56:38', '2016-10-25 16:56:38');
+INSERT INTO `tp_func` VALUES ('10375', '6', '查询-按下单时间', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:56:46', '2016-10-25 16:56:46');
+INSERT INTO `tp_func` VALUES ('10376', '7', '金融订单列表', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:57:23', '2016-10-25 16:57:23');
+INSERT INTO `tp_func` VALUES ('10377', '8', '【关联订单】', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:57:37', '2016-10-25 16:57:37');
+INSERT INTO `tp_func` VALUES ('10378', '9', '详情', '正常', '10118', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:57:46', '2016-10-25 16:57:46');
+INSERT INTO `tp_func` VALUES ('10379', '1', '查询-按借贷人姓名', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:58:17', '2016-10-25 16:58:17');
+INSERT INTO `tp_func` VALUES ('10380', '2', '查询-按借贷人手机号', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:58:30', '2016-10-25 16:58:30');
+INSERT INTO `tp_func` VALUES ('10381', '3', '查询-按维保单ID', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:58:42', '2016-10-25 16:58:42');
+INSERT INTO `tp_func` VALUES ('10382', '4', '查询-按维保单状态', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 16:58:52', '2016-10-25 16:58:52');
+INSERT INTO `tp_func` VALUES ('10383', '5', '查询-按维保单车型', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:00:18', '2016-10-25 17:00:18');
+INSERT INTO `tp_func` VALUES ('10384', '6', '查询-按下单时间', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:00:26', '2016-10-25 17:00:26');
+INSERT INTO `tp_func` VALUES ('10385', '7', '维保订单列表', '正常', '10119', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:00:40', '2016-10-25 17:00:40');
+INSERT INTO `tp_func` VALUES ('10386', '1', '待确认订单统计', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:18:04', '2016-10-25 17:18:04');
+INSERT INTO `tp_func` VALUES ('10387', '2', '待结算定金汇总', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:18:24', '2016-10-25 17:18:24');
+INSERT INTO `tp_func` VALUES ('10388', '3', '【立即结算】', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:18:32', '2016-10-25 17:18:32');
+INSERT INTO `tp_func` VALUES ('10389', '4', '查询-按客户手机', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:18:49', '2016-10-25 17:18:49');
+INSERT INTO `tp_func` VALUES ('10390', '5', '查询-按订单类型', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:19:07', '2016-10-25 17:19:07');
+INSERT INTO `tp_func` VALUES ('10391', '6', '查询-按定金状态', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:19:17', '2016-10-25 17:19:17');
+INSERT INTO `tp_func` VALUES ('10392', '7', '查询-按订单编号', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:19:29', '2016-10-25 17:19:29');
+INSERT INTO `tp_func` VALUES ('10393', '8', '查询-按订单来源', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:19:37', '2016-10-25 17:19:37');
+INSERT INTO `tp_func` VALUES ('10394', '9', '查询-按订单状态', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:05', '2016-10-25 17:20:05');
+INSERT INTO `tp_func` VALUES ('10395', '10', '查询-按顾问', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:15', '2016-10-25 17:20:15');
+INSERT INTO `tp_func` VALUES ('10396', '11', '订单列表', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:26', '2016-10-25 17:20:26');
+INSERT INTO `tp_func` VALUES ('10397', '12', '导出列表', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:32', '2016-10-25 17:20:32');
+INSERT INTO `tp_func` VALUES ('10398', '13', '确认成交', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:44', '2016-10-25 17:20:44');
+INSERT INTO `tp_func` VALUES ('10399', '14', '取消交易', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:51', '2016-10-25 17:20:51');
+INSERT INTO `tp_func` VALUES ('10400', '15', '详情', '正常', '10124', '50', '未测试', '腰立辉', '腰立辉', '2016-10-25 17:20:59', '2016-10-25 17:20:59');
 
 -- ----------------------------
 -- Table structure for `tp_hcfunc`
@@ -870,7 +1063,7 @@ CREATE TABLE `tp_hcfunc` (
   `num20` varchar(255) DEFAULT NULL,
   `adder` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=72 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=77 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_hcfunc
@@ -891,7 +1084,7 @@ CREATE TABLE `tp_path` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10108 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10140 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_path
@@ -940,8 +1133,8 @@ INSERT INTO `tp_path` VALUES ('10047', '13', '统计报表-买顾业绩统计', 
 INSERT INTO `tp_path` VALUES ('10048', '14', '线索管理-全部线索', '正常', '11', '腰立辉', '腰立辉', '2016-09-26 11:24:44', '2016-09-26 10:12:36');
 INSERT INTO `tp_path` VALUES ('10049', '15', '线索管理-线索来源配置', '正常', '11', '腰立辉', '腰立辉', '2016-09-26 11:24:47', '2016-09-26 10:13:00');
 INSERT INTO `tp_path` VALUES ('10050', '16', '任务管理-添加客户', '正常', '11', '腰立辉', '腰立辉', '2016-09-26 11:24:50', '2016-09-26 10:14:51');
-INSERT INTO `tp_path` VALUES ('10051', '22', '任务管理-任务管理', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:56:59', '2016-10-21 11:56:59');
-INSERT INTO `tp_path` VALUES ('10052', '18', '订单管理', '正常', '11', '腰立辉', '腰立辉', '2016-09-26 11:24:55', '2016-09-26 10:15:21');
+INSERT INTO `tp_path` VALUES ('10051', '22', '任务管理-任务管理-今日待办', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:26:25', '2016-10-25 10:26:25');
+INSERT INTO `tp_path` VALUES ('10052', '23', '订单管理-全部新车订单', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 16:35:44', '2016-10-25 16:35:44');
 INSERT INTO `tp_path` VALUES ('10053', '24', '权限管理-角色类型管理', '已搁置', '11', '腰立辉', '腰立辉', '2016-10-21 11:56:14', '2016-10-21 11:56:14');
 INSERT INTO `tp_path` VALUES ('10054', '25', '权限管理-系统资源管理', '已搁置', '11', '腰立辉', '腰立辉', '2016-10-21 11:56:05', '2016-10-21 11:56:05');
 INSERT INTO `tp_path` VALUES ('10055', '26', '权限管理-角色管理', '已搁置', '11', '腰立辉', '腰立辉', '2016-10-21 11:55:56', '2016-10-21 11:55:56');
@@ -957,13 +1150,13 @@ INSERT INTO `tp_path` VALUES ('10064', '35', '消息中心-品牌分配', '正�
 INSERT INTO `tp_path` VALUES ('10065', '36', '基盘客户管理-待办任务', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:40:28', '2016-10-21 11:40:28');
 INSERT INTO `tp_path` VALUES ('10066', '37', '基盘客户管理-短信推送', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:40:16', '2016-10-21 11:40:16');
 INSERT INTO `tp_path` VALUES ('10067', '38', '价格库存管理-车型及报价配置管理', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:40:08', '2016-10-21 11:40:08');
-INSERT INTO `tp_path` VALUES ('10072', '20', '任务管理-价格库存管理-新增车款', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:56:29', '2016-10-21 11:56:29');
+INSERT INTO `tp_path` VALUES ('10072', '20', '任务管理-报价收集-新增车款', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:25:14', '2016-10-25 10:25:14');
 INSERT INTO `tp_path` VALUES ('10069', '39', '价格库存管理-车型价格库', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:40:00', '2016-10-21 11:40:00');
-INSERT INTO `tp_path` VALUES ('10070', '19', '任务管理-价格库存管理-即将过期', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:39:21', '2016-10-21 11:39:21');
+INSERT INTO `tp_path` VALUES ('10070', '19', '任务管理-报价收集-即将过期', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:25:06', '2016-10-25 10:25:06');
 INSERT INTO `tp_path` VALUES ('10071', '10', '业务管理-价格收集管理', '正常', '11', '腰立辉', '腰立辉', '2016-09-26 11:24:35', '2016-09-26 11:10:39');
-INSERT INTO `tp_path` VALUES ('10073', '18', '任务管理-价格库存管理-我的报价', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:39:11', '2016-10-21 11:39:11');
-INSERT INTO `tp_path` VALUES ('10074', '17', '任务管理-价格库存管理-待确定价格', '正常', '11', '腰立辉', '腰立辉', '2016-10-10 14:33:38', '2016-10-10 14:33:38');
-INSERT INTO `tp_path` VALUES ('10075', '21', '任务管理-价格库存管理-库存价格收集', '正常', '11', '腰立辉', '腰立辉', '2016-10-21 11:56:39', '2016-10-21 11:56:39');
+INSERT INTO `tp_path` VALUES ('10073', '18', '任务管理-报价收集-我的报价', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:24:59', '2016-10-25 10:24:59');
+INSERT INTO `tp_path` VALUES ('10074', '17', '任务管理-报价收集-待确定价格', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:24:51', '2016-10-25 10:24:51');
+INSERT INTO `tp_path` VALUES ('10075', '21', '任务管理-报价收集-库存价格收集', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:25:22', '2016-10-25 10:25:22');
 INSERT INTO `tp_path` VALUES ('10076', '1', '登陆模块', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:19:26', '2016-09-26 16:19:26');
 INSERT INTO `tp_path` VALUES ('10077', '2', '设置-角色管理', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:20:09', '2016-09-26 16:20:09');
 INSERT INTO `tp_path` VALUES ('10078', '3', '设置-用户管理', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:33:20', '2016-09-26 16:33:20');
@@ -996,6 +1189,38 @@ INSERT INTO `tp_path` VALUES ('10104', '4', '测试库-项目用例库', '正常
 INSERT INTO `tp_path` VALUES ('10105', '4', '测试库-项目控件库', '正常', '54', '腰立辉', '腰立辉', '2016-09-26 16:29:09', '2016-09-26 16:29:09');
 INSERT INTO `tp_path` VALUES ('10106', '1', '登录模块', '正常', '57', '腰立辉', '腰立辉', '2016-09-27 17:15:49', '2016-09-27 17:15:49');
 INSERT INTO `tp_path` VALUES ('10107', '2', '我的工作台', '正常', '57', '腰立辉', '腰立辉', '2016-09-27 17:16:06', '2016-09-27 17:16:06');
+INSERT INTO `tp_path` VALUES ('10108', '22', '任务管理-任务管理-过期待办', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:26:48', '2016-10-25 10:26:48');
+INSERT INTO `tp_path` VALUES ('10109', '22', '任务管理-任务管理-全部待办', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:27:04', '2016-10-25 10:27:04');
+INSERT INTO `tp_path` VALUES ('10110', '22', '任务管理-任务管理-金融待办', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:27:25', '2016-10-25 10:27:25');
+INSERT INTO `tp_path` VALUES ('10111', '22', '任务管理-任务管理-全部客户', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:27:42', '2016-10-25 10:27:42');
+INSERT INTO `tp_path` VALUES ('10112', '22', '任务管理-任务管理-投诉客户', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 10:28:05', '2016-10-25 10:28:05');
+INSERT INTO `tp_path` VALUES ('10113', '22', '任务管理-任务管理-添加客户', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 14:02:43', '2016-10-25 14:02:43');
+INSERT INTO `tp_path` VALUES ('10114', '22', '任务管理-任务管理-查看外出计划', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 14:03:05', '2016-10-25 14:03:05');
+INSERT INTO `tp_path` VALUES ('10115', '22', '任务管理-任务管理-跟进', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 14:03:23', '2016-10-25 14:03:23');
+INSERT INTO `tp_path` VALUES ('10116', '22', '任务管理-任务管理-跟进-推送商家', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 15:16:12', '2016-10-25 15:16:12');
+INSERT INTO `tp_path` VALUES ('10117', '23', '订单管理-成交订单', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 16:36:17', '2016-10-25 16:36:17');
+INSERT INTO `tp_path` VALUES ('10118', '23', '订单管理-金融订单', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 16:36:34', '2016-10-25 16:36:34');
+INSERT INTO `tp_path` VALUES ('10119', '23', '订单管理-维保订单', '正常', '11', '腰立辉', '腰立辉', '2016-10-25 16:36:47', '2016-10-25 16:36:47');
+INSERT INTO `tp_path` VALUES ('10120', '1', '登陆模块', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:11:33', '2016-10-25 17:11:33');
+INSERT INTO `tp_path` VALUES ('10121', '2', '首页', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:11:58', '2016-10-25 17:11:58');
+INSERT INTO `tp_path` VALUES ('10122', '3', '订单管理', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:12:22', '2016-10-25 17:12:22');
+INSERT INTO `tp_path` VALUES ('10123', '4', '订单管理-竞价订单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:12:43', '2016-10-25 17:12:43');
+INSERT INTO `tp_path` VALUES ('10124', '5', '订单管理-成交确认', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:12:56', '2016-10-25 17:12:56');
+INSERT INTO `tp_path` VALUES ('10125', '6', '交易佣金-本月账单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:13:43', '2016-10-25 17:13:43');
+INSERT INTO `tp_path` VALUES ('10126', '7', '交易佣金-历史账单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:13:51', '2016-10-25 17:13:51');
+INSERT INTO `tp_path` VALUES ('10127', '8', '交易佣金-交易明细', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:13:59', '2016-10-25 17:13:59');
+INSERT INTO `tp_path` VALUES ('10128', '9', '金牌商家计划-本月账单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:14:31', '2016-10-25 17:14:31');
+INSERT INTO `tp_path` VALUES ('10129', '10', '金牌商家计划-历史账单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:14:47', '2016-10-25 17:14:47');
+INSERT INTO `tp_path` VALUES ('10130', '11', '金融服务-金融订单', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:15:08', '2016-10-25 17:15:08');
+INSERT INTO `tp_path` VALUES ('10131', '12', '金融服务-订单结算', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:15:23', '2016-10-25 17:15:23');
+INSERT INTO `tp_path` VALUES ('10132', '13', '维修保养', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:15:54', '2016-10-25 17:15:54');
+INSERT INTO `tp_path` VALUES ('10133', '14', '基本设置-人员管理', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:16:11', '2016-10-25 17:16:11');
+INSERT INTO `tp_path` VALUES ('10134', '15', '基本设置-车型管理', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:16:26', '2016-10-25 17:16:26');
+INSERT INTO `tp_path` VALUES ('10135', '16', '基本设置-位置管理', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:16:34', '2016-10-25 17:16:34');
+INSERT INTO `tp_path` VALUES ('10136', '17', '基本设置-结算账户', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:16:41', '2016-10-25 17:16:41');
+INSERT INTO `tp_path` VALUES ('10137', '18', '统计报表', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:16:49', '2016-10-25 17:16:49');
+INSERT INTO `tp_path` VALUES ('10138', '19', '信用评价', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:17:12', '2016-10-25 17:17:12');
+INSERT INTO `tp_path` VALUES ('10139', '20', '专题活动', '正常', '6', '腰立辉', '腰立辉', '2016-10-25 17:17:28', '2016-10-25 17:17:28');
 
 -- ----------------------------
 -- Table structure for `tp_product`
@@ -1082,7 +1307,7 @@ CREATE TABLE `tp_prosys` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`prosysid`)
-) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=76 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_prosys
@@ -1098,7 +1323,9 @@ INSERT INTO `tp_prosys` VALUES ('65', '4', '49', '腰立辉', '腰立辉', '2016
 INSERT INTO `tp_prosys` VALUES ('69', '11', '50', '腰立辉', '腰立辉', '2016-10-19 12:50:06', '2016-10-19 12:50:06');
 INSERT INTO `tp_prosys` VALUES ('70', '54', '45', '王鑫彤', '王鑫彤', '2016-10-21 10:27:07', '2016-10-21 10:27:07');
 INSERT INTO `tp_prosys` VALUES ('71', '4', '47', '王鑫彤', '王鑫彤', '2016-10-21 10:57:01', '2016-10-21 10:57:01');
+INSERT INTO `tp_prosys` VALUES ('74', '11', '51', '腰立辉', '腰立辉', '2016-10-25 15:17:08', '2016-10-25 15:17:08');
 INSERT INTO `tp_prosys` VALUES ('73', '3', '65', '腰立辉', '腰立辉', '2016-10-24 09:21:35', '2016-10-24 09:21:35');
+INSERT INTO `tp_prosys` VALUES ('75', '6', '51', '腰立辉', '腰立辉', '2016-10-25 17:11:04', '2016-10-25 17:11:04');
 
 -- ----------------------------
 -- Table structure for `tp_risk`
@@ -1143,7 +1370,7 @@ CREATE TABLE `tp_rules` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10003 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10013 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_rules
@@ -1151,6 +1378,16 @@ CREATE TABLE `tp_rules` (
 INSERT INTO `tp_rules` VALUES ('10000', '1', '用户名用自己的域账号，密码默认为123456', '需求文档', '10000', '正常', '45', '', '腰立辉', '腰立辉', '2016-09-22 15:09:32', '2016-09-22 15:09:32');
 INSERT INTO `tp_rules` VALUES ('10001', '1', '正常注销', '需求文档', '10001', '正常', '45', '', '腰立辉', '腰立辉', '2016-09-22 16:43:37', '2016-09-22 16:43:37');
 INSERT INTO `tp_rules` VALUES ('10002', '1', '222', '需求文档', '10116', '正常', '47', '', '腰立辉', '腰立辉', '2016-10-14 14:00:15', '2016-10-14 14:00:15');
+INSERT INTO `tp_rules` VALUES ('10003', '1', '未注册客户，按钮禁用，鼠标悬停有提示', '需求原型', '10328', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:20:04', '2016-10-25 15:20:04');
+INSERT INTO `tp_rules` VALUES ('10004', '1', '点击姓名，跳转客户详情', '需求文档', '10336', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:21:19', '2016-10-25 15:21:19');
+INSERT INTO `tp_rules` VALUES ('10005', '1', '车主姓名  限制20个汉字', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:36:06', '2016-10-25 15:36:06');
+INSERT INTO `tp_rules` VALUES ('10006', '2', '创建订单除优惠券外，各项信息均为必填，需验证信息准确性。  未填写和填写不合法时的提示', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:35:48', '2016-10-25 15:35:48');
+INSERT INTO `tp_rules` VALUES ('10007', '3', '车主手机11位手机号码', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:36:30', '2016-10-25 15:36:30');
+INSERT INTO `tp_rules` VALUES ('10008', '4', '上牌城市范围全国，省份城市级联，均必选', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:36:56', '2016-10-25 15:36:56');
+INSERT INTO `tp_rules` VALUES ('10009', '5', '意向车型品牌、车型、车款级联，品牌影响商家范围', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:37:18', '2016-10-25 15:37:18');
+INSERT INTO `tp_rules` VALUES ('10010', '6', '购车时间日期选择控件，不可选择早于当前时间', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:37:48', '2016-10-25 15:37:48');
+INSERT INTO `tp_rules` VALUES ('10011', '7', '选择商家 受购车城市和品牌影响，更换品牌时重置商家', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:39:04', '2016-10-25 15:39:04');
+INSERT INTO `tp_rules` VALUES ('10012', '8', '商家报价  限制填写0以上整数数字', '需求文档', '10337', '正常', '51', '', '腰立辉', '腰立辉', '2016-10-25 15:38:49', '2016-10-25 15:38:49');
 
 -- ----------------------------
 -- Table structure for `tp_scene`
@@ -1174,7 +1411,7 @@ CREATE TABLE `tp_scene` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10026 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10029 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scene
@@ -1188,6 +1425,7 @@ INSERT INTO `tp_scene` VALUES ('10005', '4', 'M', '2', '默认', '默认', 'http
 INSERT INTO `tp_scene` VALUES ('10006', '5', 'M', '2', '默认', '默认', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目', '正常', '45', '登录-建项目-建里程碑', '10000', '腰立辉', '腰立辉', '2016-09-25 21:42:14', '2016-09-25 21:42:14');
 INSERT INTO `tp_scene` VALUES ('10007', '6', 'M', '2', '默认', '无对应产品时', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '45', '登录-建产品-建项目-建里程碑-选系统', '10001', '腰立辉', null, '2016-09-25 21:46:13', '0000-00-00 00:00:00');
 INSERT INTO `tp_scene` VALUES ('10008', '1', 'M', '2', '默认', '默认', 'http://127.0.0.1:81/tpTest/autotest.php/Index/index', '正常创建测试项目并制定里程碑选定测试系统', '正常', '47', '登录-建项目-建里程碑', '10000', '腰立辉', null, '2016-09-25 21:53:23', '0000-00-00 00:00:00');
+INSERT INTO `tp_scene` VALUES ('10027', '2', 'M', '2', '买顾', '客户已注册', '', '推送商家商家确认', '正常', '51', '', '0', '腰立辉', '腰立辉', '2016-10-25 17:08:33', '2016-10-25 17:08:33');
 INSERT INTO `tp_scene` VALUES ('10010', '1', 'M', '2', '管理员', '默认', '', '添加TOP100车款', '正常', '46', '', '0', '腰立辉', '腰立辉', '2016-09-27 16:47:46', '2016-09-27 16:47:46');
 INSERT INTO `tp_scene` VALUES ('10011', '2', 'M', '2', '管理员', '默认', '', '给TOP100车款批量配置电销和买顾', '正常', '46', '', '0', '腰立辉', '腰立辉', '2016-09-27 16:57:28', '2016-09-27 16:57:28');
 INSERT INTO `tp_scene` VALUES ('10012', '3', 'M', '2', '默认', '默认', '', '【功能】车型及报价员配置管理', '正常', '46', '', '0', '腰立辉', '腰立辉', '2016-10-10 13:32:31', '2016-10-10 13:32:31');
@@ -1199,6 +1437,8 @@ INSERT INTO `tp_scene` VALUES ('10017', '8', 'M', '2', '【功能】', '默认',
 INSERT INTO `tp_scene` VALUES ('10018', '9', 'M', '2', '【功能】', '默认', '', '产品库-产品管理', '正常', '45', '', '0', '腰立辉', '腰立辉', '2016-10-13 09:57:06', '2016-10-13 09:57:06');
 INSERT INTO `tp_scene` VALUES ('10019', '10', 'M', '2', '【功能】', '默认', '', '项目管理', '正常', '45', '', '0', '腰立辉', '腰立辉', '2016-10-13 09:57:21', '2016-10-13 09:57:21');
 INSERT INTO `tp_scene` VALUES ('10021', '11', 'M', '2', '【功能】', '默认', '', '项目-里程碑', '正常', '45', '里程碑下所有子功能', '0', '腰立辉', '腰立辉', '2016-10-17 09:40:20', '2016-10-17 09:40:20');
+INSERT INTO `tp_scene` VALUES ('10026', '1', 'M', '2', '买顾', '客户未注册', '', '推送商家', '正常', '51', '', '0', '腰立辉', '腰立辉', '2016-10-25 17:08:03', '2016-10-25 17:08:03');
+INSERT INTO `tp_scene` VALUES ('10028', '3', 'M', '2', '买顾', '客户已注册', '', '推送商家商家取消交易', '正常', '51', '', '10027', '腰立辉', '腰立辉', '2016-10-25 17:24:30', '2016-10-25 17:24:30');
 
 -- ----------------------------
 -- Table structure for `tp_scenefunc`
@@ -1243,7 +1483,7 @@ CREATE TABLE `tp_scenefunc` (
   `createTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updateTime` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=10146 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10178 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_scenefunc
@@ -1341,6 +1581,37 @@ INSERT INTO `tp_scenefunc` VALUES ('10122', '5', '10027', 'Auto.Access', '项目
 INSERT INTO `tp_scenefunc` VALUES ('10123', '6', '10198', 'Auto.Access', '项目-里程碑', 'M人员-入口（手工）', '10021', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-17 09:52:24', '0000-00-00 00:00:00');
 INSERT INTO `tp_scenefunc` VALUES ('10124', '7', '10026', 'Auto.Access', '项目-里程碑', 'A人员-入口（自动化）', '10021', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-17 09:52:27', '0000-00-00 00:00:00');
 INSERT INTO `tp_scenefunc` VALUES ('10125', '2', '10007', 'Auto.Access', 'Access客户端-测试项目', '项目-添加', '10008', null, '0', '10103', '已绑定', '正常添加项目', '添加成功', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-17 16:28:15', '2016-10-17 16:28:15');
+INSERT INTO `tp_scenefunc` VALUES ('10147', '2', '10277', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', '10026', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:09:05', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10146', '1', '10273', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', '10026', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:09:00', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10148', '3', '10289', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', '10026', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:09:16', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10149', '4', '10292', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', '10026', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:09:21', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10150', '5', '10328', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', '10026', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:09:41', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10151', null, '10277', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:10:14', '2016-10-25 17:10:14');
+INSERT INTO `tp_scenefunc` VALUES ('10152', null, '10273', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:10:14', '2016-10-25 17:10:14');
+INSERT INTO `tp_scenefunc` VALUES ('10153', null, '10289', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:10:14', '2016-10-25 17:10:14');
+INSERT INTO `tp_scenefunc` VALUES ('10154', null, '10292', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:10:14', '2016-10-25 17:10:14');
+INSERT INTO `tp_scenefunc` VALUES ('10155', null, '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:10:14', '2016-10-25 17:10:14');
+INSERT INTO `tp_scenefunc` VALUES ('10156', '6', '10335', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户信息', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:10:35', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10157', '7', '10336', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户姓名调整信息页', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:10:37', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10158', '8', '10337', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '创建买顾订单', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:10:40', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10159', '9', '10389', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '查询-按客户手机', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:23:06', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10160', '10', '10396', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '订单列表', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:23:15', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10161', '11', '10398', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '确认成交', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:23:25', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10162', '12', '10338', 'OP.HmcDSCRM', '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户姓名', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:23:53', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10163', '13', '10346', 'OP.HmcDSCRM', '惠买车电商CRM-订单管理-全部新车订单', '订单列表', '10027', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', null, '2016-10-25 17:23:57', '0000-00-00 00:00:00');
+INSERT INTO `tp_scenefunc` VALUES ('10164', null, '10277', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '查询-按待办来源', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10165', null, '10273', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '数量统计', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10166', null, '10289', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '今日待办列表', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10167', null, '10292', null, '惠买车电商CRM-任务管理-任务管理-今日待办', '客户跟进入口', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10168', null, '10328', null, '惠买车电商CRM-任务管理-任务管理-跟进', '推送商家入口', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10169', '6', '10335', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户信息', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10170', '7', '10336', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '客户姓名调整信息页', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10171', '8', '10337', 'OP.HmcDSCRM', '惠买车电商CRM-任务管理-任务管理-跟进-推送商家', '创建买顾订单', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10172', '9', '10389', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '查询-按客户手机', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10173', '10', '10396', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '订单列表', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10177', '11', '10399', 'Dealer.hmc', '惠买车商家版-订单管理-成交确认', '取消交易', '10028', '', '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:25:17', '2016-10-25 17:25:17');
+INSERT INTO `tp_scenefunc` VALUES ('10175', '12', '10338', 'OP.HmcDSCRM', '惠买车电商CRM-订单管理-全部新车订单', '查询-按客户姓名', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
+INSERT INTO `tp_scenefunc` VALUES ('10176', '13', '10346', 'OP.HmcDSCRM', '惠买车电商CRM-订单管理-全部新车订单', '订单列表', '10028', null, '0', null, '未绑定', null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, '腰立辉', '腰立辉', '2016-10-25 17:24:10', '2016-10-25 17:24:10');
 
 -- ----------------------------
 -- Table structure for `tp_stage`
@@ -1395,9 +1666,9 @@ INSERT INTO `tp_stage` VALUES ('1026', '4', '第一轮测试', '50', '2016-11-03
 INSERT INTO `tp_stage` VALUES ('1027', '5', '第二轮测试', '50', '2016-11-04', '2016-11-05', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-20 15:00:43', '2016-10-20 15:00:43');
 INSERT INTO `tp_stage` VALUES ('1028', '6', '线上验证测试', '50', '2016-11-05', '2016-11-06', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-20 15:01:01', '2016-10-20 15:01:01');
 INSERT INTO `tp_stage` VALUES ('1029', '1', '编写测试计划', '51', '2016-10-21', '2016-10-22', '已完成', '无文档', '腰立辉', '腰立辉', '2016-10-21 11:32:27', '2016-10-21 11:32:27');
-INSERT INTO `tp_stage` VALUES ('1030', '2', '编写测试用例', '51', '2016-10-21', '2016-10-25', '进行中', '测试用例', '腰立辉', '腰立辉', '2016-10-21 11:32:46', '2016-10-21 11:32:46');
-INSERT INTO `tp_stage` VALUES ('1031', '3', '功能验证', '51', '2016-10-24', '2016-10-24', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-21 11:33:11', '2016-10-21 11:33:11');
-INSERT INTO `tp_stage` VALUES ('1032', '4', '第一轮测试', '51', '2016-10-24', '2016-10-25', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-21 11:33:24', '2016-10-21 11:33:24');
+INSERT INTO `tp_stage` VALUES ('1030', '2', '编写测试用例', '51', '2016-10-21', '2016-10-25', '已完成', '测试用例', '腰立辉', '腰立辉', '2016-10-25 17:03:06', '2016-10-21 11:32:46');
+INSERT INTO `tp_stage` VALUES ('1031', '3', '功能验证', '51', '2016-10-24', '2016-10-24', '已完成', '无文档', '腰立辉', '腰立辉', '2016-10-25 17:26:01', '2016-10-21 11:33:11');
+INSERT INTO `tp_stage` VALUES ('1032', '4', '第一轮测试', '51', '2016-10-24', '2016-10-25', '进行中', '无文档', '腰立辉', '腰立辉', '2016-10-25 17:26:03', '2016-10-21 11:33:24');
 INSERT INTO `tp_stage` VALUES ('1033', '5', '第二轮测试', '51', '2016-10-25', '2016-10-26', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-21 11:33:37', '2016-10-21 11:33:37');
 INSERT INTO `tp_stage` VALUES ('1034', '6', '线上验证测试', '51', '2016-10-27', '2016-10-27', '未开始', '无文档', '腰立辉', '腰立辉', '2016-10-21 11:33:48', '2016-10-21 11:33:48');
 
