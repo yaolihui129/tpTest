@@ -10,7 +10,7 @@ class DictAction extends CommonAction {
     	     /* 1.分类数据*/
          $tp=$m->field('type',false)->group('type')->select();
              /* 2.分类字典*/
-    	 $arr=$m->field('id,k,v,type,state,moder,updateTime',false)->where($where)->select();
+    	 $arr=$m->field('id,k,v,type,state,moder,updatetime',false)->where($where)->order('k')->select();
 
     	 /* 输出数据*/
     	 $this->assign('data',$tp);
@@ -27,7 +27,7 @@ class DictAction extends CommonAction {
         /* 实例化模型*/
         $m=M('dict');
         /* 查询数据*/
-        $arr=$m->field('id,k,v,type,state,moder,updateTime',false)->where($where)->select();
+        $arr=$m->field('id,k,v,type,state,moder,updateTime',false)->where($where)->order('k')->select();
         $this->assign('data',$arr);
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
@@ -62,7 +62,7 @@ class DictAction extends CommonAction {
         /* 实例化模型*/
         $m=M('dict');
         /* 查询数据*/
-        $arr=$m->field('id,k,v,type,state',false)->where($where)->select();
+        $arr=$m->field('id,k,v,type,state',false)->where($where)->order('k')->select();
         $dic=$m->find($id);
 
 

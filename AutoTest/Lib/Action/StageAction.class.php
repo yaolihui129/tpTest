@@ -105,16 +105,16 @@ class StageAction extends CommonAction {
 
     }
 
-    
+
     public function modstate(){
         /* 实例化模型*/
-        $db=D('stage'); 
+        $db=D('stage');
         if ($_GET['state']=="未开始"){
             $_GET['state']="进行中";
         }elseif ($_GET['state']=="进行中"){
             $_GET['state']="已完成";
         }
-    
+
         if ($db->save($_GET)){
             $this->success("修改成功！");
         }else{
@@ -122,9 +122,6 @@ class StageAction extends CommonAction {
         }
 
     }
-    
-    
-
 
     public function del(){
         /* 接收参数*/
@@ -134,9 +131,9 @@ class StageAction extends CommonAction {
 
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

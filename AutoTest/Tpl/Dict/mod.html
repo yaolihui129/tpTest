@@ -1,8 +1,5 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-             <a href="__URL__/index/type/<{$w.type}>"> 数据字典</a>
-             >编辑
+<layout name="layout" />
+        <div class="place">所在位置：<a href="__URL__/index/type/<{$w.type}>"> 数据字典</a>>编辑
             <span style="float:right;margin-right:60px;">
              <a href="__URL__/index/type/<{$w.type}>"> 返回</a>
             </span>
@@ -10,10 +7,10 @@
         <div class="content">
            <div class="main">
               <div class="top">字典:<{$w.tpye}></div>
-              <div class="left" width="20%"  >
-                <volist name='data' id='vo' empty="没有数据"><ur>
-                         <li><a href="__URL__/mod/id/<{$vo.id}>/type/<{$w.type}>"><{$vo.k}>:<{$vo.v}></a></li>
-                </ur></volist>
+              <div class="left" >
+                <volist name='data' id='vo' empty="没有数据"><ul>
+                    <li><a href="__URL__/mod/id/<{$vo.id}>/type/<{$w.type}>"><{$vo.k}>:<{$vo.v}></a></li>
+                </ul></volist>
               </div>
               <div class="midd" align="left">
                     <table border="0" width="400" align="left">

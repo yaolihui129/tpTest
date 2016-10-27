@@ -68,12 +68,11 @@ class ScenefuncAction extends CommonAction {
         $sceneid=$_GET['sceneid'];
         $m=D('scenefunc');
         $where=array("sceneid"=>$sceneid);
-        $arr=$m->where($where)->field("funcid,sysno,path,func,remarks,casestate,casemain,caseexpected,
+        $arr=$m->where($where)->field("funcid,sn,sysno,path,func,remarks,casestate,casemain,caseexpected,
             num1,num2,num3,num4,num5,num6,num7,num8,num9,num10,num11,num12,num13,num14,num15,num16,num17,num18,num19,num20")->select();
         $m=D('hcfunc');
         foreach ($arr as $a){
             $a['adder']= $_SESSION['realname'];
-//             dump($a);
             if(!$m->create($a)){
                   $this->error($m->getError());
             }

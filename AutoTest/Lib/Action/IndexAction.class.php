@@ -18,6 +18,9 @@ class IndexAction extends CommonAction {
     }
 
     public  function test(){
+        $ip= get_client_ip();
+        //echo $ip;
+        $this->assign('ip',$ip);
         $this->display();
     }
 

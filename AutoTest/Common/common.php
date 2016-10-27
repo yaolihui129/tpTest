@@ -13,7 +13,7 @@ function formselect($value="正常",$name="state",$type="state") {
     $m =M('dict');
     $where=array("type"=>$type,"state"=>"正常");
     //获取所有分类
-    $cats = $m->where($where)->select();
+    $cats = $m->where($where)->order('k')->select();
     foreach($cats as $v) {
         $selected = ($v['v']==$value) ? "selected" : "";
         $html .= '<option '.$selected.' value="'.$v['v'].'">'.$v['v'].'</option>';
@@ -121,7 +121,21 @@ function getProNo($id){
         return ;
     }
 }
+/**
+ * 根据id获取系统信息
+ */
+function getSystem($id){
+    if ($id){
+        $m=M('system');
+        $data=$m->find($id);
+        //dump($data);
 
+        $str=$data['system']."【".$data['state']."】";
+        return $str;
+    }else {
+        return ;
+    }
+}
 
 /**
  * 根据id获取里程碑信息

@@ -1,19 +1,16 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-                                 数据字典
-        </div>
+<layout name="layout" />
+        <div class="place">所在位置：数据字典</div>
         <div class="content">
            <div class="main">
               <div class="top">数据字典</div>
-              <div class="left" width="20%"  >
+              <div class="left">
                     <volist name='data' id='vo' empty="没有数据">
-                      <ur>
+                      <ul>
                          <li><a href="__URL__/index/type/<{$vo.type}>""><{$vo.type}></a></li>
-                       </ur>
+                       </ul>
                     </volist>
               </div>
-              <div class="midd" width="50%" align="center">
+              <div class="midd" align="center">
                    <table border="1" width="70%">
                      <tr>
                        <th width=10% align="center" bgcolor="#ccc">Key</th>

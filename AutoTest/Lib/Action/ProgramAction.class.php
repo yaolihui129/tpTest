@@ -18,7 +18,7 @@ class ProgramAction extends CommonAction {
 	     $this -> assign("selectgp", formselect($_SESSION['testgp'],"testgp","testgp"));
 	     $this->display();
     }
-    
+
     public function indexl(){
         /* 接收参数*/
         $testgp=!empty($_GET['testgp']) ? $_GET['testgp'] :$_SESSION['testgp'];
@@ -148,11 +148,11 @@ class ProgramAction extends CommonAction {
         $this->display() ;
     }
 
-    public function modprost(){ 
+    public function modprost(){
         /* 实例化模型*/
         $db=D('program');
         $prost=$_GET['prost'];
-        
+
         if ($prost=="未开始"){
             $_GET['prost']="进行中";
             if ($db->save($_GET)){
@@ -167,8 +167,19 @@ class ProgramAction extends CommonAction {
             }else{
                 $this->error("修改失败！");
             }
+        }elseif ($prost=="已完成"){
+            $_GET['prost']="已上线";
+            if ($db->save($_GET)){
+                $this->success("修改成功！");
+            }else{
+                $this->error("修改失败！");
+            }
+
+        }else{
+            //$this->redirect('');
+           $this->success(' ');
         }
-              
+
     }
 
     public function del(){
