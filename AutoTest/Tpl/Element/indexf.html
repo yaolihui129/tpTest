@@ -1,12 +1,8 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-              <a href="__APP__/Program">项目</a>
-              ><a href="__APP__/Func/func/proid/<{$w.proid}>">功能点</a>
-              >数据模板
-               <span style="float:right;margin-right:60px;">
+<layout name="layout" />
+        <div class="place">所在位置：<a href="__APP__/Program">项目</a>><a href="__APP__/Func/func/proid/<{$w.proid}>">功能点</a>>数据模板
+            <span style="float:right;margin-right:60px;">
                  <a href="__APP__/Func/func/proid/<{$w.proid}>"> 返回</a>
-               </span>
+            </span>
         </div>
         <div class="content">
            <div class="main">
@@ -15,16 +11,21 @@
                   <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" >
-               <h1>功能控件<span style="float:right;">
-                            <a href="__URL__/addf/funcid/<{$w.funcid}>/proid/<{$w.proid}>">添加</a>
-                           </span>
-              </h1>
-                    <volist name='data' id='vo' empty="没有数据">
+                  <h1>功能控件 </h1>
+                  <span style="float:right;">
+                      <a href="__URL__/addf/funcid/<{$w.funcid}>/proid/<{$w.proid}>">添加</a>
+                  </span>
+                  <form action="__URL__/order" method="post" >
+                  <volist name='data' id='vo' empty="没有数据">
                       <ul>
-                         <li><a href="__URL__/modf/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>" title="编辑">
-                             <{$vo.sn}>.<{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>:<{$vo.state}> </li>
-                       </ul>
-                    </volist>
+                         <li>
+                             <input type="text" name="sn[<{$vo.id}>]" value="<{$vo.sn}>"  class="input40"/>
+                             <a href="__URL__/modf/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>" title="编辑">
+                             <{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>:<{$vo.state}> </li><hr>
+                      </ul>
+                  </volist>
+                  <input type="submit" name="do_submit" value="批量排序" class="btn">
+                </form>
               </div>
                <div class="midd" >
                    <table border="1" width="80%" align="center">

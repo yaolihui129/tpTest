@@ -168,7 +168,6 @@ class DatacaseAction extends CommonAction {
     public function update(){
         $db=D('case');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{

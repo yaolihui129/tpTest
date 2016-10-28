@@ -40,10 +40,13 @@
                        <th width=9% align="center" bgcolor="#ccc">更新时间</th>
                        <!-- <th width=3% align="center" bgcolor="#ccc">操作 </th> -->
                      </tr>
+                     <form action="__URL__/order" method="post" >
                      <volist name='funcs' id='func' empty="没有数据">
                     <tr>
                        <td align="center" ><{$func.id}></td>
-                       <td align="center" ><{$func.sn}></td>
+                       <td align="center" >
+                           <input type="text" name="sn[<{$func.id}>]" value="<{$func.sn}>"  class="input40"/>
+                       </td>
                        <td >
                          <a href="__APP__/Case/indexp/funcid/<{$func.id}>/pathid/<{$func.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>" >
                             <{$func.func}>
@@ -64,6 +67,8 @@
                        </td> -->
                     </tr>
                     </volist>
+                    <tr><td></td><td  colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td></tr>
+                    </form>
                 </table>
 
               </div><!-- midd -->

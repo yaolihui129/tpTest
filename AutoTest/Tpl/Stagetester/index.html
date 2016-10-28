@@ -1,11 +1,8 @@
  <layout name="layout" />
-       <div class="place"> 所在位置：
-          <a href="__APP__/Program">项目</a>
-             ><a href="__APP__/Stage/index/proid/<{$w.proid}>">里程碑</a>
-             >测试者
-            <span style="float:right;margin-right:60px;">
-            <a href="__APP__/Stage/index/proid/<{$w.proid}>"> 返回</a>
-            </span>
+       <div class="place"> 所在位置：<a href="__APP__/Program">项目</a>><a href="__APP__/Stage/index/proid/<{$w.proid}>">里程碑</a>>测试者
+           <span style="float:right;margin-right:60px;">
+                 <a href="__APP__/Stage/index/proid/<{$w.proid}>"> 返回</a>
+           </span>
        </div>
         <div class="content">
            <div class="main">
@@ -13,12 +10,14 @@
                   <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:20%;">
-                    <volist name='data' id='vo' empty="没有数据"><ul>
+                  <volist name='data' id='vo' empty="没有数据">
+                     <ul>
                       <li><a href="__URL__/index/stageid/<{$vo.id}>/proid/<{$vo.proid}>/type/<{$w.type}>">
                       <{$vo.sn}>.<{$w.proid|getProNo=###}><{$vo.stage}>【<{$vo.state}>】</a></li>
-                   </ul> </volist>
+                     </ul>
+                  </volist>
               </div>
-               <div class="midd"  align="left">
+              <div class="midd"  align="left">
               <table border="0" width="80%" valign="top">
                 <tr>
                     <th width=80% align="left"></th>
@@ -36,10 +35,11 @@
                          <th width=7% align="center" bgcolor="#ccc">结束</th>
                          <th width=5% align="center" bgcolor="#ccc">计划/时</th>
                       </tr>
+                    <form action="__URL__/order" method="post" >
                     <volist name='testers' id='tester'>
                       <tr>
                          <td align="center"><{$tester.id}></td>
-                         <td align="center"><{$tester.sn}></td>
+                         <td align="center"><input type="text" name="sn[<{$tester.id}>]" value="<{$tester.sn}>"  class="input40"/></td>
                          <td align="center"><{$tester.type}></td>
                          <td align="left"><a href="__APP__/Exescene/queue/stagetesterid/<{$tester.id}>/tester/<{$tester.tester}>/stageid/<{$w.stageid}>/proid/<{$vo.proid}>/type/<{$w.type}>" >
                             <{$tester.tester}></a>
@@ -53,6 +53,8 @@
                          <td align="center"><{$tester.plan}></td>
                        </tr>
                     </volist>
+                       <tr><td></td><td  colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td></tr>
+                    </form>
                    </table>
                  </td>
                  <td  valign="top">

@@ -54,7 +54,6 @@ class ExefuncAction extends CommonAction {
 
         $_GET['result']="通过";
         $_GET['moder']=$_SESSION['realname'];
-        $_GET['updateTime']=date("Y-m-d H:i:s",time());
 
         $db=D('exefunc');
         if ($db->save($_GET)){
@@ -63,7 +62,7 @@ class ExefuncAction extends CommonAction {
 //             $arr['id']=$funcid;
 //             $arr['result']='失败';
 //             $arr['moder']=$_SESSION['realname'];
-//             $arr['updateTime']=date("Y-m-d H:i:s",time());
+
 
 
 
@@ -81,7 +80,6 @@ class ExefuncAction extends CommonAction {
         $data=$db->find($_POST['id']);
         $funcid=$data['funcid'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
            $arr['id']=$funcid;
            $arr['result']='失败';
@@ -93,20 +91,33 @@ class ExefuncAction extends CommonAction {
            }else{
                $this->error("失败！");
            }
-
-
         }else{
             $this->error("失败！");
         }
-
     }
+
+
+    public function order(){
+
+        $db = D('exescene');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
+    }
+
 
 
     public function supdate(){
         /* 实例化模型*/
         $db=D('exescene');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+
         if ($db->save($_POST)){
             $this->success("成功！");
         }else{

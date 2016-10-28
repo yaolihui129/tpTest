@@ -1,12 +1,11 @@
 <?php
 class LoginAction extends Action {
-    
+
     public function index(){
-        
-        layout(false); // 临时关闭当前模板的布局功能       
+        layout(false); // 临时关闭当前模板的布局功能
         $this->display();
     }
-    
+
     public function login(){
         $user = D('user')
         ->field("id,username,realname,usergp,filename")
@@ -21,23 +20,19 @@ class LoginAction extends Action {
             $this->redirect('Index/index');
         }else{
             // p($user);
-            $this->error('用户登陆失败，请重新登陆！', "index");
+            $this->error('用户名或密码错误！', "index");
         }
-      
     }
-    
+
     public function logout(){
-        $username =$_SESSION['username'];
         $_SESSION = array();
-        
         if (isset($_COOKIE[session_name()])) {
             setcookie(session_name(),'',time()-3600,'/');
         }
         // 销毁sesstion
         session_destroy();
-        
-        $this->success("再见 {$username}, 退出成功!", "index");
-    
+        $this->success("再见 {$_SESSION['realname']}, 退出成功!", "index");
+
     }
-    
+
 }

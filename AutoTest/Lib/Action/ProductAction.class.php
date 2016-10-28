@@ -19,9 +19,9 @@ class ProductAction extends CommonAction {
         $arr=$m->select();
         /*输出数据 */
         $this->assign('data',$arr);
-        
+
         $this -> assign("state", formselect());
-       
+
         $this->display();
     }
 
@@ -30,7 +30,7 @@ class ProductAction extends CommonAction {
         $m=D('product');
        $_POST['adder']=$_SESSION['realname'];
        $_POST['moder']=$_SESSION['realname'];
-       $_POST['updateTime']=date("Y-m-d H:i:s",time());
+       $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -68,7 +68,6 @@ class ProductAction extends CommonAction {
         /* 实例化模型*/
         $db=D('product');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{

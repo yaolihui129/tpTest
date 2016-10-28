@@ -112,7 +112,7 @@ class PathAction extends CommonAction {
         $m=D('path');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -192,13 +192,26 @@ class PathAction extends CommonAction {
     public function update(){
         $db=M('path');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
 
+    }
+
+    public function order(){
+
+        $db = D('path');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+           $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
     }
 
     public function library(){
@@ -276,7 +289,7 @@ class PathAction extends CommonAction {
             $a['exesceneid']=$lastId;
             $a['adder']=$_SESSION['realname'];
             $a['moder']=$_SESSION['realname'];
-            $a['updateTime']=date("Y-m-d H:i:s",time());
+            $a['createTime']=date("Y-m-d H:i:s",time());
             $m=D('exefunc');
             if(!$m->create($a)){
                 $this->error($m->getError());

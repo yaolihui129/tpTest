@@ -50,7 +50,7 @@ class SceneAction extends CommonAction {
         $m=D('scene');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -86,14 +86,28 @@ class SceneAction extends CommonAction {
     public function update(){
         $db=D('scene');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
-
     }
+
+    public function order(){
+dump($_POST);
+        $db = D('scene');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        dump($num);
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
+    }
+
 
     public function library(){
         $this->display();
@@ -114,7 +128,7 @@ class SceneAction extends CommonAction {
         $data['state']='待确认';
         $data['adder']=$_SESSION['realname'];
         $data['moder']=$_SESSION['realname'];
-        $data['updateTime']=date("Y-m-d H:i:s",time());
+        $data['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create($data)){
             $this->error($m->getError());
         }

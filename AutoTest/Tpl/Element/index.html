@@ -1,36 +1,38 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-               <a href="__APP__/Product">产品</a>
-              ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
-              ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
-              ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
-              >数据模板
-               <span style="float:right;margin-right:60px;">
-                 <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
-               </span>
+<layout name="layout" />
+        <div class="place"> 所在位置：<a href="__APP__/Product">产品</a>
+            ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
+            ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
+            ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
+            >数据模板
+            <span style="float:right;margin-right:60px;">
+               <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+            </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top"  >数据用例模板
               <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
               </div>
-              <div class="left" align="left" style="width:20%;">
-               <h1>控件<span style="float:right;">
-                            <a href="__URL__/add/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">添加</a>
-                           </span>
-              </h1>
-                    <volist name='data' id='vo' empty="没有数据">
-                      <ur>
-                         <li><a href="__URL__/mod/id/<{$vo.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">
-                         <{$vo.sn}>.<{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>
+              <div class="left" align="left" >
+                  <h1>控件</h1>
+                  <span style="float:right;">
+                      <a href="__URL__/add/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">添加</a>
+                  </span>
+                <form action="__URL__/order" method="post" >
+                   <volist name='data' id='vo' empty="没有数据">
+                     <ul>
+                         <li>
+                           <input type="text" name="sn[<{$vo.id}>]" value="<{$vo.sn}>"  class="input40"/>
+                           <a href="__URL__/mod/id/<{$vo.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">
+                           <{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>
                          </li>
-                       </ur>
+                      </ul>
                     </volist>
+                    <input type="submit" name="do_submit" value="批量排序" class="btn">
+                </form>
               </div>
-               <div class="midd" width="75%">
+               <div class="midd">
                    <table border="1" width="80%" align="center">
-
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -83,6 +85,5 @@
                     </tr>
                     </volist>
                 </table>
-
               </div><!-- midd -->
            </div><!-- main -->

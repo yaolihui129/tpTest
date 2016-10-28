@@ -42,7 +42,7 @@ class DictAction extends CommonAction {
         $m=D('dict');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -79,15 +79,13 @@ class DictAction extends CommonAction {
         /* 实例化模型*/
         $db=D('dict');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
-
-
     }
+
 
     public function del(){
         /* 接收参数*/
@@ -96,9 +94,9 @@ class DictAction extends CommonAction {
         $m=M('dict');
         $count =$m->delete($id);
         if ($count>0) {
-            $this->success('数据删除成功');
+            $this->success('删除成功');
         }else{
-            $this->error('数据删除失败');
+            $this->error('删除失败');
         }
     }
 

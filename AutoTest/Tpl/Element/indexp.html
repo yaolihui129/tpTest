@@ -1,39 +1,35 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-               <a href="__APP__/Program">项目</a>
-             ><a href="__APP__/Func/range/proid/<{$w.proid}>">范围</a>
-              >数据模板
-               <span style="float:right;margin-right:60px;">
+<layout name="layout" />
+        <div class="place">所在位置：<a href="__APP__/Program">项目</a>><a href="__APP__/Func/range/proid/<{$w.proid}>">范围</a>数据模板
+             <span style="float:right;margin-right:60px;">
                  <a href="__APP__/Func/range/proid/<{$w.proid}>"> 返回</a>
-               </span>
+             </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top" >数据用例模板
                   <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
-                  <span style="float:right;">
-                                                    当前项目：<{$w.proid|getProNo=###}>
-                  </span>
-
+                  <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:20%;">
-               <h1>功能控件<span style="float:right;margin-right:55px;">
-                            <a href="__URL__/addr/funcid/<{$w.funcid}>/proid/<{$w.proid}>">添加</a>
-                           </span>
-              </h1>
-                    <volist name='data' id='vo' empty="没有数据">
+                  <h1>功能控件</h1>
+                  <span style="float:right;margin-right:55px;">
+                       <a href="__URL__/addr/funcid/<{$w.funcid}>/proid/<{$w.proid}>">添加</a>
+                  </span>
+                 <form action="__URL__/order" method="post" >
+                 <volist name='data' id='vo' empty="没有数据">
                       <ur>
-                         <li><a href="__URL__/modr/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>">
-                             <{$vo.sn}>.<{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>
-
+                         <li>
+                             <input type="text" name="sn[<{$vo.id}>]" value="<{$vo.sn}>"  class="input40"/>
+                             <a href="__URL__/modr/id/<{$vo.id}>/funcid/<{$w.funcid}>/proid/<{$w.proid}>">
+                             <{$vo.typeset}>:<{$vo.control}>-<{$vo.data}></a>
                          </li>
                        </ur>
-                    </volist>
+                  </volist>
+                  <input type="submit" name="do_submit" value="批量排序" class="btn">
+                </form>
               </div>
                <div class="midd" >
                    <table border="1" width="80%" align="center">
-
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=3% align="center" bgcolor="#ccc">顺序</th>
@@ -46,7 +42,6 @@
                        <td align="center" >
                           <a href="__URL__/setdstate/id/<{$case.id}>/dstate/<{$case.dstate}>" title="变更状态"><{$case.dstate}></a>
                        </td>
-
                        <th width=3% align="center" bgcolor="#ccc"><{$data[0]['control']?$data[0]['control']:'Num1'}></th>
                        <th width=3% align="center" bgcolor="#ccc"><{$data[1]['control']?$data[1]['control']:'Num2'}></th>
                        <th width=3% align="center" bgcolor="#ccc"><{$data[2]['control']?$data[2]['control']:'Num3'}></th>

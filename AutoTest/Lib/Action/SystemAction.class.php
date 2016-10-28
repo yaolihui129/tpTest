@@ -17,7 +17,7 @@ class SystemAction extends CommonAction {
     	 $m=M('system');
     	 /*查询数据 */
     	 $where=array(prodid=>$prodid);
-    	 $syses=$m->where($where)->select();
+    	 $syses=$m->where($where)->order('sysno')->select();
     	 /*输出数据 */
 	     $this->assign('syses',$syses);
 	     $this->assign('w',$where);
@@ -53,7 +53,7 @@ class SystemAction extends CommonAction {
         $m=D('system');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -99,7 +99,6 @@ class SystemAction extends CommonAction {
         $db=D('system');
 
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{

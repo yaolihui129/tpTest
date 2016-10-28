@@ -32,7 +32,6 @@ class TestAction extends CommonAction {
         $arr['id']=$_GET['funcid'];
         $arr['result']='通过';
         $arr['moder']=$_SESSION['realname'];
-        $arr['updateTime']=date("Y-m-d H:i:s",time());
         dump($arr);
         $db=D('func');
         if ($db->save($arr)){
@@ -49,7 +48,6 @@ class TestAction extends CommonAction {
         $arr['id']=$_GET['funcid'];
         $arr['result']='未测试';
         $arr['moder']=$_SESSION['realname'];
-        $arr['updateTime']=date("Y-m-d H:i:s",time());
         dump($arr);
         $db=D('func');
         if ($db->save($arr)){

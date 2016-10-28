@@ -96,7 +96,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
-        $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
+       // $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("prodid"=>$prodid,"proid"=>$proid,"sysid"=>$sysid,"pathid"=>$pathid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -117,7 +117,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
-        $this -> assign("typeset", formselect($arr['typeset'],"typeset","typeset"));
+        //$this -> assign("typeset", formselect($arr['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -137,7 +137,7 @@ class ElementAction extends CommonAction {
         $count=$m->where($where)->count()+1;
         $this->assign("c",$count);
         $this -> assign("state", formselect());
-         $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
+        // $this -> assign("typeset", formselect($element['typeset'],"typeset","typeset"));
         $where=array("proid"=>$proid,"funcid"=>$funcid);
         $this->assign('w',$where);
 
@@ -168,7 +168,7 @@ class ElementAction extends CommonAction {
         $m=D('element');
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -271,21 +271,34 @@ class ElementAction extends CommonAction {
     public function update(){
         $db=D('element');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
-
     }
+
+
+    public function order(){
+
+        $db = D('element');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
+    }
+
 
     public function setdstate(){
         $db=D('case');
         if ($_GET['dstate']=='待维护'){
             $_GET['dstate']='已完成';
             $_GET['moder']=$_SESSION['realname'];
-            $_GET['updateTime']=date("Y-m-d H:i:s",time());
             if ($db->save($_GET)){
                  $this->success("修改成功！");
             }else{

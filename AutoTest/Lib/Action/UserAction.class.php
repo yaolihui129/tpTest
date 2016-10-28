@@ -30,7 +30,7 @@ class UserAction extends CommonAction {
         $_POST['email']=$_POST['username']."@yiche.com";
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -81,12 +81,8 @@ class UserAction extends CommonAction {
 
     public function update(){
         /* 实例化模型*/
-
         $db=D('user');
-
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
-
         import('ORG.Net.UploadFile');
         $upload = new UploadFile();// 实例化上传类
         $upload->savePath =  './Public/Upload/';// 设置附件上传目录
@@ -95,10 +91,7 @@ class UserAction extends CommonAction {
         }else{// 上传成功 获取上传文件信息
             $info =  $upload->getUploadFileInfo();
         }
-
         $_POST['filename']=$info[0]['savename'];
-
-
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
@@ -119,7 +112,6 @@ class UserAction extends CommonAction {
         $db=M('user');
         $_POST['password']=md5(123456);
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("密码已重置为：123456！");
         }else{

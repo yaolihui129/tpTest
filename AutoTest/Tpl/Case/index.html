@@ -1,28 +1,27 @@
 <layout name="layout" />
         <div class="place"> 所在位置：
-               <a href="__APP__/Product">产品</a>
+              <a href="__APP__/Product">产品</a>
               ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
               ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
               ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
               >用例
-               <span style="float:right;margin-right:60px;">
-                 <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
-               </span>
+            <span style="float:right;margin-right:60px;">
+              <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
+            </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top" style="margin-left:15%;">测试用例
                  <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
-                  <span style="float:right;">
-                                                    当前项目：<{$w.proid|getProNo=###}>
-                  </span>
-
+                 <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:15%;">
-                 <volist name='data' id='vo' empty="没有数据"><ur>
-                    <li><a href="__URL__/index/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/">
-                    <{$vo.sn}>.【<{$vo.state}>】<{$vo.func}>:<{$vo.id|countFCase=###}></a></li>
-                 </ur></volist>
+                 <volist name='data' id='vo' empty="没有数据">
+                   <ul>
+                      <li><a href="__URL__/index/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/">
+                          <{$vo.sn}>.【<{$vo.state}>】<{$vo.func}>:<{$vo.id|countFCase=###}></a></li>
+                   </ul>
+                 </volist>
               </div>
               <div class="midd" align="right" >
                    <table border="1" width="84%" align="center">
@@ -43,10 +42,11 @@
                        <th width=7% align="center" bgcolor="#ccc">更新时间</th>
                        <!-- <th width=2% align="center" bgcolor="#ccc">操作 </th> -->
                      </tr>
+                     <form action="__URL__/order" method="post" >
                      <volist name='cases' id='case' empty="没有数据">
                      <tr>
                        <td align="center" ><{$case.id}></td>
-                       <td align="center" ><{$case.sn}></td>
+                       <td align="center" ><input type="text" name="sn[<{$case.id}>]" value="<{$case.sn}>"  class="input40"/></td>
                        <td ><a href="#" ><{$case.main}></a>
                          <span style="float:right;margin-right:5px;">
                            <a href="__URL__/mod/id/<{$case.id}>/funcid/<{$w.funcid}>/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>w/<{$w.w}>">修改</a>
@@ -63,6 +63,8 @@
                        </td> -->
                     </tr>
                     </volist>
+                    <tr><td></td><td  colspan="10"><input type="submit" name="do_submit" value="批量排序" class="btn"></td></tr>
+                    </form>
                 </table>
 
               </div><!-- midd -->

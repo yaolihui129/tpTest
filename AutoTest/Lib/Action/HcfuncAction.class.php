@@ -47,7 +47,7 @@ class HcfuncAction extends CommonAction {
         $data=$m->field("sn,funcid,path,func,remarks,adder")->find($_GET['id']);
         $data['sceneid']=$_GET['sceneid'];
         $data['moder']=$_SESSION['realname'];
-        $data['updateTime']=date("Y-m-d H:i:s",time());
+        $data['createTime']=date("Y-m-d H:i:s",time());
 //         dump($data);
 
         $m=D('scenefunc');
@@ -77,7 +77,7 @@ class HcfuncAction extends CommonAction {
         foreach ($arr as $a){
             $a['sceneid']=$sceneid;
             $a['moder']=$_SESSION['realname'];
-            $a['updateTime']=date("Y-m-d H:i:s",time());
+            $a['createTime']=date("Y-m-d H:i:s",time());
 //           dump($a);
             $m=D('scenefunc');
             if(!$m->create($a)){
@@ -113,6 +113,20 @@ class HcfuncAction extends CommonAction {
         }
 
 
+    }
+
+    public function order(){
+
+        $db = D('hcfunc');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
     }
 
 

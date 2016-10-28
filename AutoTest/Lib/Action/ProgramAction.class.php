@@ -75,7 +75,7 @@ class ProgramAction extends CommonAction {
         $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
         $_POST['expOnline']=$_POST['end'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if ($m->create()){
             $count=$m->add($_POST);
             if ($count){
@@ -117,7 +117,6 @@ class ProgramAction extends CommonAction {
         /* 实例化模型*/
         $db=D('program');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{

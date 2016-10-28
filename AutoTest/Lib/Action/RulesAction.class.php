@@ -246,7 +246,7 @@ class RulesAction extends CommonAction {
         $m=D('rules');
     $_POST['adder']=$_SESSION['realname'];
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
+        $_POST['createTime']=date("Y-m-d H:i:s",time());
         if(!$m->create()){
             $this->error($m->getError());
         }
@@ -377,14 +377,28 @@ class RulesAction extends CommonAction {
     public function update(){
         $db=D('rules');
         $_POST['moder']=$_SESSION['realname'];
-        $_POST['updateTime']=date("Y-m-d H:i:s",time());
         if ($db->save($_POST)){
             $this->success("修改成功！");
         }else{
             $this->error("修改失败！");
         }
-
     }
+
+
+    public function order(){
+
+        $db = D('rules');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
+    }
+
 
     public function del(){
         /* 接收参数*/

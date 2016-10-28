@@ -28,6 +28,20 @@ class ExesceneAction extends CommonAction {
 	     $this->display();
     }
 
+    public function order(){
+
+        $db = D('exescene');
+        $num = 0;
+        foreach($_POST['sn'] as $id => $sn) {
+            $num += $db->save(array("id"=>$id, "sn"=>$sn));
+        }
+        if($num) {
+            $this->success("重新排序成功!");
+        }else{
+            $this->error("重新排序失败...");
+        }
+    }
+
     public function test(){
 
         $type=$_GET['type'];
@@ -88,11 +102,6 @@ public function queue(){
 
 }
 
-public function modsn(){
-
-    dump($_POST);
-}
-
 public function insert(){
     $sceneid=$_GET['sceneid'];
     $m=D('scene');
@@ -103,7 +112,7 @@ public function insert(){
     $data['sn']=$m->where($where)->count()+1;
     $data['adder']=$_SESSION['realname'];
     $data['moder']=$_SESSION['realname'];
-    $data['updateTime']=date("Y-m-d H:i:s",time());
+    $data['createTime']=date("Y-m-d H:i:s",time());
     $data['stagetesterid']=$_GET['stagetesterid'];
     $data['sceneid']=$sceneid;
 
