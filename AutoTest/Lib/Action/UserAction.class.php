@@ -74,12 +74,40 @@ class UserAction extends CommonAction {
         $this->assign('user',$user);
         $this -> assign("usergp", formselect($user['usergp'],"usergp","testgp"));
         $this -> assign("position", formselect($user['position'],"position","position"));
+        $this->display();
+    }
 
+
+
+
+    public function update(){
+        /* 实例化模型*/
+        $db=D('user');
+        $_POST['moder']=$_SESSION['realname'];
+        if ($db->save($_POST)){
+            $this->success("修改成功！");
+        }else{
+            $this->error("修改失败！");
+        }
+    }
+
+
+
+    public function photo(){
+        /* 接收参数*/
+        $id = !empty($_POST['id']) ? $_POST['id'] : $_GET['id'];
+        /* 实例化模型*/
+        $m=M('user');
+        $arr=$m->select();
+        $this->assign('data',$arr);
+
+        $user=$m->find($id);
+        $this->assign('user',$user);
 
         $this->display();
     }
 
-    public function update(){
+    public function upload(){
         /* 实例化模型*/
         $db=D('user');
         $_POST['moder']=$_SESSION['realname'];
@@ -117,7 +145,6 @@ class UserAction extends CommonAction {
         }else{
             $this->error("重置失败！");
         }
-
     }
 
     public function del(){

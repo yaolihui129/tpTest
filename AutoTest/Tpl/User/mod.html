@@ -1,8 +1,5 @@
-      <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-             <a href="__URL__">用户</a>
-             >编辑
+<layout name="layout" />
+        <div class="place">所在位置：<a href="__URL__">用户</a>>编辑
              <span style="float:right;margin-right:60px;">
               <a href="__URL__/add" >添加用户 </a>
               <a href="__URL__">  返回</a>
@@ -36,11 +33,9 @@
                      <tr><td>职位：</td>
                          <td><{$position}>分组：<{$usergp}></td>
                      </tr>
-                      <tr><td>头像：</td>
-                         <td><input type="file" name="filename" class="input200"/></td>
-                     </tr>
+
                      <tr><td></td>
-                         <td><img alt="头像" src="__ROOT__/Upload/<{$user.filename}>" height="200" width="160"></td>
+                         <td><img alt="头像" src="__ROOT__/Public/Upload/<{$user.filename}>" height="200" width="160"></td>
                      </tr>
                       <tr><td>状态：</td>
                          <td>

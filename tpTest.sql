@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50532
 File Encoding         : 65001
 
-Date: 2016-10-28 17:04:45
+Date: 2016-10-31 18:10:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1298,7 +1298,7 @@ CREATE TABLE `tp_program` (
   `createTime` timestamp NULL DEFAULT NULL,
   `updateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=79 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tp_program
@@ -1335,6 +1335,7 @@ INSERT INTO `tp_program` VALUES ('75', 'B1610.9', '直销后台优化', '1', '�
 INSERT INTO `tp_program` VALUES ('76', 'C1610.10', 'PC支付页实时数据提醒，优惠券文案调整', '1', '已完成', '2016-10-27', '2016-10-27', '岳丹丹', 'C', '简要', '钱丽梅、谢芳', '新项目', '一般需求', '2016-10-27', '<p style=\"margin-left:18.0pt;\">\r\n	1.&nbsp; 支付页实时数据提醒</p>\r\n<p style=\"margin-left:18.0pt;\">\r\n	2.&nbsp; 优惠券文案调整</p>\r\n', '腰立辉', '腰立辉', '2016-10-27 13:10:20', '2016-10-27 13:10:20');
 INSERT INTO `tp_program` VALUES ('77', 'C1610.11', '导购图片效果优化', '1', '已上线', '2016-10-27', '2016-09-29', '王朋', 'C', '简要', '任宝生', '功能优化', '一般需求', '2016-09-29', '<p>\r\n	首页列表、车主分享，标签页列表、正文页相关文章，相应图片原图自适应，不做图片拉伸效果；</p>\r\n', '腰立辉', '腰立辉', '2016-10-27 13:18:46', '2016-10-27 13:18:46');
 INSERT INTO `tp_program` VALUES ('78', 'C1610.12', '大客户内购', '1', '已上线', '2016-10-27', '2016-09-29', '王朋', 'C', '简要', '赵爽', '新项目', '一般需求', '2016-09-29', '<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" hspace=\"0\" vspace=\"0\">\r\n	<tbody>\r\n		<tr>\r\n			<td align=\"left\">\r\n				<p style=\"margin-left:42.0pt;\">\r\n					1、PC端内购平台搭建；</p>\r\n				<p style=\"margin-left:42.0pt;\">\r\n					2、完成登录、身份认证、邮箱认证、礼品卡活动报名、上传购车申请表申请领取礼品等功能；</p>\r\n				<p style=\"margin-left:42.0pt;\">\r\n					3、管理后台优化企业管理，新增活动管理、内购用户信息查看功能；</p>\r\n				<p style=\"margin-left:42.0pt;\">\r\n					4、优化客户报名线索，新增审核购车申请表功能，及相关细节优化；</p>\r\n				<p style=\"margin-left:42.0pt;\">\r\n					5、调用礼品接口发放京东卡功能；</p>\r\n				<p style=\"margin-left:42.0pt;\">\r\n					6、礼品投放接口以及文案调整。</p>\r\n			</td>\r\n		</tr>\r\n	</tbody>\r\n</table>\r\n', '腰立辉', '腰立辉', '2016-10-27 13:20:01', '2016-10-27 13:20:01');
+INSERT INTO `tp_program` VALUES ('79', 'OP1610.9', '易鑫融资款代收代付需求评审', '1', '进行中', '2016-10-31', '2016-11-07', '孔洋', 'OP', '简要', '胡春阳', '新项目', '一般需求', '2016-11-07', '', '腰立辉', '腰立辉', '2016-10-31 09:45:41', '2016-10-31 09:46:16');
 
 -- ----------------------------
 -- Table structure for `tp_prosys`
@@ -1856,7 +1857,7 @@ INSERT INTO `tp_user` VALUES ('3', 'guopp', '郭佩佩', null, 'e10adc3949ba59ab
 INSERT INTO `tp_user` VALUES ('11', 'yaolh', '腰立辉', '57dcf1cd1186b.jpeg', 'c33367701511b4f6020ec61ded352059', '在职', '6270', '惠买车-产品研发中心-质量管理部', 'OP', '18801043607', '', 'yaolh@yiche.com', '高级测试经理', '腰立辉', '腰立辉', '2016-09-22 16:54:21', '2016-09-17 15:33:33');
 INSERT INTO `tp_user` VALUES ('5', 'kongy', '孔洋', null, 'e10adc3949ba59abbe56e057f20f883e', '在职', '8028', '惠买车-产品研发中心-质量管理部', 'OP', '13641171889', null, 'kongy@bitauto.com', '高级测试工程师', '腰立辉', '腰立辉', '2016-09-12 11:34:09', '2016-10-28 16:32:11');
 INSERT INTO `tp_user` VALUES ('6', 'lixm', '李小梅', null, 'e10adc3949ba59abbe56e057f20f883e', '在职', '354', '惠买车-产品研发中心-质量管理部', 'OP', null, null, null, '测试工程师', '腰立辉', '腰立辉', '2016-10-14 17:30:10', '2016-10-28 16:32:13');
-INSERT INTO `tp_user` VALUES ('8', 'mengjl', '孟军良', null, 'e10adc3949ba59abbe56e057f20f883e', '在职', '5714', '惠买车-产品研发中心-质量管理部', 'Auto', '13717659790', '', 'mengjl@bitauto.com', '质量总监', '腰立辉', '腰立辉', '2016-10-19 16:56:39', '2016-10-28 16:32:15');
+INSERT INTO `tp_user` VALUES ('8', 'mengjl', '孟军良', '5816a9713cc6e.png', 'e10adc3949ba59abbe56e057f20f883e', '在职', '5714', '惠买车-产品研发中心-质量管理部', 'Auto', '13717659790', '323', 'mengjl@bitauto.com', '质量总监', '腰立辉', '腰立辉', '2016-10-19 16:56:39', '2016-10-31 10:16:17');
 INSERT INTO `tp_user` VALUES ('9', 'shidd', '师冬冬', '', 'e10adc3949ba59abbe56e057f20f883e', '在职', '9204', '惠买车-产品研发中心-质量管理部', 'C', '', '', '', '测试工程师', '腰立辉', '腰立辉', '2016-09-26 17:13:48', '2016-10-28 16:33:22');
 INSERT INTO `tp_user` VALUES ('10', 'tianl', '田亮', '', 'e10adc3949ba59abbe56e057f20f883e', '在职', '6851', '惠买车-产品研发中心-质量管理部', 'B', '15811407311', '', 'tianl@bitauto.com', '测试工程师', '腰立辉', '腰立辉', '2016-09-22 09:25:01', '2016-09-16 18:59:52');
 INSERT INTO `tp_user` VALUES ('24', 'wangp', '王朋', null, 'e10adc3949ba59abbe56e057f20f883e', '在职', '10520', '惠买车-产品研发中心-质量管理部', 'C', null, null, null, null, '腰立辉', '腰立辉', '2016-09-26 17:17:47', '2016-10-28 16:31:55');
