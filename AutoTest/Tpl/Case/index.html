@@ -1,18 +1,16 @@
 <layout name="layout" />
-        <div class="place"> 所在位置：
-              <a href="__APP__/Product">产品</a>
+        <div class="place"> 所在位置：<a href="__APP__/Product">产品</a>
               ><a href="__APP__/System/index/prodid/<{$w.prodid}>">系统</a>
               ><a href="__APP__/Path/index/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">路径</a>
-              ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>
-              >用例
+              ><a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>">功能点</a>>用例
             <span style="float:right;margin-right:60px;">
               <a href="__APP__/Func/index/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:15%;">测试用例
-                 <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              <div class="top" >
+                 <span style="margin-left:15%;">用例：<{$w.funcid|getSPFunc=###}></span>
                  <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
               <div class="left" align="left" style="width:15%;">

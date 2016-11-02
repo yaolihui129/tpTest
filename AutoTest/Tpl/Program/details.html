@@ -1,12 +1,10 @@
 <layout name="layout" />
-       <div class="place"> 所在位置：<a href="__URL__">项目</a>>详情
-            <span style="float:right;margin-right:60px;">
-                 <a href="__URL__"> 返回</a>
-             </span>
-        </div>
+       <div class="place"> 所在位置：<a href="__URL__">项目</a>>详情</div>
         <div class="content">
            <div class="main">
-              <div class="top" > 项目详情<span style="float:right;">当前项目：<{$p.prono}></span></div>
+              <div class="top" > 
+                  <span style="float:right;"><a href="__URL__"><button class="btn">返回</button></a>
+              </div>
               <div class="left" align="left" style="width:25%;padding:0 2% 0 0;">
                 <ul>
                    <volist name='pros' id='pro' empty="没有数据">

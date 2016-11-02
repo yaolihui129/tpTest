@@ -1,14 +1,15 @@
 <layout name="layout" />
        <div class="place">所在位置：<a href="__APP__/Program">项目</a>>风险
             <span style="float:right;margin-right:60px;">
-                 <a href="__APP__/Program"> 返回</a>
+                 
             </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top">
-              <span  style="margin-left:27%;">项目风险:<{$w.proid|getPro=###}></span>
-              <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+                  <span  style="margin-left:27%;">项目风险:<{$w.proid|getPro=###}></span>
+                  <span style="float:right;"><a href="__APP__/Program"><button class="btn">返回</button></a></span>
+              </div>
                <div class="left" align="left"  style="width:25%;padding:0 2% 0 0;">
                  <volist name='pros' id='pro' empty="没有数据">
                     <ul>

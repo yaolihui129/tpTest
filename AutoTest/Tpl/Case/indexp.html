@@ -1,6 +1,5 @@
      <layout name="layout" />
-        <div class="place"> 所在位置：
-            <a href="__APP__/Program">项目</a>
+        <div class="place"> 所在位置：<a href="__APP__/Program">项目</a>
             ><a href="__APP__/Prosys/index/proid/<{$w.proid}>/prodid/<{$w.prodid}>">系统</a>
             ><a href="__APP__/Path/indexp/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">路径</a>
             ><a href="__APP__/Func/indexp/pathid/<{$w.pathid}>/sysid/<{$w.sysid}>/prodid/<{$w.prodid}>/proid/<{$w.proid}>">功能点</a>
@@ -11,8 +10,8 @@
         </div>
         <div class="content">
            <div class="main">
-             <div class="top" style="margin-left:15%;">测试用例
-                <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+             <div class="top" >
+                <span style="margin-left:15%;">用例：<{$w.funcid|getSPFunc=###}></span>
                 <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
              </div>
               <div class="left" align="left" style="width:15%;">
