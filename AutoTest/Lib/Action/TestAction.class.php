@@ -16,7 +16,8 @@ class TestAction extends CommonAction {
         ->join('tp_stagetester ON tp_stage.id =tp_stagetester.stageid')
         ->join('tp_exescene ON tp_stagetester.id=tp_exescene.stagetesterid')
         ->join('tp_exefunc ON tp_exescene.id=tp_exefunc.exesceneid')
-       ->select();
+        ->order('tp_stage.sn,tp_stage.id')
+        ->select();
         $this->assign('arr',$arr);
 
         $where=array("proid"=>$proid,"pathid"=>$pathid,"funcid"=>$funcid);

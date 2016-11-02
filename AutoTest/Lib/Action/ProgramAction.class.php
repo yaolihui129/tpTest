@@ -65,6 +65,9 @@ class ProgramAction extends CommonAction {
         $this -> assign("selectgpuer", selectgpuer($_SESSION['realname'],$_SESSION['testgp'],"manager"));
         $this->assign("startDate",PublicAction::date("start",$start));
         $this->assign("endDate",PublicAction::date("end",$end));
+        $this -> assign("reType", formselect($arr['reType'],"reType","reType"));
+        $this -> assign("reLevel", formselect($arr['reLevel'],"reLevel","reLevel"));
+        $this->assign("jianjie",PublicAction::editor("profile",$arr['profile']));
 
         $this->display();
     }

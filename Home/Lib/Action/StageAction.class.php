@@ -8,7 +8,7 @@ class StageAction extends Action {
         /* 实例化模型*/
         $s = D("stage");
         $where=array("proid"=>"$proid");
-        $stages=$s->where($where)->select();
+        $stages=$s->where($where)->order("sn,id")->select();
         $this->assign('stages',$stages);
         $where=array("proid"=>$proid,"testgp"=>$testgp);
         $this->assign('w',$where);

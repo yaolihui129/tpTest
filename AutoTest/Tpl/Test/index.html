@@ -9,8 +9,8 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" >测试结果
-              <span>(功能点：<{$w.funcid|getSPFunc=###}>)</span>
+              <div class="top" >
+              <span><{$w.funcid|getSPFunc=###}>失败:<{$w.funcid|countFResult=###}>/<{$w.funcid|countFQResult=###}></span>
                 <span style="float:right;">
                                                  当前项目：<{$w.proid|getProNo=###}>最终测试结果：
                   <a href="__URL__/reset/funcid/<{$w.funcid}>" onclick="return confirm('测试结果将被置为“未测试”')"><{$w.funcid|getFResult=###}></a>
@@ -18,14 +18,8 @@
 
                 </span>
               </div>
-              <div class="left" align="left" style="width:25%;">
-                 <volist name='data' id='vo' empty="没有数据"><ur>
-                    <li><a href="__URL__/index/funcid/<{$vo.id}>/pathid/<{$w.pathid}>/proid/<{$w.proid}>/">
-                    <{$vo.func}>【<{$vo.result}>】:<{$vo.id|countFResult=###}></a></li>
-                 </ur></volist>
-              </div>
               <div class="midd" align="right" >
-                   <table border="1" width="75%" align="center">
+                   <table border="1" width="100%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">里程碑</th>
                        <th width=2% align="center" bgcolor="#ccc">人员</th>

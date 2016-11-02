@@ -3,21 +3,22 @@
         <div class="content">
            <div class="main">
               <div class="top">
-                <span style="margin-left:7%;">测试项目</span>
+                <span style="margin-left:10%;">测试项目</span>
                 <span style="float:right;">
                                              当前分组：<{$_SESSION['testgp']}>
                 </span>
               </div>
-              <div class="left"  style="width:7%;" align="left">
+              <div class="left"  style="width:8%;padding:0 2% 0 0;" align="left">
                   <h1>选择分组</h1>
                     <volist name='data' id='vo' empty="没有数据">
-                      <ur style="margin-left:5px;">
-                       <a href="__URL__/index/testgp/<{$vo.v}>">   <{$vo.k}>.<{$vo.v}>：<{$vo.v|countPro=###}></a><br>
-                       </ur>
+                      <ul style="margin-left:5px;">
+                        <li><a href="__URL__/index/testgp/<{$vo.v}>">
+                          <{$vo.k}>.<{$vo.v}>：<{$vo.v|countPro=###}></a><hr></li>
+                       </ul>
                     </volist>
               </div>
               <div class="midd" >
-                 <table border="1" width="92%" align="center">
+                 <table border="1" width="90%" align="center">
                      <tr>
                        <th width=5% align="center" bgcolor="#ccc">编号</th>
                        <th width=33% align="left" bgcolor="#ccc">项目：

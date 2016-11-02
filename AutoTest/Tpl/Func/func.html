@@ -1,23 +1,19 @@
 <layout name="layout" />
-        <div class="place">
-                                 所在位置：
-             <a href="__APP__/Program">项目</a>
-             >功能点
+        <div class="place"> 所在位置：<a href="__APP__/Program">项目</a>>功能点
             <span style="float:right;margin-right:60px;">
              <a href="__APP__/Program"> 返回</a>
             </span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:25%;">项目:<{$w.proid|getProNo=###}>功能点
+              <div class="top" style="margin-left:25%;">功能点:<{$w.proid|getPro=###}>
                   <span style="float:right;">
-                  <a href="__APP__/Func/range/proid/<{$w.proid}>"><button  class="btn" >测试范围</button></a>
-                                               当前项目：<{$w.proid|getProNo=###}>
+                     <a href="__APP__/Func/range/proid/<{$w.proid}>"><button  class="btn" >测试范围</button></a>
                   </span>
               </div>
-               <div class="left" align="left" style="width:25%;">
+               <div class="left" align="left"  style="width:23%;padding:0 2% 0 0;">
                     <volist name='pros' id='pro' empty="没有数据"><ur><li>
-                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>【<{$pro.prost}>】<{$pro.program}></a>
+                       <a href="__URL__/func/proid/<{$pro.id}>""><{$pro.prono}>【<{$pro.prost}>】<{$pro.program}></a><hr>
                       </li></ur></volist>
               </div>
               <div class="midd"  align="right">

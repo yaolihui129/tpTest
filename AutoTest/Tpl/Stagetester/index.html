@@ -9,11 +9,11 @@
               <div class="top" style="margin-left:20%;">里程碑：<{$w.type}>测试人员<{$w.proid|getProNo=###}><{$w.stageid|getStage=###}>
                   <span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span>
               </div>
-              <div class="left" align="left" style="width:20%;">
+              <div class="left" align="left" style="width:18%;padding:0 2% 0 0">
                   <volist name='data' id='vo' empty="没有数据">
                      <ul>
                       <li><a href="__URL__/index/stageid/<{$vo.id}>/proid/<{$vo.proid}>/type/<{$w.type}>">
-                      <{$vo.sn}>.<{$w.proid|getProNo=###}><{$vo.stage}>【<{$vo.state}>】</a></li>
+                      <{$vo.sn}>.<{$vo.stage}>【<{$vo.state}>】</a><hr></li>
                      </ul>
                   </volist>
               </div>

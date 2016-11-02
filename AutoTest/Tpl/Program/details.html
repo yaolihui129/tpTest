@@ -1,18 +1,19 @@
 <layout name="layout" />
-        <div class="place"> 所在位置：
-             <a href="__URL__">项目</a>
-             >详情
+       <div class="place"> 所在位置：<a href="__URL__">项目</a>>详情
             <span style="float:right;margin-right:60px;">
-            <a href="__URL__"> 返回</a>
+                 <a href="__URL__"> 返回</a>
              </span>
         </div>
         <div class="content">
            <div class="main">
               <div class="top" > 项目详情<span style="float:right;">当前项目：<{$p.prono}></span></div>
-              <div class="left" align="left" style="width:30%">
-                <volist name='pros' id='pro' empty="没有数据">
-                  <a href="__URL__/details/id/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>【<{$pro.prost}>】</a><br>
-                </volist>
+              <div class="left" align="left" style="width:25%;padding:0 2% 0 0;">
+                <ul>
+                   <volist name='pros' id='pro' empty="没有数据">
+                  <li><a href="__URL__/details/id/<{$pro.id}>"">
+                  <{$pro.prono}>【<{$pro.prost}>】<{$pro.program}></a><hr></li>
+                   </volist>
+                </ul>
               </div>
               <div class="midd" align="left">
                   <table border="0" width="700" align="left">

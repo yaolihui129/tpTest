@@ -207,6 +207,25 @@ function countFResult($id){
     }
 }
 
+
+/**
+ * 根据id获取功能被测试数
+ */
+function countFQResult($id){
+    if ($id){
+        $where=array("proid"=>$_SESSION['proid'],"tp_exefunc.funcid"=>$id);
+        $m=M('stage');
+        $data=$m ->where($where)
+        ->join('tp_stagetester ON tp_stage.id =tp_stagetester.stageid')
+        ->join('tp_exescene ON tp_stagetester.id=tp_exescene.stagetesterid')
+        ->join('tp_exefunc ON tp_exescene.id=tp_exefunc.exesceneid')
+        ->count();
+        return $data;
+    }else {
+        return ;
+    }
+}
+
 /**
  * 根据id获取功能结果
  */

@@ -1,18 +1,19 @@
 <layout name="layout" />
-        <div class="place">所在位置：<a href="__APP__/Program">项目</a>>里程碑
-            <span style="float:right;margin-right:60px;">
-                 <a href="__APP__/Program"> 返回</a>
-            </span>
-        </div>
+        <div class="place">所在位置：<a href="__APP__/Program">项目</a>>里程碑</div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:25%;">里程碑<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
-              <div class="left" align="left" style="width:25%;">
+              <div class="top" >
+                  <span style="margin-left:25%;">里程碑:<{$w.proid|getPro=###}></span>
+                  <span style="float:right;margin-right:5px;">
+                       <a href="__APP__/Program"><button class="btn"> 返回</button></a>
+                  </span>
+              </div>
+              <div class="left" align="left" style="width:23%;padding:0 2% 0 0">
                  <volist name='pros' id='pro' empty="没有数据">
                     <ul>
                       <li>
                          <a href="__URL__/index/proid/<{$pro.id}>">
-                         <{$pro.prono}>-<{$pro.program}>：<{$pro.id|countStage=###}>【<{$pro.prost}>】</a>
+                         <{$pro.prono}>【<{$pro.prost}>】<{$pro.program}>:<{$pro.id|countStage=###}></a><hr>
                       </li>
                     </ul>
                  </volist>

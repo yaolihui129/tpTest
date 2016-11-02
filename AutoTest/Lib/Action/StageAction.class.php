@@ -14,7 +14,7 @@ class StageAction extends CommonAction {
         /* 实例化模型*/
         $s = D("stage");
         $where=array("proid"=>"$proid");
-        $stages=$s->where($where)->select();
+        $stages=$s->where($where)->order("sn,id")->select();
         $this->assign("stages",$stages);
         $this->assign('w',$where);
 
@@ -30,7 +30,7 @@ class StageAction extends CommonAction {
         /* 实例化模型*/
         $m= D("stage");
         $where=array("proid"=>$proid);
-        $pros=$m->where($where)->select();
+        $pros=$m->where($where)->order("sn,id")->select();
 
         $this->assign("data",$pros);
         $count=$m->where($where)->count()+1;
@@ -72,7 +72,7 @@ class StageAction extends CommonAction {
         /* 实例化模型*/
         $m= D("stage");
         $where=array("proid"=>$proid);
-        $pros=$m->where($where)->select();
+        $pros=$m->where($where)->order("sn,id")->select();
 
         $this->assign("data",$pros);
         $stage=$m->find($id);

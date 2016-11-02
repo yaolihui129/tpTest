@@ -8,7 +8,11 @@
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">项目涉及系统<span style="float:right;">当前项目：<{$w.proid|getProNo=###}></span></div>
+              <div class="top">项目涉及系统:<{$w.proid|getPro=###}>
+                  <span style="float:right;">
+                     <a href="__APP__/Func/func/proid/<{$w.proid}>"><button  class="btn" >功能点</button></a>
+                  </span>
+              </div>
               <table  border="0" width="100%" align="center">
                  <tr>
                     <th width=57% align="left" ><h1>项目系统</h1></th>

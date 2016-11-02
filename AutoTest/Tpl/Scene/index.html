@@ -7,19 +7,19 @@
          <div class="content">
            <div class="main">
               <div class="top">
-                 <span style="margin-left:20%;">测试场景<{$w.proid|getProNo=###}></span>
-                 <span style="float:right;">复制目标：<{$w.copy|getProNo=###}>当前项目：<{$w.proid|getProNo=###}></span>
+                 <span style="margin-left:25%;">测试场景:<{$w.proid|getPro=###}></span>
+                 <span style="float:right;">复制目标：<{$w.copy|getProNo=###}></span>
               </div>
-              <div class="left"  align="left">
+              <div class="left" align="left"  style="width:23%;padding:0 2% 0 0;">
                     <volist name='pros' id='pro' empty="没有数据">
                         <ul>
                            <li><a href="__URL__/index/proid/<{$pro.id}>">
-                           <{$pro.prono}>【<{$pro.prost}>】-<{$pro.program}>:<{$pro.id|countScene=###}></a></li>
+                           <{$pro.prono}>【<{$pro.prost}>】<{$pro.program}>:<{$pro.id|countScene=###}></a><hr></li>
                         </ul>
                     </volist>
               </div>
               <div class="midd" >
-                   <table border="1" width="80%" align="left">
+                   <table border="1" width="75%" align="left">
                      <tr>
                       <th width=2% align="center" bgcolor="#ccc">ID</th>
                        <th width=1% align="center" bgcolor="#ccc">顺序</th>

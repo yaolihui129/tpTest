@@ -8,21 +8,21 @@
        </div>
         <div class="content">
            <div class="main">
-              <div class="top" style="margin-left:20%;">规划列队:
+              <div class="top" style="margin-left:25%;">规划列队:<{$w.proid|getProNo=###}>
                   <span style="float:right;">
                       <a href="__APP__/Path/library/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">待测模块（路径）</a>
                       <a href="__URL__/library/stagetesterid/<{$w.stagetesterid}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">
                                                                  待测<{$w.type}>场景库<{$w.proid|countScene=###}></a>当前项目：<{$w.proid|getProNo=###}>
                   </span>
               </div>
-              <div class="left" align="left" >
+              <div class="left" align="left" style="width:19%;padding:0 3%;">
                     <volist name='data' id='vo' empty="没有数据"><ol>
                       <li><a href="__URL__/queue/stagetesterid/<{$vo.id}>/tester/<{$w.tester}>/stageid/<{$w.stageid}>/proid/<{$w.proid}>/type/<{$w.type}>">
-                       <{$vo.sn}>.<{$w.proid|getProNo=###}><{$vo.stage}>【<{$vo.state}>】<{$vo.tester}>:<{$vo.id|countExescene=###}></a></li>
+                       <{$vo.tester}>:<{$vo.stage}>【<{$vo.state}>】<{$vo.id|countExescene=###}></a><hr></li>
                    </ol> </volist>
               </div>
                 <div class="midd"  align="left" >
-                          <table border="1" width="80%" align="left">
+                          <table border="1" width="75%" align="left">
                             <tr>
                               <th width=3% align="center" bgcolor="#ccc">ID</th>
                               <th width=2% align="center" bgcolor="#ccc">顺序</th>

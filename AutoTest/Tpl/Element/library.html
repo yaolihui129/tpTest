@@ -1,26 +1,20 @@
       <layout name="layout" />
-        <div class="place">
-                               所在位置：
-              <a href="__APP__/Program">项目</a>
-              >控件库
-               <span style="float:right;margin-right:60px;">
-                  <a href="__APP__/Program"> 返回</a>
-                </span>
+        <div class="place"> 所在位置：<a href="__APP__/Program/indexl">项目</a>>控件库
+            <span style="float:right;margin-right:60px;"><a href="__APP__/Program/indexl"> 返回</a></span>
         </div>
         <div class="content">
            <div class="main">
-              <div class="top">控件库
-                 <span style="float:right;">
-                                             当前项目：<{$w.proid|getProNo=###}>
-                   </span>
+              <div class="top">
+                 <span style="margin-left:25%;">控件库:<{$w.proid|getPro=###}></span>
+                 <span style="float:right;"></span>
               </div>
-              <div class="left" width="30%">
-                <volist name='data' id='pro' empty="没有数据"><ur><li>
-                   <a href="__URL__/library/proid/<{$pro.id}>""><{$pro.prono}>-<{$pro.program}>:<{$pro.prost}></a>
-                </li></ur> </volist>
+              <div class="left" align="left"  style="width:23%;padding:0 2% 0 0;">
+                <volist name='data' id='pro' empty="没有数据"><ul><li>
+                   <a href="__URL__/library/proid/<{$pro.id}>""><{$pro.prono}>【<{$pro.prost}>】<{$pro.program}>:</a><hr>
+                </li></ul> </volist>
               </div>
-              <div class="midd" width="60%">
-                   <table border="1" width="80%" align="center">
+              <div class="midd" >
+                   <table border="1" width="75%" align="center">
                      <tr>
                        <th width=3% align="center" bgcolor="#ccc">ID</th>
                        <th width=2% align="center" bgcolor="#ccc">顺序</th>
